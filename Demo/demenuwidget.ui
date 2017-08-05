@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DeMenuWidget</class>
+ <widget class="QWidget" name="DeMenuWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1389</width>
+    <height>54</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>DeMenuWidget</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton
+{
+background-color: rgb(255, 255, 255, 0.3);
+border:1px solid gray;
+border-radius:5px;
+font: 20pt &quot;宋体&quot;;
+padding-top:5px;
+padding-bottom:5px;
+min-width:120px;
+}
+
+QPushButton:hover
+{
+	background-color: rgb(255, 255, 255);
+    border:2px solid gray;
+    border-radius:5px;
+}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <property name="horizontalSpacing">
+    <number>10</number>
+   </property>
+   <item row="0" column="5">
+    <widget class="QPushButton" name="exitBtn">
+     <property name="text">
+      <string>退  出</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="4">
+    <widget class="QPushButton" name="logBtn">
+     <property name="text">
+      <string>日  志</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QPushButton" name="loginBtn">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="text">
+      <string>登  录</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QPushButton" name="userBtn">
+     <property name="text">
+      <string>管  理</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <widget class="QPushButton" name="systemCfgBtn">
+     <property name="text">
+      <string>系统设置</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3">
+    <widget class="QPushButton" name="systemTestBtn">
+     <property name="text">
+      <string>系统测试</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

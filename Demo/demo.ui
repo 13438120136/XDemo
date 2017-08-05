@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DemoClass</class>
+ <widget class="QMainWindow" name="DemoClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>773</width>
+    <height>594</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Demo</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QStatusBar {
+	background-color: rgb(117, 161, 255);
+}
+
+QStatusBar::item {
+    border: 1px solid red;
+    border-radius: 3px;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <widget class="QStackedWidget" name="contentWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="page">
+       <layout class="QGridLayout" name="gridLayout" rowstretch="8,1">
+        <property name="margin">
+         <number>0</number>
+        </property>
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="DeInitWidget" name="widget" native="true">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="DeBottomMenuWidget" name="menuWidget" native="true">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
+QPushButton
+{
+background-color: rgb(255, 255, 255, 0.3);
+border:1px solid gray;
+border-radius:3px;
+font: 16pt &quot;宋体&quot;;
+min-height:40px;
+min-width:30px;
+}
+
+QPushButton:hover
+{
+	background-color: rgb(255, 255, 255);
+    border:2px solid gray;
+    border-radius:3px;
+}
+</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>DeBottomMenuWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">debottommenuwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>DeInitWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">deinitwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="demo.qrc"/>
+ </resources>
+ <connections/>
+</ui>

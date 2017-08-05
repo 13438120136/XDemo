@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DeAddRadioactiveDlg</class>
+ <widget class="QDialog" name="DeAddRadioactiveDlg">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>694</width>
+    <height>474</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>DeAddRadioactiveDlg</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDateEdit
+{
+   min-height:30px;
+   border:1px solid gray;
+   border-radius:5px;
+   padding: 0px;
+   font: 16pt &quot;新宋体&quot;;
+}
+
+QDateEdit::drop-down
+{
+   border:1px solid black;
+   min-width:30px;
+}
+
+QCalendarWidget
+{
+font: 20pt &quot;新宋体&quot;;
+}
+
+QCalendarWidget QAbstractButton
+{
+    min-width:40px;
+}
+
+QLineEdit
+{
+border:1px solid gray;
+border-radius:5px;
+min-height:30px;
+max-height:30px;
+font: 16pt &quot;新宋体&quot;;
+}
+
+#widget_2
+{
+min-height:30px;
+}
+
+QLabel
+{
+font: 14pt &quot;新宋体&quot;;
+min-width:100px;
+}
+
+QGroupBox {
+     border: 1px solid gray;
+     border-radius: 3px;
+     margin-top: 2ex; /* leave space at the top for the title */
+     padding: 10px;
+ }
+
+ QGroupBox::title {
+     subcontrol-origin: margin;
+     subcontrol-position: top center; /* position at the top center */
+     padding: 0 10px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #FFOECE, stop: 1 #FFFFFF);
+ }
+
+QPushButton {
+    
+	font: 16pt &quot;新宋体&quot;;
+	background-color: rgb(244, 244, 244);
+     border: 1px solid #8f8f91;
+     border-radius: 6px;
+     min-width: 100px;
+     min-height: 30px;
+ }
+
+ QPushButton:pressed {
+	background-color: rgb(255, 255, 255);
+ }</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_4" rowstretch="10,1">
+   <item row="0" column="0">
+    <widget class="QWidget" name="widget_4" native="true">
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
+       <widget class="QWidget" name="widget" native="true">
+        <property name="styleSheet">
+         <string notr="true">max-width: 380px;
+max-height:260px;</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="0" column="0" colspan="4">
+          <widget class="QGroupBox" name="groupBox">
+           <property name="title">
+            <string>添加放射源记录</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_8">
+            <item row="0" column="0">
+             <layout class="QGridLayout" name="gridLayout_2">
+              <item row="0" column="0">
+               <widget class="QLabel" name="label">
+                <property name="text">
+                 <string>编号</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="idLineEdit"/>
+              </item>
+             </layout>
+            </item>
+            <item row="1" column="0">
+             <layout class="QGridLayout" name="gridLayout_7">
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_3">
+                <property name="text">
+                 <string>原始活度</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="originalLineEdit"/>
+              </item>
+             </layout>
+            </item>
+            <item row="2" column="0">
+             <layout class="QGridLayout" name="gridLayout_5">
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_2">
+                <property name="text">
+                 <string>生产日期</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QDateEdit" name="dateEdit">
+                <property name="maximumSize">
+                 <size>
+                  <width>382</width>
+                  <height>262</height>
+                 </size>
+                </property>
+                <property name="wrapping">
+                 <bool>false</bool>
+                </property>
+                <property name="keyboardTracking">
+                 <bool>true</bool>
+                </property>
+                <property name="displayFormat">
+                 <string>yyyy-M-d</string>
+                </property>
+                <property name="calendarPopup">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="3" column="0">
+             <layout class="QGridLayout" name="gridLayout_6">
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_4">
+                <property name="text">
+                 <string>放射源类</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="DeComboBox" name="widget_3" native="true">
+                <property name="maximumSize">
+                 <size>
+                  <width>380</width>
+                  <height>260</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>67</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="1" column="1">
+          <widget class="QPushButton" name="okBtn">
+           <property name="text">
+            <string>Y</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QPushButton" name="cancelBtn">
+           <property name="text">
+            <string>N</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>67</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="DeVirtualKeyboradWidget" name="keyBoradWidget" native="true">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>220</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>DeVirtualKeyboradWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">devirtualkeyboradwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>DeComboBox</class>
+   <extends>QWidget</extends>
+   <header location="global">decombobox.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
