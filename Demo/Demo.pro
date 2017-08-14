@@ -3,7 +3,7 @@
 # ------------------------------------------------------
 
 TEMPLATE = app
-TARGET = Demo
+TARGET = DemoApp
 DESTDIR = ../
 QT += core gui sql
 CONFIG += debug
@@ -19,7 +19,6 @@ MOC_DIR += ./GeneratedFiles/debug
 OBJECTS_DIR += debug
 UI_DIR += ./GeneratedFiles
 RCC_DIR += ./GeneratedFiles
-win32:RC_FILE = Demo.rc
 
 SUBDIRS += \
     Demo.pro
