@@ -3,7 +3,7 @@
 //----------------------------------------------------------------------------
 DeTableView::DeTableView(QWidget *parent)
 	: QWidget(parent)
-	,m_model(nullptr)
+	,m_model(NULL)
 {
 	ui.setupUi(this);
 	ui.tableView->horizontalHeader()->setResizeMode(QHeaderView::Stretch);

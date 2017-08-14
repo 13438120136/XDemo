@@ -46,7 +46,7 @@ QVariant DeRadioactivityModel::dataShow(const QModelIndex &index) const
 	int row = index.row();
 	int column = index.column();
 
-	auto tmpData = m_data.mid(indexData());	
+	QList<DeRadioactiveSourceTable> tmpData = m_data.mid(indexData());	
 	if (row + 1 > tmpData.size())
 		return QVariant();
 

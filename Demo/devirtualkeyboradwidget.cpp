@@ -3,7 +3,7 @@
 
 DeVirtualKeyboradWidget::DeVirtualKeyboradWidget(QWidget *parent)
 	: QWidget(parent)
-	,m_lineEdit(nullptr)
+	,m_lineEdit(NULL)
 {
 	ui.setupUi(this);
 	initAllKeyEvent();
@@ -42,7 +42,7 @@ void DeVirtualKeyboradWidget::initAllKeyEvent()
 
 void DeVirtualKeyboradWidget::virtualKeyPressEvent(QWidget *button)
 {
-	if (m_lineEdit == nullptr)
+	if (m_lineEdit == NULL)
 		return ;
 
 	QPushButton *pButton = (QPushButton *)button;
@@ -52,7 +52,7 @@ void DeVirtualKeyboradWidget::virtualKeyPressEvent(QWidget *button)
 
 void DeVirtualKeyboradWidget::on_spaceBtn_clicked()
 {
-	if (m_lineEdit == nullptr)
+	if (m_lineEdit == NULL)
 		return ;
 
 	m_lineEdit->insert(" ");
@@ -61,7 +61,7 @@ void DeVirtualKeyboradWidget::on_spaceBtn_clicked()
 
 void DeVirtualKeyboradWidget::on_backBtn_clicked()
 {
-	if (m_lineEdit == nullptr)
+	if (m_lineEdit == NULL)
 		return ;
 
 	m_lineEdit->backspace();
