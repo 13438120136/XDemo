@@ -69,8 +69,7 @@ HEADERS += \
     detestdatamodel.h \
     detestinformodel.h \
     deuserlistmodel.h \
-    devirtualkeyboradwidget.h \
-    resource.h
+    devirtualkeyboradwidget.h 
 
 SOURCES += \
     deaddradioactivedlg.cpp \
