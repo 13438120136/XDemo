@@ -8,7 +8,7 @@ const QString tableName = "radioactiveSourceTable";
 DeRadioactiveSourceTable::DeRadioactiveSourceTable(DeSqlDataBase *db)
 	: DeValueObjectInterface(db)
 {
-
+	initTable();
 }
 //----------------------------------------------------------------------------
 DeRadioactiveSourceTable::~DeRadioactiveSourceTable()

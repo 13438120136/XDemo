@@ -3,7 +3,7 @@
 
 #include <QString>
 #include "desqldatabase_global.h"
-#include <devalueobjectinterface.h>
+#include "devalueobjectinterface.h"
 
 ///报警条件对应值对象
 class DESQLDATABASE_EXPORT DeAlermTable : public DeValueObjectInterface

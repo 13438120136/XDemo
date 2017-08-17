@@ -52,3 +52,8 @@ QSqlQuery *DeSqlDataBase::getSqlQuery()
 	return m_sqlQuery;
 }
 //----------------------------------------------------------------------------
+QSqlDatabase &DeSqlDataBase::dataBase()
+{
+	return m_sqlDataBase;
+}
+//----------------------------------------------------------------------------

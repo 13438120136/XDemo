@@ -12,6 +12,8 @@ DeAlermTable::DeAlermTable(DeSqlDataBase *db)
 {
 	m_alermTime = 0;
 	m_polluteChannel = 0;
+
+	initTable();
 }
 //----------------------------------------------------------------------------
 DeAlermTable::~DeAlermTable()

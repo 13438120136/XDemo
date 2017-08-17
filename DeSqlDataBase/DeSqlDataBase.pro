@@ -26,6 +26,7 @@ HEADERS += \
     desqldatabase.h \
     desqldatabase_global.h \
     deusertable.h \
+	delogtable.h \
     devalueobjectinterface.h
 
 SOURCES += \
@@ -34,4 +35,5 @@ SOURCES += \
     deradioactivesourcetable.cpp \
     desqldatabase.cpp \
     deusertable.cpp \
+	delogtable.cpp \
     devalueobjectinterface.cpp

@@ -3,7 +3,7 @@
 
 #include <QString>
 #include "desqldatabase_global.h"
-#include <devalueobjectinterface.h>
+#include "devalueobjectinterface.h"
 
 ///每一项放射源管理对象条目值对象
 class DESQLDATABASE_EXPORT DeRadioactiveSourceTable : public DeValueObjectInterface

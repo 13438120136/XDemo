@@ -10,7 +10,7 @@ const QString tableName = "usrTable";
 DeUserTable::DeUserTable(DeSqlDataBase *db)
 	: DeValueObjectInterface(db)
 {
-
+	initTable();
 }
 //----------------------------------------------------------------------------
 DeUserTable::~DeUserTable()

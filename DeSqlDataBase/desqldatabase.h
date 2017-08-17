@@ -19,6 +19,7 @@ public:
 	bool execSql(const QString &sql);
 	///获取当前QSqlQuery对象
 	QSqlQuery *getSqlQuery();
+	QSqlDatabase &dataBase();
 
 private:
 	QSqlDatabase m_sqlDataBase;

@@ -3,7 +3,7 @@
 
 #include <QString>
 #include "desqldatabase_global.h"
-#include <devalueobjectinterface.h>
+#include "devalueobjectinterface.h"
 
 ///管理用户值对象
 class DESQLDATABASE_EXPORT DeUserTable : public DeValueObjectInterface
