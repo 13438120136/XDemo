@@ -80,6 +80,7 @@ bool DeAddUserDlg::eventFilter(QObject *obj, QEvent *event)
 //----------------------------------------------------------------------------
 void DeAddUserDlg::slotUserLineEdit(const QString & text)
 {
+	Q_UNUSED(text)
 	QString user = ui.userLineEdit->text().trimmed();
 	QString passwd = ui.passwdLineEdit->text().trimmed();
 
@@ -88,6 +89,7 @@ void DeAddUserDlg::slotUserLineEdit(const QString & text)
 //----------------------------------------------------------------------------
 void DeAddUserDlg::slotUserPasswdEdit(const QString & text)
 {
+	Q_UNUSED(text)
 	QString user = ui.userLineEdit->text().trimmed();
 	QString passwd = ui.passwdLineEdit->text().trimmed();
 

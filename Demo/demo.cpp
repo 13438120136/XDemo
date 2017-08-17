@@ -7,6 +7,7 @@
 #include "detestdatamodel.h"
 #include <deinitwidget.h>
 #include <deusertable.h>
+#include <dedevicetable.h>
 #include <deradioactivesourcetable.h>
 
 Q_DECLARE_METATYPE(Demo *)
@@ -28,11 +29,7 @@ Demo::Demo(QWidget *parent, Qt::WFlags flags)
 	///初始化数据库对象
 	m_sqlDatabase.openDataBase();
 
-    ///初始化表格
-	DeUserTable userTable(&m_sqlDatabase);
-	DeRadioactiveSourceTable sourceTable(&m_sqlDatabase);
-    userTable.initTable();
-    sourceTable.initTable();
+	DeDeviceTable xxx(&m_sqlDatabase);
 }
 //----------------------------------------------------------------------------
 Demo::~Demo()

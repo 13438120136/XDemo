@@ -31,6 +31,7 @@ int DeChannelTestModel::dataSize()
 //----------------------------------------------------------------------------
 QVariant DeChannelTestModel::dataShow(const QModelIndex &index) const
 {
+	Q_UNUSED(index)
 	return QVariant();	
 }
 //----------------------------------------------------------------------------

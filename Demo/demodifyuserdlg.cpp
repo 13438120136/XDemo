@@ -68,7 +68,7 @@ void DeModifyUserDlg::setData(DeUserTable data)
 	ui.widgePermission->setCurrentIndex(data.getUserPermission());
 }
 //----------------------------------------------------------------------------
-void DeModifyUserDlg::slotUserPasswdEdit(const QString & text)
+void DeModifyUserDlg::slotUserPasswdEdit(const QString &)
 {
 	QString passwd = ui.passwdLineEdit->text().trimmed();
 	ui.okBtn->setEnabled(!passwd.isEmpty());

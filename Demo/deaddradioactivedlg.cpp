@@ -67,6 +67,7 @@ bool DeAddRadioactiveDlg::eventFilter(QObject *obj, QEvent *event)
 //----------------------------------------------------------------------------
 void DeAddRadioactiveDlg::slotIDLineEdit(const QString & text)
 {
+	Q_UNUSED(text)
 	QString id = ui.idLineEdit->text();
 	QString value = ui.originalLineEdit->text();
 
@@ -75,6 +76,7 @@ void DeAddRadioactiveDlg::slotIDLineEdit(const QString & text)
 //----------------------------------------------------------------------------
 void DeAddRadioactiveDlg::slotValueLineEdit(const QString & text)
 {
+	Q_UNUSED(text)
 	QString id = ui.idLineEdit->text();
 	QString value = ui.originalLineEdit->text();
 

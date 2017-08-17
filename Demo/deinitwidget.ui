@@ -132,7 +132,7 @@
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">image: url(:/Demo/C:/Users/Administrator/Desktop/PPP/lFoot.png);</string>
+               <string notr="true">image: url(:/Demo/Resources/lFoot.png);</string>
               </property>
               <property name="text">
                <string/>
@@ -255,7 +255,7 @@
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">image: url(:/Demo/C:/Users/Administrator/Desktop/PPP/rFoot.png);</string>
+               <string notr="true">image: url(:/Demo/Resources/rFoot.png);</string>
               </property>
               <property name="text">
                <string/>
@@ -397,7 +397,7 @@
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">image: url(:/Demo/C:/Users/Administrator/Desktop/PPP/leftHand.jpg);</string>
+               <string notr="true">image: url(:/Demo/Resources/leftHand.jpg);</string>
               </property>
               <property name="text">
                <string/>
@@ -543,7 +543,7 @@ font: bold 24pt &quot;新宋体&quot; ;</string>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">image: url(:/Demo/C:/Users/Administrator/Desktop/PPP/rightHand.jpg);</string>
+               <string notr="true">image: url(:/Demo/Resources/rightHand.jpg);</string>
               </property>
               <property name="text">
                <string/>

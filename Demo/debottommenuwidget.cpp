@@ -23,8 +23,6 @@ DeBottomMenuWidget::~DeBottomMenuWidget()
 void DeBottomMenuWidget::leftButtonSlot()
 {
 	QScrollBar *scrollBar = ui.scrollArea->horizontalScrollBar();
-	int min = scrollBar->minimum();
-	int max = scrollBar->maximum();
 
 	int value = scrollBar->value();
 	if (value == 0)
@@ -40,7 +38,6 @@ void DeBottomMenuWidget::leftButtonSlot()
 void DeBottomMenuWidget::rightButtonSlot()
 {
 	QScrollBar *scrollBar = ui.scrollArea->horizontalScrollBar();
-	int min = scrollBar->minimum();
 	int max = scrollBar->maximum();
 
 	int value = scrollBar->value();
