@@ -59,6 +59,7 @@ QVariant DeUserListModel::dataShow(const QModelIndex &index) const
 //----------------------------------------------------------------------------
 Qt::ItemFlags DeUserListModel::flags(const QModelIndex &index) const
 {
+	Q_UNUSED(index)
 	return Qt::ItemIsSelectable | Qt::ItemIsEnabled;
 }
 //----------------------------------------------------------------------------

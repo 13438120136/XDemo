@@ -1,5 +1,6 @@
 #include "dedevicetable.h"
 #include "desqldatabase.h"
+#include <qvariant.h>
 
 ///当前对象对应的数据库表名称
 const QString tableName = "deviceSettingTable";
@@ -36,21 +37,33 @@ QString DeDeviceTable::execSelectString()
 //----------------------------------------------------------------------------
 QList<DeValueObjectInterface *> DeDeviceTable::selectValue(QSqlQuery *sqlQuery)
 {
+	Q_UNUSED(sqlQuery)
+
 	QList<DeValueObjectInterface *> result;
-
-	while (sqlQuery->next())
-	{
-	}
-
 	return result;
 }
 //----------------------------------------------------------------------------
-bool DeDeviceTable::insertDataToDB()
+bool DeDeviceTable::insertDataToDB(DeSystemParam &data)
 {
 	DeSqlDataBase *db = currSqlDataBase();
 	QSqlQuery sqlQuery(db->dataBase());
 	QString sql = QString("insert into %1 values (?)").arg(tableName);
 	sqlQuery.prepare(sql);
+	sqlQuery.bindValue(0, data.byteArray());
 	return sqlQuery.exec();
+}
+//----------------------------------------------------------------------------
+DeSystemParam DeDeviceTable::selectDB()
+{
+	DeSqlDataBase *db = currSqlDataBase();
+	QSqlQuery sqlQuery(db->dataBase());
+	QString sql = QString("select * from %1").arg(tableName);
+	sqlQuery.exec(sql);
+
+	sqlQuery.next();
+
+	DeSystemParam param;
+	param.setByteArray(sqlQuery.value(0).toByteArray());
+	return param;
 }
 //----------------------------------------------------------------------------

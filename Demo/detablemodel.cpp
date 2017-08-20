@@ -14,13 +14,13 @@ DeTableModel::~DeTableModel()
 //----------------------------------------------------------------------------
 Qt::ItemFlags DeTableModel::flags(const QModelIndex &index) const
 {
+	Q_UNUSED(index)
 	return Qt::ItemIsEnabled;
 }
 //----------------------------------------------------------------------------
 QVariant DeTableModel::data(const QModelIndex &index, int role) const
 {
 	int row = index.row();
-	int column = index.column();
 
 	///œ‘ æ±≥æ∞—’…´
 	if ((role == Qt::BackgroundColorRole)
@@ -39,6 +39,7 @@ QVariant DeTableModel::data(const QModelIndex &index, int role) const
 //----------------------------------------------------------------------------
 QVariant DeTableModel::dataShow(const QModelIndex &index) const
 {
+	Q_UNUSED(index)
 	return QVariant();
 }
 //----------------------------------------------------------------------------

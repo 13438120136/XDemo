@@ -33,6 +33,7 @@ int DeTestInforModel::dataSize()
 //----------------------------------------------------------------------------
 QVariant DeTestInforModel::dataShow(const QModelIndex &index) const
 {
+	Q_UNUSED(index)
 	return QVariant();	
 }
 //----------------------------------------------------------------------------
