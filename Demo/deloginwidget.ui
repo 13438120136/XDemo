@@ -62,10 +62,10 @@ QPushButton {
     
 	font: 16pt &quot;新宋体&quot;;
 	background-color: rgb(244, 244, 244);
-     border: 1px solid #8f8f91;
-     border-radius: 6px;
-     min-width: 100px;
-     min-height: 30px;
+    border: 1px solid #8f8f91;
+    border-radius: 6px;
+    min-width: 100px;
+    min-height: 38px;
  }
 
  QPushButton:pressed {
@@ -75,13 +75,25 @@ QPushButton {
 </string>
         </property>
         <layout class="QGridLayout" name="gridLayout_7">
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <property name="spacing">
+          <number>6</number>
+         </property>
          <item row="0" column="0">
           <widget class="QWidget" name="widget" native="true">
            <property name="styleSheet">
             <string notr="true">max-width:280px;
-max-height:180px;</string>
+max-height:174px;</string>
            </property>
            <layout class="QGridLayout" name="gridLayout_4">
+            <property name="verticalSpacing">
+             <number>10</number>
+            </property>
             <item row="1" column="0">
              <spacer name="horizontalSpacer">
               <property name="orientation">
@@ -100,7 +112,7 @@ max-height:180px;</string>
               <property name="maximumSize">
                <size>
                 <width>282</width>
-                <height>182</height>
+                <height>176</height>
                </size>
               </property>
               <property name="text">
@@ -113,7 +125,7 @@ max-height:180px;</string>
               <property name="maximumSize">
                <size>
                 <width>282</width>
-                <height>182</height>
+                <height>176</height>
                </size>
               </property>
               <property name="text">
@@ -139,7 +151,7 @@ max-height:180px;</string>
               <property name="maximumSize">
                <size>
                 <width>302</width>
-                <height>208</height>
+                <height>202</height>
                </size>
               </property>
               <property name="styleSheet">
@@ -149,6 +161,9 @@ max-height:180px;</string>
                <string>登录</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_3">
+               <property name="margin">
+                <number>3</number>
+               </property>
                <item row="0" column="0">
                 <layout class="QGridLayout" name="gridLayout">
                  <property name="horizontalSpacing">

@@ -29,7 +29,7 @@ QList<DeUserTable> &DeUserListModel::data()
 //----------------------------------------------------------------------------
 int DeUserListModel::perPageCount()
 {
-	return 10;
+	return 7;
 }
 //----------------------------------------------------------------------------
 int DeUserListModel::dataSize()

@@ -42,6 +42,8 @@ DeSystemConfigWidget::DeSystemConfigWidget(QWidget *parent)
 		<< AlermEventData(20, 22, 23);
 	eventModel->setData(eData);	
 	ui.widget_2->setModel(eventModel);
+
+	//ui.virtualKeyBoradwidget->hide();
 }
 //----------------------------------------------------------------------------
 DeSystemConfigWidget::~DeSystemConfigWidget()
