@@ -40,6 +40,7 @@ FORMS += \
     desystemconfigwidget.ui \
     desystemtestwidget.ui \
     detableview.ui \
+	depropertyeditwidget.ui \
     devirtualkeyboradwidget.ui
 
 HEADERS += \
@@ -69,6 +70,7 @@ HEADERS += \
     detestdatamodel.h \
     detestinformodel.h \
     deuserlistmodel.h \
+	depropertyeditwidget.h \
     devirtualkeyboradwidget.h 
 
 SOURCES += \
@@ -98,4 +100,5 @@ SOURCES += \
     detestinformodel.cpp \
     deuserlistmodel.cpp \
     devirtualkeyboradwidget.cpp \
+	depropertyeditwidget.cpp \
     main.cpp
