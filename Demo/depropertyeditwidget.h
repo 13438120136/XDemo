@@ -13,10 +13,14 @@ public:
 	~DePropertyEditWidget();
 
 	void setHeadTitle(const QString &title);
+	void setContentText(const QString &text);
 
 public Q_SLOTS:
 	void on_btnOk_clicked();
 	void on_btnCancel_clicked();
+
+protected:
+	bool eventFilter(QObject *obj, QEvent *event);
 
 private:
 	Ui::DePropertyEditWidget ui;

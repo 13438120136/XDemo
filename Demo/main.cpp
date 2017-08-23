@@ -3,10 +3,17 @@
 #include "destatemachine.h"
 #include "deusertable.h"
 #include "desqldatabase.h"
+#include <QTranslator>
 
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
+
+	///º”‘ÿ”Ô—‘∞¸
+	QTranslator translator;
+	translator.load(":/Demo/demo_zh.qm");
+	a.installTranslator(&translator);
+
 	Demo demo;
 	demo.setFixedSize(640, 480);
 	demo.show();

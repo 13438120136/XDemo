@@ -78,7 +78,27 @@ bool DeSystemConfigWidget::eventFilter(QObject *obj, QEvent *event)
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::initEdit()
 {
-	ui.ipEdit->setProperty("customText", tr("IP地址"));
+	ui.ipEdit->setProperty("customText", tr("IP地址设置"));
+	ui.timeEdit->setProperty("customText", tr("测量时间"));
+	ui.forceTestTimeEdit->setProperty("customText", tr("强制本底测量时间"));
+	ui.checkFatorEdit->setProperty("customText", tr("本底检测平滑因子"));
+	ui.rCheckFatorEdit->setProperty("customText", tr("辐射检测平滑因子"));
+	ui.personFatorEdit->setProperty("customText", tr("人员屏蔽补偿因子"));
+	ui.resetTimeEdit->setProperty("customText", tr("报警自动恢复时间"));
+
+	ui.alphaLowEdit->setProperty("customText", tr("alpha 低本底报警阀值"));
+	ui.alphaHighEdit->setProperty("customText", tr("alpha 高本底报警阀值"));
+	ui.alphaAlarmEdit->setProperty("customText", tr("alpha 报警系数"));
+	ui.alphaSAlarmEdit->setProperty("customText", tr("alpha 严重报警系数"));
+	ui.alphaThresholdEdit->setProperty("customText", tr("alpha 报警阀值"));
+	ui.alphaSThresholdEdit->setProperty("customText", tr("alpha 严重报警阀值"));
+
+	ui.betaLowEdit->setProperty("customText", tr("beta 低本底报警阀值"));
+	ui.betaHighEdit->setProperty("customText", tr("beta 高本底报警阀值"));
+	ui.betaAlarmEdit->setProperty("customText", tr("beta 报警系数"));
+	ui.betaSAlarmEdit->setProperty("customText", tr("beta 严重报警系数"));
+	ui.betaThresholdEdit->setProperty("customText", tr("beta 报警阀值"));
+	ui.betaSThresholdEdit->setProperty("customText", tr("beta 严重报警阀值"));
 
 	QSignalMapper *signalMapper = new QSignalMapper(this);
 	QList<QAbstractButton *> listButtons = ui.buttonGroup->buttons();
@@ -100,9 +120,9 @@ void DeSystemConfigWidget::propertyEditSlot(QWidget *w)
 	QPushButton *button = (QPushButton *)w;
 	QString header = button->property("customText").toString();
 	widget->setHeadTitle(header);
+	widget->setContentText(button->text());
 
 	Demo *demo = qApp->property("_mainWin").value<Demo *>();
 	demo->slotSetWidget(widget);
-	//widget->exec();
 }
 //----------------------------------------------------------------------------

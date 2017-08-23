@@ -6,5 +6,7 @@
         <file>Resources/lFoot.png</file>
         <file>Resources/rFoot.png</file>
         <file>Resources/rightHand.jpg</file>
+        <file>demo_zh.qm</file>
+        <file>demo_en.qm</file>
     </qresource>
 </RCC>
