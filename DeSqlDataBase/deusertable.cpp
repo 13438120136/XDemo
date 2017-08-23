@@ -4,7 +4,7 @@
 #include <QVariant>
 
 ///当前对象对应的数据库表名称
-const QString tableName = "usrTable";
+const QString tableName = "userTable";
 
 //----------------------------------------------------------------------------
 DeUserTable::DeUserTable(DeSqlDataBase *db)

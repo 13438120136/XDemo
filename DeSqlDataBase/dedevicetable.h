@@ -15,7 +15,10 @@ public:
 
 	void initTable();
 	bool insertDataToDB(DeSystemParam &data);
+	bool updateDataToDB(DeSystemParam &data);
 	DeSystemParam selectDB();
+	///检查数据库表是否为空
+	bool isEmptyInTable();
 
 protected:
 	///组装添加数据字符串

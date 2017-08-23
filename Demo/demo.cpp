@@ -28,8 +28,6 @@ Demo::Demo(QWidget *parent, Qt::WFlags flags)
 
 	///初始化数据库对象
 	m_sqlDatabase.openDataBase();
-
-	DeDeviceTable xxx(&m_sqlDatabase);
 }
 //----------------------------------------------------------------------------
 Demo::~Demo()

@@ -3,14 +3,18 @@
 
 #include <QOBject>
 #include <qbytearray.h>
+#include "desqldatabase_global.h"
 
 struct SystemParam;
 ///定义系统参数类
-class DeSystemParam
+class DESQLDATABASE_EXPORT DeSystemParam
 {
 public:
 	DeSystemParam();
 	~DeSystemParam();
+
+	DeSystemParam(const DeSystemParam &other);
+	DeSystemParam &	operator=(const DeSystemParam & other);
 
 	void setByteArray(const QByteArray &byteArray);
 	QByteArray byteArray() const;
@@ -51,6 +55,36 @@ public:
 	void setBetaSeriousAlramCoefficient(int coefficient);
 	void setBetaThreshold(int threshold);
 	void setBetaSeriousThreshold(int threshold);	
+
+	///获取字段
+	int getThresholdType();
+	int getLanguage();
+	QString getIp();
+	int getMeasurementTime();
+	int getCheckTime();
+	int getcheckFactor();
+	int getRadiationCheckFactor();
+	float getPersonnelFactor();
+	int getAlarmResetTime();
+	int getAlarmTime();
+
+	int getAlphaLowAlarmThreshold();
+	int getAlphaHighAlarmThreshold();
+	int getAlphaAlramCoefficient();
+	int getAlphaSeriousAlramCoefficient();
+	int getAlphaThreshold();
+	int getAlphaSeriousThreshold();	
+
+	int getBetaLowAlarmThreshold();
+	int getBetaHighAlarmThreshold();
+	int getBetaAlramCoefficient();
+	int getBetaSeriousAlramCoefficient();
+	int getBetaThreshold();
+	int getBetaSeriousThreshold();	
+
+private:
+	///设置所有相关字段的默认值
+	void setDefaultValues(SystemParam *value);
 
 private:
 	SystemParam *pSystemParam;

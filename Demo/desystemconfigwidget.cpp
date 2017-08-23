@@ -6,22 +6,21 @@
 #include <QSignalMapper>
 #include <depropertyeditwidget.h>
 #include <deadduserdlg.h>
+#include "dedevicetable.h"
 
 Q_DECLARE_METATYPE(Demo *)
 //----------------------------------------------------------------------------
 DeSystemConfigWidget::DeSystemConfigWidget(QWidget *parent)
 	: QDialog(parent)
-	,m_isFullShow(false)
 {
 	ui.setupUi(this);
 	this->setWindowFlags(Qt::ToolTip);
+
+	initEdit();
+	readDataFromDB();
+
 	ui.dateEdit->setDate(QDate::currentDate());
 	ui.dateEdit->calendarWidget()->setGridVisible(true);
-
-	ui.groupBox->installEventFilter(this);
-	ui.groupBox_2->installEventFilter(this);
-	ui.groupBox_4->installEventFilter(this);
-	ui.groupBox_5->installEventFilter(this);
 
 	///测量次数
 	DeTestDataModel *mm = new DeTestDataModel(this);
@@ -47,8 +46,6 @@ DeSystemConfigWidget::DeSystemConfigWidget(QWidget *parent)
 		<< AlermEventData(20, 22, 23);
 	eventModel->setData(eData);	
 	ui.widget_2->setModel(eventModel);
-
-	initEdit();
 }
 //----------------------------------------------------------------------------
 DeSystemConfigWidget::~DeSystemConfigWidget()
@@ -61,20 +58,6 @@ void DeSystemConfigWidget::on_okBtn_clicked()
 	Demo *demo = qApp->property("_mainWin").value<Demo *>();
 	demo->slotBackMainWidget();
 }
-//----------------------------------------------------------------------------
-bool DeSystemConfigWidget::eventFilter(QObject *obj, QEvent *event)
- {
-	 if (event->type() == QEvent::MouseButtonRelease) 
-	 {
-		 m_isFullShow = !m_isFullShow;
-         return true;
-     }
-	 else 
-	 {
-         // standard event processing
-         return QObject::eventFilter(obj, event);
-     }
- }
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::initEdit()
 {
@@ -124,5 +107,191 @@ void DeSystemConfigWidget::propertyEditSlot(QWidget *w)
 
 	Demo *demo = qApp->property("_mainWin").value<Demo *>();
 	demo->slotSetWidget(widget);
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::updateDataBase()
+{
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	DeDeviceTable deviceTable(demo->dataBase());
+	deviceTable.updateDataToDB(m_systemParamData);
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::readDataFromDB()
+{
+	///从数据库获取设备数据
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	DeDeviceTable deviceTable(demo->dataBase());
+	m_systemParamData = deviceTable.selectDB();
+
+	ui.ipEdit->setText(m_systemParamData.getIp());
+	ui.timeEdit->setText(QString::number(m_systemParamData.getMeasurementTime()));
+	ui.forceTestTimeEdit->setText(QString::number(m_systemParamData.getCheckTime()));
+	ui.checkFatorEdit->setText(QString::number(m_systemParamData.getcheckFactor()));
+	ui.rCheckFatorEdit->setText(QString::number(m_systemParamData.getRadiationCheckFactor()));
+	ui.personFatorEdit->setText(QString::number(m_systemParamData.getPersonnelFactor()));
+	ui.resetTimeEdit->setText(QString::number(m_systemParamData.getAlarmResetTime()));
+
+	ui.alphaLowEdit->setText(QString::number(m_systemParamData.getAlphaLowAlarmThreshold()));
+	ui.alphaHighEdit->setText(QString::number(m_systemParamData.getAlphaHighAlarmThreshold()));
+	ui.alphaAlarmEdit->setText(QString::number(m_systemParamData.getAlphaAlramCoefficient()));
+	ui.alphaSAlarmEdit->setText(QString::number(m_systemParamData.getAlphaSeriousAlramCoefficient()));
+	ui.alphaThresholdEdit->setText(QString::number(m_systemParamData.getAlphaThreshold()));
+	ui.alphaSThresholdEdit->setText(QString::number(m_systemParamData.getAlphaSeriousThreshold()));
+
+	ui.betaLowEdit->setText(QString::number(m_systemParamData.getBetaLowAlarmThreshold()));
+	ui.betaHighEdit->setText(QString::number(m_systemParamData.getBetaHighAlarmThreshold()));
+	ui.betaAlarmEdit->setText(QString::number(m_systemParamData.getBetaAlramCoefficient()));
+	ui.betaSAlarmEdit->setText(QString::number(m_systemParamData.getBetaSeriousAlramCoefficient()));
+	ui.betaThresholdEdit->setText(QString::number(m_systemParamData.getBetaThreshold()));
+	ui.betaSThresholdEdit->setText(QString::number(m_systemParamData.getBetaSeriousThreshold()));
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::setIpAddress(const QString &ip)
+{
+	ui.ipEdit->setText(ip);
+	m_systemParamData.setIp(ip);
+	updateDataBase();
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::setLanguage()
+{
+	updateDataBase();
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::setThresholdType(int type)
+{
+	m_systemParamData.setThresholdType(type);
+	updateDataBase();
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::setMeasurementTime(int time)
+{
+	ui.timeEdit->setText(QString::number(time));
+	m_systemParamData.setMeasurementTime(time);
+	updateDataBase();
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::setCheckTime(int time)
+{
+	ui.forceTestTimeEdit->setText(QString::number(time));
+	m_systemParamData.setCheckTime(time);
+	updateDataBase();
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::setcheckFactor(int factor)
+{
+	ui.checkFatorEdit->setText(QString::number(factor));
+	m_systemParamData.setcheckFactor(factor);
+	updateDataBase();
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::setRadiationCheckFactor(int factor)
+{
+	ui.rCheckFatorEdit->setText(QString::number(factor));
+	m_systemParamData.setRadiationCheckFactor(factor);
+	updateDataBase();
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::setPersonnelFactor(float factor)
+{
+	ui.personFatorEdit->setText(QString::number(factor));
+	m_systemParamData.setPersonnelFactor(factor);
+	updateDataBase();
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::setAlarmResetTime(int alarmTime)
+{
+	ui.resetTimeEdit->setText(QString::number(alarmTime));
+	m_systemParamData.setAlarmResetTime(alarmTime);
+	updateDataBase();
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::setAlarmTime(int alarmTime)
+{
+
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::setAlphaLowAlarmThreshold(int low)
+{
+	ui.alphaLowEdit->setText(QString::number(low));
+	m_systemParamData.setAlphaLowAlarmThreshold(low);
+	updateDataBase();
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::setAlphaHighAlarmThreshold(int high)
+{
+	ui.alphaHighEdit->setText(QString::number(high));
+	m_systemParamData.setAlphaHighAlarmThreshold(high);
+	updateDataBase();
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::setAlphaAlramCoefficient(int coefficient)
+{
+	ui.alphaAlarmEdit->setText(QString::number(coefficient));
+	m_systemParamData.setAlphaAlramCoefficient(coefficient);
+	updateDataBase();
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::setAlphaSeriousAlramCoefficient(int coefficient)
+{
+	ui.alphaSAlarmEdit->setText(QString::number(coefficient));
+	m_systemParamData.setAlphaSeriousAlramCoefficient(coefficient);
+	updateDataBase();
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::setAlphaThreshold(int threshold)
+{
+	ui.alphaThresholdEdit->setText(QString::number(threshold));
+	m_systemParamData.setAlphaThreshold(threshold);
+	updateDataBase();
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::setAlphaSeriousThreshold(int threshold)
+{
+	ui.alphaSThresholdEdit->setText(QString::number(threshold));
+	m_systemParamData.setAlphaSeriousThreshold(threshold);
+	updateDataBase();
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::setBetaLowAlarmThreshold(int low)
+{
+	ui.betaLowEdit->setText(QString::number(low));
+	m_systemParamData.setBetaLowAlarmThreshold(low);
+	updateDataBase();
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::setBetaHighAlarmThreshold(int high)
+{
+	ui.betaHighEdit->setText(QString::number(high));
+	m_systemParamData.setBetaHighAlarmThreshold(high);
+	updateDataBase();
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::setBetaAlramCoefficient(int coefficient)
+{
+	ui.betaAlarmEdit->setText(QString::number(coefficient));
+	m_systemParamData.setBetaAlramCoefficient(coefficient);
+	updateDataBase();
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::setBetaSeriousAlramCoefficient(int coefficient)
+{
+	ui.betaSAlarmEdit->setText(QString::number(coefficient));
+	m_systemParamData.setBetaSeriousAlramCoefficient(coefficient);
+	updateDataBase();
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::setBetaThreshold(int threshold)
+{
+	ui.betaThresholdEdit->setText(QString::number(threshold));
+	m_systemParamData.setBetaThreshold(threshold);
+	updateDataBase();
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::setBetaSeriousThreshold(int threshold)
+{
+	ui.betaSThresholdEdit->setText(QString::number(threshold));
+	m_systemParamData.setBetaSeriousThreshold(threshold);
+	updateDataBase();
 }
 //----------------------------------------------------------------------------

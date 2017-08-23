@@ -10,6 +10,9 @@ DeDeviceTable::DeDeviceTable(DeSqlDataBase *db)
 	: DeValueObjectInterface(db)
 {
 	initTable();
+	///如果表格为空 就放入默认值
+	if (isEmptyInTable())
+		insertDataToDB(DeSystemParam());
 }
 //----------------------------------------------------------------------------
 DeDeviceTable::~DeDeviceTable()
@@ -20,7 +23,7 @@ DeDeviceTable::~DeDeviceTable()
 void DeDeviceTable::initTable()
 {
 	QString sql = QString("CREATE TABLE IF NOT EXISTS %1(   \
-						  deviceData blog);").arg(tableName);
+						  deviceData blob);").arg(tableName);
 
 	execSql(sql);
 }
@@ -53,6 +56,16 @@ bool DeDeviceTable::insertDataToDB(DeSystemParam &data)
 	return sqlQuery.exec();
 }
 //----------------------------------------------------------------------------
+bool DeDeviceTable::updateDataToDB(DeSystemParam &data)
+{
+	DeSqlDataBase *db = currSqlDataBase();
+	QSqlQuery sqlQuery(db->dataBase());
+	QString sql = QString("update %1 set deviceData= (?)").arg(tableName);
+	sqlQuery.prepare(sql);
+	sqlQuery.bindValue(0, data.byteArray());
+	return sqlQuery.exec();
+}
+//----------------------------------------------------------------------------
 DeSystemParam DeDeviceTable::selectDB()
 {
 	DeSqlDataBase *db = currSqlDataBase();
@@ -65,5 +78,18 @@ DeSystemParam DeDeviceTable::selectDB()
 	DeSystemParam param;
 	param.setByteArray(sqlQuery.value(0).toByteArray());
 	return param;
+}
+//----------------------------------------------------------------------------
+bool DeDeviceTable::isEmptyInTable()
+{
+	DeSqlDataBase *db = currSqlDataBase();
+	QSqlQuery sqlQuery(db->dataBase());
+	QString sql = QString("select count(*) from %1").arg(tableName);
+	sqlQuery.exec(sql);
+
+	sqlQuery.next();
+
+	int resultCount = sqlQuery.value(0).toInt();
+	return !(resultCount >= 1);
 }
 //----------------------------------------------------------------------------

@@ -75,6 +75,15 @@ DeSystemParam::DeSystemParam()
 {
 	pSystemParam = new SystemParam;
 	memset(pSystemParam, 0, sizeof(SystemParam));
+	setDefaultValues(pSystemParam);
+}
+//----------------------------------------------------------------------------
+DeSystemParam::DeSystemParam(const DeSystemParam &other)
+{
+	pSystemParam = new SystemParam;
+	memset(pSystemParam, 0, sizeof(SystemParam));
+	setDefaultValues(pSystemParam);	
+	*this  = other;
 }
 //----------------------------------------------------------------------------
 DeSystemParam::~DeSystemParam()
@@ -84,6 +93,42 @@ DeSystemParam::~DeSystemParam()
 		delete pSystemParam;
 		pSystemParam = NULL;
 	}
+}
+//----------------------------------------------------------------------------
+DeSystemParam &DeSystemParam::operator=(const DeSystemParam & other)
+{
+	if (this == &other)
+		return *this;
+
+	memcpy(this->pSystemParam, other.pSystemParam, sizeof(SystemParam));
+	return *this;
+}
+//----------------------------------------------------------------------------
+void DeSystemParam::setDefaultValues(SystemParam *value)
+{
+	value->thresholdType = 1;
+	value->language = 1;
+	value->measurementTime = 5;
+	value->checkTime = 5;
+	value->checkFactor = 10;
+	value->radiationCheckFactor = 3;
+	value->personnelFactor = 0.01f;
+	value->alarmResetTime = 10;
+	value->alarmTime = 3;
+
+	value->alpha.lowAlarmThreshold = 1;
+	value->alpha.highAlarmThreshold = 10;
+	value->alpha.alramCoefficient = 2;
+	value->alpha.seriousAlramCoefficient = 8;
+	value->alpha.threshold = 3;
+	value->alpha.seriousThreshold = 7;
+
+	value->beta.lowAlarmThreshold = 2;
+	value->beta.highAlarmThreshold = 10;
+	value->beta.alramCoefficient = 2;
+	value->beta.seriousAlramCoefficient = 8;
+	value->beta.threshold = 3;
+	value->beta.seriousThreshold = 7;
 }
 //----------------------------------------------------------------------------
 QByteArray DeSystemParam::byteArray() const
@@ -218,4 +263,119 @@ void DeSystemParam::setBetaSeriousThreshold(int threshold)
 {
 	pSystemParam->beta.seriousThreshold = threshold;
 }
+//----------------------------------------------------------------------------
+int DeSystemParam::getThresholdType()
+{
+	return pSystemParam->thresholdType;
+}
+//----------------------------------------------------------------------------
+int DeSystemParam::getLanguage()
+{
+	return pSystemParam->language;
+}
+//----------------------------------------------------------------------------
+QString DeSystemParam::getIp()
+{
+	QString ip = QString("%1.%2.%3.%4")
+		.arg(pSystemParam->ip[0])
+		.arg(pSystemParam->ip[1])
+		.arg(pSystemParam->ip[2])
+		.arg(pSystemParam->ip[3]);
+	return ip;
+}
+//----------------------------------------------------------------------------
+int DeSystemParam::getMeasurementTime()
+{
+	return pSystemParam->measurementTime;
+}
+//----------------------------------------------------------------------------
+int DeSystemParam::getCheckTime()
+{
+	return pSystemParam->checkTime;
+}
+//----------------------------------------------------------------------------
+int DeSystemParam::getcheckFactor()
+{
+	return pSystemParam->checkFactor;
+}
+//----------------------------------------------------------------------------
+int DeSystemParam::getRadiationCheckFactor()
+{
+	return pSystemParam->radiationCheckFactor;
+}
+//----------------------------------------------------------------------------
+float DeSystemParam::getPersonnelFactor()
+{
+	return pSystemParam->personnelFactor;
+}
+//----------------------------------------------------------------------------
+int DeSystemParam::getAlarmResetTime()
+{
+	return pSystemParam->alarmResetTime;
+}
+//----------------------------------------------------------------------------
+int DeSystemParam::getAlarmTime()
+{
+	return pSystemParam->alarmTime;
+}
+//----------------------------------------------------------------------------
+int DeSystemParam::getAlphaLowAlarmThreshold()
+{
+	return pSystemParam->alpha.lowAlarmThreshold;
+}
+//----------------------------------------------------------------------------
+int DeSystemParam::getAlphaHighAlarmThreshold()
+{
+	return pSystemParam->alpha.highAlarmThreshold;
+}
+//----------------------------------------------------------------------------
+int DeSystemParam::getAlphaAlramCoefficient()
+{
+	return pSystemParam->alpha.alramCoefficient;
+}
+//----------------------------------------------------------------------------
+int DeSystemParam::getAlphaSeriousAlramCoefficient()
+{
+	return pSystemParam->alpha.seriousAlramCoefficient;
+}
+//----------------------------------------------------------------------------
+int DeSystemParam::getAlphaThreshold()
+{
+	return pSystemParam->alpha.threshold;
+}
+//----------------------------------------------------------------------------
+int DeSystemParam::getAlphaSeriousThreshold()
+{
+	return pSystemParam->alpha.seriousThreshold;
+}
+//----------------------------------------------------------------------------
+int DeSystemParam::getBetaLowAlarmThreshold()	
+{
+	return pSystemParam->beta.lowAlarmThreshold;
+}
+//----------------------------------------------------------------------------
+int DeSystemParam::getBetaHighAlarmThreshold()	
+{
+	return pSystemParam->beta.highAlarmThreshold;
+}
+//----------------------------------------------------------------------------
+int DeSystemParam::getBetaAlramCoefficient()
+{
+	return pSystemParam->beta.alramCoefficient;
+}
+//----------------------------------------------------------------------------
+int DeSystemParam::getBetaSeriousAlramCoefficient()	
+{
+	return pSystemParam->beta.seriousAlramCoefficient;
+}
+//----------------------------------------------------------------------------
+int DeSystemParam::getBetaThreshold()
+{
+	return pSystemParam->beta.threshold;
+}
+//----------------------------------------------------------------------------
+int DeSystemParam::getBetaSeriousThreshold()
+{
+	return pSystemParam->beta.seriousThreshold;
+}	
 //----------------------------------------------------------------------------
