@@ -1,4 +1,5 @@
 #include "depropertyeditwidget.h"
+#include "desystemconfigwidget.h"
 #include <demo.h>
 
 Q_DECLARE_METATYPE(Demo *)
@@ -6,6 +7,7 @@ Q_DECLARE_METATYPE(Demo *)
 DePropertyEditWidget::DePropertyEditWidget(QWidget *parent)
 	: QDialog(parent)
 {
+	m_systemConfigWidget = NULL;
 	ui.setupUi(this);
 	ui.virtualBoradWidget->hide();
 	this->setWindowFlags(Qt::ToolTip);
@@ -27,8 +29,20 @@ void DePropertyEditWidget::setContentText(const QString &text)
 	ui.lineEdit->setText(text);
 }
 //----------------------------------------------------------------------------
+void DePropertyEditWidget::setSystemConfigWidget(DeSystemConfigWidget *widget)
+{
+	m_systemConfigWidget = widget;
+}
+//----------------------------------------------------------------------------
 void DePropertyEditWidget::on_btnOk_clicked()
 {
+	QString content = ui.lineEdit->text();
+	if (content.isEmpty() || content.isNull())
+		return ;
+
+	if (!m_systemConfigWidget->execValidAndSave(content))
+		return ;
+
 	Demo *demo = qApp->property("_mainWin").value<Demo *>();
 	demo->slotBackMainWidget();
 }

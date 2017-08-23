@@ -64,9 +64,11 @@ void DeMenuWidget::on_systemTestBtn_clicked()
 void DeMenuWidget::on_exitBtn_clicked()
 {
 	DeMessageBox msgBox(this);
-	msgBox.setText(QString::fromLocal8Bit("ÊÇ·ñÍË³ö?"));
-	msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
-	if (msgBox.exec() == QMessageBox::Yes)
+	msgBox.setText(tr("exit?"));
+	QPushButton *okButton = msgBox.addButton(tr("yes"), QMessageBox::AcceptRole);  
+	msgBox.addButton(tr("no"), QMessageBox::RejectRole); 
+	msgBox.exec();
+	if ((QPushButton*)msgBox.clickedButton() == okButton)  
 		qApp->quit();
 }
 //----------------------------------------------------------------------------

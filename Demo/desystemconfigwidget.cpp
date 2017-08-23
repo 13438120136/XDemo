@@ -12,6 +12,7 @@ Q_DECLARE_METATYPE(Demo *)
 //----------------------------------------------------------------------------
 DeSystemConfigWidget::DeSystemConfigWidget(QWidget *parent)
 	: QDialog(parent)
+	,m_execIndex(0)
 {
 	ui.setupUi(this);
 	this->setWindowFlags(Qt::ToolTip);
@@ -83,6 +84,9 @@ void DeSystemConfigWidget::initEdit()
 	ui.betaThresholdEdit->setProperty("customText", tr("beta 报警阀值"));
 	ui.betaSThresholdEdit->setProperty("customText", tr("beta 严重报警阀值"));
 
+	////新建执行索引
+	ui.ipEdit->setProperty("customIndex", 1);
+
 	QSignalMapper *signalMapper = new QSignalMapper(this);
 	QList<QAbstractButton *> listButtons = ui.buttonGroup->buttons();
 	int nCount = listButtons.size();
@@ -102,8 +106,10 @@ void DeSystemConfigWidget::propertyEditSlot(QWidget *w)
 	DePropertyEditWidget *widget = new DePropertyEditWidget(this);
 	QPushButton *button = (QPushButton *)w;
 	QString header = button->property("customText").toString();
+	widget->setSystemConfigWidget(this);
 	widget->setHeadTitle(header);
 	widget->setContentText(button->text());
+	m_execIndex = button->property("customIndex").toInt();
 
 	Demo *demo = qApp->property("_mainWin").value<Demo *>();
 	demo->slotSetWidget(widget);
@@ -293,5 +299,18 @@ void DeSystemConfigWidget::setBetaSeriousThreshold(int threshold)
 	ui.betaSThresholdEdit->setText(QString::number(threshold));
 	m_systemParamData.setBetaSeriousThreshold(threshold);
 	updateDataBase();
+}
+//----------------------------------------------------------------------------
+bool DeSystemConfigWidget::execValidAndSave(const QString &str)
+{
+	switch(m_execIndex)
+	{
+	case 1:
+		{
+			setIpAddress(str);
+			break;
+		}
+	}
+	return true;
 }
 //----------------------------------------------------------------------------

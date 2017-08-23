@@ -4,6 +4,7 @@
 #include <QDialog>
 #include "ui_depropertyeditwidget.h"
 
+class DeSystemConfigWidget;
 class DePropertyEditWidget : public QDialog
 {
 	Q_OBJECT
@@ -12,6 +13,7 @@ public:
 	DePropertyEditWidget(QWidget *parent = 0);
 	~DePropertyEditWidget();
 
+	void setSystemConfigWidget(DeSystemConfigWidget *widget);
 	void setHeadTitle(const QString &title);
 	void setContentText(const QString &text);
 
@@ -24,6 +26,7 @@ protected:
 
 private:
 	Ui::DePropertyEditWidget ui;
+	DeSystemConfigWidget *m_systemConfigWidget;
 };
 
 #endif // DEPROPERTYEDITWIDGET_H

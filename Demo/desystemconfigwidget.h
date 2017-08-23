@@ -17,6 +17,9 @@ public:
 	DeSystemConfigWidget(QWidget *parent = 0);
 	~DeSystemConfigWidget();
 
+	///执行校验和保存
+	bool execValidAndSave(const QString &str);
+
 	///设置IP地址 格式为127.0.0.1
 	void setIpAddress(const QString &ip);
 	///设置语言
@@ -70,6 +73,7 @@ private:
 private:
 	Ui::DeSystemConfigWidget ui;
 	DeSystemParam m_systemParamData;
+	int m_execIndex;
 };
 
 #endif // DESYSTEMCONFIGWIDGET_H

@@ -283,6 +283,21 @@
         <source>系统测试</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="demenuwidget.cpp" line="67"/>
+        <source>exit?</source>
+        <translation>是否退出当前系统?</translation>
+    </message>
+    <message>
+        <location filename="demenuwidget.cpp" line="68"/>
+        <source>yes</source>
+        <translation>确定</translation>
+    </message>
+    <message>
+        <location filename="demenuwidget.cpp" line="69"/>
+        <source>no</source>
+        <translation>取消</translation>
+    </message>
 </context>
 <context>
     <name>DeModifyUserDlg</name>
@@ -565,97 +580,97 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.cpp" line="81"/>
+        <location filename="desystemconfigwidget.cpp" line="65"/>
         <source>IPµØÖ·ÉèÖÃ</source>
         <translation>IP地址设置</translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.cpp" line="82"/>
+        <location filename="desystemconfigwidget.cpp" line="66"/>
         <source>²âÁ¿Ê±¼ä</source>
         <translation>测量时间</translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.cpp" line="83"/>
+        <location filename="desystemconfigwidget.cpp" line="67"/>
         <source>Ç¿ÖÆ±¾µ×²âÁ¿Ê±¼ä</source>
         <translation>强制本底测量时间</translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.cpp" line="84"/>
+        <location filename="desystemconfigwidget.cpp" line="68"/>
         <source>±¾µ×¼ì²âÆ½»¬Òò×Ó</source>
         <translation>本底检测平滑因子</translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.cpp" line="85"/>
+        <location filename="desystemconfigwidget.cpp" line="69"/>
         <source>·øÉä¼ì²âÆ½»¬Òò×Ó</source>
         <translation>辐射检测平滑因子</translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.cpp" line="86"/>
+        <location filename="desystemconfigwidget.cpp" line="70"/>
         <source>ÈËÔ±ÆÁ±Î²¹³¥Òò×Ó</source>
         <translation>人员屏蔽补偿因子</translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.cpp" line="87"/>
+        <location filename="desystemconfigwidget.cpp" line="71"/>
         <source>±¨¾¯×Ô¶¯»Ö¸´Ê±¼ä</source>
         <translation>报警自动恢复时间</translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.cpp" line="89"/>
+        <location filename="desystemconfigwidget.cpp" line="73"/>
         <source>alpha µÍ±¾µ×±¨¾¯·§Öµ</source>
         <translation>alpha 低本底报警阀值</translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.cpp" line="90"/>
+        <location filename="desystemconfigwidget.cpp" line="74"/>
         <source>alpha ¸ß±¾µ×±¨¾¯·§Öµ</source>
         <translation>alpha 高本底报警阀值</translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.cpp" line="91"/>
+        <location filename="desystemconfigwidget.cpp" line="75"/>
         <source>alpha ±¨¾¯ÏµÊý</source>
         <translation>alpha 报警系数</translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.cpp" line="92"/>
+        <location filename="desystemconfigwidget.cpp" line="76"/>
         <source>alpha ÑÏÖØ±¨¾¯ÏµÊý</source>
         <translation>alpha 严重报警系数</translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.cpp" line="93"/>
+        <location filename="desystemconfigwidget.cpp" line="77"/>
         <source>alpha ±¨¾¯·§Öµ</source>
         <translation>alpha 报警阀值</translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.cpp" line="94"/>
+        <location filename="desystemconfigwidget.cpp" line="78"/>
         <source>alpha ÑÏÖØ±¨¾¯·§Öµ</source>
         <translation>alpha 严重报警阀值</translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.cpp" line="96"/>
+        <location filename="desystemconfigwidget.cpp" line="80"/>
         <source>beta µÍ±¾µ×±¨¾¯·§Öµ</source>
         <translation>beta 低本底报警阀值</translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.cpp" line="97"/>
+        <location filename="desystemconfigwidget.cpp" line="81"/>
         <source>beta ¸ß±¾µ×±¨¾¯·§Öµ</source>
         <translation>beta 高本底报警阀值</translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.cpp" line="98"/>
+        <location filename="desystemconfigwidget.cpp" line="82"/>
         <source>beta ±¨¾¯ÏµÊý</source>
         <translation>beta 报警系数</translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.cpp" line="99"/>
+        <location filename="desystemconfigwidget.cpp" line="83"/>
         <source>beta ÑÏÖØ±¨¾¯ÏµÊý</source>
         <translation>beta 严重报警系数</translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.cpp" line="100"/>
+        <location filename="desystemconfigwidget.cpp" line="84"/>
         <source>beta ±¨¾¯·§Öµ</source>
         <translation>beta 报警阀值</translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.cpp" line="101"/>
+        <location filename="desystemconfigwidget.cpp" line="85"/>
         <source>beta ÑÏÖØ±¨¾¯·§Öµ</source>
         <translation>beta 严重报警阀值</translation>
     </message>

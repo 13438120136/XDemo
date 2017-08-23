@@ -6,7 +6,7 @@ DeMessageBox::DeMessageBox(QWidget *parent)
 {
 	setWindowFlags(Qt::ToolTip);
 	setIcon(QMessageBox::Information);
-	this->setStyleSheet("QLabel{font: 32px \"ËÎÌו\";}");
+	this->setStyleSheet("QLabel{font: 20px \"ËÎÌו\";}");
 }
 //----------------------------------------------------------------------------
 DeMessageBox::~DeMessageBox()
@@ -16,7 +16,7 @@ DeMessageBox::~DeMessageBox()
 //----------------------------------------------------------------------------
 void DeMessageBox::resizeEvent(QResizeEvent *event)
 {
-	setFixedSize(300, 200);
+	setFixedSize(300, 160);
 	QMessageBox::resizeEvent(event);
 }
 //----------------------------------------------------------------------------
