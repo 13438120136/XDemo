@@ -14,10 +14,14 @@ public:
 
 public Q_SLOTS:
 	void on_okBtn_clicked();
-	void on_pushButton_4_clicked();
+	void propertyEditSlot(QWidget *);
 
 protected:
 	virtual bool eventFilter(QObject *obj, QEvent *event);
+
+private:
+	///≥ı ºªØ±‡º≠
+	void initEdit();
 
 private:
 	Ui::DeSystemConfigWidget ui;

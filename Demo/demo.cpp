@@ -15,8 +15,8 @@ Q_DECLARE_METATYPE(Demo *)
 Demo::Demo(QWidget *parent, Qt::WFlags flags)
 	: QMainWindow(parent, flags)
 	,m_isShowMenu(false)
-{
-		///注册为全局唯一的主窗口对象
+{	
+	///注册为全局唯一的主窗口对象
 	QVariant variant; 
 	variant.setValue(this);
 	qApp->setProperty("_mainWin", variant);

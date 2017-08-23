@@ -2,7 +2,12 @@
 #include <QCalendarWidget>
 #include "detestdatamodel.h"
 #include "dealermeventmodel.h"
+#include <demo.h>
+#include <QSignalMapper>
+#include <depropertyeditwidget.h>
+#include <deadduserdlg.h>
 
+Q_DECLARE_METATYPE(Demo *)
 //----------------------------------------------------------------------------
 DeSystemConfigWidget::DeSystemConfigWidget(QWidget *parent)
 	: QDialog(parent)
@@ -43,7 +48,7 @@ DeSystemConfigWidget::DeSystemConfigWidget(QWidget *parent)
 	eventModel->setData(eData);	
 	ui.widget_2->setModel(eventModel);
 
-	//ui.virtualKeyBoradwidget->hide();
+	initEdit();
 }
 //----------------------------------------------------------------------------
 DeSystemConfigWidget::~DeSystemConfigWidget()
@@ -53,13 +58,8 @@ DeSystemConfigWidget::~DeSystemConfigWidget()
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::on_okBtn_clicked()
 {
-	accept();
-}
-//----------------------------------------------------------------------------
-void DeSystemConfigWidget::on_pushButton_4_clicked()
-{
-	QCalendarWidget *dateEdit = new QCalendarWidget(0);
-	dateEdit->show();
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	demo->slotBackMainWidget();
 }
 //----------------------------------------------------------------------------
 bool DeSystemConfigWidget::eventFilter(QObject *obj, QEvent *event)
@@ -67,15 +67,6 @@ bool DeSystemConfigWidget::eventFilter(QObject *obj, QEvent *event)
 	 if (event->type() == QEvent::MouseButtonRelease) 
 	 {
 		 m_isFullShow = !m_isFullShow;
-
-		 ui.groupBox->setVisible(!m_isFullShow);
-		 ui.groupBox_2->setVisible(!m_isFullShow);
-		 ui.groupBox_4->setVisible(!m_isFullShow);
-		 ui.groupBox_5->setVisible(!m_isFullShow);
-
-		 if (m_isFullShow)
-			 ((QGroupBox *)obj)->setVisible(m_isFullShow);
-
          return true;
      }
 	 else 
@@ -84,4 +75,34 @@ bool DeSystemConfigWidget::eventFilter(QObject *obj, QEvent *event)
          return QObject::eventFilter(obj, event);
      }
  }
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::initEdit()
+{
+	ui.ipEdit->setProperty("customText", tr("IPµÿ÷∑"));
+
+	QSignalMapper *signalMapper = new QSignalMapper(this);
+	QList<QAbstractButton *> listButtons = ui.buttonGroup->buttons();
+	int nCount = listButtons.size();
+	for (int i = 0; i < nCount; i++)
+	{
+		QPushButton *button = (QPushButton *)listButtons[i];
+		connect(button, SIGNAL(clicked()), signalMapper, SLOT(map()));
+		signalMapper->setMapping(button, button);
+	}
+
+	connect(signalMapper, SIGNAL(mapped(QWidget *)),
+		this, SLOT(propertyEditSlot(QWidget *)));
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::propertyEditSlot(QWidget *w)
+{
+	DePropertyEditWidget *widget = new DePropertyEditWidget(this);
+	QPushButton *button = (QPushButton *)w;
+	QString header = button->property("customText").toString();
+	widget->setHeadTitle(header);
+
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	demo->slotSetWidget(widget);
+	//widget->exec();
+}
 //----------------------------------------------------------------------------

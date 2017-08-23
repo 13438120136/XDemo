@@ -20,7 +20,7 @@
 	background-color: rgb(244, 244, 244);
      border: 1px solid #8f8f91;
      border-radius: 6px;
-     min-width: 100px;
+     min-width: 90px;
      min-height: 30px;
  }
 

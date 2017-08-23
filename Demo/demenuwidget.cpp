@@ -51,8 +51,6 @@ void DeMenuWidget::on_systemCfgBtn_clicked()
 {
 	DeSystemConfigWidget *window = new DeSystemConfigWidget;
 	m_demo->slotSetWidget(window);
-	window->exec();
-	m_demo->slotBackMainWidget();
 }
 //----------------------------------------------------------------------------
 void DeMenuWidget::on_systemTestBtn_clicked()
