@@ -26,10 +26,10 @@ QLineEdit
 {
 border:1px solid gray;
 min-height:30px;
-border-top-left-radius:5px;
+border-top-left-radius:3px;
 border-top-right-radius:0px;
 border-bottom-right-radius:0px;
-border-bottom-left-radius:5px;
+border-bottom-left-radius:3px;
 }</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_3">

@@ -5,7 +5,6 @@
 #include <demo.h>
 #include <QSignalMapper>
 #include <depropertyeditwidget.h>
-#include <deadduserdlg.h>
 #include "dedevicetable.h"
 
 Q_DECLARE_METATYPE(Demo *)
@@ -86,6 +85,26 @@ void DeSystemConfigWidget::initEdit()
 
 	////新建执行索引
 	ui.ipEdit->setProperty("customIndex", 1);
+	ui.timeEdit->setProperty("customIndex", 2);
+	ui.forceTestTimeEdit->setProperty("customIndex", 3);
+	ui.checkFatorEdit->setProperty("customIndex", 4);
+	ui.rCheckFatorEdit->setProperty("customIndex", 5);
+	ui.personFatorEdit->setProperty("customIndex", 6);
+	ui.resetTimeEdit->setProperty("customIndex", 7);
+
+	ui.alphaLowEdit->setProperty("customIndex", 8);
+	ui.alphaHighEdit->setProperty("customIndex", 9);
+	ui.alphaAlarmEdit->setProperty("customIndex", 10);
+	ui.alphaSAlarmEdit->setProperty("customIndex", 11);
+	ui.alphaThresholdEdit->setProperty("customIndex", 12);
+	ui.alphaSThresholdEdit->setProperty("customIndex", 13);
+
+	ui.betaLowEdit->setProperty("customIndex", 14);
+	ui.betaHighEdit->setProperty("customIndex", 15);
+	ui.betaAlarmEdit->setProperty("customIndex", 16);
+	ui.betaSAlarmEdit->setProperty("customIndex", 17);
+	ui.betaThresholdEdit->setProperty("customIndex", 18);
+	ui.betaSThresholdEdit->setProperty("customIndex", 19);
 
 	QSignalMapper *signalMapper = new QSignalMapper(this);
 	QList<QAbstractButton *> listButtons = ui.buttonGroup->buttons();
@@ -99,6 +118,129 @@ void DeSystemConfigWidget::initEdit()
 
 	connect(signalMapper, SIGNAL(mapped(QWidget *)),
 		this, SLOT(propertyEditSlot(QWidget *)));
+}
+//----------------------------------------------------------------------------
+bool DeSystemConfigWidget::execValidAndSave(const QString &str)
+{
+	switch(m_execIndex)
+	{
+	case 1:
+		{
+			setIpAddress(str);
+			break;
+		}
+	case 2:
+		{
+			int time = str.toInt();
+			setMeasurementTime(time);
+			break;
+		}
+	case 3:
+		{
+			int time = str.toInt();
+			setCheckTime(time);
+			break;
+		}
+	case 4:
+		{
+			int time = str.toInt();
+			setcheckFactor(time);
+			break;
+		}
+	case 5:
+		{
+			int time = str.toInt();
+			setRadiationCheckFactor(time);
+			break;
+		}
+	case 6:
+		{
+			float time = str.toFloat();
+			setPersonnelFactor(time);
+			break;
+		}
+	case 7:
+		{
+			int time = str.toInt();
+			setAlarmResetTime(time);
+			break;
+		}
+
+	case 8:
+		{
+			int time = str.toInt();
+			setAlphaLowAlarmThreshold(time);
+			break;
+		}
+	case 9:
+		{
+			int time = str.toInt();
+			setAlphaHighAlarmThreshold(time);
+			break;
+		}
+	case 10:
+		{
+			int time = str.toInt();
+			setAlphaAlramCoefficient(time);
+			break;
+		}
+	case 11:
+		{
+			int time = str.toInt();
+			setAlphaSeriousAlramCoefficient(time);
+			break;
+		}
+	case 12:
+		{
+			int time = str.toInt();
+			setAlphaThreshold(time);
+			break;
+		}
+	case 13:
+		{
+			int time = str.toInt();
+			setAlphaSeriousThreshold(time);
+			break;
+		}
+		///////////////////////Beta//////////////////////////
+	case 14:
+		{
+			int time = str.toInt();
+			setBetaLowAlarmThreshold(time);
+			break;
+		}
+	case 15:
+		{
+			int time = str.toInt();
+			setBetaHighAlarmThreshold(time);
+			break;
+		}
+	case 16:
+		{
+			int time = str.toInt();
+			setBetaAlramCoefficient(time);
+			break;
+		}
+	case 17:
+		{
+			int time = str.toInt();
+			setBetaSeriousAlramCoefficient(time);
+			break;
+		}
+	case 18:
+		{
+			int time = str.toInt();
+			setBetaThreshold(time);
+			break;
+		}
+	case 19:
+		{
+			int time = str.toInt();
+			setBetaSeriousThreshold(time);
+			break;
+		}
+	}
+	return true;
 }
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::propertyEditSlot(QWidget *w)
@@ -299,18 +441,5 @@ void DeSystemConfigWidget::setBetaSeriousThreshold(int threshold)
 	ui.betaSThresholdEdit->setText(QString::number(threshold));
 	m_systemParamData.setBetaSeriousThreshold(threshold);
 	updateDataBase();
-}
-//----------------------------------------------------------------------------
-bool DeSystemConfigWidget::execValidAndSave(const QString &str)
-{
-	switch(m_execIndex)
-	{
-	case 1:
-		{
-			setIpAddress(str);
-			break;
-		}
-	}
-	return true;
 }
 //----------------------------------------------------------------------------

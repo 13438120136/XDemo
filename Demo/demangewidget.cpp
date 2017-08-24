@@ -112,6 +112,10 @@ void DeManageWidget::delUserSlot()
 	msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
 	if (msgBox.exec() == QMessageBox::Yes)
 	{
+		///系统用户不能删除
+		if (str == "admin")
+			return ;
+
 		///更新数据库
 		Demo *demo = qApp->property("_mainWin").value<Demo *>();
 		DeSqlDataBase *dataBase = demo->dataBase();

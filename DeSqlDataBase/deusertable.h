@@ -40,6 +40,8 @@ public:
 	QString getUserPermissionName();
 	///获取权限值
 	int getUserPermission();
+	///用户表是否为空
+	bool isEmptyTable();
 
 protected:
 	QString execAddString();

@@ -25,7 +25,7 @@ void DeAlermEventModel::setData(const QList<AlermEventData> &data)
 //----------------------------------------------------------------------------
 int DeAlermEventModel::perPageCount()
 {
-	return 3;
+	return 5;
 }
 //----------------------------------------------------------------------------
 int DeAlermEventModel::dataSize()

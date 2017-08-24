@@ -52,17 +52,36 @@ QList<DeValueObjectInterface *> DeUserTable::selectValue(QSqlQuery *sqlQuery)
 {
 	QList<DeValueObjectInterface *> result;
 
-	while (sqlQuery->next())
+	QSqlQuery sqlQueryObj(*sqlQuery);
+
+	while (sqlQueryObj.next())
 	{
 		DeUserTable *table = new DeUserTable(this->currSqlDataBase());
-		table->m_user = sqlQuery->value(0).toString();
-		table->m_userClassfy = sqlQuery->value(2).toString();
-		table->m_permission = sqlQuery->value(3).toInt();
+		table->m_user = sqlQueryObj.value(0).toString();
+		table->m_userClassfy = sqlQueryObj.value(2).toString();
+		table->m_permission = sqlQueryObj.value(3).toInt();
 
 		result.append(table);
 	}
 
 	return result;
+}
+//----------------------------------------------------------------------------
+bool DeUserTable::isEmptyTable()
+{
+	QString sql = QString("select count(*) from %1")
+		.arg(tableName);
+
+	if (!execSql(sql))
+		return true;
+
+	QSqlQuery *sqlQuery = this->currSqlDataBase()->getSqlQuery();
+	if (!sqlQuery->next())
+		return true;
+
+	int count = sqlQuery->value(0).toInt();
+
+	return (count == 0);
 }
 //----------------------------------------------------------------------------
 bool DeUserTable::isExist()

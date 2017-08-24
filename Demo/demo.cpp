@@ -28,6 +28,16 @@ Demo::Demo(QWidget *parent, Qt::WFlags flags)
 
 	///初始化数据库对象
 	m_sqlDatabase.openDataBase();
+	///建立系统默认用户
+	DeUserTable userTable(&m_sqlDatabase);
+	if (userTable.isEmptyTable())
+	{
+		userTable.setUserName("admin");
+		userTable.setUserPasswd("123456");
+		userTable.setUserPermissionName(tr("sys user"));
+		userTable.setUserPermission(DeUserTable::ADMIN);
+		userTable.insertDataToDB();
+	}
 }
 //----------------------------------------------------------------------------
 Demo::~Demo()
@@ -39,7 +49,7 @@ void Demo::slotTimeOut()
 {
 	QString timeString = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss");
 	QString versionString = "V1.0";
-	ui.statusBar->showMessage(QString::fromLocal8Bit("当前时间:%1     软件版本:%2   %3").arg(timeString).arg(versionString).arg(m_loginStatus));
+	ui.statusBar->showMessage(tr("当前时间:%1     软件版本:%2   %3").arg(timeString).arg(versionString).arg(m_loginStatus));
 }
 //----------------------------------------------------------------------------
 void Demo::slotShowMenu(bool bShow)

@@ -7,8 +7,7 @@ DeUserListModel::DeUserListModel(QObject *parent)
 	this->setColumnCount(2);
 	this->setRowCount(perPageCount());
 	QStringList headLabels;
-	headLabels << QString::fromLocal8Bit("用户名")
-		<< QString::fromLocal8Bit("权限");
+	headLabels << tr("user") << tr("author");		
 	this->setHorizontalHeaderLabels(headLabels);
 }
 //----------------------------------------------------------------------------

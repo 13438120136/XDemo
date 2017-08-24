@@ -17,7 +17,7 @@
    <string notr="true">QLineEdit
 {
 border:1px solid gray;
-border-radius:5px;
+border-radius:3px;
 min-height:30px;
 font: 16pt &quot;新宋体&quot;;
 }
@@ -30,7 +30,6 @@ min-height:30px;
 QLabel
 {
 font: 14pt &quot;新宋体&quot;;
-min-width:60px;
 }
 
 QGroupBox {
@@ -53,7 +52,7 @@ QPushButton {
 	font: 16pt &quot;新宋体&quot;;
 	background-color: rgb(244, 244, 244);
      border: 1px solid #8f8f91;
-     border-radius: 6px;
+     border-radius: 3px;
      min-width: 100px;
      min-height: 30px;
  }
@@ -87,7 +86,7 @@ max-height:220px;</string>
              <widget class="QLabel" name="label">
               <property name="minimumSize">
                <size>
-                <width>60</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
@@ -97,13 +96,17 @@ max-height:220px;</string>
              </widget>
             </item>
             <item row="0" column="1">
-             <widget class="QLineEdit" name="userLineEdit"/>
+             <widget class="QLineEdit" name="userLineEdit">
+              <property name="maxLength">
+               <number>32</number>
+              </property>
+             </widget>
             </item>
             <item row="1" column="0">
              <widget class="QLabel" name="label_2">
               <property name="minimumSize">
                <size>
-                <width>60</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
@@ -114,6 +117,9 @@ max-height:220px;</string>
             </item>
             <item row="1" column="1">
              <widget class="QLineEdit" name="passwdLineEdit">
+              <property name="maxLength">
+               <number>32</number>
+              </property>
               <property name="echoMode">
                <enum>QLineEdit::Password</enum>
               </property>
@@ -123,7 +129,7 @@ max-height:220px;</string>
              <widget class="QLabel" name="label_3">
               <property name="minimumSize">
                <size>
-                <width>60</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
