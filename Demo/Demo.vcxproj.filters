@@ -320,6 +320,9 @@
     <ClCompile Include="delogger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="delogdatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Demo.aps">
@@ -455,6 +458,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="deloginterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="delogdatabase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

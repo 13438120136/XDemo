@@ -141,6 +141,7 @@
     <ClCompile Include="decombobox.cpp" />
     <ClCompile Include="dedeviceselfcheckstate.cpp" />
     <ClCompile Include="deinitwidget.cpp" />
+    <ClCompile Include="delogdatabase.cpp" />
     <ClCompile Include="delogger.cpp" />
     <ClCompile Include="deloginterface.cpp" />
     <ClCompile Include="deloginwidget.cpp" />
@@ -350,6 +351,7 @@
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
       </Command>
     </CustomBuild>
+    <ClInclude Include="delogdatabase.h" />
     <ClInclude Include="deloginterface.h" />
     <ClInclude Include="delogitem.h" />
     <ClInclude Include="Demo.aps" />

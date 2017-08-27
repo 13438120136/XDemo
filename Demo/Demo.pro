@@ -74,6 +74,7 @@ HEADERS += \
 	delogger.h \
 	deloginterface.h \
 	delogitem.h \
+	delogdatabase.h \
     devirtualkeyboradwidget.h 
 
 SOURCES += \
@@ -107,4 +108,5 @@ SOURCES += \
 	delogger.cpp \
 	deloginterface.cpp \
 	delogitem.cpp \
+	delogdatabase.cpp \
     main.cpp
