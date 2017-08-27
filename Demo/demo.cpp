@@ -9,6 +9,7 @@
 #include <deusertable.h>
 #include <dedevicetable.h>
 #include <deradioactivesourcetable.h>
+#include "delogger.h"
 
 Q_DECLARE_METATYPE(Demo *)
 //----------------------------------------------------------------------------

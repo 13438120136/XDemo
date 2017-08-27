@@ -26,6 +26,7 @@ public Q_SLOTS:
 private:
 	Ui::DeMenuWidget ui;
 	Demo *m_demo;
+	bool m_isLogIn;
 };
 
 #endif // DEMENUWIDGET_H

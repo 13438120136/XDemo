@@ -311,6 +311,15 @@
     <ClCompile Include="GeneratedFiles\Release\moc_depropertyeditwidget.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="delogitem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="deloginterface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="delogger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Demo.aps">
@@ -442,6 +451,12 @@
     <ClInclude Include="GeneratedFiles\ui_depropertyeditwidget.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="delogitem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="deloginterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="deaddradioactivedlg.ui">
@@ -491,6 +506,9 @@
     </CustomBuild>
     <CustomBuild Include="depropertyeditwidget.ui">
       <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="delogger.h">
+      <Filter>Header Files</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

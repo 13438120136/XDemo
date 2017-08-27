@@ -266,7 +266,7 @@
     <message utf8="true">
         <location filename="demenuwidget.ui" line="65"/>
         <source>登  录</source>
-        <translation type="unfinished"></translation>
+        <translation>Login</translation>
     </message>
     <message utf8="true">
         <location filename="demenuwidget.ui" line="72"/>
@@ -284,17 +284,27 @@
         <translation>Test</translation>
     </message>
     <message>
-        <location filename="demenuwidget.cpp" line="67"/>
+        <location filename="demenuwidget.cpp" line="29"/>
+        <source>Login</source>
+        <translation>Login</translation>
+    </message>
+    <message>
+        <location filename="demenuwidget.cpp" line="38"/>
+        <source>Logout</source>
+        <translation>Logout</translation>
+    </message>
+    <message>
+        <location filename="demenuwidget.cpp" line="69"/>
         <source>exit?</source>
         <translation>exit the system?</translation>
     </message>
     <message>
-        <location filename="demenuwidget.cpp" line="68"/>
+        <location filename="demenuwidget.cpp" line="70"/>
         <source>yes</source>
         <translation>Yes</translation>
     </message>
     <message>
-        <location filename="demenuwidget.cpp" line="69"/>
+        <location filename="demenuwidget.cpp" line="71"/>
         <source>no</source>
         <translation>No</translation>
     </message>

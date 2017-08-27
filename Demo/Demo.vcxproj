@@ -141,7 +141,10 @@
     <ClCompile Include="decombobox.cpp" />
     <ClCompile Include="dedeviceselfcheckstate.cpp" />
     <ClCompile Include="deinitwidget.cpp" />
+    <ClCompile Include="delogger.cpp" />
+    <ClCompile Include="deloginterface.cpp" />
     <ClCompile Include="deloginwidget.cpp" />
+    <ClCompile Include="delogitem.cpp" />
     <ClCompile Include="demaintainstate.cpp" />
     <ClCompile Include="demangewidget.cpp" />
     <ClCompile Include="demenuwidget.cpp" />
@@ -331,6 +334,24 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <CustomBuild Include="delogger.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </Command>
+    </CustomBuild>
+    <ClInclude Include="deloginterface.h" />
+    <ClInclude Include="delogitem.h" />
     <ClInclude Include="Demo.aps" />
     <CustomBuild Include="deaddradioactivedlg.h">
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);%(AdditionalInputs)</AdditionalInputs>

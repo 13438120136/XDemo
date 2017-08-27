@@ -12,6 +12,7 @@ DeMenuWidget::DeMenuWidget(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
+	m_isLogIn = false;
 	m_demo = qApp->property("_mainWin").value<Demo *>();
 }
 //----------------------------------------------------------------------------
@@ -22,9 +23,10 @@ DeMenuWidget::~DeMenuWidget()
 //----------------------------------------------------------------------------
 void DeMenuWidget::on_loginBtn_clicked()
 {
-	if (ui.loginBtn->text()  == QString::fromLocal8Bit("×¢ Ïú"))
+	m_isLogIn = !m_isLogIn;
+	if (!m_isLogIn)
 	{
-		ui.loginBtn->setText(QString::fromLocal8Bit("µÇ Â¼"));
+		ui.loginBtn->setText(tr("Login"));
 		m_demo->setToolStatus(QString::fromLocal8Bit("Î´µÇÂ¼"), false);
 	}
 	else
@@ -33,7 +35,7 @@ void DeMenuWidget::on_loginBtn_clicked()
 		m_demo->slotSetWidget(window);
 		if (window->exec() == QDialog::Accepted)
 		{
-			ui.loginBtn->setText(QString::fromLocal8Bit("×¢ Ïú"));
+			ui.loginBtn->setText(tr("Logout"));
 			m_demo->setToolStatus(QString::fromLocal8Bit("ÒÑ¾­µÇÂ¼"), true);
 		}
 

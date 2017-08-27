@@ -71,6 +71,9 @@ HEADERS += \
     detestinformodel.h \
     deuserlistmodel.h \
 	depropertyeditwidget.h \
+	delogger.h \
+	deloginterface.h \
+	delogitem.h \
     devirtualkeyboradwidget.h 
 
 SOURCES += \
@@ -101,4 +104,7 @@ SOURCES += \
     deuserlistmodel.cpp \
     devirtualkeyboradwidget.cpp \
 	depropertyeditwidget.cpp \
+	delogger.cpp \
+	deloginterface.cpp \
+	delogitem.cpp \
     main.cpp
