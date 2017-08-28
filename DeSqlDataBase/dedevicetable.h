@@ -14,8 +14,8 @@ public:
 	~DeDeviceTable();
 
 	void initTable();
-	bool insertDataToDataBase(DeSystemParam &data);
-	bool updateDataToDataBase(DeSystemParam &data);
+	bool insertDataToDataBase(const DeSystemParam &data);
+	bool updateDataToDataBase(const DeSystemParam &data);
 	DeSystemParam selectDB();
 	///检查数据库表是否为空
 	bool isEmptyInTable();

@@ -1,7 +1,7 @@
 #ifndef DESYSTEMPARAM_H
 #define DESYSTEMPARAM_H
 
-#include <QOBject>
+#include <qobject.h>
 #include <qbytearray.h>
 #include "desqldatabase_global.h"
 

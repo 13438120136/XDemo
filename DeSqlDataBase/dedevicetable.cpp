@@ -46,7 +46,7 @@ QList<DeValueObjectInterface *> DeDeviceTable::selectValue(QSqlQuery *sqlQuery)
 	return result;
 }
 //----------------------------------------------------------------------------
-bool DeDeviceTable::insertDataToDataBase(DeSystemParam &data)
+bool DeDeviceTable::insertDataToDataBase(const DeSystemParam &data)
 {
 	DeSqlDataBase *db = currSqlDataBase();
 	QSqlQuery sqlQuery(db->dataBase());
@@ -56,7 +56,7 @@ bool DeDeviceTable::insertDataToDataBase(DeSystemParam &data)
 	return sqlQuery.exec();
 }
 //----------------------------------------------------------------------------
-bool DeDeviceTable::updateDataToDataBase(DeSystemParam &data)
+bool DeDeviceTable::updateDataToDataBase(const DeSystemParam &data)
 {
 	DeSqlDataBase *db = currSqlDataBase();
 	QSqlQuery sqlQuery(db->dataBase());
