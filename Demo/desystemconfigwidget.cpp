@@ -261,7 +261,7 @@ void DeSystemConfigWidget::updateDataBase()
 {
 	Demo *demo = qApp->property("_mainWin").value<Demo *>();
 	DeDeviceTable deviceTable(demo->dataBase());
-	deviceTable.updateDataToDB(m_systemParamData);
+	deviceTable.updateDataToDataBase(m_systemParamData);
 }
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::readDataFromDB()

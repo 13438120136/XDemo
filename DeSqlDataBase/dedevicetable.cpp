@@ -12,7 +12,7 @@ DeDeviceTable::DeDeviceTable(DeSqlDataBase *db)
 	initTable();
 	///如果表格为空 就放入默认值
 	if (isEmptyInTable())
-		insertDataToDB(DeSystemParam());
+		insertDataToDataBase(DeSystemParam());
 }
 //----------------------------------------------------------------------------
 DeDeviceTable::~DeDeviceTable()
@@ -46,7 +46,7 @@ QList<DeValueObjectInterface *> DeDeviceTable::selectValue(QSqlQuery *sqlQuery)
 	return result;
 }
 //----------------------------------------------------------------------------
-bool DeDeviceTable::insertDataToDB(DeSystemParam &data)
+bool DeDeviceTable::insertDataToDataBase(DeSystemParam &data)
 {
 	DeSqlDataBase *db = currSqlDataBase();
 	QSqlQuery sqlQuery(db->dataBase());
@@ -56,7 +56,7 @@ bool DeDeviceTable::insertDataToDB(DeSystemParam &data)
 	return sqlQuery.exec();
 }
 //----------------------------------------------------------------------------
-bool DeDeviceTable::updateDataToDB(DeSystemParam &data)
+bool DeDeviceTable::updateDataToDataBase(DeSystemParam &data)
 {
 	DeSqlDataBase *db = currSqlDataBase();
 	QSqlQuery sqlQuery(db->dataBase());
