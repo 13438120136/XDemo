@@ -40,8 +40,6 @@ Q_SIGNALS:
 	void signalRadiationCheck();
 
 public Q_SLOTS:
-	///更新状态栏时间
-	void slotTimeOut();
 	//显示菜单栏
 	void slotShowMenu(bool bShow);
 	///切换页面到指定窗口

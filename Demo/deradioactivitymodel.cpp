@@ -59,7 +59,7 @@ QVariant DeRadioactivityModel::dataShow(const QModelIndex &index) const
 	case 2:
 		{
 			quint64 time = tmpData[row].getDateProduct();
-			return QDateTime::fromMSecsSinceEpoch(time).toString();
+			return QDateTime::fromMSecsSinceEpoch(time).toString("yyyy-MM-dd");
 		}
 	case 3:
 		return tmpData[row].getOriginalValue();

@@ -15,6 +15,9 @@ DeSystemConfigWidget::DeSystemConfigWidget(QWidget *parent)
 {
 	ui.setupUi(this);
 	this->setWindowFlags(Qt::ToolTip);
+	ui.tabWidget->findChildren<QTabBar*>().at(2)->hide();
+	ui.tabWidget_2->findChildren<QTabBar*>().at(0)->hide();
+	ui.tabWidget_3->findChildren<QTabBar*>().at(0)->hide();	
 
 	initEdit();
 	readDataFromDB();

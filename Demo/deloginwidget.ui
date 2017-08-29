@@ -32,7 +32,7 @@
          <string notr="true">QLineEdit
 {
 border:1px solid gray;
-border-radius:3px;
+border-radius:5px;
 min-height:30px;
 font: 16pt &quot;新宋体&quot;;
 }
@@ -40,6 +40,7 @@ font: 16pt &quot;新宋体&quot;;
 QLabel
 {
 font: 14pt &quot;新宋体&quot;;
+color:gray;
 }
 
 QGroupBox {
@@ -48,6 +49,7 @@ QGroupBox {
      margin-top: 2ex; /* leave space at the top for the title */
      padding: 10px;
      font: 12pt &quot;新宋体&quot;;
+color:gray;
  }
 
  QGroupBox::title {
@@ -60,10 +62,10 @@ QGroupBox {
 
 QPushButton {
     
-	font: 16pt &quot;新宋体&quot;;
+	font: bold 16pt &quot;新宋体&quot;;
 	background-color: rgb(244, 244, 244);
-    border: 1px solid #8f8f91;
-    border-radius: 3px;
+    border: 0px solid #8f8f91;
+    border-radius: 5px;
     min-width: 100px;
     min-height: 38px;
  }
@@ -71,6 +73,18 @@ QPushButton {
  QPushButton:pressed {
 	background-color: rgb(255, 255, 255);
  }
+
+QPushButton::focus
+{
+    color: rgb(254, 255, 253);
+    background-color: rgb(66, 189, 170);
+}
+
+QPushButton::!focus
+{    
+	color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
 
 </string>
         </property>
@@ -111,9 +125,12 @@ max-height:180px;</string>
              <widget class="QPushButton" name="okBtn">
               <property name="maximumSize">
                <size>
-                <width>282</width>
-                <height>182</height>
+                <width>280</width>
+                <height>180</height>
                </size>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::StrongFocus</enum>
               </property>
               <property name="text">
                <string>登录</string>
@@ -124,8 +141,8 @@ max-height:180px;</string>
              <widget class="QPushButton" name="cancelBtn">
               <property name="maximumSize">
                <size>
-                <width>282</width>
-                <height>182</height>
+                <width>280</width>
+                <height>180</height>
                </size>
               </property>
               <property name="text">
@@ -166,8 +183,8 @@ max-height:180px;</string>
                </property>
                <item row="0" column="0">
                 <layout class="QGridLayout" name="gridLayout">
-                 <property name="horizontalSpacing">
-                  <number>0</number>
+                 <property name="spacing">
+                  <number>6</number>
                  </property>
                  <item row="0" column="0">
                   <widget class="QLabel" name="label">
@@ -178,7 +195,7 @@ max-height:180px;</string>
                     </size>
                    </property>
                    <property name="text">
-                    <string>用户:</string>
+                    <string>用户名</string>
                    </property>
                   </widget>
                  </item>
@@ -194,7 +211,7 @@ max-height:180px;</string>
                <item row="1" column="0">
                 <layout class="QGridLayout" name="gridLayout_6">
                  <property name="horizontalSpacing">
-                  <number>0</number>
+                  <number>6</number>
                  </property>
                  <item row="0" column="0">
                   <widget class="QLabel" name="label_2">
@@ -205,7 +222,7 @@ max-height:180px;</string>
                     </size>
                    </property>
                    <property name="text">
-                    <string>密码:</string>
+                    <string>密  码</string>
                    </property>
                   </widget>
                  </item>

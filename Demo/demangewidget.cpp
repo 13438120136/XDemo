@@ -7,6 +7,7 @@
 #include <demo.h>
 #include "demessagebox.h"
 #include "deaddradioactivedlg.h"
+#include <QTabBar>
 
 Q_DECLARE_METATYPE(Demo *)
 //----------------------------------------------------------------------------
@@ -15,6 +16,7 @@ DeManageWidget::DeManageWidget(QWidget *parent)
 {
 	ui.setupUi(this);
 
+	ui.tabWidget->findChildren<QTabBar*>().at(0)->hide();
 	this->setWindowFlags(Qt::ToolTip);
 	connect(ui.addUserBtn, SIGNAL(clicked()), this, SLOT(addUserSlot()));
 	connect(ui.delUserBtn, SIGNAL(clicked()), this, SLOT(delUserSlot()));	
@@ -57,12 +59,6 @@ DeManageWidget::DeManageWidget(QWidget *parent)
 DeManageWidget::~DeManageWidget()
 {
 
-}
-//----------------------------------------------------------------------------
-void DeManageWidget::on_okBtn_clicked()
-{	
-	Demo *demo = qApp->property("_mainWin").value<Demo *>();
-	demo->slotBackMainWidget();
 }
 //----------------------------------------------------------------------------
 void DeManageWidget::addUserSlot()
@@ -168,5 +164,15 @@ void DeManageWidget::slotAddRadioactiveData(DeRadioactiveSourceTable tableData)
 {
 	m_activeityModel->data().append(tableData);
 	ui.widget_2->setModel(m_activeityModel);
+}
+//---------------------------------------------------------------------------
+void DeManageWidget::on_userBtn_clicked()
+{
+	ui.tabWidget->setCurrentIndex(0);
+}
+//---------------------------------------------------------------------------
+void DeManageWidget::on_radioBtn_clicked()
+{
+	ui.tabWidget->setCurrentIndex(1);
 }
 //---------------------------------------------------------------------------

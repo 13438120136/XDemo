@@ -17,7 +17,7 @@
    <string notr="true">QLineEdit
 {
 border:1px solid gray;
-border-radius:3px;
+border-radius:5px;
 min-height:30px;
 font: 16pt &quot;新宋体&quot;;
 }
@@ -49,10 +49,10 @@ QGroupBox {
 
 QPushButton {
     
-	font: 16pt &quot;新宋体&quot;;
+	font: bold 16pt &quot;新宋体&quot;;
 	background-color: rgb(244, 244, 244);
-     border: 1px solid #8f8f91;
-     border-radius: 3px;
+     border: 0px solid #8f8f91;
+     border-radius: 5px;
      min-width: 100px;
      min-height: 30px;
  }
@@ -60,11 +60,27 @@ QPushButton {
  QPushButton:pressed {
 	background-color: rgb(255, 255, 255);
  }
+
 </string>
   </property>
   <layout class="QGridLayout" name="gridLayout_4">
    <item row="0" column="0">
     <widget class="QWidget" name="widget_3" native="true">
+     <property name="styleSheet">
+      <string notr="true">
+QPushButton::focus
+{
+    color: rgb(254, 255, 253);
+    background-color: rgb(66, 189, 170);
+}
+
+QPushButton::!focus
+{    
+	color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+</string>
+     </property>
      <layout class="QGridLayout" name="gridLayout_3">
       <item row="0" column="0">
        <widget class="QWidget" name="widget" native="true">
@@ -162,12 +178,18 @@ max-height:220px;</string>
            <property name="text">
             <string>确定</string>
            </property>
+           <property name="autoDefault">
+            <bool>false</bool>
+           </property>
           </widget>
          </item>
          <item row="1" column="2">
           <widget class="QPushButton" name="cancelBtn">
            <property name="text">
             <string>取消</string>
+           </property>
+           <property name="autoDefault">
+            <bool>false</bool>
            </property>
           </widget>
          </item>

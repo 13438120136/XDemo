@@ -1,6 +1,7 @@
 #include "deloginwidget.h"
 #include <demo.h>
 #include <deusertable.h>
+#include "demenuwidget.h"
 
 Q_DECLARE_METATYPE(Demo *)
 //----------------------------------------------------------------------------
@@ -12,6 +13,7 @@ DeLoginWidget::DeLoginWidget(QWidget *parent)
 	ui.userLineEdit->installEventFilter(this);
 	ui.passwdLineEdit->installEventFilter(this);
 	this->setWindowFlags(Qt::ToolTip);
+	ui.okBtn->setFocus();
 }
 //----------------------------------------------------------------------------
 DeLoginWidget::~DeLoginWidget()
@@ -32,12 +34,15 @@ void DeLoginWidget::on_okBtn_clicked()
 
 	///是否合法 可以登录
 	bool bOk = table.isValid();
-	accept();
+	
+	DeMenuWidget *widget = new DeMenuWidget();
+	demo->slotSetWidget(widget);
 }
 //----------------------------------------------------------------------------
 void DeLoginWidget::on_cancelBtn_clicked()
 {
-	reject();
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	demo->slotBackMainWidget();
 }
 //----------------------------------------------------------------------------
 bool DeLoginWidget::eventFilter(QObject *obj, QEvent *event)

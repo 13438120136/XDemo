@@ -84,7 +84,10 @@ void DeAddUserDlg::slotUserLineEdit(const QString & text)
 	QString user = ui.userLineEdit->text().trimmed();
 	QString passwd = ui.passwdLineEdit->text().trimmed();
 
-	ui.okBtn->setEnabled(!user.isEmpty() && !passwd.isEmpty());
+	bool ok = !user.isEmpty() && !passwd.isEmpty();
+	ui.okBtn->setEnabled(ok);
+	if (ok)
+		ui.okBtn->setFocus();
 }
 //----------------------------------------------------------------------------
 void DeAddUserDlg::slotUserPasswdEdit(const QString & text)
@@ -93,6 +96,9 @@ void DeAddUserDlg::slotUserPasswdEdit(const QString & text)
 	QString user = ui.userLineEdit->text().trimmed();
 	QString passwd = ui.passwdLineEdit->text().trimmed();
 
-	ui.okBtn->setEnabled(!user.isEmpty() && !passwd.isEmpty());
+	bool ok = !user.isEmpty() && !passwd.isEmpty();
+	ui.okBtn->setEnabled(ok);
+	if (ok)
+		ui.okBtn->setFocus();
 }
 //----------------------------------------------------------------------------

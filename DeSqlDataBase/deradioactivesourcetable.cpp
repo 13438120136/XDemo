@@ -43,12 +43,13 @@ QList<DeValueObjectInterface *> DeRadioactiveSourceTable::selectValue(QSqlQuery 
 {
 	QList<DeValueObjectInterface *> result;
 
-	while (sqlQuery->next())
+	QSqlQuery sqlQueryObj(*sqlQuery);
+	while (sqlQueryObj.next())
 	{
 		DeRadioactiveSourceTable *table = new DeRadioactiveSourceTable(this->currSqlDataBase());
-		table->m_identifier = sqlQuery->value(0).toInt();
-		table->m_dateOfProduct = sqlQuery->value(1).value<quint64>();
-		table->m_originalValue = sqlQuery->value(2).toInt();
+		table->m_identifier = sqlQueryObj.value(0).toInt();
+		table->m_dateOfProduct = sqlQueryObj.value(1).value<quint64>();
+		table->m_originalValue = sqlQueryObj.value(2).toInt();
 
 		result.append(table);
 	}

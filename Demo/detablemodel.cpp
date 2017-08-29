@@ -30,6 +30,9 @@ QVariant DeTableModel::data(const QModelIndex &index, int role) const
 		return color;
 	}
 
+	if (role == Qt::TextAlignmentRole)
+		return Qt::AlignCenter;
+
 	///显示文本内容
 	if (role == Qt::DisplayRole)
 		return dataShow(index);
@@ -129,7 +132,7 @@ QString DeTableModel::pageMessage()
 	if (total == 0)
 		total = 1;
 
-	return QString::fromLocal8Bit("第%1页 共%2页").arg(curr).arg(total);
+	return QString::fromLocal8Bit("%1/%2").arg(curr).arg(total);
 }
 //----------------------------------------------------------------------------
 void DeTableModel::initColumnCount()

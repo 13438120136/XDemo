@@ -46,13 +46,6 @@ Demo::~Demo()
 	m_sqlDatabase.closeDataBase();
 }
 //----------------------------------------------------------------------------
-void Demo::slotTimeOut()
-{
-	QString timeString = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss");
-	QString versionString = "V1.0";
-	ui.statusBar->showMessage(tr("当前时间:%1     软件版本:%2   %3").arg(timeString).arg(versionString).arg(m_loginStatus));
-}
-//----------------------------------------------------------------------------
 void Demo::slotShowMenu(bool bShow)
 {
 	//ui.menuWidget->setVisible(bShow);
@@ -77,11 +70,6 @@ void Demo::initClickEvents()
 {
 	ui.widget->installEventFilter(this);
 	//ui.menuWidget->setVisible(false);
-
-	QTimer *timer = new QTimer(this);
-	timer->start(500);
-	connect(timer, SIGNAL(timeout()), this, SLOT(slotTimeOut()));
-	slotTimeOut();
 }
 //----------------------------------------------------------------------------
 void Demo::slotSetWidget(QWidget *widget)

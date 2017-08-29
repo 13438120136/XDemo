@@ -24,13 +24,20 @@
      min-height: 30px;
  }
 
+QLabel
+{
+    padding-left:15px;
+    padding-right:15px;
+}
+
  QPushButton:pressed {
 	background-color: rgb(255, 255, 255);
  }
 
 QTableView
 {
-	font: 12pt &quot;宋体&quot;;
+	font: bold 12pt &quot;宋体&quot;;
+    border:none;
 }
 
  QTableView QTableCornerButton::section
@@ -44,8 +51,8 @@ QTableView
 
 QHeaderView::section
 {
-	background-color: white;
-    color: black;
+	background-color: rgb(130, 130, 130);
+    color: rgb(255, 255, 255);
     border: 0px solid white;
 	border-color: rgb(209, 209, 209);	
 	border-top-width:0px;
@@ -57,7 +64,7 @@ QHeaderView::section
 QHeaderView
 {
    min-height:25px;
-   font: 12pt &quot;宋体&quot;;
+   font: bold 12pt &quot;宋体&quot;;
 }</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
@@ -66,6 +73,20 @@ QHeaderView
    </property>
    <item row="1" column="0">
     <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="2">
+      <widget class="QPushButton" name="firstBtn">
+       <property name="text">
+        <string>首页</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="6">
+      <widget class="QPushButton" name="lastBtn">
+       <property name="text">
+        <string>末页</string>
+       </property>
+      </widget>
+     </item>
      <item row="0" column="0">
       <spacer name="horizontalSpacer">
        <property name="orientation">
@@ -79,35 +100,7 @@ QHeaderView
        </property>
       </spacer>
      </item>
-     <item row="0" column="2">
-      <widget class="QPushButton" name="firstBtn">
-       <property name="text">
-        <string>首页</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="3">
-      <widget class="QPushButton" name="prevBtn">
-       <property name="text">
-        <string>上一页</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="4">
-      <widget class="QPushButton" name="nextBtn">
-       <property name="text">
-        <string>下一页</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="5">
-      <widget class="QPushButton" name="lastBtn">
-       <property name="text">
-        <string>末页</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="6">
+     <item row="0" column="7">
       <spacer name="horizontalSpacer_2">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -120,7 +113,21 @@ QHeaderView
        </property>
       </spacer>
      </item>
-     <item row="0" column="1">
+     <item row="0" column="5">
+      <widget class="QPushButton" name="nextBtn">
+       <property name="text">
+        <string>下一页</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QPushButton" name="prevBtn">
+       <property name="text">
+        <string>上一页</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="4">
       <widget class="QLabel" name="label">
        <property name="styleSheet">
         <string notr="true">font: 10pt &quot;宋体&quot;;</string>
@@ -134,8 +141,14 @@ QHeaderView
    </item>
    <item row="0" column="0">
     <widget class="QTableView" name="tableView">
+     <property name="showGrid">
+      <bool>true</bool>
+     </property>
      <attribute name="verticalHeaderVisible">
       <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>40</number>
      </attribute>
     </widget>
    </item>

@@ -20,14 +20,17 @@ public Q_SLOTS:
 	void addUserSlot();
 	void delUserSlot();
 	void modifySlot();
-	///返回
-	void on_okBtn_clicked();
+
 	///更新界面显示
 	void slotAddUser(DeUserTable data);
 	void slotUpdateUser(DeUserTable data);
 
 	void addRadioactivitySlot();
 	void slotAddRadioactiveData(DeRadioactiveSourceTable tableData);
+
+	///
+	void on_userBtn_clicked();
+	void on_radioBtn_clicked();
 
 private:
 	int selectCurrentRow();
