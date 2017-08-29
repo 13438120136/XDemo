@@ -38,7 +38,7 @@ QStatusBar::item {
        <number>0</number>
       </property>
       <widget class="QWidget" name="page">
-       <layout class="QGridLayout" name="gridLayout" rowstretch="8,1">
+       <layout class="QGridLayout" name="gridLayout" rowstretch="8">
         <property name="margin">
          <number>0</number>
         </property>
@@ -52,42 +52,6 @@ QStatusBar::item {
           </property>
          </widget>
         </item>
-        <item row="1" column="0">
-         <widget class="DeBottomMenuWidget" name="menuWidget" native="true">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">
-QPushButton
-{
-background-color: rgb(255, 255, 255, 0.3);
-border:1px solid gray;
-border-radius:3px;
-font: 16pt &quot;宋体&quot;;
-min-height:40px;
-min-width:30px;
-}
-
-QPushButton:hover
-{
-	background-color: rgb(255, 255, 255);
-    border:2px solid gray;
-    border-radius:3px;
-}
-</string>
-          </property>
-         </widget>
-        </item>
        </layout>
       </widget>
      </widget>
@@ -98,12 +62,6 @@ QPushButton:hover
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
-  <customwidget>
-   <class>DeBottomMenuWidget</class>
-   <extends>QWidget</extends>
-   <header location="global">debottommenuwidget.h</header>
-   <container>1</container>
-  </customwidget>
   <customwidget>
    <class>DeInitWidget</class>
    <extends>QWidget</extends>

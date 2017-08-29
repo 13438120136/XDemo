@@ -55,7 +55,7 @@ void Demo::slotTimeOut()
 //----------------------------------------------------------------------------
 void Demo::slotShowMenu(bool bShow)
 {
-	ui.menuWidget->setVisible(bShow);
+	//ui.menuWidget->setVisible(bShow);
 }
 //----------------------------------------------------------------------------
 bool Demo::eventFilter(QObject *obj, QEvent *event)
@@ -76,7 +76,7 @@ bool Demo::eventFilter(QObject *obj, QEvent *event)
 void Demo::initClickEvents()
 {
 	ui.widget->installEventFilter(this);
-	ui.menuWidget->setVisible(false);
+	//ui.menuWidget->setVisible(false);
 
 	QTimer *timer = new QTimer(this);
 	timer->start(500);
@@ -117,7 +117,7 @@ DeSqlDataBase *Demo::dataBase()
 //----------------------------------------------------------------------------
 void Demo::deviceCheckSelf()
 {
-	ui.menuWidget->setDefaultButtonsStatus();
+	//ui.menuWidget->setDefaultButtonsStatus();
 	//ui.menuWidget->setMaintainButtonsStatus();
 	ui.widget->showLabelMsg(QString::fromLocal8Bit("自检中..... 请稍后"));
 }
@@ -139,13 +139,13 @@ void Demo::deviceVarCheck()
 //----------------------------------------------------------------------------
 void Demo::loginMaintainMode()
 {
-	ui.menuWidget->setMaintainButtonsStatus();
+	//ui.menuWidget->setMaintainButtonsStatus();
 	ui.widget->showLabelMsg(QString::fromLocal8Bit("进入维护模式"));
 }
 //----------------------------------------------------------------------------
 void Demo::logoutMaintainMode()
 {
-	ui.menuWidget->setDefaultButtonsStatus();
+	//ui.menuWidget->setDefaultButtonsStatus();
 	ui.widget->showLabelMsg(QString::fromLocal8Bit("退出维护模式"));
 }
 //----------------------------------------------------------------------------

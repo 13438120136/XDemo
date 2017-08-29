@@ -16,6 +16,9 @@ public:
 	///信息显示函数
 	void showLabelMsg(const QString &msg);
 
+public Q_SLOTS:
+	void slotTimeOut();
+
 private:
 	Ui::DeInitWidget ui;
 };
