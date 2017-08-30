@@ -38,7 +38,7 @@ DeSystemConfigWidget::DeSystemConfigWidget(QWidget *parent)
 		 << TestData(9, 12, 150, 200, 10)
 		 << TestData(6, 12, 100, 200, 20);
 	mm->setData(data);
-	ui.widget->setModel(mm);
+	ui.widget1->setModel(mm);
 
 	///±¨¾¯ÊÂ¼þ
 	DeAlermEventModel *eventModel = new DeAlermEventModel(this);
@@ -444,5 +444,35 @@ void DeSystemConfigWidget::setBetaSeriousThreshold(int threshold)
 	ui.betaSThresholdEdit->setText(QString::number(threshold));
 	m_systemParamData.setBetaSeriousThreshold(threshold);
 	updateDataBase();
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::on_deviceBtn_clicked()
+{
+	ui.tabWidget->setCurrentIndex(0);
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::on_testBtn_clicked()
+{
+	ui.tabWidget->setCurrentIndex(1);
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::on_runStateBtn_clicked()
+{
+	ui.tabWidget_3->setCurrentIndex(0);
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::on_testParamBtn_clicked()
+{
+	ui.tabWidget_3->setCurrentIndex(1);
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::on_alphaBtn_clicked()
+{
+	ui.tabWidget_3->setCurrentIndex(2);
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::on_betaBtn_clicked()
+{
+	ui.tabWidget_3->setCurrentIndex(3);
 }
 //----------------------------------------------------------------------------
