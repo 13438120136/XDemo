@@ -38,7 +38,7 @@ DeSystemConfigWidget::DeSystemConfigWidget(QWidget *parent)
 		 << TestData(9, 12, 150, 200, 10)
 		 << TestData(6, 12, 100, 200, 20);
 	mm->setData(data);
-	ui.widget1->setModel(mm);
+	ui.widget->setModel(mm);
 
 	///±¨¾¯ÊÂ¼þ
 	DeAlermEventModel *eventModel = new DeAlermEventModel(this);

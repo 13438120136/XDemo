@@ -22,10 +22,7 @@
    font: 16pt &quot;新宋体&quot;;
 }
 
-QTabWidget
-{
-   border:none;
-}
+QTabWidget::pane { border: 0; }
 
 QDateEdit::drop-down
 {
@@ -45,61 +42,46 @@ QCalendarWidget QAbstractButton
 
 QLabel
 {
-font: 12pt &quot;新宋体&quot;;
+font: 11pt &quot;黑体&quot;;
 }
-
-QGroupBox {
-     border: 1px solid gray;
-     border-radius: 3px;
-     margin-top: 2ex; /* leave space at the top for the title */
-     padding:5px;
- }
-
-QGroupBox::title {
-     subcontrol-origin: margin;
-     subcontrol-position: top center; /* position at the top center */
-     padding: 0 10px;
-     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                       stop: 0 #FFOECE, stop: 1 #FFFFFF);
- }
 
 QPushButton[flat=&quot;true&quot;]
 {
-     font: 12pt &quot;新宋体&quot;;
-     border: 0px solid #8f8f91;
+     font: 12pt &quot;黑体&quot;;
+     border: none;
 	 background-color:rgba(85, 255, 0, 0);
-     min-width: 85px;
-     min-height: 0px;
      text-align:right; 
 }
 
 QPushButton[flat=&quot;true&quot;]:pressed
 {
-    font: 14pt &quot;新宋体&quot;;
+    font: 14pt &quot;黑体&quot;;
 }
 
 QPushButton {
     
-	font: 14pt &quot;新宋体&quot;;
+	font: 14pt &quot;黑体&quot;;
 	background-color: rgb(244, 244, 244);
      border: 1px solid #8f8f91;
      border-radius: 3px;
-     min-width: 100px;
  }
 
- QPushButton:pressed {
-	background-color: rgb(255, 255, 255);
- }
-
- QPushButton:checked {
-	background-color: rgba(0, 170, 255, 100);
- }
-
- QTabWidget::tab-bar {
+ QTabWidget::tab-bar 
+ {
      alignment: center;
  }
 
+QWidget#widget_3
+{
+	background-color: rgb(255, 255, 255);
+}
 
+QWidget#widget_4
+{
+background-color: rgb(250, 250, 250);
+}
+
+/*
  QTabBar::tab {
      background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                  stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
@@ -114,6 +96,7 @@ QPushButton {
      padding-bottom:6px;
  }
 
+
  QTabBar::tab:selected, QTabBar::tab:hover {
      background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                  stop: 0 #fafafa, stop: 0.4 #f4f4f4,
@@ -122,14 +105,22 @@ QPushButton {
 
  QTabBar::tab:selected {
      border-color: #9B9B9B;
-     border-bottom-color: #C2C7CB; /* same as pane color */
+     border-bottom-color: #C2C7CB;
  }
 
  QTabBar::tab:!selected {
-     margin-top: 2px; /* make non-selected tabs look smaller */
- }</string>
+     margin-top: 2px;
+ }
+*/
+</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
    <item row="0" column="0">
     <widget class="QWidget" name="widget_4" native="true">
      <property name="styleSheet">
@@ -138,7 +129,9 @@ QPushButton {
    background-color: rgb(255, 255, 255, 0);
    border:0px solid red;
    border-radius:0px;
-   font:bold 14px;
+   font:bold 16px;
+   min-width: 100px;
+   min-height: 35px;
 }
 
 QPushButton:focus
@@ -244,9 +237,7 @@ QPushButton:focus
      </property>
      <widget class="QWidget" name="tab">
       <property name="styleSheet">
-       <string notr="true">QGroupBox {
-   margin:5px;
- }</string>
+       <string notr="true"/>
       </property>
       <attribute name="title">
        <string>设备信息</string>
@@ -260,20 +251,31 @@ QPushButton:focus
        </property>
        <item row="0" column="0">
         <widget class="QStackedWidget" name="stackedWidget">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
          <property name="currentIndex">
           <number>0</number>
          </property>
          <widget class="QWidget" name="page">
           <layout class="QGridLayout" name="gridLayout_20">
+           <property name="margin">
+            <number>0</number>
+           </property>
+           <property name="spacing">
+            <number>0</number>
+           </property>
            <item row="0" column="0">
             <widget class="QWidget" name="widget_3" native="true">
              <property name="styleSheet">
               <string notr="true">QPushButton
 {   
-   background-color: rgb(255, 255, 255, 0);
+   background-color: rgb(125, 125, 125, 0);
    border:0px solid red;
    border-radius:0px;
    font:bold 14px;
+   min-width: 100px;
+   min-height: 30px;
 }
 
 QPushButton:focus
@@ -352,119 +354,90 @@ QPushButton:focus
            </item>
            <item row="2" column="0">
             <widget class="QTabWidget" name="tabWidget_3">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+</string>
+             </property>
              <property name="currentIndex">
-              <number>3</number>
+              <number>1</number>
              </property>
              <widget class="QWidget" name="tab_5">
               <attribute name="title">
                <string>运行状态</string>
               </attribute>
-              <widget class="QPushButton" name="pushButton_4">
-               <property name="geometry">
-                <rect>
-                 <x>317</x>
-                 <y>31</y>
-                 <width>85</width>
-                 <height>16</height>
-                </rect>
-               </property>
-               <property name="text">
-                <string>正常</string>
-               </property>
-               <property name="flat">
-                <bool>true</bool>
-               </property>
-              </widget>
-              <widget class="QLabel" name="label">
-               <property name="geometry">
-                <rect>
-                 <x>9</x>
-                 <y>9</y>
-                 <width>56</width>
-                 <height>16</height>
-                </rect>
-               </property>
-               <property name="text">
-                <string>IP地址:</string>
-               </property>
-              </widget>
-              <widget class="QPushButton" name="ipEdit">
-               <property name="geometry">
-                <rect>
-                 <x>317</x>
-                 <y>9</y>
-                 <width>85</width>
-                 <height>16</height>
-                </rect>
-               </property>
-               <property name="text">
-                <string>127.0.0.1</string>
-               </property>
-               <property name="flat">
-                <bool>true</bool>
-               </property>
-               <attribute name="buttonGroup">
-                <string notr="true">buttonGroup</string>
-               </attribute>
-              </widget>
-              <widget class="QLabel" name="label_2">
-               <property name="geometry">
-                <rect>
-                 <x>9</x>
-                 <y>31</y>
-                 <width>72</width>
-                 <height>16</height>
-                </rect>
-               </property>
-               <property name="text">
-                <string>设备状态:</string>
-               </property>
-              </widget>
-              <widget class="QLabel" name="label_25">
-               <property name="geometry">
-                <rect>
-                 <x>9</x>
-                 <y>53</y>
-                 <width>80</width>
-                 <height>16</height>
-                </rect>
-               </property>
-               <property name="text">
-                <string>通道选择：</string>
-               </property>
-              </widget>
-              <widget class="QWidget" name="">
-               <property name="geometry">
-                <rect>
-                 <x>317</x>
-                 <y>53</y>
-                 <width>97</width>
-                 <height>28</height>
-                </rect>
-               </property>
-               <layout class="QGridLayout" name="gridLayout_5">
-                <item row="0" column="0">
-                 <widget class="QCheckBox" name="checkBox">
-                  <property name="text">
-                   <string>α</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="1">
-                 <widget class="QCheckBox" name="checkBox_2">
-                  <property name="text">
-                   <string>α+β</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
+              <layout class="QGridLayout" name="gridLayout_26">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label">
+                 <property name="text">
+                  <string>IP地址:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QPushButton" name="ipEdit">
+                 <property name="text">
+                  <string>127.0.0.1</string>
+                 </property>
+                 <property name="flat">
+                  <bool>true</bool>
+                 </property>
+                 <attribute name="buttonGroup">
+                  <string notr="true">buttonGroup</string>
+                 </attribute>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_2">
+                 <property name="text">
+                  <string>设备状态:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QPushButton" name="pushButton_4">
+                 <property name="text">
+                  <string>正常</string>
+                 </property>
+                 <property name="flat">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_25">
+                 <property name="text">
+                  <string>通道选择：</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <layout class="QGridLayout" name="gridLayout_5">
+                 <item row="0" column="0">
+                  <widget class="QCheckBox" name="checkBox">
+                   <property name="text">
+                    <string>α</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QCheckBox" name="checkBox_2">
+                   <property name="text">
+                    <string>α+β</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
              </widget>
              <widget class="QWidget" name="tab_6">
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
               <attribute name="title">
                <string>测量参数</string>
               </attribute>
-              <layout class="QGridLayout" name="gridLayout_26">
+              <layout class="QGridLayout" name="gridLayout_21">
                <property name="margin">
                 <number>0</number>
                </property>
@@ -472,6 +445,21 @@ QPushButton:focus
                 <number>0</number>
                </property>
                <item row="0" column="0">
+                <widget class="QWidget" name="widget_7" native="true">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:  rgb(250, 250, 250);
+max-height:30px;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="Line" name="line_9">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
                 <widget class="QWidget" name="widget_5" native="true">
                  <layout class="QGridLayout" name="gridLayout_25">
                   <property name="leftMargin">
@@ -486,8 +474,14 @@ QPushButton:focus
                   <property name="bottomMargin">
                    <number>0</number>
                   </property>
+                  <property name="spacing">
+                   <number>0</number>
+                  </property>
                   <item row="0" column="0">
                    <widget class="QFrame" name="frame">
+                    <property name="styleSheet">
+                     <string notr="true">min-height:50px;</string>
+                    </property>
                     <property name="frameShape">
                      <enum>QFrame::StyledPanel</enum>
                     </property>
@@ -495,6 +489,21 @@ QPushButton:focus
                      <enum>QFrame::Raised</enum>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_2">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>20</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="spacing">
+                      <number>0</number>
+                     </property>
                      <item row="0" column="0">
                       <widget class="QLabel" name="label_3">
                        <property name="text">
@@ -515,15 +524,11 @@ QPushButton:focus
                     </layout>
                    </widget>
                   </item>
-                  <item row="1" column="0">
-                   <widget class="Line" name="line_2">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                   </widget>
-                  </item>
                   <item row="2" column="0">
                    <widget class="QFrame" name="frame_2">
+                    <property name="styleSheet">
+                     <string notr="true">min-height:50px;</string>
+                    </property>
                     <property name="frameShape">
                      <enum>QFrame::StyledPanel</enum>
                     </property>
@@ -531,6 +536,18 @@ QPushButton:focus
                      <enum>QFrame::Raised</enum>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_6">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>20</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
                      <item row="0" column="0">
                       <widget class="QLabel" name="label_6">
                        <property name="text">
@@ -551,15 +568,11 @@ QPushButton:focus
                     </layout>
                    </widget>
                   </item>
-                  <item row="3" column="0">
-                   <widget class="Line" name="line_3">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                   </widget>
-                  </item>
                   <item row="4" column="0">
                    <widget class="QFrame" name="frame_3">
+                    <property name="styleSheet">
+                     <string notr="true">min-height:50px;</string>
+                    </property>
                     <property name="frameShape">
                      <enum>QFrame::StyledPanel</enum>
                     </property>
@@ -567,6 +580,18 @@ QPushButton:focus
                      <enum>QFrame::Raised</enum>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_15">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>20</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
                      <item row="0" column="0">
                       <widget class="QLabel" name="label_4">
                        <property name="text">
@@ -587,15 +612,11 @@ QPushButton:focus
                     </layout>
                    </widget>
                   </item>
-                  <item row="5" column="0">
-                   <widget class="Line" name="line_4">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                   </widget>
-                  </item>
                   <item row="6" column="0">
                    <widget class="QFrame" name="frame_4">
+                    <property name="styleSheet">
+                     <string notr="true">min-height:50px;</string>
+                    </property>
                     <property name="frameShape">
                      <enum>QFrame::StyledPanel</enum>
                     </property>
@@ -603,6 +624,18 @@ QPushButton:focus
                      <enum>QFrame::Raised</enum>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_22">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>20</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
                      <item row="0" column="0">
                       <widget class="QLabel" name="label_7">
                        <property name="text">
@@ -623,6 +656,27 @@ QPushButton:focus
                     </layout>
                    </widget>
                   </item>
+                  <item row="1" column="0">
+                   <widget class="Line" name="line_2">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="Line" name="line_3">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="5" column="0">
+                   <widget class="Line" name="line_4">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                   </widget>
+                  </item>
                   <item row="7" column="0">
                    <widget class="Line" name="line_5">
                     <property name="orientation">
@@ -630,8 +684,18 @@ QPushButton:focus
                     </property>
                    </widget>
                   </item>
+                  <item row="9" column="0">
+                   <widget class="Line" name="line_6">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                   </widget>
+                  </item>
                   <item row="8" column="0">
                    <widget class="QFrame" name="frame_5">
+                    <property name="styleSheet">
+                     <string notr="true">min-height:50px;</string>
+                    </property>
                     <property name="frameShape">
                      <enum>QFrame::StyledPanel</enum>
                     </property>
@@ -639,6 +703,18 @@ QPushButton:focus
                      <enum>QFrame::Raised</enum>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_23">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>20</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
                      <item row="0" column="0">
                       <widget class="QLabel" name="label_5">
                        <property name="text">
@@ -659,15 +735,11 @@ QPushButton:focus
                     </layout>
                    </widget>
                   </item>
-                  <item row="9" column="0">
-                   <widget class="Line" name="line_6">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                   </widget>
-                  </item>
                   <item row="10" column="0">
                    <widget class="QFrame" name="frame_6">
+                    <property name="styleSheet">
+                     <string notr="true">min-height:50px;</string>
+                    </property>
                     <property name="frameShape">
                      <enum>QFrame::StyledPanel</enum>
                     </property>
@@ -675,6 +747,21 @@ QPushButton:focus
                      <enum>QFrame::Raised</enum>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_24">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>20</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="spacing">
+                      <number>0</number>
+                     </property>
                      <item row="0" column="0">
                       <widget class="QLabel" name="label_8">
                        <property name="text">
@@ -696,6 +783,20 @@ QPushButton:focus
                    </widget>
                   </item>
                  </layout>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="Line" name="line_8">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QWidget" name="widget_6" native="true">
+                 <property name="styleSheet">
+                  <string notr="true">background-color:  rgb(250, 250, 250);</string>
+                 </property>
                 </widget>
                </item>
               </layout>
@@ -993,6 +1094,9 @@ QPushButton:focus
            </item>
            <item row="1" column="0">
             <widget class="Line" name="line_7">
+             <property name="frameShadow">
+              <enum>QFrame::Sunken</enum>
+             </property>
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
