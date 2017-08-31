@@ -22,8 +22,8 @@ DeSystemConfigWidget::DeSystemConfigWidget(QWidget *parent)
 	initEdit();
 	readDataFromDB();
 
-	ui.dateEdit->setDate(QDate::currentDate());
-	ui.dateEdit->calendarWidget()->setGridVisible(true);
+	//ui.dateEdit->setDate(QDate::currentDate());
+	//ui.dateEdit->calendarWidget()->setGridVisible(true);
 
 	///测量次数
 	DeTestDataModel *mm = new DeTestDataModel(this);
@@ -64,7 +64,7 @@ void DeSystemConfigWidget::on_okBtn_clicked()
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::initEdit()
 {
-	ui.ipEdit->setProperty("customText", tr("IP地址设置"));
+	//ui.ipEdit->setProperty("customText", tr("IP地址设置"));
 	ui.timeEdit->setProperty("customText", tr("测量时间"));
 	ui.forceTestTimeEdit->setProperty("customText", tr("强制本底测量时间"));
 	ui.checkFatorEdit->setProperty("customText", tr("本底检测平滑因子"));
@@ -87,7 +87,7 @@ void DeSystemConfigWidget::initEdit()
 	ui.betaSThresholdEdit->setProperty("customText", tr("beta 严重报警阀值"));
 
 	////新建执行索引
-	ui.ipEdit->setProperty("customIndex", 1);
+	//ui.ipEdit->setProperty("customIndex", 1);
 	ui.timeEdit->setProperty("customIndex", 2);
 	ui.forceTestTimeEdit->setProperty("customIndex", 3);
 	ui.checkFatorEdit->setProperty("customIndex", 4);
@@ -274,7 +274,7 @@ void DeSystemConfigWidget::readDataFromDB()
 	DeDeviceTable deviceTable(demo->dataBase());
 	m_systemParamData = deviceTable.selectDB();
 
-	ui.ipEdit->setText(m_systemParamData.getIp());
+	//ui.ipEdit->setText(m_systemParamData.getIp());
 	ui.timeEdit->setText(QString::number(m_systemParamData.getMeasurementTime()));
 	ui.forceTestTimeEdit->setText(QString::number(m_systemParamData.getCheckTime()));
 	ui.checkFatorEdit->setText(QString::number(m_systemParamData.getcheckFactor()));
@@ -299,7 +299,7 @@ void DeSystemConfigWidget::readDataFromDB()
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::setIpAddress(const QString &ip)
 {
-	ui.ipEdit->setText(ip);
+	//ui.ipEdit->setText(ip);
 	m_systemParamData.setIp(ip);
 	updateDataBase();
 }
