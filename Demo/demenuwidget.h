@@ -1,11 +1,11 @@
 #ifndef DEMENUWIDGET_H
 #define DEMENUWIDGET_H
 
-#include <QDialog>
+#include <QWidget>
 #include "ui_demenuwidget.h"
 #include "demo.h"
 
-class DeMenuWidget : public QDialog
+class DeMenuWidget : public QWidget
 {
 	Q_OBJECT
 

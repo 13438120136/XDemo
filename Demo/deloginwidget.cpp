@@ -36,11 +36,7 @@ void DeLoginWidget::on_okBtn_clicked()
 	bool bOk = table.isValid();
 	
 	DeMenuWidget *widget = new DeMenuWidget();
-	widget->move(demo->pos());
-	widget->resize(demo->width(), demo->height());
-	widget->setWindowOpacity(0.9);
-	widget->exec();
-	delete widget;
+	demo->slotSetWidget(widget);
 }
 //----------------------------------------------------------------------------
 void DeLoginWidget::on_cancelBtn_clicked()
