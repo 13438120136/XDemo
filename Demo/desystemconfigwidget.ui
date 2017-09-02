@@ -164,7 +164,7 @@ QPushButton:focus
        <number>0</number>
       </property>
       <item row="0" column="0">
-       <widget class="QPushButton" name="functionBtn">
+       <widget class="QPushButton" name="pushButton_8">
         <property name="text">
          <string>功能选择</string>
         </property>
