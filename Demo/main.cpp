@@ -4,10 +4,15 @@
 #include "deusertable.h"
 #include "desqldatabase.h"
 #include <QTranslator>
+#include <QTextCodec>
 
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
+
+    QTextCodec::setCodecForCStrings(QTextCodec::codecForName("gb2312"));
+    QTextCodec::setCodecForLocale(QTextCodec::codecForName("gb2312"));
+    QTextCodec::setCodecForTr(QTextCodec::codecForName("gb2312"));
 
 	///º”‘ÿ”Ô—‘∞¸
 	QTranslator translator;

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>625</width>
-    <height>554</height>
+    <height>566</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -365,7 +365,6 @@ QPushButton:focus
                <string notr="true">QFrame#frame_19, #frame_20,  #frame_21,  #frame_22,  #frame_23,  #frame_24,  #frame_25,  #frame_26,  #frame_27,  #frame_28,  #frame_29 
 {
    min-height:50px;
-   max-height:50px;
 }</string>
               </property>
               <attribute name="title">
@@ -447,7 +446,7 @@ max-height:30px;</string>
                        <item row="0" column="0">
                         <widget class="QFrame" name="frame_21">
                          <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
+                          <enum>QFrame::NoFrame</enum>
                          </property>
                          <property name="frameShadow">
                           <enum>QFrame::Raised</enum>
@@ -495,7 +494,7 @@ max-height:30px;</string>
                        <item row="2" column="0">
                         <widget class="QFrame" name="frame_22">
                          <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
+                          <enum>QFrame::NoFrame</enum>
                          </property>
                          <property name="frameShadow">
                           <enum>QFrame::Raised</enum>
@@ -543,7 +542,7 @@ max-height:30px;</string>
                        <item row="4" column="0">
                         <widget class="QFrame" name="frame_23">
                          <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
+                          <enum>QFrame::NoFrame</enum>
                          </property>
                          <property name="frameShadow">
                           <enum>QFrame::Raised</enum>
@@ -651,7 +650,7 @@ max-height:30px;</string>
                        <item row="0" column="0">
                         <widget class="QFrame" name="frame_19">
                          <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
+                          <enum>QFrame::NoFrame</enum>
                          </property>
                          <property name="frameShadow">
                           <enum>QFrame::Raised</enum>
@@ -699,7 +698,7 @@ max-height:30px;</string>
                        <item row="2" column="0">
                         <widget class="QFrame" name="frame_20">
                          <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
+                          <enum>QFrame::NoFrame</enum>
                          </property>
                          <property name="frameShadow">
                           <enum>QFrame::Raised</enum>
@@ -835,7 +834,7 @@ max-height:30px;</string>
                        <item row="0" column="0">
                         <widget class="QFrame" name="frame_24">
                          <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
+                          <enum>QFrame::NoFrame</enum>
                          </property>
                          <property name="frameShadow">
                           <enum>QFrame::Raised</enum>
@@ -977,7 +976,7 @@ max-height:30px;</string>
                        <item row="0" column="0">
                         <widget class="QFrame" name="frame_26">
                          <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
+                          <enum>QFrame::NoFrame</enum>
                          </property>
                          <property name="frameShadow">
                           <enum>QFrame::Raised</enum>
@@ -1025,7 +1024,7 @@ max-height:30px;</string>
                        <item row="2" column="0">
                         <widget class="QFrame" name="frame_27">
                          <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
+                          <enum>QFrame::NoFrame</enum>
                          </property>
                          <property name="frameShadow">
                           <enum>QFrame::Raised</enum>
@@ -1073,7 +1072,7 @@ max-height:30px;</string>
                        <item row="4" column="0">
                         <widget class="QFrame" name="frame_28">
                          <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
+                          <enum>QFrame::NoFrame</enum>
                          </property>
                          <property name="frameShadow">
                           <enum>QFrame::Raised</enum>
@@ -1121,7 +1120,7 @@ max-height:30px;</string>
                        <item row="6" column="0">
                         <widget class="QFrame" name="frame_29">
                          <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
+                          <enum>QFrame::NoFrame</enum>
                          </property>
                          <property name="frameShadow">
                           <enum>QFrame::Raised</enum>
@@ -1236,7 +1235,7 @@ max-height:30px;</string>
                        <item row="0" column="0">
                         <widget class="QFrame" name="frame_25">
                          <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
+                          <enum>QFrame::NoFrame</enum>
                          </property>
                          <property name="frameShadow">
                           <enum>QFrame::Raised</enum>
@@ -1716,7 +1715,7 @@ max-height:30px;</string>
                   <item row="0" column="0">
                    <widget class="QFrame" name="frame_7">
                     <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
+                     <enum>QFrame::NoFrame</enum>
                     </property>
                     <property name="frameShadow">
                      <enum>QFrame::Raised</enum>
@@ -1764,7 +1763,7 @@ max-height:30px;</string>
                   <item row="2" column="0">
                    <widget class="QFrame" name="frame_8">
                     <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
+                     <enum>QFrame::NoFrame</enum>
                     </property>
                     <property name="frameShadow">
                      <enum>QFrame::Raised</enum>
@@ -1812,7 +1811,7 @@ max-height:30px;</string>
                   <item row="4" column="0">
                    <widget class="QFrame" name="frame_9">
                     <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
+                     <enum>QFrame::NoFrame</enum>
                     </property>
                     <property name="frameShadow">
                      <enum>QFrame::Raised</enum>
@@ -1860,7 +1859,7 @@ max-height:30px;</string>
                   <item row="6" column="0">
                    <widget class="QFrame" name="frame_10">
                     <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
+                     <enum>QFrame::NoFrame</enum>
                     </property>
                     <property name="frameShadow">
                      <enum>QFrame::Raised</enum>
@@ -1908,7 +1907,7 @@ max-height:30px;</string>
                   <item row="8" column="0">
                    <widget class="QFrame" name="frame_11">
                     <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
+                     <enum>QFrame::NoFrame</enum>
                     </property>
                     <property name="frameShadow">
                      <enum>QFrame::Raised</enum>
@@ -1956,7 +1955,7 @@ max-height:30px;</string>
                   <item row="10" column="0">
                    <widget class="QFrame" name="frame_12">
                     <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
+                     <enum>QFrame::NoFrame</enum>
                     </property>
                     <property name="frameShadow">
                      <enum>QFrame::Raised</enum>
@@ -2121,7 +2120,7 @@ max-height:30px;</string>
                   <item row="0" column="0">
                    <widget class="QFrame" name="frame_13">
                     <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
+                     <enum>QFrame::NoFrame</enum>
                     </property>
                     <property name="frameShadow">
                      <enum>QFrame::Raised</enum>
@@ -2169,7 +2168,7 @@ max-height:30px;</string>
                   <item row="2" column="0">
                    <widget class="QFrame" name="frame_14">
                     <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
+                     <enum>QFrame::NoFrame</enum>
                     </property>
                     <property name="frameShadow">
                      <enum>QFrame::Raised</enum>
@@ -2217,7 +2216,7 @@ max-height:30px;</string>
                   <item row="4" column="0">
                    <widget class="QFrame" name="frame_15">
                     <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
+                     <enum>QFrame::NoFrame</enum>
                     </property>
                     <property name="frameShadow">
                      <enum>QFrame::Raised</enum>
@@ -2265,7 +2264,7 @@ max-height:30px;</string>
                   <item row="6" column="0">
                    <widget class="QFrame" name="frame_16">
                     <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
+                     <enum>QFrame::NoFrame</enum>
                     </property>
                     <property name="frameShadow">
                      <enum>QFrame::Raised</enum>
@@ -2313,7 +2312,7 @@ max-height:30px;</string>
                   <item row="8" column="0">
                    <widget class="QFrame" name="frame_17">
                     <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
+                     <enum>QFrame::NoFrame</enum>
                     </property>
                     <property name="frameShadow">
                      <enum>QFrame::Raised</enum>
@@ -2361,7 +2360,7 @@ max-height:30px;</string>
                   <item row="10" column="0">
                    <widget class="QFrame" name="frame_18">
                     <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
+                     <enum>QFrame::NoFrame</enum>
                     </property>
                     <property name="frameShadow">
                      <enum>QFrame::Raised</enum>
