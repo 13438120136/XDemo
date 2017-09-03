@@ -115,7 +115,7 @@ QPushButton:focus
        <number>0</number>
       </property>
       <item row="0" column="0">
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="funcBtn">
         <property name="text">
          <string>功能选择</string>
         </property>
@@ -162,7 +162,7 @@ QPushButton:focus
        </spacer>
       </item>
       <item row="0" column="5">
-       <widget class="QPushButton" name="pushButton_4">
+       <widget class="QPushButton" name="logoutBtn">
         <property name="text">
          <string>注销</string>
         </property>

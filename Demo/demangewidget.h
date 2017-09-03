@@ -32,6 +32,9 @@ public Q_SLOTS:
 	void on_userBtn_clicked();
 	void on_radioBtn_clicked();
 
+	void on_funcBtn_clicked();
+	void on_logoutBtn_clicked();
+
 private:
 	int selectCurrentRow();
 

@@ -72,8 +72,10 @@ void Demo::initClickEvents()
 	//ui.menuWidget->setVisible(false);
 }
 //----------------------------------------------------------------------------
+#include <qdebug.h>
 void Demo::slotSetWidget(QWidget *widget)
 {
+	qDebug() << "in";
 	m_widgetStack.push_back(widget);
 	ui.contentWidget->addWidget(widget);
 	ui.contentWidget->setCurrentWidget(widget);
@@ -81,6 +83,7 @@ void Demo::slotSetWidget(QWidget *widget)
 //----------------------------------------------------------------------------
 void Demo::slotBackMainWidget()
 {
+	qDebug() << "out";
 	if (m_widgetStack.isEmpty())
 	{
 		ui.contentWidget->setCurrentIndex(0);

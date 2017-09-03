@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>624</width>
+    <width>596</width>
     <height>330</height>
    </rect>
   </property>
@@ -20,7 +20,7 @@
 	background-color: rgb(244, 244, 244);
      border: 1px solid #8f8f91;
      border-radius: 6px;
-     min-width: 90px;
+     min-width: 80px;
      min-height: 30px;
  }
 
@@ -28,6 +28,7 @@ QLabel
 {
     padding-left:15px;
     padding-right:15px;
+    min-width:40px;
 }
 
  QPushButton:pressed {

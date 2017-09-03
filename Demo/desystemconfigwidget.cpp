@@ -6,6 +6,7 @@
 #include <QSignalMapper>
 #include <depropertyeditwidget.h>
 #include "dedevicetable.h"
+#include "demenuwidget.h"
 
 Q_DECLARE_METATYPE(Demo *)
 //----------------------------------------------------------------------------
@@ -54,12 +55,6 @@ DeSystemConfigWidget::DeSystemConfigWidget(QWidget *parent)
 DeSystemConfigWidget::~DeSystemConfigWidget()
 {
 
-}
-//----------------------------------------------------------------------------
-void DeSystemConfigWidget::on_okBtn_clicked()
-{
-	Demo *demo = qApp->property("_mainWin").value<Demo *>();
-	demo->slotBackMainWidget();
 }
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::initEdit()
@@ -474,5 +469,21 @@ void DeSystemConfigWidget::on_alphaBtn_clicked()
 void DeSystemConfigWidget::on_betaBtn_clicked()
 {
 	ui.tabWidget_3->setCurrentIndex(3);
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::on_funcBtn_clicked()
+{	
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();	
+	DeMenuWidget widget;
+	widget.move(demo->pos());
+	widget.resize(demo->width(), demo->height());
+	widget.setWindowOpacity(0.9);
+	widget.exec();	
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::on_logoutBtn_clicked()
+{
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	demo->slotBackMainWidget();
 }
 //----------------------------------------------------------------------------

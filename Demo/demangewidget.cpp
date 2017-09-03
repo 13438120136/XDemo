@@ -7,6 +7,7 @@
 #include <demo.h>
 #include "demessagebox.h"
 #include "deaddradioactivedlg.h"
+#include "demenuwidget.h"
 #include <QTabBar>
 
 Q_DECLARE_METATYPE(Demo *)
@@ -176,3 +177,19 @@ void DeManageWidget::on_radioBtn_clicked()
 	ui.tabWidget->setCurrentIndex(1);
 }
 //---------------------------------------------------------------------------
+void DeManageWidget::on_funcBtn_clicked()
+{
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();	
+	DeMenuWidget widget;
+	widget.move(demo->pos());
+	widget.resize(demo->width(), demo->height());
+	widget.setWindowOpacity(0.9);
+	widget.exec();
+}
+//---------------------------------------------------------------------------
+void DeManageWidget::on_logoutBtn_clicked()
+{
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	demo->slotBackMainWidget();
+}
+//----------------------------------------------------------------------------

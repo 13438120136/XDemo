@@ -34,9 +34,12 @@ void DeLoginWidget::on_okBtn_clicked()
 
 	///是否合法 可以登录
 	bool bOk = table.isValid();
-	
-	DeMenuWidget *widget = new DeMenuWidget();
-	demo->slotSetWidget(widget);
+
+	DeMenuWidget widget;	
+	widget.move(demo->pos());
+	widget.resize(demo->width(), demo->height());
+	widget.setWindowOpacity(0.9);
+	widget.exec();
 }
 //----------------------------------------------------------------------------
 void DeLoginWidget::on_cancelBtn_clicked()

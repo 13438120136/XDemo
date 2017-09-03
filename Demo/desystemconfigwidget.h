@@ -59,7 +59,6 @@ public:
 	
 
 public Q_SLOTS:
-	void on_okBtn_clicked();
 	void propertyEditSlot(QWidget *);
 	void on_deviceBtn_clicked();
 	void on_testBtn_clicked();
@@ -67,6 +66,8 @@ public Q_SLOTS:
 	void on_testParamBtn_clicked();
 	void on_alphaBtn_clicked();
 	void on_betaBtn_clicked();
+	void on_funcBtn_clicked();
+	void on_logoutBtn_clicked();
 
 private:
 	///≥ı ºªØ±‡º≠

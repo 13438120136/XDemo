@@ -13,8 +13,12 @@ public:
 	~DeSystemTestWidget();
 
 public Q_SLOTS:
-	void on_okBtn_clicked();
 	void slotPhysicalTest(bool);
+	void on_ioBtn_clicked();
+	void on_channelBtn_clicked();
+	void on_xiaolvBtn_clicked();
+	void on_funcBtn_clicked();
+	void on_logoutBtn_clicked();
 
 protected:
 	virtual bool eventFilter(QObject *obj, QEvent *event);

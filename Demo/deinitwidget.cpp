@@ -4,6 +4,8 @@
 #include <QDateTime>
 #include <demo.h>
 #include "deloginwidget.h"
+#include "demessagebox.h"
+#include "demenuwidget.h"
 
 Q_DECLARE_METATYPE(Demo *)
 //----------------------------------------------------------------------------
@@ -37,7 +39,13 @@ void DeInitWidget::slotTimeOut()
 //----------------------------------------------------------------------------
 void DeInitWidget::on_exitBtn_clicked()
 {
-	qApp->quit();
+	DeMessageBox msgBox(this);
+	msgBox.setText(tr("exit?"));
+	QPushButton *okButton = msgBox.addButton(tr("yes"), QMessageBox::AcceptRole);  
+	msgBox.addButton(tr("no"), QMessageBox::RejectRole); 
+	msgBox.exec();
+	if ((QPushButton*)msgBox.clickedButton() == okButton)  
+		qApp->quit();
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::on_loginBtn_clicked()
