@@ -46,9 +46,12 @@ public Q_SLOTS:
 	void slotSetWidget(QWidget *widget);
 	///返回上一级页面
 	void slotBackMainWidget();
+    void translator(bool language);
+    bool getLangeuage();
 
 protected:
 	virtual bool eventFilter(QObject *obj, QEvent *event);
+    virtual void changeEvent(QEvent *);
 
 private:
 	void initClickEvents();
@@ -60,6 +63,7 @@ private:
 	QList<QWidget *> m_widgetStack;
 	DeSqlDataBase m_sqlDatabase;
 	QString m_loginStatus;
+    bool m_currLanguage;
 };
 
 #endif // DEMO_H

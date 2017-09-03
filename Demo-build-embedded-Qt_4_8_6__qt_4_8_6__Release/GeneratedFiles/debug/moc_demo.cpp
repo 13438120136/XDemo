@@ -22,7 +22,7 @@ static const uint qt_meta_data_Demo[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   14, // methods
+       8,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -38,6 +38,8 @@ static const uint qt_meta_data_Demo[] = {
       64,   58,    5,    5, 0x0a,
       90,   83,    5,    5, 0x0a,
      114,    5,    5,    5, 0x0a,
+     144,  135,    5,    5, 0x0a,
+     166,    5,  161,    5, 0x0a,
 
        0        // eod
 };
@@ -47,6 +49,8 @@ static const char qt_meta_stringdata_Demo[] = {
     "signalRadiationCheck()\0bShow\0"
     "slotShowMenu(bool)\0widget\0"
     "slotSetWidget(QWidget*)\0slotBackMainWidget()\0"
+    "language\0translator(bool)\0bool\0"
+    "getLangeuage()\0"
 };
 
 void Demo::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -61,6 +65,9 @@ void Demo::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void *
         case 3: _t->slotShowMenu((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 4: _t->slotSetWidget((*reinterpret_cast< QWidget*(*)>(_a[1]))); break;
         case 5: _t->slotBackMainWidget(); break;
+        case 6: _t->translator((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 7: { bool _r = _t->getLangeuage();
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
         default: ;
         }
     }
@@ -98,9 +105,9 @@ int Demo::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 8;
     }
     return _id;
 }

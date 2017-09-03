@@ -67,8 +67,8 @@ public:
     QGridLayout *gridLayout_14;
     QSpacerItem *verticalSpacer;
     QGridLayout *gridLayout_8;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QPushButton *chinaBtn;
+    QPushButton *englishBtn;
     QWidget *widget_5;
     QGridLayout *gridLayout_6;
     QWidget *widget_3;
@@ -374,19 +374,19 @@ public:
         gridLayout_8 = new QGridLayout();
         gridLayout_8->setSpacing(0);
         gridLayout_8->setObjectName(QString::fromUtf8("gridLayout_8"));
-        pushButton = new QPushButton(widget_8);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setStyleSheet(QString::fromUtf8(""));
+        chinaBtn = new QPushButton(widget_8);
+        chinaBtn->setObjectName(QString::fromUtf8("chinaBtn"));
+        chinaBtn->setStyleSheet(QString::fromUtf8(""));
 
-        gridLayout_8->addWidget(pushButton, 0, 0, 1, 1);
+        gridLayout_8->addWidget(chinaBtn, 0, 0, 1, 1);
 
-        pushButton_2 = new QPushButton(widget_8);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setAutoDefault(false);
-        pushButton_2->setDefault(false);
-        pushButton_2->setFlat(false);
+        englishBtn = new QPushButton(widget_8);
+        englishBtn->setObjectName(QString::fromUtf8("englishBtn"));
+        englishBtn->setAutoDefault(false);
+        englishBtn->setDefault(false);
+        englishBtn->setFlat(false);
 
-        gridLayout_8->addWidget(pushButton_2, 0, 1, 1, 1);
+        gridLayout_8->addWidget(englishBtn, 0, 1, 1, 1);
 
 
         gridLayout_14->addLayout(gridLayout_8, 1, 0, 1, 1);
@@ -550,8 +550,8 @@ public:
         label_26->setText(QApplication::translate("DeInitWidget", "0", 0, QApplication::UnicodeUTF8));
         label_27->setText(QString());
         msgLabel->setText(QApplication::translate("DeInitWidget", "TextLabel", 0, QApplication::UnicodeUTF8));
-        pushButton->setText(QApplication::translate("DeInitWidget", "\344\270\255\346\226\207", 0, QApplication::UnicodeUTF8));
-        pushButton_2->setText(QApplication::translate("DeInitWidget", "English", 0, QApplication::UnicodeUTF8));
+        chinaBtn->setText(QApplication::translate("DeInitWidget", "\344\270\255\346\226\207", 0, QApplication::UnicodeUTF8));
+        englishBtn->setText(QApplication::translate("DeInitWidget", "English", 0, QApplication::UnicodeUTF8));
         label_4->setText(QApplication::translate("DeInitWidget", "\316\261", 0, QApplication::UnicodeUTF8));
         label_8->setText(QApplication::translate("DeInitWidget", "0", 0, QApplication::UnicodeUTF8));
         label_5->setText(QApplication::translate("DeInitWidget", "\316\262", 0, QApplication::UnicodeUTF8));

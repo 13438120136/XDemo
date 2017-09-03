@@ -22,7 +22,7 @@ static const uint qt_meta_data_DeInitWidget[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -33,6 +33,8 @@ static const uint qt_meta_data_DeInitWidget[] = {
       14,   13,   13,   13, 0x0a,
       28,   13,   13,   13, 0x0a,
       49,   13,   13,   13, 0x0a,
+      71,   13,   13,   13, 0x0a,
+      93,   13,   13,   13, 0x0a,
 
        0        // eod
 };
@@ -40,6 +42,7 @@ static const uint qt_meta_data_DeInitWidget[] = {
 static const char qt_meta_stringdata_DeInitWidget[] = {
     "DeInitWidget\0\0slotTimeOut()\0"
     "on_exitBtn_clicked()\0on_loginBtn_clicked()\0"
+    "on_chinaBtn_clicked()\0on_englishBtn_clicked()\0"
 };
 
 void DeInitWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -51,6 +54,8 @@ void DeInitWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 0: _t->slotTimeOut(); break;
         case 1: _t->on_exitBtn_clicked(); break;
         case 2: _t->on_loginBtn_clicked(); break;
+        case 3: _t->on_chinaBtn_clicked(); break;
+        case 4: _t->on_englishBtn_clicked(); break;
         default: ;
         }
     }
@@ -89,9 +94,9 @@ int DeInitWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 5;
     }
     return _id;
 }

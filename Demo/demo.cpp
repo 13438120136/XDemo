@@ -154,3 +154,22 @@ void Demo::setToolStatus(const QString &text, bool isLogin)
 		emit signalLogout();
 }
 //----------------------------------------------------------------------------
+void Demo::changeEvent(QEvent *e)
+{
+    if (e->type() == QEvent::LanguageChange)
+    {
+        ui.retranslateUi(this);
+        qDebug() << "switch language";
+    }
+}
+//----------------------------------------------------------------------------
+void Demo::translator(bool language)
+{
+    m_currLanguage = language;
+}
+//----------------------------------------------------------------------------
+bool Demo::getLangeuage()
+{
+    return m_currLanguage;
+}
+//----------------------------------------------------------------------------

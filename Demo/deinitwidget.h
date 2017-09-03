@@ -20,6 +20,8 @@ public Q_SLOTS:
 	void slotTimeOut();
 	void on_exitBtn_clicked();
 	void on_loginBtn_clicked();
+    void on_chinaBtn_clicked();
+    void on_englishBtn_clicked();
 
 private:
 	Ui::DeInitWidget ui;

@@ -6,6 +6,8 @@
 #include "deloginwidget.h"
 #include "demessagebox.h"
 #include "demenuwidget.h"
+#include <QTranslator>
+#include <QDebug>
 
 Q_DECLARE_METATYPE(Demo *)
 //----------------------------------------------------------------------------
@@ -53,5 +55,27 @@ void DeInitWidget::on_loginBtn_clicked()
 	Demo *demo = qApp->property("_mainWin").value<Demo *>();
 	DeLoginWidget *window = new DeLoginWidget;
 	demo->slotSetWidget(window);
+}
+//----------------------------------------------------------------------------
+void DeInitWidget::on_chinaBtn_clicked()
+{
+    QTranslator translator;
+    translator.load(":/Demo/demo_zh.qm");
+    qApp->installTranslator(&translator);
+    ui.retranslateUi(this);
+
+    Demo *demo = qApp->property("_mainWin").value<Demo *>();
+    demo->translator(true);
+}
+//----------------------------------------------------------------------------
+void DeInitWidget::on_englishBtn_clicked()
+{
+    QTranslator translator;
+    translator.load(":/Demo/demo_en.qm");
+    qApp->installTranslator(&translator);
+    ui.retranslateUi(this);
+
+    Demo *demo = qApp->property("_mainWin").value<Demo *>();
+    demo->translator(false);
 }
 //----------------------------------------------------------------------------
