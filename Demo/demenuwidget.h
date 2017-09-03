@@ -17,7 +17,6 @@ public:
 	void setMaintainButtonsStatus();
 
 public Q_SLOTS:
-	void on_loginBtn_clicked();
 	void on_userBtn_clicked();
 	void on_systemCfgBtn_clicked();
 	void on_systemTestBtn_clicked();

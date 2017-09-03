@@ -19,6 +19,10 @@ DeAddUserDlg::DeAddUserDlg(QWidget *parent)
 	ui.userLineEdit->installEventFilter(this);
 	ui.passwdLineEdit->installEventFilter(this);
 
+	///ÔÝÊ±Òþ²Ø
+	ui.label_3->hide();
+	ui.widgePermission->hide();
+
 	connect(ui.userLineEdit, SIGNAL(textChanged(const QString &)), this, SLOT(slotUserLineEdit(const QString &)));
 	connect(ui.passwdLineEdit, SIGNAL(textChanged(const QString &)), this, SLOT(slotUserPasswdEdit(const QString &)));
 }

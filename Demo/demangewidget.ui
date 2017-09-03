@@ -181,7 +181,7 @@ QPushButton:focus
    <item row="2" column="0">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -190,7 +190,7 @@ QPushButton:focus
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0">
         <layout class="QGridLayout" name="gridLayout">
-         <item row="0" column="2">
+         <item row="0" column="3">
           <widget class="QPushButton" name="delUserBtn">
            <property name="minimumSize">
             <size>
@@ -200,19 +200,6 @@ QPushButton:focus
            </property>
            <property name="text">
             <string>删除用户</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="3">
-          <widget class="QPushButton" name="changeUserBtn">
-           <property name="minimumSize">
-            <size>
-             <width>102</width>
-             <height>32</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>修改用户</string>
            </property>
           </widget>
          </item>
@@ -242,6 +229,19 @@ QPushButton:focus
            </property>
           </spacer>
          </item>
+         <item row="0" column="2">
+          <widget class="QPushButton" name="changeUserBtn">
+           <property name="minimumSize">
+            <size>
+             <width>102</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>修改用户</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </item>
        <item row="1" column="0">
@@ -256,7 +256,7 @@ QPushButton:focus
       <layout class="QGridLayout" name="gridLayout_6">
        <item row="0" column="0">
         <layout class="QGridLayout" name="gridLayout_5">
-         <item row="0" column="2">
+         <item row="0" column="3">
           <widget class="QPushButton" name="delRadioactivityBtn">
            <property name="minimumSize">
             <size>
@@ -282,19 +282,6 @@ QPushButton:focus
            </property>
           </spacer>
          </item>
-         <item row="0" column="3">
-          <widget class="QPushButton" name="modifyRadioactivityBtn">
-           <property name="minimumSize">
-            <size>
-             <width>102</width>
-             <height>32</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>修改记录</string>
-           </property>
-          </widget>
-         </item>
          <item row="0" column="1">
           <widget class="QPushButton" name="addRadioactivityBtn">
            <property name="minimumSize">
@@ -305,6 +292,19 @@ QPushButton:focus
            </property>
            <property name="text">
             <string>添加记录</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QPushButton" name="modifyRadioactivityBtn">
+           <property name="minimumSize">
+            <size>
+             <width>102</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>修改记录</string>
            </property>
           </widget>
          </item>

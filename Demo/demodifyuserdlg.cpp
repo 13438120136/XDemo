@@ -14,6 +14,10 @@ DeModifyUserDlg::DeModifyUserDlg(QWidget *parent)
 	ui.keyBoradWidget->hide();
 	ui.passwdLineEdit->installEventFilter(this);
 
+	//ÔÝÊ±Òþ²Ø
+	ui.label_3->hide();
+	ui.widgePermission->hide();
+
 	connect(ui.passwdLineEdit, SIGNAL(textChanged(const QString &)), this, SLOT(slotUserPasswdEdit(const QString &)));
 }
 //----------------------------------------------------------------------------

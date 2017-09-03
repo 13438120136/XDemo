@@ -22,10 +22,6 @@ DeMenuWidget::~DeMenuWidget()
 
 }
 //----------------------------------------------------------------------------
-void DeMenuWidget::on_loginBtn_clicked()
-{
-}
-//----------------------------------------------------------------------------
 void DeMenuWidget::on_userBtn_clicked()
 {
 	m_demo->slotBackMainWidget();

@@ -86,7 +86,7 @@ QPushButton::!focus
        <widget class="QWidget" name="widget" native="true">
         <property name="styleSheet">
          <string notr="true">max-width: 320px;
-max-height:220px;</string>
+max-height:180px;</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_2">
          <item row="0" column="0" colspan="4">

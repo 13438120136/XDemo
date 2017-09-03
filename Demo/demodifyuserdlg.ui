@@ -50,10 +50,10 @@ QGroupBox {
 
 QPushButton {
     
-	font: 16pt &quot;新宋体&quot;;
+	font: bold 16pt &quot;新宋体&quot;;
 	background-color: rgb(244, 244, 244);
-     border: 1px solid #8f8f91;
-     border-radius: 6px;
+     border: 0px solid #8f8f91;
+     border-radius: 5px;
      min-width: 100px;
      min-height: 30px;
  }
@@ -66,12 +66,27 @@ QPushButton {
   <layout class="QGridLayout" name="gridLayout_4">
    <item row="0" column="0">
     <widget class="QWidget" name="widget_3" native="true">
+     <property name="styleSheet">
+      <string notr="true">
+QPushButton::focus
+{
+    color: rgb(254, 255, 253);
+    background-color: rgb(66, 189, 170);
+}
+
+QPushButton::!focus
+{    
+	color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+</string>
+     </property>
      <layout class="QGridLayout" name="gridLayout_3">
       <item row="0" column="0">
        <widget class="QWidget" name="widget" native="true">
         <property name="styleSheet">
          <string notr="true">max-width: 320px;
-max-height:220px;</string>
+max-height:180px;</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_2">
          <item row="0" column="0" colspan="4">
