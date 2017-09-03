@@ -19,9 +19,6 @@ protected:
 	virtual bool eventFilter(QObject *obj, QEvent *event);
 
 private:
-    void retranslateUI();
-
-private:
 	Ui::DeLoginWidget ui;
 };
 

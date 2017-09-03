@@ -10,6 +10,7 @@
 #include <dedevicetable.h>
 #include <deradioactivesourcetable.h>
 #include "delogger.h"
+#include <QTranslator>
 
 Q_DECLARE_METATYPE(Demo *)
 //----------------------------------------------------------------------------
@@ -72,10 +73,8 @@ void Demo::initClickEvents()
 	//ui.menuWidget->setVisible(false);
 }
 //----------------------------------------------------------------------------
-#include <qdebug.h>
 void Demo::slotSetWidget(QWidget *widget)
 {
-	qDebug() << "in";
 	m_widgetStack.push_back(widget);
 	ui.contentWidget->addWidget(widget);
 	ui.contentWidget->setCurrentWidget(widget);
@@ -83,7 +82,6 @@ void Demo::slotSetWidget(QWidget *widget)
 //----------------------------------------------------------------------------
 void Demo::slotBackMainWidget()
 {
-	qDebug() << "out";
 	if (m_widgetStack.isEmpty())
 	{
 		ui.contentWidget->setCurrentIndex(0);
@@ -159,17 +157,30 @@ void Demo::changeEvent(QEvent *e)
     if (e->type() == QEvent::LanguageChange)
     {
         ui.retranslateUi(this);
-        qDebug() << "switch language";
     }
 }
 //----------------------------------------------------------------------------
-void Demo::translator(bool language)
+void Demo::execTranslator()
 {
-    m_currLanguage = language;
+	if (m_currLanguage)
+		m_translator->load(":/Demo/demo_zh.qm");
+	else
+		m_translator->load(":/Demo/demo_en.qm");
+	qApp->installTranslator(m_translator);
 }
 //----------------------------------------------------------------------------
-bool Demo::getLangeuage()
+void Demo::setTranlator(QTranslator *translator)
 {
-    return m_currLanguage;
+	m_translator = translator;
+}
+//----------------------------------------------------------------------------
+void Demo::setBLanguage(bool bLanguage)
+{
+	m_currLanguage = bLanguage;
+	if (bLanguage)
+		m_translator->load(":/Demo/demo_zh.qm");
+	else
+		m_translator->load(":/Demo/demo_en.qm");
+	qApp->installTranslator(m_translator);
 }
 //----------------------------------------------------------------------------

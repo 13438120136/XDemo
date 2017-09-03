@@ -9,6 +9,9 @@ Q_DECLARE_METATYPE(Demo *)
 DeSystemTestWidget::DeSystemTestWidget(QWidget *parent)
 	: QDialog(parent)
 {
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	demo->execTranslator();
+
 	ui.setupUi(this);
 	this->setWindowFlags(Qt::ToolTip);
 	ui.tabWidget->findChildren<QTabBar*>().at(0)->hide();

@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
 	a.installTranslator(&translator);
 
 	Demo demo;
+	demo.setTranlator(&translator);
 	demo.setFixedSize(640, 480);
 	demo.show();
 

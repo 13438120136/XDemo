@@ -9,14 +9,15 @@ Q_DECLARE_METATYPE(Demo *)
 DeLoginWidget::DeLoginWidget(QWidget *parent)
 	: QDialog(parent)
 {
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	demo->execTranslator();
+
 	ui.setupUi(this);
 	ui.keyBoradWidget->hide();
 	ui.userLineEdit->installEventFilter(this);
 	ui.passwdLineEdit->installEventFilter(this);
 	this->setWindowFlags(Qt::ToolTip);
 	ui.okBtn->setFocus();
-
-    retranslateUI();
 }
 //----------------------------------------------------------------------------
 DeLoginWidget::~DeLoginWidget()
@@ -65,16 +66,4 @@ bool DeLoginWidget::eventFilter(QObject *obj, QEvent *event)
          return QObject::eventFilter(obj, event);
      }
  }
-//----------------------------------------------------------------------------
-void DeLoginWidget::retranslateUI()
-{
-    Demo *demo = qApp->property("_mainWin").value<Demo *>();
-    QTranslator translator;
-    if (demo->getLangeuage())
-        translator.load(":/Demo/demo_zh.qm");
-    else
-        translator.load(":/Demo/demo_en.qm");
-    qApp->installTranslator(&translator);
-    ui.retranslateUi(this);
-}
 //----------------------------------------------------------------------------

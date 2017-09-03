@@ -2,12 +2,16 @@
 #include "demo.h"
 #include "deusertable.h"
 #include <qmessagebox.h>
+#include <QTranslator>
 
 Q_DECLARE_METATYPE(Demo *)
 //----------------------------------------------------------------------------
 DeModifyUserDlg::DeModifyUserDlg(QWidget *parent)
 	: QDialog(parent)
 {
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	demo->execTranslator();
+
 	ui.setupUi(this);
 
 	ui.okBtn->setEnabled(false);

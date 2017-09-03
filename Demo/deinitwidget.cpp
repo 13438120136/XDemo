@@ -59,23 +59,15 @@ void DeInitWidget::on_loginBtn_clicked()
 //----------------------------------------------------------------------------
 void DeInitWidget::on_chinaBtn_clicked()
 {
-    QTranslator translator;
-    translator.load(":/Demo/demo_zh.qm");
-    qApp->installTranslator(&translator);
-    ui.retranslateUi(this);
-
     Demo *demo = qApp->property("_mainWin").value<Demo *>();
-    demo->translator(true);
+	demo->setBLanguage(true);
+	ui.retranslateUi(this);
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::on_englishBtn_clicked()
 {
-    QTranslator translator;
-    translator.load(":/Demo/demo_en.qm");
-    qApp->installTranslator(&translator);
-    ui.retranslateUi(this);
-
     Demo *demo = qApp->property("_mainWin").value<Demo *>();
-    demo->translator(false);
+	demo->setBLanguage(false);
+	ui.retranslateUi(this);
 }
 //----------------------------------------------------------------------------

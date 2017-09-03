@@ -15,6 +15,9 @@ Q_DECLARE_METATYPE(Demo *)
 DeManageWidget::DeManageWidget(QWidget *parent)
 	: QDialog(parent)
 {
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	demo->execTranslator();
+
 	ui.setupUi(this);
 
 	ui.tabWidget->findChildren<QTabBar*>().at(0)->hide();
@@ -25,7 +28,6 @@ DeManageWidget::DeManageWidget(QWidget *parent)
 	connect(ui.addRadioactivityBtn, SIGNAL(clicked()), this, SLOT(addRadioactivitySlot()));
 
 	///数据库对象
-	Demo *demo = qApp->property("_mainWin").value<Demo *>();
 	DeSqlDataBase *dataBase = demo->dataBase();
 	DeUserTable table(dataBase);
 

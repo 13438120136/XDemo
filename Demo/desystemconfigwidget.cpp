@@ -14,6 +14,9 @@ DeSystemConfigWidget::DeSystemConfigWidget(QWidget *parent)
 	: QDialog(parent)
 	,m_execIndex(0)
 {
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	demo->execTranslator();
+
 	ui.setupUi(this);
 	this->setWindowFlags(Qt::ToolTip);
 	ui.tabWidget->findChildren<QTabBar*>().at(2)->hide();

@@ -5,16 +5,19 @@
 #include "desystemtestwidget.h"
 #include <demo.h>
 #include <demessagebox.h>
+#include <QTranslator>
 
 Q_DECLARE_METATYPE(Demo *)
 //----------------------------------------------------------------------------
 DeMenuWidget::DeMenuWidget(QWidget *parent)
 	: QDialog(parent)
 {
+	m_demo = qApp->property("_mainWin").value<Demo *>();
+	m_demo->execTranslator();
+
 	ui.setupUi(this);
 	m_isLogIn = false;
 	this->setWindowFlags(Qt::ToolTip);
-	m_demo = qApp->property("_mainWin").value<Demo *>();
 }
 //----------------------------------------------------------------------------
 DeMenuWidget::~DeMenuWidget()

@@ -30,6 +30,8 @@ public:
 	void radiationChecking();
 	///设置状态栏登录名
 	void setToolStatus(const QString &text, bool isLogin);
+	///设置翻译对象
+	void setTranlator(QTranslator *translator);
 
 Q_SIGNALS:
 	///登录信号
@@ -46,8 +48,8 @@ public Q_SLOTS:
 	void slotSetWidget(QWidget *widget);
 	///返回上一级页面
 	void slotBackMainWidget();
-    void translator(bool language);
-    bool getLangeuage();
+	void execTranslator();
+	void setBLanguage(bool bLanguage);
 
 protected:
 	virtual bool eventFilter(QObject *obj, QEvent *event);
@@ -64,6 +66,7 @@ private:
 	DeSqlDataBase m_sqlDatabase;
 	QString m_loginStatus;
     bool m_currLanguage;
+	QTranslator *m_translator;
 };
 
 #endif // DEMO_H
