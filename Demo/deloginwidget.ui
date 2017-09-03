@@ -168,7 +168,7 @@ max-height:180px;</string>
               <property name="maximumSize">
                <size>
                 <width>302</width>
-                <height>210</height>
+                <height>220</height>
                </size>
               </property>
               <property name="styleSheet">
@@ -222,7 +222,7 @@ max-height:180px;</string>
                     </size>
                    </property>
                    <property name="text">
-                    <string>密  码</string>
+                    <string>密   码</string>
                    </property>
                   </widget>
                  </item>
@@ -264,8 +264,6 @@ max-height:180px;</string>
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="demo.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

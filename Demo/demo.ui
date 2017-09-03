@@ -25,6 +25,12 @@ QStatusBar::item {
 </string>
   </property>
   <widget class="QWidget" name="centralWidget">
+   <property name="styleSheet">
+    <string notr="true">QPushButton
+{
+     outline:none;
+}</string>
+   </property>
    <layout class="QGridLayout" name="gridLayout_2">
     <property name="margin">
      <number>0</number>
@@ -68,8 +74,6 @@ QStatusBar::item {
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="demo.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

@@ -24,9 +24,10 @@
      min-height: 30px;
  }
 
-QTabWidget
-{
-   border:none;
+QTabWidget::pane
+{   
+	background-color: rgb(255, 255, 255);
+    border: 0px;
 }
 
  QPushButton:pressed {
