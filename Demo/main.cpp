@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 
 	///º”‘ÿ”Ô—‘∞¸
 	QTranslator translator;
-	translator.load(":/Demo/demo_zh.qm");
+	translator.load(":/Demo/demo_en.qm");
 	a.installTranslator(&translator);
 
 	Demo demo;
