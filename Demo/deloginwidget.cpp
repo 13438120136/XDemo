@@ -9,9 +9,6 @@ Q_DECLARE_METATYPE(Demo *)
 DeLoginWidget::DeLoginWidget(QWidget *parent)
 	: QDialog(parent)
 {
-	Demo *demo = qApp->property("_mainWin").value<Demo *>();
-	demo->execTranslator();
-
 	ui.setupUi(this);
 	ui.keyBoradWidget->hide();
 	ui.userLineEdit->installEventFilter(this);

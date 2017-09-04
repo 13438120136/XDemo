@@ -1,15 +1,10 @@
 #include "devirtualkeyboradwidget.h"
 #include <qpushbutton.h>
-#include "demo.h"
 
-Q_DECLARE_METATYPE(Demo *)
 DeVirtualKeyboradWidget::DeVirtualKeyboradWidget(QWidget *parent)
 	: QWidget(parent)
 	,m_lineEdit(NULL)
 {
-	Demo *demo = qApp->property("_mainWin").value<Demo *>();
-	demo->execTranslator();
-
 	ui.setupUi(this);
 	initAllKeyEvent();
 }

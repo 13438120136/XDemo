@@ -10,9 +10,6 @@ Q_DECLARE_METATYPE(Demo *)
 DeAddUserDlg::DeAddUserDlg(QWidget *parent)
 	: QDialog(parent)
 {
-	Demo *demo = qApp->property("_mainWin").value<Demo *>();
-	demo->execTranslator();
-
 	ui.setupUi(this);
 	ui.widgePermission->addItem(QString::fromLocal8Bit("管理员"));
 	ui.widgePermission->addItem(QString::fromLocal8Bit("维护人员"));
