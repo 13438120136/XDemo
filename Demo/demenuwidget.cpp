@@ -4,7 +4,9 @@
 #include "desystemconfigwidget.h"
 #include "desystemtestwidget.h"
 #include <demessagebox.h>
+#include "demo.h"
 
+Q_DECLARE_METATYPE(Demo *)
 //----------------------------------------------------------------------------
 DeMenuWidget::DeMenuWidget(QWidget *parent)
 	: QDialog(parent)
@@ -12,6 +14,7 @@ DeMenuWidget::DeMenuWidget(QWidget *parent)
 	ui.setupUi(this);
 	m_isLogIn = false;
 	this->setWindowFlags(Qt::ToolTip);
+	m_demo = qApp->property("_mainWin").value<Demo *>();
 }
 //----------------------------------------------------------------------------
 DeMenuWidget::~DeMenuWidget()
@@ -22,24 +25,21 @@ DeMenuWidget::~DeMenuWidget()
 void DeMenuWidget::on_userBtn_clicked()
 {
 	m_demo->slotBackMainWidget();
-	DeManageWidget *window = new DeManageWidget(this);
-	m_demo->slotSetWidget(window);
+	m_demo->slotSetWidget(new DeManageWidget);
 	accept();
 }
 //----------------------------------------------------------------------------
 void DeMenuWidget::on_systemCfgBtn_clicked()
 {
 	m_demo->slotBackMainWidget();
-	DeSystemConfigWidget *window = new DeSystemConfigWidget;
-	m_demo->slotSetWidget(window);
+	m_demo->slotSetWidget(new DeSystemConfigWidget);
 	accept();
 }
 //----------------------------------------------------------------------------
 void DeMenuWidget::on_systemTestBtn_clicked()
 {
 	m_demo->slotBackMainWidget();
-	DeSystemTestWidget *window = new DeSystemTestWidget;
-	m_demo->slotSetWidget(window);
+	m_demo->slotSetWidget(new DeSystemTestWidget);
 	accept();
 }
 //----------------------------------------------------------------------------

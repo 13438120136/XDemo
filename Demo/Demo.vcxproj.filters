@@ -46,19 +46,14 @@
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="Generated Files\Debug">
-      <UniqueIdentifier>{3d70d276-3119-45e5-aeb6-4862e7d4c37d}</UniqueIdentifier>
+      <UniqueIdentifier>{009bd65f-f781-408d-aa73-b89f8fd06b4b}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Generated Files\Release">
-      <UniqueIdentifier>{906bc48c-9a16-450e-bf45-b9d0dabcbaf8}</UniqueIdentifier>
+      <UniqueIdentifier>{4e7e34b6-14cb-4eb9-99d8-aaaef9e544df}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
-    </Filter>
-    <Filter Include="Translation Files">
-      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
-      <Extensions>ts</Extensions>
-      <ParseFiles>false</ParseFiles>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -86,7 +81,19 @@
     <ClCompile Include="deinitwidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="delogdatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="delogger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="deloginterface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="deloginwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="delogitem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="demaintainstate.cpp">
@@ -105,6 +112,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="demodifyuserdlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="depropertyeditwidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="deradiationmmeasurestate.cpp">
@@ -233,6 +243,12 @@
     <ClCompile Include="GeneratedFiles\Release\moc_demodifyuserdlg.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_depropertyeditwidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_depropertyeditwidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_deradiationmmeasurestate.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
@@ -302,27 +318,6 @@
     <ClCompile Include="GeneratedFiles\qrc_demo.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
-    <ClCompile Include="depropertyeditwidget.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_depropertyeditwidget.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_depropertyeditwidget.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="delogitem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="deloginterface.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="delogger.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="delogdatabase.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Demo.aps">
@@ -352,9 +347,21 @@
     <CustomBuild Include="deinitwidget.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <ClInclude Include="delogdatabase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="delogger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="deloginterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <CustomBuild Include="deloginwidget.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <ClInclude Include="delogitem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <CustomBuild Include="demaintainstate.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
@@ -371,6 +378,9 @@
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="demodifyuserdlg.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="depropertyeditwidget.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="deradiationmmeasurestate.h">
@@ -406,9 +416,6 @@
     <CustomBuild Include="devirtualkeyboradwidget.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-    <ClInclude Include="resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_deaddradioactivedlg.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
@@ -439,6 +446,9 @@
     <ClInclude Include="GeneratedFiles\ui_demodifyuserdlg.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_depropertyeditwidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_desystemconfigwidget.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
@@ -450,18 +460,6 @@
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_devirtualkeyboradwidget.h">
       <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_depropertyeditwidget.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="delogitem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="deloginterface.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="delogdatabase.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -495,6 +493,9 @@
     <CustomBuild Include="demodifyuserdlg.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="depropertyeditwidget.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
     <CustomBuild Include="desystemconfigwidget.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
@@ -507,15 +508,6 @@
     <CustomBuild Include="devirtualkeyboradwidget.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="depropertyeditwidget.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="depropertyeditwidget.ui">
-      <Filter>Form Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="delogger.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\back.jpg">
@@ -524,6 +516,12 @@
     <CustomBuild Include="demo.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="demo_en.qm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="demo_zh.qm">
+      <Filter>Resource Files</Filter>
+    </None>
     <None Include="Resources\key.jpg">
       <Filter>Resource Files</Filter>
     </None>
@@ -538,12 +536,6 @@
     </None>
     <None Include="Resources\rightHand.jpg">
       <Filter>Resource Files</Filter>
-    </None>
-    <None Include="demo_zh.ts">
-      <Filter>Translation Files</Filter>
-    </None>
-    <None Include="demo_en.ts">
-      <Filter>Translation Files</Filter>
     </None>
   </ItemGroup>
 </Project>

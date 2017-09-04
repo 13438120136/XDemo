@@ -2,12 +2,20 @@
 #define DEMENUWIDGET_H
 
 #include <QDialog>
+#include <QMap>
 #include "ui_demenuwidget.h"
 #include "demo.h"
 
 class DeMenuWidget : public QDialog
 {
 	Q_OBJECT
+
+	enum WidgetType
+	{
+		MANAGE,
+		SYSTEM,
+		TEST
+	};
 
 public:
 	DeMenuWidget(QWidget *parent = 0);
