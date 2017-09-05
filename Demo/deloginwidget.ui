@@ -14,9 +14,24 @@
    <string>DeLoginWidget</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_5">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
    <item row="0" column="0">
     <widget class="QWidget" name="widget_3" native="true">
      <layout class="QGridLayout" name="gridLayout_2">
+      <property name="margin">
+       <number>0</number>
+      </property>
       <property name="spacing">
        <number>0</number>
       </property>
@@ -248,7 +263,11 @@ max-height:180px;</string>
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="DeVirtualKeyboradWidget" name="keyBoradWidget" native="true"/>
+       <widget class="DeVirtualKeyboradWidget" name="keyBoradWidget" native="true">
+        <property name="styleSheet">
+         <string notr="true">max-height:300px;</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
