@@ -27,7 +27,7 @@ void DeTestDataModel::setData(const QList<TestData> &data)
 //----------------------------------------------------------------------------
 int DeTestDataModel::perPageCount()
 {
-	return 5;
+	return 6;
 }
 //----------------------------------------------------------------------------
 int DeTestDataModel::dataSize()

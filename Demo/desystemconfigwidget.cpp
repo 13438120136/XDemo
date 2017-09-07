@@ -16,8 +16,7 @@ DeSystemConfigWidget::DeSystemConfigWidget(QWidget *parent)
 {
 	ui.setupUi(this);
 	this->setWindowFlags(Qt::ToolTip);
-	ui.tabWidget->findChildren<QTabBar*>().at(2)->hide();
-	ui.tabWidget_2->findChildren<QTabBar*>().at(0)->hide();
+	ui.tabWidget->findChildren<QTabBar*>().at(1)->hide();
 	ui.tabWidget_3->findChildren<QTabBar*>().at(0)->hide();	
 
 	initEdit();
@@ -40,6 +39,7 @@ DeSystemConfigWidget::DeSystemConfigWidget(QWidget *parent)
 		 << TestData(6, 12, 100, 200, 20);
 	mm->setData(data);
 	ui.widget->setModel(mm);
+	ui.widget->hideMenu();
 
 	///±¨¾¯ÊÂ¼þ
 	DeAlermEventModel *eventModel = new DeAlermEventModel(this);
@@ -50,6 +50,7 @@ DeSystemConfigWidget::DeSystemConfigWidget(QWidget *parent)
 		<< AlermEventData(20, 22, 23);
 	eventModel->setData(eData);	
 	ui.widget_2->setModel(eventModel);
+	ui.widget_2->hideFirstAndLastBtn();
 }
 //----------------------------------------------------------------------------
 DeSystemConfigWidget::~DeSystemConfigWidget()

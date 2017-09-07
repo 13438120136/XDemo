@@ -57,3 +57,14 @@ void DeTableView::setPageMessage(const QString &msg)
 	ui.label->setText(msg);
 }
 //----------------------------------------------------------------------------
+void DeTableView::hideMenu()
+{
+	ui.widget->hide();
+}
+//----------------------------------------------------------------------------
+void DeTableView::hideFirstAndLastBtn()
+{
+	ui.firstBtn->hide();
+	ui.lastBtn->hide();
+}
+//----------------------------------------------------------------------------

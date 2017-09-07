@@ -19,6 +19,10 @@ public:
 	void setModel(DeTableModel *model);
 	///设置翻页信息
 	void setPageMessage(const QString &msg);
+	///隐藏表格按钮
+	void hideMenu();
+	///隐藏第一页和最后一页按钮
+	void hideFirstAndLastBtn();
 
 public Q_SLOTS:
 	void on_firstBtn_clicked();
