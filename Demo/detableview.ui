@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>596</width>
+    <width>577</width>
     <height>330</height>
    </rect>
   </property>
@@ -39,6 +39,8 @@ QTableView
 {
 	font: bold 12pt &quot;宋体&quot;;
     border:none;
+	selection-background-color: rgb(66, 189, 170);
+	selection-color: rgb(254, 255, 253);
 }
 
  QTableView QTableCornerButton::section

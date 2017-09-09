@@ -7,6 +7,7 @@
 #include <depropertyeditwidget.h>
 #include "dedevicetable.h"
 #include "demenuwidget.h"
+#include <qcalendarwidget.h>
 
 Q_DECLARE_METATYPE(Demo *)
 //----------------------------------------------------------------------------
@@ -47,8 +48,12 @@ DeSystemConfigWidget::DeSystemConfigWidget(QWidget *parent)
 	eData << AlermEventData(1, 2, 3)
 		<< AlermEventData(4, 5, 6)
 		<< AlermEventData(7, 8, 9)
+		<< AlermEventData(20, 22, 23)
+		<< AlermEventData(20, 22, 23)
 		<< AlermEventData(20, 22, 23);
 	eventModel->setData(eData);	
+	ui.widget_2->tableView()->setSelectionBehavior(QAbstractItemView::SelectRows);
+	ui.widget_2->tableView()->setSelectionMode(QAbstractItemView::SingleSelection);
 	ui.widget_2->setModel(eventModel);
 	ui.widget_2->hideFirstAndLastBtn();
 }
@@ -486,5 +491,26 @@ void DeSystemConfigWidget::on_logoutBtn_clicked()
 {
 	Demo *demo = qApp->property("_mainWin").value<Demo *>();
 	demo->slotBackMainWidget();
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::on_datetimeBtn_clicked()
+{
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	demo->slotBackMainWidget();
+	///自定义系统的日期选择菜单
+	QCalendarWidget *calendarWidget = new QCalendarWidget;
+	calendarWidget->setGridVisible(true);
+	calendarWidget->setStyleSheet("QToolButton{min-width:60px; min-height:40px;border:none} \
+								  QWidget{font:24px bold \"黑体\";}");
+
+	QWidget *contentWidget = calendarWidget->findChild<QWidget *>("qt_calendar_calendarview");
+	contentWidget->setStyleSheet("selection-background-color: rgb(66, 189, 170); \
+								 selection-color: rgb(254, 255, 253);");
+
+	QWidget *headWidget = calendarWidget->findChild<QWidget *>("qt_calendar_navigationbar");
+	headWidget->setStyleSheet("background-color: rgb(240, 240, 240); \
+							  color: rgb(66, 189, 170)");
+
+	demo->slotSetWidget(calendarWidget);
 }
 //----------------------------------------------------------------------------

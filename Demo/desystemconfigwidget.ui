@@ -2558,7 +2558,7 @@ max-height:30px;</string>
                   <number>0</number>
                  </property>
                  <item row="0" column="0">
-                  <widget class="QPushButton" name="pushButton_4">
+                  <widget class="QPushButton" name="datetimeBtn">
                    <property name="text">
                     <string>2017-8-27</string>
                    </property>

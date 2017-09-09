@@ -474,7 +474,7 @@ font: bold 24pt &quot;新宋体&quot; ;</string>
 
 QPushButton
 {
-    font: 10pt &quot;黑体&quot;;
+    font: 12pt &quot;黑体&quot;;
     min-width:40px;
 }
 
@@ -482,7 +482,8 @@ QLabel
 {
    color: gray;
    font: 10pt &quot;黑体&quot;;
-}</string>
+}
+</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_17">
          <item row="0" column="0">
@@ -793,13 +794,53 @@ QLabel
              </property>
             </spacer>
            </item>
-           <item row="1" column="0">
+           <item row="3" column="0">
             <widget class="QLabel" name="timeLabel">
+             <property name="styleSheet">
+              <string notr="true">QLabel
+{
+text-align: center;
+}</string>
+             </property>
              <property name="text">
-              <string>TextLabel</string>
+              <string/>
              </property>
              <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QPushButton" name="pushButton">
+             <property name="styleSheet">
+              <string notr="true">QPushButton
+{    
+    border: 0px solid #8f8f91;
+    border-radius: 5px;
+    min-height: 38px;    
+    color: rgb(254, 255, 253);
+    background-color: rgb(66, 189, 170);
+}</string>
+             </property>
+             <property name="text">
+              <string>测量信息</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QPushButton" name="pushButton_2">
+             <property name="styleSheet">
+              <string notr="true">QPushButton
+{  
+    border: 0px solid #8f8f91;
+    border-radius: 5px;
+    min-height: 38px;    
+    color: rgb(254, 255, 253);
+    background-color: rgb(66, 189, 170);
+}</string>
+             </property>
+             <property name="text">
+              <string>设备信息</string>
              </property>
             </widget>
            </item>

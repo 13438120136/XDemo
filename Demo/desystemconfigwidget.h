@@ -68,6 +68,8 @@ public Q_SLOTS:
 	void on_betaBtn_clicked();
 	void on_funcBtn_clicked();
 	void on_logoutBtn_clicked();
+	///日期选择
+	void on_datetimeBtn_clicked();
 
 private:
 	///初始化编辑

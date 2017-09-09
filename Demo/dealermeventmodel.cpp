@@ -25,7 +25,7 @@ void DeAlermEventModel::setData(const QList<AlermEventData> &data)
 //----------------------------------------------------------------------------
 int DeAlermEventModel::perPageCount()
 {
-	return 5;
+	return 10;
 }
 //----------------------------------------------------------------------------
 int DeAlermEventModel::dataSize()
@@ -53,5 +53,11 @@ QVariant DeAlermEventModel::dataShow(const QModelIndex &index) const
 	default:
 		return QVariant();
 	}	
+}
+//----------------------------------------------------------------------------
+Qt::ItemFlags DeAlermEventModel::flags(const QModelIndex &index) const
+{
+	Q_UNUSED(index)
+	return Qt::ItemIsSelectable | Qt::ItemIsEnabled;
 }
 //----------------------------------------------------------------------------
