@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>625</width>
-    <height>566</height>
+    <height>542</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -51,11 +51,6 @@ QPushButton[flat=&quot;true&quot;]
      border: none;
 	 background-color:rgba(85, 255, 0, 0);
      text-align:right; 
-}
-
-QPushButton[flat=&quot;true&quot;]:pressed
-{
-    font: 14pt &quot;黑体&quot;;
 }
 
 QPushButton {
@@ -221,7 +216,7 @@ QPushButton:focus
        </widget>
       </item>
       <item row="0" column="4">
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="detectorBtn">
         <property name="text">
          <string>探测器参数</string>
         </property>
@@ -253,7 +248,16 @@ QPushButton:focus
        <string>设备信息</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_14">
-       <property name="margin">
+       <property name="leftMargin">
+        <number>9</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>9</number>
+       </property>
+       <property name="bottomMargin">
         <number>0</number>
        </property>
        <property name="spacing">
@@ -2462,13 +2466,22 @@ QFrame#frame_30, #frame_31,  #frame_32,  #frame_33,  #frame_34,  #frame_35,  #fr
        <string>测量信息</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_7" rowstretch="2,3" columnstretch="5,8">
+       <property name="leftMargin">
+        <number>9</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>9</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
        <property name="horizontalSpacing">
         <number>3</number>
        </property>
        <property name="verticalSpacing">
-        <number>0</number>
-       </property>
-       <property name="margin">
         <number>0</number>
        </property>
        <item row="0" column="0" rowspan="2">
@@ -2793,9 +2806,211 @@ max-height:30px;</string>
       </layout>
      </widget>
      <widget class="QWidget" name="tab_3">
+      <property name="styleSheet">
+       <string notr="true">QLineEdit
+{
+   border:1px solid gray;
+   border-radius:5px;
+   height:30px;
+   font:16pt bold &quot;黑体&quot;;
+}
+
+QPushButton {
+    
+	font: bold 16pt &quot;黑体&quot;;
+    border: 0px solid #8f8f91;
+    border-radius: 5px;
+    min-height: 30px;
+    color: rgb(254, 255, 253);
+    background-color: rgb(66, 189, 170);
+ }</string>
+      </property>
       <attribute name="title">
        <string>探测器参数</string>
       </attribute>
+      <layout class="QGridLayout" name="gridLayout_72" rowstretch="0,0" columnstretch="1,1,1">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item row="0" column="0" colspan="3">
+        <widget class="DeTableView" name="channelTabelView" native="true"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QWidget" name="widget_34" native="true">
+         <layout class="QGridLayout" name="gridLayout_8">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>通道号</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="DeValueSelectWidget" name="widget_35" native="true"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_9">
+            <property name="text">
+             <string>计数时间</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="DeValueSelectWidget" name="widget_38" native="true"/>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_22">
+            <property name="text">
+             <string>高压</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLineEdit" name="lineEdit">
+            <property name="text">
+             <string>46</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QWidget" name="widget_39" native="true">
+         <layout class="QGridLayout" name="gridLayout_9">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_45">
+            <property name="text">
+             <string>阀值1(mV)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLineEdit" name="lineEdit_2">
+            <property name="text">
+             <string>1</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_46">
+            <property name="text">
+             <string>阀值2(mV)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLineEdit" name="lineEdit_3">
+            <property name="text">
+             <string>2</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_47">
+            <property name="text">
+             <string>阀值3(mV)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLineEdit" name="lineEdit_4">
+            <property name="text">
+             <string>3</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QWidget" name="widget_40" native="true">
+         <layout class="QGridLayout" name="gridLayout_71">
+          <item row="3" column="0" colspan="2">
+           <widget class="QLineEdit" name="lineEdit_6">
+            <property name="text">
+             <string>6</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0" colspan="2">
+           <widget class="QLabel" name="label_49">
+            <property name="text">
+             <string>高压误差(%)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="QLineEdit" name="lineEdit_5">
+            <property name="text">
+             <string>显示信息</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QPushButton" name="pushButton_3">
+            <property name="text">
+             <string>读取</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QPushButton" name="pushButton_4">
+            <property name="text">
+             <string>设置</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_48">
+            <property name="text">
+             <string>信息</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0" colspan="2">
+           <widget class="QWidget" name="widget_41" native="true"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
    </item>
@@ -2807,6 +3022,12 @@ max-height:30px;</string>
    <class>DeTableView</class>
    <extends>QWidget</extends>
    <header location="global">detableview.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>DeValueSelectWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">devalueselectwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

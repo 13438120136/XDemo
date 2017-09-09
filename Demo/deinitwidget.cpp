@@ -8,6 +8,7 @@
 #include "demenuwidget.h"
 #include <QTranslator>
 #include <QDebug>
+#include "desystemconfigwidget.h"
 
 Q_DECLARE_METATYPE(Demo *)
 //----------------------------------------------------------------------------
@@ -69,5 +70,12 @@ void DeInitWidget::on_englishBtn_clicked()
     Demo *demo = qApp->property("_mainWin").value<Demo *>();
 	demo->setBLanguage(false);
 	ui.retranslateUi(this);
+}
+//----------------------------------------------------------------------------
+void DeInitWidget::on_deviceBtn_clicked()
+{
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	DeSystemConfigWidget *window = new DeSystemConfigWidget(false);
+	demo->slotSetWidget(window);
 }
 //----------------------------------------------------------------------------

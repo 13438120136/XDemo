@@ -8,17 +8,27 @@
 #include "dedevicetable.h"
 #include "demenuwidget.h"
 #include <qcalendarwidget.h>
+#include "dedetectormodel.h"
 
 Q_DECLARE_METATYPE(Demo *)
 //----------------------------------------------------------------------------
-DeSystemConfigWidget::DeSystemConfigWidget(QWidget *parent)
+DeSystemConfigWidget::DeSystemConfigWidget(bool isMaintain, QWidget *parent)
 	: QDialog(parent)
 	,m_execIndex(0)
+	,m_isMaintain(isMaintain)
 {
 	ui.setupUi(this);
 	this->setWindowFlags(Qt::ToolTip);
 	ui.tabWidget->findChildren<QTabBar*>().at(1)->hide();
 	ui.tabWidget_3->findChildren<QTabBar*>().at(0)->hide();	
+
+	if (!m_isMaintain)
+	{
+		ui.logoutBtn->setText("");
+		ui.logoutBtn->setEnabled(false);
+		ui.detectorBtn->hide();	
+		ui.funcBtn->setText(tr("·µ»Ø"));
+	}
 
 	initEdit();
 	readDataFromDB();
@@ -56,6 +66,15 @@ DeSystemConfigWidget::DeSystemConfigWidget(QWidget *parent)
 	ui.widget_2->tableView()->setSelectionMode(QAbstractItemView::SingleSelection);
 	ui.widget_2->setModel(eventModel);
 	ui.widget_2->hideFirstAndLastBtn();
+
+	DeDetectorModel *detectorModel = new DeDetectorModel(this);
+	ui.channelTabelView->setModel(detectorModel);
+	ui.channelTabelView->hideMenu();
+
+	QList<int> intTMpList;
+	intTMpList << 2 << 3 << 5 << 7 << 101;
+	ui.widget_35->setValueList(intTMpList);
+	ui.widget_38->setValueList(intTMpList);
 }
 //----------------------------------------------------------------------------
 DeSystemConfigWidget::~DeSystemConfigWidget()
@@ -457,6 +476,11 @@ void DeSystemConfigWidget::on_testBtn_clicked()
 	ui.tabWidget->setCurrentIndex(1);
 }
 //----------------------------------------------------------------------------
+void DeSystemConfigWidget::on_detectorBtn_clicked()
+{
+	ui.tabWidget->setCurrentIndex(2);
+}
+//----------------------------------------------------------------------------
 void DeSystemConfigWidget::on_runStateBtn_clicked()
 {
 	ui.tabWidget_3->setCurrentIndex(0);
@@ -478,13 +502,21 @@ void DeSystemConfigWidget::on_betaBtn_clicked()
 }
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::on_funcBtn_clicked()
-{	
-	Demo *demo = qApp->property("_mainWin").value<Demo *>();	
-	DeMenuWidget widget;
-	widget.move(demo->pos());
-	widget.resize(demo->width(), demo->height());
-	widget.setWindowOpacity(0.9);
-	widget.exec();	
+{
+	if (m_isMaintain)
+	{
+		Demo *demo = qApp->property("_mainWin").value<Demo *>();	
+		DeMenuWidget widget;
+		widget.move(demo->pos());
+		widget.resize(demo->width(), demo->height());
+		widget.setWindowOpacity(0.9);
+		widget.exec();	
+	}
+	else
+	{
+		Demo *demo = qApp->property("_mainWin").value<Demo *>();
+		demo->slotBackMainWidget();
+	}
 }
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::on_logoutBtn_clicked()

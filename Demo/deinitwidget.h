@@ -22,6 +22,8 @@ public Q_SLOTS:
 	void on_loginBtn_clicked();
     void on_chinaBtn_clicked();
     void on_englishBtn_clicked();
+	///没有登录时候的按钮
+	void on_deviceBtn_clicked();
 
 private:
 	Ui::DeInitWidget ui;

@@ -14,7 +14,7 @@ class DeSystemConfigWidget : public QDialog
 	Q_OBJECT
 
 public:
-	DeSystemConfigWidget(QWidget *parent = 0);
+	DeSystemConfigWidget(bool isMaintain = true, QWidget *parent = 0);
 	~DeSystemConfigWidget();
 
 	///执行校验和保存
@@ -62,6 +62,8 @@ public Q_SLOTS:
 	void propertyEditSlot(QWidget *);
 	void on_deviceBtn_clicked();
 	void on_testBtn_clicked();
+	///探测器参数
+	void on_detectorBtn_clicked();
 	void on_runStateBtn_clicked();
 	void on_testParamBtn_clicked();
 	void on_alphaBtn_clicked();
@@ -83,6 +85,7 @@ private:
 	Ui::DeSystemConfigWidget ui;
 	DeSystemParam m_systemParamData;
 	int m_execIndex;
+	bool m_isMaintain;  ///当前是否为维护模式 true-维护
 };
 
 #endif // DESYSTEMCONFIGWIDGET_H
