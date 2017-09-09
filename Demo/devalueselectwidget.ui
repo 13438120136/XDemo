@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DeValueSelectWidget</class>
+ <widget class="QWidget" name="DeValueSelectWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>416</width>
+    <height>52</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>DeValueSelectWidget</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QLabel
+{   
+	background-color: rgb(255, 255, 255);
+    font:16pt bold &quot;黑体&quot;;
+}
+
+QPushButton
+{
+    background-color: rgb(147, 147, 147);
+}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout" columnstretch="1,8,1">
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QPushButton" name="prevBtn">
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+    border:0px solid black;
+    border-top-left-radius:5px;
+    border-top-right-radius:0px;
+    border-bottom-right-radius:0px;
+    border-bottom-left-radius:5px;
+    min-height:30px;    
+    width:30px;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <widget class="QPushButton" name="nextBtn">
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+    border:0px solid black;
+    border-top-left-radius:0px;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+    border-bottom-left-radius:0px;
+    min-height:30px;  
+    width:30px;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

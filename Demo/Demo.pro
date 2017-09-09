@@ -41,6 +41,7 @@ FORMS += \
     desystemtestwidget.ui \
     detableview.ui \
 	depropertyeditwidget.ui \
+	devalueselectwidget.ui \
     devirtualkeyboradwidget.ui
 
 HEADERS += \
@@ -75,6 +76,8 @@ HEADERS += \
 	deloginterface.h \
 	delogitem.h \
 	delogdatabase.h \
+	dedetectormodel.h \
+	devalueselectwidget.h \
     devirtualkeyboradwidget.h 
 
 SOURCES += \
@@ -108,5 +111,7 @@ SOURCES += \
 	delogger.cpp \
 	deloginterface.cpp \
 	delogitem.cpp \
+	dedetectormodel.cpp \
+	devalueselectwidget.cpp \
 	delogdatabase.cpp \
     main.cpp
