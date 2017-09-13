@@ -1,19 +1,21 @@
 #include "devirtualkeyboradwidget.h"
 #include <qpushbutton.h>
 
+//----------------------------------------------------------------------------
 DeVirtualKeyboradWidget::DeVirtualKeyboradWidget(QWidget *parent)
 	: QWidget(parent)
 	,m_lineEdit(NULL)
 {
 	ui.setupUi(this);
+	ui.tabWidget->findChild<QTabBar*>()->hide();
 	initAllKeyEvent();
 }
-
+//----------------------------------------------------------------------------
 DeVirtualKeyboradWidget::~DeVirtualKeyboradWidget()
 {
 
 }
-
+//----------------------------------------------------------------------------
 void DeVirtualKeyboradWidget::initAllKeyEvent()
 {
 	m_signalMapper = new QSignalMapper(this);
@@ -39,7 +41,7 @@ void DeVirtualKeyboradWidget::initAllKeyEvent()
 	connect(m_signalMapper, SIGNAL(mapped(QWidget *)),
              this, SLOT(virtualKeyPressEvent(QWidget *)));
 }
-
+//----------------------------------------------------------------------------
 void DeVirtualKeyboradWidget::virtualKeyPressEvent(QWidget *button)
 {
 	if (m_lineEdit == NULL)
@@ -49,7 +51,7 @@ void DeVirtualKeyboradWidget::virtualKeyPressEvent(QWidget *button)
 	m_lineEdit->insert(pButton->text());
 	m_lineEdit->setFocus();
 }
-
+//----------------------------------------------------------------------------
 void DeVirtualKeyboradWidget::on_spaceBtn_clicked()
 {
 	if (m_lineEdit == NULL)
@@ -58,7 +60,7 @@ void DeVirtualKeyboradWidget::on_spaceBtn_clicked()
 	m_lineEdit->insert(" ");
 	m_lineEdit->setFocus();
 }
-
+//----------------------------------------------------------------------------
 void DeVirtualKeyboradWidget::on_backBtn_clicked()
 {
 	if (m_lineEdit == NULL)
@@ -67,12 +69,12 @@ void DeVirtualKeyboradWidget::on_backBtn_clicked()
 	m_lineEdit->backspace();
 	m_lineEdit->setFocus();
 }
-
+//----------------------------------------------------------------------------
 void DeVirtualKeyboradWidget::setEditControl(QLineEdit *lineEdit)
 {
 	m_lineEdit = lineEdit;
 }
-
+//----------------------------------------------------------------------------
 void DeVirtualKeyboradWidget::on_shiftBtn_clicked()
 {
 	QList<QAbstractButton *> listButtons = ui.charButtonGroup->buttons();
@@ -87,8 +89,19 @@ void DeVirtualKeyboradWidget::on_shiftBtn_clicked()
 			button->setText(text.toUpper());
 	}
 }
-
+//----------------------------------------------------------------------------
 void DeVirtualKeyboradWidget::on_hideBtn_clicked()
 {
 	hide();
 }
+//----------------------------------------------------------------------------
+void DeVirtualKeyboradWidget::on_changeNumBtn_clicked()
+{
+	ui.tabWidget->setCurrentIndex(1);
+}
+//----------------------------------------------------------------------------
+void DeVirtualKeyboradWidget::on_changeCharBtn_clicked()
+{
+	ui.tabWidget->setCurrentIndex(0);
+}
+//----------------------------------------------------------------------------

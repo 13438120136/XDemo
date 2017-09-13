@@ -8,5 +8,6 @@
         <file>Resources/rightHand.jpg</file>
         <file>demo_en.qm</file>
         <file>demo_zh.qm</file>
+        <file>Resources/logo.png</file>
     </qresource>
 </RCC>

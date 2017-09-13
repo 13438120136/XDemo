@@ -19,16 +19,21 @@ public:
 	///设置输入控件
 	void setEditControl(QLineEdit *lineEdit);
 
+public Q_SLOTS:
 	///上档按键事件
-	Q_SLOT void on_shiftBtn_clicked();
+	void on_shiftBtn_clicked();
 	///空格事件
-	Q_SLOT void on_spaceBtn_clicked();
+	void on_spaceBtn_clicked();
 	///回退键事件
-	Q_SLOT void on_backBtn_clicked();
+	void on_backBtn_clicked();
 	///键盘隐藏
-	Q_SLOT void on_hideBtn_clicked();
+	void on_hideBtn_clicked();
 	///响应按键
-	Q_SLOT void virtualKeyPressEvent(QWidget *button);
+	void virtualKeyPressEvent(QWidget *button);
+	//切换到数字键盘
+	void on_changeNumBtn_clicked();
+	///切换到字母键盘
+	void on_changeCharBtn_clicked();
 
 private:
 	Ui::DeVirtualKeyboradWidget ui;
