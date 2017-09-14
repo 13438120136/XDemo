@@ -14,43 +14,35 @@
    <string>DeMenuWidget</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QPushButton
+   <string notr="true">.QPushButton
 {
-background-color: rgb(255, 255, 255);
+background-color: #95989A;
 border:0px solid gray;
-font: 12pt &quot;宋体&quot;;
-padding-top:15px;
-padding-bottom:15px;
-padding-left:25px;
-width:150px;
+font: 14px &quot;微软雅黑&quot;;
+padding-top:18px;
+padding-bottom:18px;
+padding-left:32px;
 text-align:left;
-min-height:20px;
 outline:none;
-}
-
-QLabel
-{
-   min-height:45px;
-   font: bold 12pt &quot;宋体&quot;;
-}
-
-QWidget#widget
-{
-	background-color: rgb(255, 255, 255);
-}
-</string>
+}</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_10">
    <property name="margin">
     <number>0</number>
    </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
    <item row="0" column="0">
     <widget class="QWidget" name="widget_2" native="true">
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);</string>
+      <string notr="true"/>
      </property>
      <layout class="QGridLayout" name="gridLayout_9">
       <property name="margin">
+       <number>0</number>
+      </property>
+      <property name="spacing">
        <number>0</number>
       </property>
       <item row="0" column="0">
@@ -60,6 +52,20 @@ QWidget#widget
         </property>
         <item row="1" column="0">
          <widget class="QWidget" name="widget" native="true">
+          <property name="styleSheet">
+           <string notr="true">QWidget
+{
+background-color: #E9E9E9;
+}
+
+QWidget &gt; QLabel
+{
+min-width:20px;
+max-width:20px;
+min-height:20px;
+max-height:20px;
+}</string>
+          </property>
           <layout class="QGridLayout" name="gridLayout_8">
            <property name="leftMargin">
             <number>20</number>
@@ -76,30 +82,43 @@ QWidget#widget
            <property name="spacing">
             <number>0</number>
            </property>
-           <item row="9" column="0">
-            <layout class="QGridLayout" name="gridLayout_7">
-             <item row="0" column="0">
-              <widget class="QLabel" name="label_7">
-               <property name="text">
-                <string>x</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="1">
-              <widget class="QPushButton" name="exitBtn">
-               <property name="text">
-                <string>退  出</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
+           <item row="5" column="0">
+            <widget class="Line" name="line_5">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
            </item>
            <item row="3" column="0">
+            <widget class="Line" name="line_4">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="Line" name="line_3">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="0">
+            <widget class="Line" name="line_6">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
             <layout class="QGridLayout" name="gridLayout_4">
              <item row="0" column="0">
               <widget class="QLabel" name="label_4">
+               <property name="styleSheet">
+                <string notr="true">image: url(:/Demo/Resources/gongnengxuanze-shezhi-weixuanzhong.png);</string>
+               </property>
                <property name="text">
-                <string>x</string>
+                <string/>
                </property>
               </widget>
              </item>
@@ -112,47 +131,16 @@ QWidget#widget
              </item>
             </layout>
            </item>
-           <item row="6" column="0">
-            <widget class="Line" name="line_5">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-            </widget>
-           </item>
            <item row="0" column="0">
-            <widget class="Line" name="line_2">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-            </widget>
-           </item>
-           <item row="8" column="0">
-            <widget class="Line" name="line_6">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="0">
-            <widget class="Line" name="line_3">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="0">
-            <widget class="Line" name="line_4">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0">
             <layout class="QGridLayout" name="gridLayout_3">
              <item row="0" column="0">
               <widget class="QLabel" name="label_3">
+               <property name="styleSheet">
+                <string notr="true">image: url(:/Demo/Resources/gongnengyuanze-guanli-weixuanzhong.png);
+</string>
+               </property>
                <property name="text">
-                <string>x</string>
+                <string/>
                </property>
               </widget>
              </item>
@@ -165,12 +153,15 @@ QWidget#widget
              </item>
             </layout>
            </item>
-           <item row="5" column="0">
+           <item row="4" column="0">
             <layout class="QGridLayout" name="gridLayout_5">
              <item row="0" column="0">
               <widget class="QLabel" name="label_5">
+               <property name="styleSheet">
+                <string notr="true">image: url(:/Demo/Resources/gongnengyuanze-xitongceshi-weixuanzhong.png);</string>
+               </property>
                <property name="text">
-                <string>x</string>
+                <string/>
                </property>
               </widget>
              </item>
@@ -183,12 +174,15 @@ QWidget#widget
              </item>
             </layout>
            </item>
-           <item row="7" column="0">
+           <item row="6" column="0">
             <layout class="QGridLayout" name="gridLayout_6">
              <item row="0" column="0">
               <widget class="QLabel" name="label_6">
+               <property name="styleSheet">
+                <string notr="true">image: url(:/Demo/Resources/gongnengyuanze-rizhi-weixuanzhong.png);</string>
+               </property>
                <property name="text">
-                <string>x</string>
+                <string/>
                </property>
               </widget>
              </item>
@@ -201,6 +195,27 @@ QWidget#widget
              </item>
             </layout>
            </item>
+           <item row="8" column="0">
+            <layout class="QGridLayout" name="gridLayout_7">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_7">
+               <property name="styleSheet">
+                <string notr="true">image: url(:/Demo/Resources/gongnengyuanze-tuichu.png);</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QPushButton" name="exitBtn">
+               <property name="text">
+                <string>退  出</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
           </layout>
          </widget>
         </item>
@@ -208,16 +223,22 @@ QWidget#widget
          <widget class="QLabel" name="label_8">
           <property name="font">
            <font>
-            <family>宋体</family>
-            <pointsize>12</pointsize>
-            <weight>75</weight>
+            <family>微软雅黑</family>
+            <pointsize>-1</pointsize>
+            <weight>50</weight>
             <italic>false</italic>
-            <bold>true</bold>
+            <bold>false</bold>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(117, 117, 117);
-color: rgb(255, 255, 255);</string>
+           <string notr="true">QLabel
+{
+font:14px &quot;微软雅黑&quot;;
+background-color: #95989A;
+color: rgb(255, 255, 255);
+min-height:36px;
+min-width:200px;
+}</string>
           </property>
           <property name="text">
            <string>功能选择</string>
@@ -237,17 +258,14 @@ color: rgb(255, 255, 255);</string>
        </layout>
       </item>
       <item row="1" column="0">
-       <spacer name="verticalSpacer">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
+       <widget class="QWidget" name="widget_3" native="true">
+        <property name="styleSheet">
+         <string notr="true">QWidget
+{
+background-color: #E9E9E9;
+}</string>
         </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>165</height>
-         </size>
-        </property>
-       </spacer>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -268,6 +286,8 @@ color: rgb(255, 255, 255);</string>
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="demo.qrc"/>
+ </resources>
  <connections/>
 </ui>
