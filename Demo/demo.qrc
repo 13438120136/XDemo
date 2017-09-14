@@ -1,13 +1,39 @@
 <RCC>
     <qresource prefix="/Demo">
-        <file>Resources/back.jpg</file>
-        <file>Resources/key.jpg</file>
-        <file>Resources/leftHand.jpg</file>
-        <file>Resources/lFoot.png</file>
-        <file>Resources/rFoot.png</file>
-        <file>Resources/rightHand.jpg</file>
         <file>demo_en.qm</file>
         <file>demo_zh.qm</file>
+        <file>Resources/jianceyemian-jiao-left-bendijiance.gif</file>
+        <file>Resources/jianceyemian-jiao-left-guzhang.png</file>
+        <file>Resources/jianceyemian-jiao-left-jiancezhong.gif</file>
+        <file>Resources/jianceyemian-jiao-left-jiuwei.png</file>
+        <file>Resources/jianceyemian-jiao-left-wuran.png</file>
+        <file>Resources/jianceyemian-jiao-left-wuwuran.png</file>
+        <file>Resources/jianceyemian-jiao-left-zhunbeijiuxu.png</file>
+        <file>Resources/jianceyemian-jiao-left-zijian.png</file>
+        <file>Resources/jianceyemian-jiao-right-bendijiance.gif</file>
+        <file>Resources/jianceyemian-jiao-right-guzhang.png</file>
+        <file>Resources/jianceyemian-jiao-right-jiancezhong.gif</file>
+        <file>Resources/jianceyemian-jiao-right-jiuwei.png</file>
+        <file>Resources/jianceyemian-jiao-right-wuran.png</file>
+        <file>Resources/jianceyemian-jiao-right-wuwuran.png</file>
+        <file>Resources/jianceyemian-jiao-right-zhunbeijiuxu.png</file>
+        <file>Resources/jianceyemian-jiao-right-zijian.png</file>
+        <file>Resources/jianceyemian-left-bendijiance.gif</file>
+        <file>Resources/jianceyemian-left-jiancezhong.gif</file>
+        <file>Resources/jianceyemian-right-bendijiance.gif</file>
+        <file>Resources/jianceyemian-right-jiancezhong.gif</file>
+        <file>Resources/jianceyemian-shou-left-guzhang.png</file>
+        <file>Resources/jianceyemian-shou-left-jiuwei.png</file>
+        <file>Resources/jianceyemian-shou-left-wuran.png</file>
+        <file>Resources/jianceyemian-shou-left-wuwuran.png</file>
+        <file>Resources/jianceyemian-shou-left-zhunbeijiuxu.png</file>
+        <file>Resources/jianceyemian-shou-left-zijian.png</file>
+        <file>Resources/jianceyemian-shou-right-guzhang.png</file>
+        <file>Resources/jianceyemian-shou-right-jiuwei.png</file>
+        <file>Resources/jianceyemian-shou-right-wuran.png</file>
+        <file>Resources/jianceyemian-shou-right-wuwuran.png</file>
+        <file>Resources/jianceyemian-shou-right-zhunbeijiuxu.png</file>
+        <file>Resources/jianceyemian-shou-right-zijian.png</file>
         <file>Resources/logo.png</file>
     </qresource>
 </RCC>

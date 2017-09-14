@@ -4,6 +4,7 @@
 #include <QtGui/QMainWindow>
 #include "ui_demo.h"
 #include <desqldatabase.h>
+#include <deinitwidget.h>
 
 class Demo : public QMainWindow
 {
@@ -50,6 +51,8 @@ public Q_SLOTS:
 	void slotBackMainWidget();
 	void execTranslator();
 	void setBLanguage(bool bLanguage);
+	///—” ± µ•Œª:∫¡√Î
+	void eventSleep(int msec);
 
 protected:
 	virtual bool eventFilter(QObject *obj, QEvent *event);
@@ -67,6 +70,7 @@ private:
 	QString m_loginStatus;
     bool m_currLanguage;
 	QTranslator *m_translator;
+	DeInitWidget *widget;
 };
 
 #endif // DEMO_H

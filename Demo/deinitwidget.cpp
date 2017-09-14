@@ -16,6 +16,7 @@ DeInitWidget::DeInitWidget(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
+	ui.tabWidget->findChild<QTabBar *>()->hide();
 
 	QTimer *timer = new QTimer(this);
 	timer->start(500);

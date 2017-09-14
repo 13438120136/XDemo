@@ -5,12 +5,13 @@
 #include "detablemodel.h"
 #include "detableview.h"
 #include "detestdatamodel.h"
-#include <deinitwidget.h>
 #include <deusertable.h>
 #include <dedevicetable.h>
 #include <deradioactivesourcetable.h>
 #include "delogger.h"
+#include <delogowidget.h>
 #include <QTranslator>
+#include <qdebug.h>
 
 Q_DECLARE_METATYPE(Demo *)
 //----------------------------------------------------------------------------
@@ -22,8 +23,16 @@ Demo::Demo(QWidget *parent, Qt::WFlags flags)
 	QVariant variant; 
 	variant.setValue(this);
 	qApp->setProperty("_mainWin", variant);
-
 	ui.setupUi(this);
+
+	///首页
+	widget = new DeInitWidget;
+	slotSetWidget(widget);
+
+	///显示欢迎界面
+	DelogoWidget *logoWidget = new DelogoWidget;
+	//slotSetWidget(logoWidget);
+
 	initClickEvents();
 	this->setWindowFlags(Qt::FramelessWindowHint);
 	m_loginStatus = QString::fromLocal8Bit("未登录");
@@ -40,6 +49,8 @@ Demo::Demo(QWidget *parent, Qt::WFlags flags)
 		userTable.setUserPermission(DeUserTable::ADMIN);
 		userTable.insertDataToDB();
 	}
+
+	//QTimer::singleShot(1000, this, SLOT(slotBackMainWidget()));
 }
 //----------------------------------------------------------------------------
 Demo::~Demo()
@@ -69,7 +80,7 @@ bool Demo::eventFilter(QObject *obj, QEvent *event)
 //----------------------------------------------------------------------------
 void Demo::initClickEvents()
 {
-	ui.widget->installEventFilter(this);
+	widget->installEventFilter(this);
 	//ui.menuWidget->setVisible(false);
 }
 //----------------------------------------------------------------------------
@@ -108,39 +119,39 @@ void Demo::deviceCheckSelf()
 {
 	//ui.menuWidget->setDefaultButtonsStatus();
 	//ui.menuWidget->setMaintainButtonsStatus();
-	ui.widget->showLabelMsg(QString::fromLocal8Bit("自检中..... 请稍后"));
+	widget->showLabelMsg(QString::fromLocal8Bit("自检中..... 请稍后"));
 }
 //----------------------------------------------------------------------------
 void Demo::deviceFault()
 {
-	ui.widget->showLabelMsg(QString::fromLocal8Bit("设备故障 请维修"));
+	widget->showLabelMsg(QString::fromLocal8Bit("设备故障 请维修"));
 }
 //----------------------------------------------------------------------------
 void Demo::deviceForceVariable()
 {
-	ui.widget->showLabelMsg(QString::fromLocal8Bit("强制本底测量"));
+	widget->showLabelMsg(QString::fromLocal8Bit("强制本底测量"));
 }
 //----------------------------------------------------------------------------
 void Demo::deviceVarCheck()
 {
-	ui.widget->showLabelMsg(QString::fromLocal8Bit("本底检测"));
+	widget->showLabelMsg(QString::fromLocal8Bit("本底检测"));
 }
 //----------------------------------------------------------------------------
 void Demo::loginMaintainMode()
 {
 	//ui.menuWidget->setMaintainButtonsStatus();
-	ui.widget->showLabelMsg(QString::fromLocal8Bit("进入维护模式"));
+	widget->showLabelMsg(QString::fromLocal8Bit("进入维护模式"));
 }
 //----------------------------------------------------------------------------
 void Demo::logoutMaintainMode()
 {
 	//ui.menuWidget->setDefaultButtonsStatus();
-	ui.widget->showLabelMsg(QString::fromLocal8Bit("退出维护模式"));
+	widget->showLabelMsg(QString::fromLocal8Bit("退出维护模式"));
 }
 //----------------------------------------------------------------------------
 void Demo::radiationChecking()
 {
-	ui.widget->showLabelMsg(QString::fromLocal8Bit("进入辐射检测"));
+	widget->showLabelMsg(QString::fromLocal8Bit("进入辐射检测"));
 }
 //----------------------------------------------------------------------------
 void Demo::setToolStatus(const QString &text, bool isLogin)
@@ -182,5 +193,12 @@ void Demo::setBLanguage(bool bLanguage)
 	else
 		m_translator->load(":/Demo/demo_en.qm");
 	qApp->installTranslator(m_translator);
+}
+//----------------------------------------------------------------------------
+void Demo::eventSleep(int msec)
+{
+	QEventLoop ev;
+	QTimer::singleShot(msec, &ev, SLOT(quit()));
+	ev.exec();
 }
 //----------------------------------------------------------------------------
