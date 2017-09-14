@@ -31,7 +31,7 @@ Demo::Demo(QWidget *parent, Qt::WFlags flags)
 
 	///ÏÔÊ¾»¶Ó­½çÃæ
 	DelogoWidget *logoWidget = new DelogoWidget;
-	//slotSetWidget(logoWidget);
+	slotSetWidget(logoWidget);
 
 	initClickEvents();
 	this->setWindowFlags(Qt::FramelessWindowHint);
@@ -50,7 +50,7 @@ Demo::Demo(QWidget *parent, Qt::WFlags flags)
 		userTable.insertDataToDB();
 	}
 
-	//QTimer::singleShot(1000, this, SLOT(slotBackMainWidget()));
+	QTimer::singleShot(5000, this, SLOT(slotBackMainWidget()));
 }
 //----------------------------------------------------------------------------
 Demo::~Demo()

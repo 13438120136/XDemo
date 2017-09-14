@@ -71,7 +71,7 @@ min-height:40px;
 min-width:40px;</string>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Panel</enum>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="text">
       <string>1</string>

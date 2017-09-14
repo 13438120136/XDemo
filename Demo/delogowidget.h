@@ -13,6 +13,9 @@ public:
 	~DelogoWidget();
 
 private:
+	void playGif();
+
+private:
 	Ui::DelogoWidget ui;
 };
 

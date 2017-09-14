@@ -7,7 +7,7 @@
 #include "demessagebox.h"
 #include "demenuwidget.h"
 #include <QTranslator>
-#include <QDebug>
+#include <QMovie>
 #include "desystemconfigwidget.h"
 
 Q_DECLARE_METATYPE(Demo *)
@@ -22,6 +22,8 @@ DeInitWidget::DeInitWidget(QWidget *parent)
 	timer->start(500);
 	connect(timer, SIGNAL(timeout()), this, SLOT(slotTimeOut()));
 	slotTimeOut();
+
+	playLabelForGif(ui.label_39, ":/Demo/Resources/jianceyemian-teshu-jiancezhong.gif");
 }
 //----------------------------------------------------------------------------
 DeInitWidget::~DeInitWidget()
@@ -29,10 +31,19 @@ DeInitWidget::~DeInitWidget()
 
 }
 //----------------------------------------------------------------------------
+void DeInitWidget::playLabelForGif(QLabel *label, const QString &gif, int speed)
+{
+	QMovie *movie = new QMovie(gif);
+	label->setMovie(movie);
+	if (speed >= 1)
+		movie->setSpeed(speed * 100);
+	movie->setScaledSize(QSize(label->width(), label->height()));
+	movie->start();
+}
+//----------------------------------------------------------------------------
 void DeInitWidget::showLabelMsg(const QString &msg)
 {
-	ui.msgLabel->setText(msg);
-	
+	ui.msgLabel->setText(msg);	
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::slotTimeOut()

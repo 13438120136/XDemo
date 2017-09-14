@@ -35,5 +35,9 @@
         <file>Resources/jianceyemian-shou-right-zhunbeijiuxu.png</file>
         <file>Resources/jianceyemian-shou-right-zijian.png</file>
         <file>Resources/logo.png</file>
+        <file>Resources/jianceyemian-teshu-jiancezhong.gif</file>
+        <file>Resources/jianceyemian-teshu-wuran.png</file>
+        <file>Resources/jianceyemian-teshu-wuwuran.png</file>
+        <file>Resources/xitongceshi-jinxingzhong.gif</file>
     </qresource>
 </RCC>

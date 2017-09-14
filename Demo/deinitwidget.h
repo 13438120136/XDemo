@@ -26,6 +26,8 @@ public Q_SLOTS:
 	void on_deviceBtn_clicked();
 
 private:
+	void playLabelForGif(QLabel *label, const QString &gif, int speed = 1);
+private:
 	Ui::DeInitWidget ui;
 };
 
