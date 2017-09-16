@@ -13,9 +13,6 @@ public:
 	DeBottomMenuWidget(QWidget *parent = 0);
 	~DeBottomMenuWidget();
 
-	void setDefaultButtonsStatus();
-	void setMaintainButtonsStatus();
-
 	Q_SLOT void leftButtonSlot();
 	Q_SLOT void rightButtonSlot();
 

@@ -94,45 +94,6 @@ DeSqlDataBase *Demo::dataBase()
 	return &m_sqlDatabase;
 }
 //----------------------------------------------------------------------------
-void Demo::deviceCheckSelf()
-{
-	//ui.menuWidget->setDefaultButtonsStatus();
-	//ui.menuWidget->setMaintainButtonsStatus();
-	widget->showLabelMsg(QString::fromLocal8Bit("自检中..... 请稍后"));
-}
-//----------------------------------------------------------------------------
-void Demo::deviceFault()
-{
-	widget->showLabelMsg(QString::fromLocal8Bit("设备故障 请维修"));
-}
-//----------------------------------------------------------------------------
-void Demo::deviceForceVariable()
-{
-	widget->showLabelMsg(QString::fromLocal8Bit("强制本底测量"));
-}
-//----------------------------------------------------------------------------
-void Demo::deviceVarCheck()
-{
-	widget->showLabelMsg(QString::fromLocal8Bit("本底检测"));
-}
-//----------------------------------------------------------------------------
-void Demo::loginMaintainMode()
-{
-	//ui.menuWidget->setMaintainButtonsStatus();
-	widget->showLabelMsg(QString::fromLocal8Bit("进入维护模式"));
-}
-//----------------------------------------------------------------------------
-void Demo::logoutMaintainMode()
-{
-	//ui.menuWidget->setDefaultButtonsStatus();
-	widget->showLabelMsg(QString::fromLocal8Bit("退出维护模式"));
-}
-//----------------------------------------------------------------------------
-void Demo::radiationChecking()
-{
-	widget->showLabelMsg(QString::fromLocal8Bit("进入辐射检测"));
-}
-//----------------------------------------------------------------------------
 void Demo::setToolStatus(const QString &text, bool isLogin)
 {
 	m_loginStatus = text;
@@ -179,5 +140,45 @@ void Demo::eventSleep(int msec)
 	QEventLoop ev;
 	QTimer::singleShot(msec, &ev, SLOT(quit()));
 	ev.exec();
+}
+//----------------------------------------------------------------------------
+void Demo::slotDeviceSelfChecking()
+{
+	widget->deviceSelfChecking();
+}
+//----------------------------------------------------------------------------
+void Demo::slotDeviceFault(bool first, bool sec, bool three, bool four)
+{
+	widget->deviceFault(first, sec, three, four);
+}
+//----------------------------------------------------------------------------
+void Demo::slotChecking()
+{
+	widget->deviceChecking();
+}
+//----------------------------------------------------------------------------
+void Demo::slotPleaseLeave()
+{
+	widget->pleaseLeave();
+}
+//----------------------------------------------------------------------------
+void Demo::slotContaminated()
+{
+	widget->wuran();
+}
+//----------------------------------------------------------------------------
+void Demo::slotReady()
+{
+	widget->ready();
+}
+//----------------------------------------------------------------------------
+void Demo::slotNoContaminated()
+{
+	widget->nowuran();
+}
+//----------------------------------------------------------------------------
+void Demo::slotKeyMeasuring()
+{
+	widget->keyPartMeasuring();
 }
 //----------------------------------------------------------------------------

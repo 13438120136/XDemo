@@ -16,14 +16,10 @@ DeMaintainState::~DeMaintainState()
 void DeMaintainState::onEntry(QEvent *event)
 {
 	Q_UNUSED(event)
-	m_demo->loginMaintainMode();
 }
 //----------------------------------------------------------------------------
 void DeMaintainState::onExit(QEvent *event)
 {
 	Q_UNUSED(event)
-	m_demo->logoutMaintainMode();
-	m_demo->deviceForceVariable();
-	m_demo->deviceVarCheck();
 }
 //----------------------------------------------------------------------------

@@ -48,19 +48,42 @@ void DeMenuWidget::on_exitBtn_clicked()
 	reject();
 }
 //----------------------------------------------------------------------------
-void DeMenuWidget::setDefaultButtonsStatus()
+void DeMenuWidget::setShowMenuStatus(int index)
 {
-	ui.userBtn->setEnabled(false);
-	ui.systemCfgBtn->setEnabled(false);
-	ui.systemTestBtn->setEnabled(false);
-	ui.logBtn->setEnabled(false);
-}
-//----------------------------------------------------------------------------
-void DeMenuWidget::setMaintainButtonsStatus()
-{
-	ui.userBtn->setEnabled(true);
-	ui.systemCfgBtn->setEnabled(true);
-	ui.systemTestBtn->setEnabled(true);
-	ui.logBtn->setEnabled(true);
+	switch(index)
+	{
+	case 1:
+		{
+			ui.label_3->setStyleSheet("image: url(:/Demo/Resources/gongnengyuanze-guanli-xuanzhong.png);");
+			ui.userBtn->setStyleSheet("color:#42BDAA");
+			break;
+		}
+
+	case 2:
+		{
+			ui.label_4->setStyleSheet("image: url(:/Demo/Resources/gongnengxuanze-shezhi-xuanzhong.png);");
+			ui.systemCfgBtn->setStyleSheet("color:#42BDAA");
+			break;
+		}
+	case 3:
+		{
+			ui.label_5->setStyleSheet("image: url(:/Demo/Resources/gongnengyuanze-xitongceshi-xuanzhong.png);");
+			ui.systemTestBtn->setStyleSheet("color:#42BDAA");
+			break;
+		}
+	case 4:
+		{
+			ui.label_6->setStyleSheet("image: url(:/Demo/Resources/gongnengyuanze-rizhi-xuanzhong.png);");
+			ui.logBtn->setStyleSheet("color:#42BDAA");
+			break;
+		}
+	case 5:
+		{
+			ui.exitBtn->setStyleSheet("color:#42BDAA");
+			break;
+		}
+	default:
+		break;
+	}
 }
 //----------------------------------------------------------------------------

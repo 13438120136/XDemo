@@ -22,6 +22,9 @@ DeSystemConfigWidget::DeSystemConfigWidget(bool isMaintain, QWidget *parent)
 	ui.tabWidget->findChildren<QTabBar*>().at(1)->hide();
 	ui.tabWidget_3->findChildren<QTabBar*>().at(0)->hide();	
 
+	on_deviceBtn_clicked();
+	on_runStateBtn_clicked();
+
 	if (!m_isMaintain)
 	{
 		ui.logoutBtn->setText("");
@@ -466,36 +469,103 @@ void DeSystemConfigWidget::setBetaSeriousThreshold(int threshold)
 void DeSystemConfigWidget::on_deviceBtn_clicked()
 {
 	ui.tabWidget->setCurrentIndex(0);
+	ui.deviceBtn->setStyleSheet("border:2px solid black; \
+								border-top-width:0px; \
+								border-right-width:0px; \
+								border-left-width:0px; \
+								border-bottom-width:2px; \
+								border-bottom-color:#42BDAA;\
+								color: #42BDAA;");
+	ui.testBtn->setStyleSheet("border:none;");
+	ui.detectorBtn->setStyleSheet("border:none;");
 }
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::on_testBtn_clicked()
 {
 	ui.tabWidget->setCurrentIndex(1);
+	ui.testBtn->setStyleSheet("border:2px solid black; \
+								border-top-width:0px; \
+								border-right-width:0px; \
+								border-left-width:0px; \
+								border-bottom-width:2px; \
+								border-bottom-color:#42BDAA; \
+								color: #42BDAA;");
+	ui.deviceBtn->setStyleSheet("border:none;");
+	ui.detectorBtn->setStyleSheet("border:none;");
 }
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::on_detectorBtn_clicked()
 {
 	ui.tabWidget->setCurrentIndex(2);
+	ui.detectorBtn->setStyleSheet("border:2px solid black; \
+								  border-top-width:0px; \
+								  border-right-width:0px; \
+								  border-left-width:0px; \
+								  border-bottom-width:2px; \
+								  border-bottom-color:#42BDAA;\
+								  color: #42BDAA;");
+	ui.testBtn->setStyleSheet("border:none;");
+	ui.deviceBtn->setStyleSheet("border:none;");
 }
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::on_runStateBtn_clicked()
 {
 	ui.tabWidget_3->setCurrentIndex(0);
+	ui.runStateBtn->setStyleSheet("border:2px solid black; \
+								  border-top-width:0px; \
+								  border-right-width:0px; \
+								  border-left-width:0px; \
+								  border-bottom-width:2px; \
+								  border-bottom-color:#42BDAA;\
+								  color: #42BDAA;");
+	ui.testParamBtn->setStyleSheet("border:none;");
+	ui.alphaBtn->setStyleSheet("border:none;");
+	ui.betaBtn->setStyleSheet("border:none;");
 }
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::on_testParamBtn_clicked()
 {
 	ui.tabWidget_3->setCurrentIndex(1);
+	ui.testParamBtn->setStyleSheet("border:2px solid black; \
+								  border-top-width:0px; \
+								  border-right-width:0px; \
+								  border-left-width:0px; \
+								  border-bottom-width:2px; \
+								  border-bottom-color:#42BDAA;\
+								  color: #42BDAA;");
+	ui.runStateBtn->setStyleSheet("border:none;");
+	ui.alphaBtn->setStyleSheet("border:none;");
+	ui.betaBtn->setStyleSheet("border:none;");
 }
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::on_alphaBtn_clicked()
 {
 	ui.tabWidget_3->setCurrentIndex(2);
+	ui.alphaBtn->setStyleSheet("border:2px solid black; \
+								  border-top-width:0px; \
+								  border-right-width:0px; \
+								  border-left-width:0px; \
+								  border-bottom-width:2px; \
+								  border-bottom-color:#42BDAA;\
+								  color: #42BDAA;");
+	ui.runStateBtn->setStyleSheet("border:none;");
+	ui.testParamBtn->setStyleSheet("border:none;");
+	ui.betaBtn->setStyleSheet("border:none;");
 }
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::on_betaBtn_clicked()
 {
-	ui.tabWidget_3->setCurrentIndex(3);
+	ui.tabWidget_3->setCurrentIndex(3);	
+	ui.betaBtn->setStyleSheet("border:2px solid black; \
+								  border-top-width:0px; \
+								  border-right-width:0px; \
+								  border-left-width:0px; \
+								  border-bottom-width:2px; \
+								  border-bottom-color:#42BDAA;\
+								  color: #42BDAA;");
+	ui.runStateBtn->setStyleSheet("border:none;");
+	ui.testParamBtn->setStyleSheet("border:none;");
+	ui.alphaBtn->setStyleSheet("border:none;");
 }
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::on_funcBtn_clicked()
@@ -504,6 +574,7 @@ void DeSystemConfigWidget::on_funcBtn_clicked()
 	{
 		Demo *demo = qApp->property("_mainWin").value<Demo *>();	
 		DeMenuWidget widget;
+		widget.setShowMenuStatus(2);
 		widget.move(demo->pos());
 		widget.resize(demo->width(), demo->height());
 		widget.setWindowOpacity(0.9);

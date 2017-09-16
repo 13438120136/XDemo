@@ -15,7 +15,6 @@ DeRadiationMmeasureState::~DeRadiationMmeasureState()
 //----------------------------------------------------------------------------
 void DeRadiationMmeasureState::onEntry(QEvent *)
 {
-	m_demo->radiationChecking();
 }
 //----------------------------------------------------------------------------
 void DeRadiationMmeasureState::onExit(QEvent *)

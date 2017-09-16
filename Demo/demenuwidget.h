@@ -21,8 +21,8 @@ public:
 	DeMenuWidget(QWidget *parent = 0);
 	~DeMenuWidget();
 
-	void setDefaultButtonsStatus();
-	void setMaintainButtonsStatus();
+	///ÉèÖÃ²Ëµ¥ÏÔÊ¾×´Ì¬
+	void setShowMenuStatus(int index = 0);
 
 public Q_SLOTS:
 	void on_userBtn_clicked();

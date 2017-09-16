@@ -25,6 +25,16 @@ public Q_SLOTS:
 	///没有登录时候的按钮
 	void on_deviceBtn_clicked();
 
+	///需要被Demo调用的
+	void deviceSelfChecking();
+	void deviceFault(bool first, bool sec, bool three, bool four);
+	void deviceChecking();
+	void pleaseLeave();
+	void wuran();
+	void ready();
+	void nowuran();
+	void keyPartMeasuring();
+
 private:
 	void playLabelForGif(QLabel *label, const QString &gif, int speed = 1);
 private:

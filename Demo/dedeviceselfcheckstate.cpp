@@ -15,9 +15,6 @@ DeDeviceSelfCheckState::~DeDeviceSelfCheckState()
 //----------------------------------------------------------------------------
 void DeDeviceSelfCheckState::onEntry(QEvent *event)
 {
-	Q_UNUSED(event)
-	m_demo->deviceCheckSelf();
-	m_demo->deviceForceVariable();
-	m_demo->deviceVarCheck();
+	Q_UNUSED(event);
 }
 //----------------------------------------------------------------------------

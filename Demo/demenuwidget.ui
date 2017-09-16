@@ -157,6 +157,7 @@ max-height:1px;</string>
               <widget class="QLabel" name="label_3">
                <property name="styleSheet">
                 <string notr="true">image: url(:/Demo/Resources/gongnengyuanze-guanli-weixuanzhong.png);
+
 </string>
                </property>
                <property name="text">

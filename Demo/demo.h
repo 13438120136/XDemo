@@ -15,20 +15,6 @@ public:
 	~Demo();
 	///获取数据库对象
 	DeSqlDataBase *dataBase();
-	///设备自检
-	void deviceCheckSelf();
-	///设备故障 需要处理
-	void deviceFault();
-	///强制本底变量
-	void deviceForceVariable();
-	///本底检测
-	void deviceVarCheck();
-	///进入维护模式
-	void loginMaintainMode();
-	///退出维护模式
-	void logoutMaintainMode();
-	///执行辐射检测
-	void radiationChecking();
 	///设置状态栏登录名
 	void setToolStatus(const QString &text, bool isLogin);
 	///设置翻译对象
@@ -51,6 +37,25 @@ public Q_SLOTS:
 	void setBLanguage(bool bLanguage);
 	///延时 单位:毫秒
 	void eventSleep(int msec);
+
+///接口部分
+public Q_SLOTS:
+	///本地自检测界面
+	void slotDeviceSelfChecking();
+	///设备发生故障
+	void slotDeviceFault(bool first, bool sec, bool three, bool four);
+	///本地检测中
+	void slotChecking();
+	///请离开检测区
+	void slotPleaseLeave();
+	///污染了
+	void slotContaminated();
+	///准备就绪
+	void slotReady();
+	///未污染
+	void slotNoContaminated();
+	///重点部位测量
+	void slotKeyMeasuring();
 
 protected:
     virtual void changeEvent(QEvent *);

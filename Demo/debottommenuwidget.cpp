@@ -51,15 +51,3 @@ void DeBottomMenuWidget::rightButtonSlot()
 	scrollBar->setValue(step);
 }
 //----------------------------------------------------------------------------
-void DeBottomMenuWidget::setDefaultButtonsStatus()
-{
-	DeMenuWidget *menu = (DeMenuWidget *)ui.scrollArea->widget();
-	menu->setDefaultButtonsStatus();
-}
-//----------------------------------------------------------------------------
-void DeBottomMenuWidget::setMaintainButtonsStatus()
-{
-	DeMenuWidget *menu = (DeMenuWidget *)ui.scrollArea->widget();
-	menu->setMaintainButtonsStatus();
-}
-//----------------------------------------------------------------------------

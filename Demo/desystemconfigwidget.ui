@@ -97,6 +97,13 @@ QTabWidget::tab-bar
    min-height:40px;
    max-height:40px;
    background-color: #E9E9E9;
+}
+
+QPushButton
+{
+   padding:5px;
+   min-width:100px;
+   text-align:center;
 }</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_17">
@@ -137,6 +144,9 @@ QTabWidget::tab-bar
       </item>
       <item row="0" column="0">
        <widget class="QPushButton" name="funcBtn">
+        <property name="styleSheet">
+         <string notr="true">text-align:left;</string>
+        </property>
         <property name="text">
          <string>功能选择</string>
         </property>
@@ -187,6 +197,9 @@ QTabWidget::tab-bar
       </item>
       <item row="0" column="8">
        <widget class="QPushButton" name="logoutBtn">
+        <property name="styleSheet">
+         <string notr="true">text-align:right;</string>
+        </property>
         <property name="text">
          <string>注销</string>
         </property>
@@ -271,6 +284,13 @@ QTabWidget::tab-bar
               <string notr="true">QWidget#widget_3
 {
    min-height:30px;
+}
+
+QPushButton
+{
+   min-width:100px;
+   padding:5px;
+   text-align:left;
 }</string>
              </property>
              <layout class="QGridLayout" name="gridLayout_16">

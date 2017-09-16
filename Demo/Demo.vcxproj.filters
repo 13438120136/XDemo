@@ -46,19 +46,14 @@
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="Generated Files\Debug">
-      <UniqueIdentifier>{009bd65f-f781-408d-aa73-b89f8fd06b4b}</UniqueIdentifier>
+      <UniqueIdentifier>{658ab054-a625-4f12-9f8a-1dca29469ac4}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Generated Files\Release">
-      <UniqueIdentifier>{4e7e34b6-14cb-4eb9-99d8-aaaef9e544df}</UniqueIdentifier>
+      <UniqueIdentifier>{3ebbe115-1716-4c25-b6b4-7fc2b3207a7d}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
-    </Filter>
-    <Filter Include="Translation Files">
-      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
-      <Extensions>ts</Extensions>
-      <ParseFiles>false</ParseFiles>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +75,9 @@
     <ClCompile Include="decombobox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="dedetectormodel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="dedeviceselfcheckstate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -99,6 +97,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="delogitem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="delogowidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="demaintainstate.cpp">
@@ -152,6 +153,9 @@
     <ClCompile Include="deuserlistmodel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="devalueselectwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="devirtualkeyboradwidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -194,6 +198,12 @@
     <ClCompile Include="GeneratedFiles\Release\moc_decombobox.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_dedetectormodel.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_dedetectormodel.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_dedeviceselfcheckstate.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
@@ -210,6 +220,12 @@
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Release\moc_deloginwidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_delogowidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_delogowidget.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_demaintainstate.cpp">
@@ -323,33 +339,6 @@
     <ClCompile Include="GeneratedFiles\qrc_demo.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
-    <ClCompile Include="devalueselectwidget.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_devalueselectwidget.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_devalueselectwidget.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="dedetectormodel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_dedetectormodel.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_dedetectormodel.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="delogowidget.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_delogowidget.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_delogowidget.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Demo.aps">
@@ -373,6 +362,9 @@
     <CustomBuild Include="decombobox.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="dedetectormodel.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
     <CustomBuild Include="dedeviceselfcheckstate.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
@@ -394,6 +386,9 @@
     <ClInclude Include="delogitem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <CustomBuild Include="delogowidget.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
     <CustomBuild Include="demaintainstate.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
@@ -445,6 +440,9 @@
     <CustomBuild Include="deuserlistmodel.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="devalueselectwidget.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
     <CustomBuild Include="devirtualkeyboradwidget.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
@@ -464,6 +462,9 @@
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_deloginwidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_delogowidget.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_demangewidget.h">
@@ -490,15 +491,20 @@
     <ClInclude Include="GeneratedFiles\ui_detableview.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_devirtualkeyboradwidget.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_devalueselectwidget.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_delogowidget.h">
+    <ClInclude Include="GeneratedFiles\ui_devirtualkeyboradwidget.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GeneratedFiles\debug\moc_devalueselectwidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\release\moc_devalueselectwidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="deaddradioactivedlg.ui">
@@ -517,6 +523,9 @@
       <Filter>Form Files</Filter>
     </CustomBuild>
     <CustomBuild Include="deloginwidget.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="delogowidget.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
     <CustomBuild Include="demangewidget.ui">
@@ -543,29 +552,14 @@
     <CustomBuild Include="detableview.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="devirtualkeyboradwidget.ui">
-      <Filter>Form Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="devalueselectwidget.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
     <CustomBuild Include="devalueselectwidget.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="dedetectormodel.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="delogowidget.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="delogowidget.ui">
+    <CustomBuild Include="devirtualkeyboradwidget.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\back.jpg">
-      <Filter>Resource Files</Filter>
-    </None>
     <CustomBuild Include="demo.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
@@ -575,26 +569,245 @@
     <None Include="demo_zh.qm">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="Resources\key.jpg">
+    <None Include="Resources\gongnengxuanze-shezhi-weixuanzhong.png">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="Resources\lFoot.png">
+    <None Include="Resources\gongnengxuanze-shezhi-xuanzhong.png">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="Resources\leftHand.jpg">
+    <None Include="Resources\gongnengyuanze-guanli-weixuanzhong.png">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="Resources\rFoot.png">
+    <None Include="Resources\gongnengyuanze-guanli-xuanzhong.png">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="Resources\rightHand.jpg">
+    <None Include="Resources\gongnengyuanze-rizhi-weixuanzhong.png">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="demo_en.ts">
-      <Filter>Translation Files</Filter>
+    <None Include="Resources\gongnengyuanze-rizhi-xuanzhong.png">
+      <Filter>Resource Files</Filter>
     </None>
-    <None Include="demo_zh.ts">
-      <Filter>Translation Files</Filter>
+    <None Include="Resources\gongnengyuanze-tuichu.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\gongnengyuanze-xitongceshi-weixuanzhong.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\gongnengyuanze-xitongceshi-xuanzhong.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\guanliyemian-chakan.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\guanliyemian-daochu.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\guanliyemian-fangsheyuanriqi.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\guanliyemian-shanchu.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\guanliyemian-tianjia.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\guanliyemian-wenjianriqi.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\guanliyemian-xiugai.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-jiao-left-bendijiance.gif">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-jiao-left-guzhang.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-jiao-left-jiancezhong.gif">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-jiao-left-jiuwei.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-jiao-left-wuran.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-jiao-left-wuwuran.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-jiao-left-zhunbeijiuxu.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-jiao-left-zijian.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-jiao-right-bendijiance.gif">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-jiao-right-guzhang.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-jiao-right-jiancezhong.gif">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-jiao-right-jiuwei.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-jiao-right-wuran.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-jiao-right-wuwuran.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-jiao-right-zhunbeijiuxu.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-jiao-right-zijian.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-left-bendijiance.gif">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-left-jiancezhong.gif">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-right-bendijiance.gif">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-right-jiancezhong.gif">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-shou-left-guzhang.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-shou-left-jiuwei.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-shou-left-wuran.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-shou-left-wuwuran.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-shou-left-zhunbeijiuxu.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-shou-left-zijian.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-shou-right-guzhang.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-shou-right-jiuwei.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-shou-right-wuran.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-shou-right-wuwuran.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-shou-right-zhunbeijiuxu.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-shou-right-zijian.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-teshu-jiancezhong.gif">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-teshu-wuran.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\jianceyemian-teshu-wuwuran.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\logo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongceshi-jiaobuyali-yichang.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongceshi-jiaobuyali-zhengchang.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongceshi-jiaobuyali.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongceshi-jinxingzhong.gif">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongceshi-renyuanjiejin-yichang.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongceshi-renyuanjiejin-zhengchang.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongceshi-renyuanjiejin.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongceshi-youshouduisheshihongwai-yichang.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongceshi-youshouduisheshihongwai-zhengchang.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongceshi-youshouduisheshihongwai.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongceshi-youshoutanceqi-yichang.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongceshi-youshoutanceqi-zhengchang.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongceshi-youshoutanceqi.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongceshi-zuoshouduisheshihongwai-yichang.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongceshi-zuoshouduisheshihongwai-zhengchang.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongceshi-zuoshouduisheshihongwai.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongshezhi-youjiao-wuran.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongshezhi-youjiao-wuwuran.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongshezhi-youshou-shoubeiwuran.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongshezhi-youshou-shouxinwuran.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongshezhi-youshou-shuangmianwuran.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongshezhi-youshou-wuwuran.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongshezhi-zuojiao-wuran.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongshezhi-zuojiao-wuwuran.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongshezhi-zuoshou-shoubeiwuran.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongshezhi-zuoshou-shouxinwuran.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongshezhi-zuoshou-shuangmianwuran.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\xitongshezhi-zuoshou-wuwuran.png">
+      <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
 </Project>

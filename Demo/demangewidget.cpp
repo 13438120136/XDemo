@@ -16,7 +16,7 @@ DeManageWidget::DeManageWidget(QWidget *parent)
 	: QDialog(parent)
 {
 	ui.setupUi(this);
-
+	on_userBtn_clicked();
 	ui.tabWidget->findChildren<QTabBar*>().at(0)->hide();
 	this->setWindowFlags(Qt::ToolTip);
 	connect(ui.addUserBtn, SIGNAL(clicked()), this, SLOT(addUserSlot()));
@@ -170,17 +170,34 @@ void DeManageWidget::slotAddRadioactiveData(DeRadioactiveSourceTable tableData)
 void DeManageWidget::on_userBtn_clicked()
 {
 	ui.tabWidget->setCurrentIndex(0);
+	ui.userBtn->setStyleSheet("border:2px solid black; \
+							  border-top-width:0px; \
+							  border-right-width:0px; \
+							  border-left-width:0px; \
+							  border-bottom-width:2px; \
+							  border-bottom-color:#42BDAA;\
+							  color: #42BDAA;");
+	ui.radioBtn->setStyleSheet("border:none;");
 }
 //---------------------------------------------------------------------------
 void DeManageWidget::on_radioBtn_clicked()
 {
 	ui.tabWidget->setCurrentIndex(1);
+	ui.radioBtn->setStyleSheet("border:2px solid black; \
+							  border-top-width:0px; \
+							  border-right-width:0px; \
+							  border-left-width:0px; \
+							  border-bottom-width:2px; \
+							  border-bottom-color:#42BDAA;\
+							  color: #42BDAA;");
+	ui.userBtn->setStyleSheet("border:none;");
 }
 //---------------------------------------------------------------------------
 void DeManageWidget::on_funcBtn_clicked()
 {
 	Demo *demo = qApp->property("_mainWin").value<Demo *>();	
 	DeMenuWidget widget;
+	widget.setShowMenuStatus(1);
 	widget.move(demo->pos());
 	widget.resize(demo->width(), demo->height());
 	widget.setWindowOpacity(0.9);
