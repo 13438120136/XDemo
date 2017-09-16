@@ -42,6 +42,8 @@ FORMS += \
     detableview.ui \
 	depropertyeditwidget.ui \
 	devalueselectwidget.ui \
+	delogowidget.ui \
+	devalueselectwidget.ui \
     devirtualkeyboradwidget.ui
 
 HEADERS += \
@@ -78,6 +80,8 @@ HEADERS += \
 	delogdatabase.h \
 	dedetectormodel.h \
 	devalueselectwidget.h \
+	delogowidget.h \
+	devalueselectwidget.h \
     devirtualkeyboradwidget.h 
 
 SOURCES += \
@@ -86,6 +90,8 @@ SOURCES += \
     dealermeventmodel.cpp \
     debottommenuwidget.cpp \
     dechanneltestmodel.cpp \
+	delogowidget.cpp \
+	devalueselectwidget.cpp \
     decombobox.cpp \
     dedeviceselfcheckstate.cpp \
     deinitwidget.cpp \
