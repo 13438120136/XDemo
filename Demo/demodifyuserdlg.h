@@ -23,9 +23,6 @@ public Q_SLOTS:
 	void on_cancelBtn_clicked();
 	void slotUserPasswdEdit(const QString & text);
 
-protected:
-	virtual bool eventFilter(QObject *obj, QEvent *event);
-
 private:
 	Ui::DeModifyUserDlg ui;
 };

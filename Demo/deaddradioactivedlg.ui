@@ -14,56 +14,33 @@
    <string>DeAddRadioactiveDlg</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QDateEdit
-{
-   min-height:30px;
-   border:1px solid gray;
-   border-radius:5px;
-   padding: 0px;
-   font: 16pt &quot;新宋体&quot;;
-}
-
-QDateEdit::drop-down
-{
-   border:1px solid black;
-   min-width:30px;
-}
-
-QCalendarWidget
-{
-font: 20pt &quot;新宋体&quot;;
-}
-
-QCalendarWidget QAbstractButton
-{
-    min-width:40px;
+   <string notr="true">#DeAddRadioactiveDlg
+{    
+	background-color: #E9E9E9;
 }
 
 QLineEdit
 {
 border:1px solid gray;
-border-radius:3px;
+border-radius:5px;
+font: 12px &quot;微软雅黑&quot;;
 min-height:30px;
 max-height:30px;
-font: 16pt &quot;新宋体&quot;;
-}
-
-#widget_2
-{
-min-height:30px;
 }
 
 QLabel
 {
-font: 14pt &quot;新宋体&quot;;
-min-width:100px;
+font: 14px &quot;微软雅黑&quot;;
+color: #95989A;
 }
 
 QGroupBox {
      border: 1px solid gray;
      border-radius: 3px;
      margin-top: 2ex; /* leave space at the top for the title */
-     padding: 10px;
+     color: #95989A;
+     font: 14px &quot;微软雅黑&quot;;
+     padding:15px;
  }
 
  QGroupBox::title {
@@ -74,169 +51,289 @@ QGroupBox {
                                        stop: 0 #FFOECE, stop: 1 #FFFFFF);
  }
 
-QPushButton {
-    
-	font: 16pt &quot;新宋体&quot;;
+QPushButton 
+{    
+	font: bold 14px &quot;微软雅黑&quot;;
 	background-color: rgb(244, 244, 244);
-     border: 1px solid #8f8f91;
-     border-radius: 3px;
-     min-width: 100px;
-     min-height: 30px;
+    border:none;
+    border-radius: 5px;
+    min-width:100px;
+    max-width:100px;
+    min-height:30px;
+    max-height:30px;
  }
-
- QPushButton:pressed {
-	background-color: rgb(255, 255, 255);
- }</string>
+</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout_4" rowstretch="10,1">
+  <layout class="QGridLayout" name="gridLayout_3">
+   <property name="leftMargin">
+    <number>160</number>
+   </property>
+   <property name="topMargin">
+    <number>120</number>
+   </property>
+   <property name="rightMargin">
+    <number>160</number>
+   </property>
+   <property name="bottomMargin">
+    <number>130</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
    <item row="0" column="0">
-    <widget class="QWidget" name="widget_4" native="true">
-     <layout class="QGridLayout" name="gridLayout_3">
-      <item row="0" column="0">
-       <widget class="QWidget" name="widget" native="true">
-        <property name="styleSheet">
-         <string notr="true">max-width: 380px;
-max-height:260px;</string>
+    <widget class="QWidget" name="widget" native="true">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <property name="margin">
+       <number>0</number>
+      </property>
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <item row="1" column="0">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
         </property>
-        <layout class="QGridLayout" name="gridLayout">
-         <item row="0" column="0" colspan="4">
-          <widget class="QGroupBox" name="groupBox">
-           <property name="title">
-            <string>添加放射源记录</string>
-           </property>
-           <layout class="QGridLayout" name="gridLayout_8">
-            <item row="0" column="0">
-             <layout class="QGridLayout" name="gridLayout_2">
-              <item row="0" column="0">
-               <widget class="QLabel" name="label">
-                <property name="text">
-                 <string>编号</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QLineEdit" name="idLineEdit">
-                <property name="maxLength">
-                 <number>32</number>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item row="1" column="0">
-             <layout class="QGridLayout" name="gridLayout_7">
-              <item row="0" column="0">
-               <widget class="QLabel" name="label_3">
-                <property name="text">
-                 <string>原始活度</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QLineEdit" name="originalLineEdit">
-                <property name="maxLength">
-                 <number>32</number>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item row="2" column="0">
-             <layout class="QGridLayout" name="gridLayout_5">
-              <item row="0" column="0">
-               <widget class="QLabel" name="label_2">
-                <property name="text">
-                 <string>生产日期</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QDateEdit" name="dateEdit">
-                <property name="maximumSize">
-                 <size>
-                  <width>382</width>
-                  <height>262</height>
-                 </size>
-                </property>
-                <property name="wrapping">
-                 <bool>false</bool>
-                </property>
-                <property name="keyboardTracking">
-                 <bool>true</bool>
-                </property>
-                <property name="displayFormat">
-                 <string>yyyy-M-d</string>
-                </property>
-                <property name="calendarPopup">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item row="3" column="0">
-             <layout class="QGridLayout" name="gridLayout_6">
-              <item row="0" column="0">
-               <widget class="QLabel" name="label_4">
-                <property name="text">
-                 <string>放射源类</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="DeComboBox" name="widget_3" native="true">
-                <property name="maximumSize">
-                 <size>
-                  <width>380</width>
-                  <height>260</height>
-                 </size>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <spacer name="horizontalSpacer">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>67</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="1">
+       <widget class="QPushButton" name="okBtn">
+        <property name="styleSheet">
+         <string notr="true">QPushButton 
+{
+	background-color: #42BDAA;
+    color: #FFFFFF;
+}</string>
+        </property>
+        <property name="text">
+         <string>Y</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="cancelBtn">
+        <property name="text">
+         <string>N</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>67</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="0" colspan="4">
+       <widget class="QGroupBox" name="groupBox">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="title">
+         <string>添加放射源记录</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <property name="margin">
+          <number>0</number>
+         </property>
+         <property name="spacing">
+          <number>6</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label">
+           <property name="maximumSize">
             <size>
-             <width>67</width>
-             <height>20</height>
+             <width>16777215</width>
+             <height>16777215</height>
             </size>
            </property>
-          </spacer>
-         </item>
-         <item row="1" column="1">
-          <widget class="QPushButton" name="okBtn">
            <property name="text">
-            <string>Y</string>
+            <string>编     号</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QLabel" name="label_3">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>原始活度</string>
            </property>
           </widget>
          </item>
          <item row="1" column="2">
-          <widget class="QPushButton" name="cancelBtn">
-           <property name="text">
-            <string>N</string>
+          <widget class="QLineEdit" name="originalLineEdit">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="maxLength">
+            <number>32</number>
            </property>
           </widget>
          </item>
-         <item row="1" column="3">
-          <spacer name="horizontalSpacer_2">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
+         <item row="2" column="0" colspan="2">
+          <widget class="QLabel" name="label_2">
+           <property name="maximumSize">
             <size>
-             <width>67</width>
-             <height>20</height>
+             <width>16777215</width>
+             <height>16777215</height>
             </size>
            </property>
-          </spacer>
+           <property name="text">
+            <string>生产日期</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <layout class="QGridLayout" name="gridLayout_4">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QLineEdit" name="lineEdit">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border-top-right-radius:0px;
+border-bottom-right-radius:0px;</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QPushButton" name="pushButton">
+             <property name="styleSheet">
+              <string notr="true">image: url(:/Demo/Resources/guanliyemian-fangsheyuanriqi.png);
+max-width:30px;
+min-width:30px;
+background-color: rgb(255, 255, 255);
+border-top-left-radius:0px;
+border-bottom-left-radius:0px;
+border:1px solid gray;</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="3" column="0" colspan="2">
+          <widget class="QLabel" name="label_4">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>放射源类</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2">
+          <widget class="DeComboBox" name="widget_3" native="true">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel
+{   
+	background-color: rgb(255, 255, 255);
+    font:14px bold &quot;微软雅黑&quot;;
+}
+
+QPushButton
+{
+	background-color: #42BDAA;
+    font:14px bold &quot;微软雅黑&quot;;
+    min-width:60px;
+    max-width:60px;
+    border:1px solid gray;
+}
+
+QLineEdit
+{
+border:1px solid gray;
+min-height:30px;
+border-top-left-radius:3px;
+border-top-right-radius:0px;
+border-bottom-right-radius:0px;
+border-bottom-left-radius:3px;
+}</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLineEdit" name="idLineEdit">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="maxLength">
+            <number>32</number>
+           </property>
+          </widget>
          </item>
         </layout>
        </widget>
@@ -244,26 +341,10 @@ max-height:260px;</string>
      </layout>
     </widget>
    </item>
-   <item row="1" column="0">
-    <widget class="DeVirtualKeyboradWidget" name="keyBoradWidget" native="true">
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>220</height>
-      </size>
-     </property>
-    </widget>
-   </item>
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
-  <customwidget>
-   <class>DeVirtualKeyboradWidget</class>
-   <extends>QWidget</extends>
-   <header location="global">devirtualkeyboradwidget.h</header>
-   <container>1</container>
-  </customwidget>
   <customwidget>
    <class>DeComboBox</class>
    <extends>QWidget</extends>
@@ -271,6 +352,8 @@ max-height:260px;</string>
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="demo.qrc"/>
+ </resources>
  <connections/>
 </ui>

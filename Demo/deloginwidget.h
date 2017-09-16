@@ -15,9 +15,6 @@ public:
 	Q_SLOT void on_okBtn_clicked();
 	Q_SLOT void on_cancelBtn_clicked();
 
-protected:
-	virtual bool eventFilter(QObject *obj, QEvent *event);
-
 private:
 	Ui::DeLoginWidget ui;
 };

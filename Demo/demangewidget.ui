@@ -14,25 +14,23 @@
    <string>DeUserWidget</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QPushButton {
-    
-	font: 16pt &quot;新宋体&quot;;
-	background-color: rgb(244, 244, 244);
-     border: 1px solid #8f8f91;
-     border-radius: 6px;
-     min-width: 100px;
-     min-height: 30px;
- }
+   <string notr="true">QWidget#DeMangeWidget
+{
+   background-color: #E9E9E9;
+}
+
+QPushButton 
+{    
+	font: 14px &quot;微软雅黑&quot;;
+	background-color: #D7D7D7;
+    border:none;
+}
 
 QTabWidget::pane
 {   
 	background-color: rgb(255, 255, 255);
     border: 0px;
 }
-
- QPushButton:pressed {
-	background-color: rgb(255, 255, 255);
- }
 
 QTabWidget::tab-bar {
      alignment: center;
@@ -70,51 +68,77 @@ QTabWidget::tab-bar {
   </property>
   <layout class="QGridLayout" name="gridLayout_4">
    <property name="leftMargin">
-    <number>9</number>
+    <number>0</number>
    </property>
    <property name="topMargin">
     <number>0</number>
    </property>
    <property name="rightMargin">
-    <number>9</number>
+    <number>0</number>
    </property>
    <property name="bottomMargin">
-    <number>0</number>
+    <number>10</number>
    </property>
-   <property name="horizontalSpacing">
+   <property name="spacing">
     <number>0</number>
-   </property>
-   <property name="verticalSpacing">
-    <number>2</number>
    </property>
    <item row="0" column="0">
     <widget class="QWidget" name="widget_3" native="true">
      <property name="styleSheet">
-      <string notr="true">QPushButton
+      <string notr="true">QWidget#widget_3
 {   
-   background-color: rgb(255, 255, 255, 0);
-   border:0px solid red;
-   border-radius:0px;
-   font:bold 14px;
-}
-
-QPushButton:focus
-{
-   border-left-width:0px;
-   border-right-width:0px;
-   border-top-width:0px;
-   border-bottom-width:2px;   
-   border-bottom-color:  rgb(66, 189, 170);
-   color:  rgb(66, 189, 170);
+	background-color: #d7d7d7;
+    min-height:36px;
+    max-height:36px;
 }</string>
      </property>
-     <layout class="QGridLayout" name="gridLayout_2">
-      <property name="margin">
+     <layout class="QGridLayout" name="gridLayout_7">
+      <property name="leftMargin">
+       <number>20</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>20</number>
+      </property>
+      <property name="bottomMargin">
        <number>0</number>
       </property>
       <property name="spacing">
        <number>0</number>
       </property>
+      <item row="0" column="2">
+       <layout class="QGridLayout" name="gridLayout_2" columnstretch="1,1">
+        <property name="horizontalSpacing">
+         <number>100</number>
+        </property>
+        <property name="verticalSpacing">
+         <number>0</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QPushButton" name="userBtn">
+          <property name="text">
+           <string>用户管理</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QPushButton" name="radioBtn">
+          <property name="text">
+           <string>放射源管理</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="0" column="4">
+       <widget class="QPushButton" name="logoutBtn">
+        <property name="text">
+         <string>注销</string>
+        </property>
+       </widget>
+      </item>
       <item row="0" column="0">
        <widget class="QPushButton" name="funcBtn">
         <property name="text">
@@ -129,45 +153,24 @@ QPushButton:focus
         </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>108</width>
+          <width>40</width>
           <height>20</height>
          </size>
         </property>
        </spacer>
       </item>
-      <item row="0" column="2">
-       <widget class="QPushButton" name="userBtn">
-        <property name="text">
-         <string>用户管理</string>
-        </property>
-       </widget>
-      </item>
       <item row="0" column="3">
-       <widget class="QPushButton" name="radioBtn">
-        <property name="text">
-         <string>放射源管理</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="4">
        <spacer name="horizontalSpacer_3">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>108</width>
+          <width>40</width>
           <height>20</height>
          </size>
         </property>
        </spacer>
-      </item>
-      <item row="0" column="5">
-       <widget class="QPushButton" name="logoutBtn">
-        <property name="text">
-         <string>注销</string>
-        </property>
-       </widget>
       </item>
      </layout>
     </widget>
@@ -189,61 +192,113 @@ QPushButton:focus
        <string>用户管理</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_3">
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>0</number>
+       </property>
        <item row="0" column="0">
-        <layout class="QGridLayout" name="gridLayout">
-         <item row="0" column="3">
-          <widget class="QPushButton" name="delUserBtn">
-           <property name="minimumSize">
-            <size>
-             <width>102</width>
-             <height>32</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>删除用户</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QPushButton" name="addUserBtn">
-           <property name="minimumSize">
-            <size>
-             <width>102</width>
-             <height>32</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>添加用户</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0">
-          <spacer name="horizontalSpacer">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="0" column="2">
-          <widget class="QPushButton" name="changeUserBtn">
-           <property name="minimumSize">
-            <size>
-             <width>102</width>
-             <height>32</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>修改用户</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
+        <widget class="QWidget" name="widget_4" native="true">
+         <property name="styleSheet">
+          <string notr="true">background-color: #E9E9E9;
+min-height:60px;
+max-height:60px;</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>20</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <property name="horizontalSpacing">
+           <number>16</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>0</number>
+          </property>
+          <item row="0" column="0">
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="1">
+           <widget class="QPushButton" name="addUserBtn">
+            <property name="minimumSize">
+             <size>
+              <width>36</width>
+              <height>36</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(:/Demo/Resources/guanliyemian-tianjia.png);
+min-width:36px;
+min-height:36px;
+max-wdith:36px;
+max-height:36px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QPushButton" name="changeUserBtn">
+            <property name="minimumSize">
+             <size>
+              <width>36</width>
+              <height>36</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(:/Demo/Resources/guanliyemian-xiugai.png);
+min-width:36px;
+min-height:36px;
+max-wdith:36px;
+max-height:36px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QPushButton" name="delUserBtn">
+            <property name="minimumSize">
+             <size>
+              <width>36</width>
+              <height>36</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(:/Demo/Resources/guanliyemian-shanchu.png);
+min-width:36px;
+min-height:36px;
+max-wdith:36px;
+max-height:36px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </item>
        <item row="1" column="0">
         <widget class="DeTableView" name="widget" native="true"/>
@@ -255,61 +310,113 @@ QPushButton:focus
        <string>放射源管理</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_6">
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>0</number>
+       </property>
        <item row="0" column="0">
-        <layout class="QGridLayout" name="gridLayout_5">
-         <item row="0" column="3">
-          <widget class="QPushButton" name="delRadioactivityBtn">
-           <property name="minimumSize">
-            <size>
-             <width>102</width>
-             <height>32</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>删除记录</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0">
-          <spacer name="horizontalSpacer_4">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="0" column="1">
-          <widget class="QPushButton" name="addRadioactivityBtn">
-           <property name="minimumSize">
-            <size>
-             <width>102</width>
-             <height>32</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>添加记录</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="2">
-          <widget class="QPushButton" name="modifyRadioactivityBtn">
-           <property name="minimumSize">
-            <size>
-             <width>102</width>
-             <height>32</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>修改记录</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
+        <widget class="QWidget" name="widget_5" native="true">
+         <property name="styleSheet">
+          <string notr="true">background-color: #E9E9E9;
+min-height:60px;
+max-height:60px;</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_5">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>20</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <property name="horizontalSpacing">
+           <number>16</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>0</number>
+          </property>
+          <item row="0" column="0">
+           <spacer name="horizontalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>461</width>
+              <height>57</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="1">
+           <widget class="QPushButton" name="addRadioactivityBtn">
+            <property name="minimumSize">
+             <size>
+              <width>36</width>
+              <height>36</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(:/Demo/Resources/guanliyemian-tianjia.png);
+min-width:36px;
+min-height:36px;
+max-wdith:36px;
+max-height:36px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QPushButton" name="modifyRadioactivityBtn">
+            <property name="minimumSize">
+             <size>
+              <width>36</width>
+              <height>36</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(:/Demo/Resources/guanliyemian-xiugai.png);
+min-width:36px;
+min-height:36px;
+max-wdith:36px;
+max-height:36px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QPushButton" name="delRadioactivityBtn">
+            <property name="minimumSize">
+             <size>
+              <width>36</width>
+              <height>36</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(:/Demo/Resources/guanliyemian-shanchu.png);
+min-width:36px;
+min-height:36px;
+max-wdith:36px;
+max-height:36px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </item>
        <item row="1" column="0">
         <widget class="DeTableView" name="widget_2" native="true"/>
@@ -329,6 +436,8 @@ QPushButton:focus
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="demo.qrc"/>
+ </resources>
  <connections/>
 </ui>

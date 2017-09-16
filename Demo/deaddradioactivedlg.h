@@ -21,9 +21,6 @@ public Q_SLOTS:
 	void slotIDLineEdit(const QString & text);
 	void slotValueLineEdit(const QString & text);
 
-protected:
-	virtual bool eventFilter(QObject *obj, QEvent *event);
-
 private:
 	Ui::DeAddRadioactiveDlg ui;
 };

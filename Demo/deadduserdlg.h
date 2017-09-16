@@ -21,9 +21,6 @@ public Q_SLOTS:
 	void slotUserLineEdit(const QString & text);
 	void slotUserPasswdEdit(const QString & text);
 
-protected:
-	virtual bool eventFilter(QObject *obj, QEvent *event);
-
 private:
 	Ui::DeAddUserDlg ui;
 };

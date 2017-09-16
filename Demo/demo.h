@@ -43,8 +43,6 @@ Q_SIGNALS:
 	void signalRadiationCheck();
 
 public Q_SLOTS:
-	//显示菜单栏
-	void slotShowMenu(bool bShow);
 	///切换页面到指定窗口
 	void slotSetWidget(QWidget *widget);
 	///返回上一级页面
@@ -55,7 +53,6 @@ public Q_SLOTS:
 	void eventSleep(int msec);
 
 protected:
-	virtual bool eventFilter(QObject *obj, QEvent *event);
     virtual void changeEvent(QEvent *);
 
 private:
@@ -64,7 +61,6 @@ private:
 
 private:
 	Ui::DemoClass ui;
-	bool m_isShowMenu;
 	QList<QWidget *> m_widgetStack;
 	DeSqlDataBase m_sqlDatabase;
 	QString m_loginStatus;

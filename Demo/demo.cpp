@@ -17,7 +17,6 @@ Q_DECLARE_METATYPE(Demo *)
 //----------------------------------------------------------------------------
 Demo::Demo(QWidget *parent, Qt::WFlags flags)
 	: QMainWindow(parent, flags)
-	,m_isShowMenu(false)
 {	
 	///注册为全局唯一的主窗口对象
 	QVariant variant; 
@@ -50,33 +49,13 @@ Demo::Demo(QWidget *parent, Qt::WFlags flags)
 		userTable.insertDataToDB();
 	}
 
-	QTimer::singleShot(5000, this, SLOT(slotBackMainWidget()));
+	QTimer::singleShot(1000, this, SLOT(slotBackMainWidget()));
 }
 //----------------------------------------------------------------------------
 Demo::~Demo()
 {
 	m_sqlDatabase.closeDataBase();
 }
-//----------------------------------------------------------------------------
-void Demo::slotShowMenu(bool bShow)
-{
-	//ui.menuWidget->setVisible(bShow);
-}
-//----------------------------------------------------------------------------
-bool Demo::eventFilter(QObject *obj, QEvent *event)
- {
-	 if (event->type() == QEvent::MouseButtonRelease) 
-	 {
-		 m_isShowMenu = !m_isShowMenu;
-		 slotShowMenu(m_isShowMenu);
-         return true;
-     }
-	 else 
-	 {
-         // standard event processing
-         return QObject::eventFilter(obj, event);
-     }
- }
 //----------------------------------------------------------------------------
 void Demo::initClickEvents()
 {

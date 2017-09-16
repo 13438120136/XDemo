@@ -16,9 +16,6 @@ DeAddUserDlg::DeAddUserDlg(QWidget *parent)
 	this->setWindowFlags(Qt::ToolTip);
 
 	ui.okBtn->setEnabled(false);
-	ui.keyBoradWidget->hide();
-	ui.userLineEdit->installEventFilter(this);
-	ui.passwdLineEdit->installEventFilter(this);
 
 	///ÔÝÊ±Òþ²Ø
 	ui.label_3->hide();
@@ -68,31 +65,11 @@ void DeAddUserDlg::on_cancelBtn_clicked()
 	demo->slotBackMainWidget();	
 }
 //----------------------------------------------------------------------------
-bool DeAddUserDlg::eventFilter(QObject *obj, QEvent *event)
-{
-	if (event->type() == QEvent::MouseButtonRelease) 
-	{
-		ui.keyBoradWidget->setEditControl((QLineEdit *)obj);
-		ui.keyBoradWidget->show();
-		return true;
-	}
-	else 
-	{
-		// standard event processing
-		return QObject::eventFilter(obj, event);
-	}
-}
-//----------------------------------------------------------------------------
 void DeAddUserDlg::slotUserLineEdit(const QString & text)
 {
 	Q_UNUSED(text)
 	QString user = ui.userLineEdit->text().trimmed();
 	QString passwd = ui.passwdLineEdit->text().trimmed();
-
-	bool ok = !user.isEmpty() && !passwd.isEmpty();
-	ui.okBtn->setEnabled(ok);
-	if (ok)
-		ui.okBtn->setFocus();
 }
 //----------------------------------------------------------------------------
 void DeAddUserDlg::slotUserPasswdEdit(const QString & text)
@@ -100,10 +77,5 @@ void DeAddUserDlg::slotUserPasswdEdit(const QString & text)
 	Q_UNUSED(text)
 	QString user = ui.userLineEdit->text().trimmed();
 	QString passwd = ui.passwdLineEdit->text().trimmed();
-
-	bool ok = !user.isEmpty() && !passwd.isEmpty();
-	ui.okBtn->setEnabled(ok);
-	if (ok)
-		ui.okBtn->setFocus();
 }
 //----------------------------------------------------------------------------

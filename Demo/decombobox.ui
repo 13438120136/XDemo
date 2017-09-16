@@ -19,7 +19,7 @@
 border:1px solid gray;
 border-radius:0px;
 min-width:30px;
-min-height:30px;
+max-width:30px;
 }
 
 QLineEdit
@@ -38,7 +38,7 @@ border-bottom-left-radius:3px;
    </property>
    <item row="0" column="0">
     <layout class="QGridLayout" name="gridLayout_2">
-     <property name="horizontalSpacing">
+     <property name="spacing">
       <number>0</number>
      </property>
      <item row="0" column="0">
@@ -59,8 +59,8 @@ border-bottom-left-radius:3px;
      </item>
      <item row="0" column="1">
       <layout class="QGridLayout" name="gridLayout">
-       <property name="horizontalSpacing">
-        <number>5</number>
+       <property name="spacing">
+        <number>0</number>
        </property>
        <item row="0" column="0">
         <widget class="QPushButton" name="subBtn">

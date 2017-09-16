@@ -17,12 +17,12 @@
    <string notr="true">QLabel
 {   
 	background-color: rgb(255, 255, 255);
-    font:16pt bold &quot;黑体&quot;;
+    font:15px bold &quot;微软雅黑&quot;;
 }
 
 QPushButton
 {
-    background-color: rgb(147, 147, 147);
+	background-color: rgb(0, 0, 0);
 }</string>
   </property>
   <layout class="QGridLayout" name="gridLayout" columnstretch="1,8,1">
@@ -43,7 +43,8 @@ QPushButton
     border-bottom-right-radius:0px;
     border-bottom-left-radius:5px;
     min-height:30px;    
-    width:30px;
+    min-width:30px;
+    max-width:30px;
 }</string>
      </property>
      <property name="text">
@@ -62,7 +63,8 @@ QPushButton
     border-bottom-right-radius:5px;
     border-bottom-left-radius:0px;
     min-height:30px;  
-    width:30px;
+    min-width:30px;
+    max-width:30px;
 }</string>
      </property>
      <property name="text">

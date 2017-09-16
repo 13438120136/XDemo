@@ -370,7 +370,7 @@ max-height:118px;</string>
             <string notr="true"/>
            </property>
            <property name="text">
-            <string>状态:未测试</string>
+            <string>状态: 未测试</string>
            </property>
           </widget>
          </item>
@@ -388,7 +388,7 @@ max-height:118px;</string>
           </spacer>
          </item>
          <item row="0" column="2">
-          <widget class="QPushButton" name="pushButton_6">
+          <widget class="QPushButton" name="ioTestBtn">
            <property name="styleSheet">
             <string notr="true">QPushButton
 {

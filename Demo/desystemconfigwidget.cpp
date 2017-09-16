@@ -43,11 +43,9 @@ DeSystemConfigWidget::DeSystemConfigWidget(bool isMaintain, QWidget *parent)
 	data << TestData(1, 12, 100, 200, 0) 
 		 << TestData(2, 12, 100, 200, 0) 
 		 << TestData(3, 12, 100, 200, 0) 
-		 << TestData(5, 12, 100, 200, 0)
-		 << TestData(7, 12, 120, 201, 2)
-		 << TestData(8, 12, 140, 200, 4)
-		 << TestData(9, 12, 150, 200, 10)
-		 << TestData(6, 12, 100, 200, 20);
+		 << TestData(4, 12, 100, 200, 0)
+		 << TestData(5, 12, 120, 201, 2)
+		 << TestData(6, 12, 140, 200, 4);
 	mm->setData(data);
 	ui.widget->setModel(mm);
 	ui.widget->hideMenu();
@@ -65,7 +63,6 @@ DeSystemConfigWidget::DeSystemConfigWidget(bool isMaintain, QWidget *parent)
 	ui.widget_2->tableView()->setSelectionBehavior(QAbstractItemView::SelectRows);
 	ui.widget_2->tableView()->setSelectionMode(QAbstractItemView::SingleSelection);
 	ui.widget_2->setModel(eventModel);
-	ui.widget_2->hideFirstAndLastBtn();
 
 	DeDetectorModel *detectorModel = new DeDetectorModel(this);
 	ui.channelTabelView->setModel(detectorModel);

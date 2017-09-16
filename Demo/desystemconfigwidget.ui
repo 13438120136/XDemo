@@ -6,75 +6,48 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>625</width>
-    <height>542</height>
+    <width>640</width>
+    <height>547</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>DeSystemConfigWidget</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QDateEdit
+   <string notr="true">QWidget#DeSystemConfigWidget
 {
-   min-height:38px;
-   border:1px solid gray;
-   padding: 0px;
-   font: 16pt &quot;新宋体&quot;;
+background-color: #E9E9E9;
 }
+
 
 QTabWidget::pane { border: 0; }
 
-QDateEdit::drop-down
-{
-   border:1px solid black;
-   min-width:30px;
-}
-
-QCalendarWidget
-{
-font: 32pt &quot;新宋体&quot;;
-}
-
-QCalendarWidget QAbstractButton
-{
-    min-width:40px;
-}
 
 QLabel
 {
-font: 11pt &quot;黑体&quot;;
+font:  12px &quot;微软雅黑&quot;;
 }
 
 QPushButton[flat=&quot;true&quot;]
 {
-     font: 12pt &quot;黑体&quot;;
+     font: 14px &quot;微软雅黑&quot;;
      border: none;
 	 background-color:rgba(85, 255, 0, 0);
      text-align:right; 
 }
 
-QPushButton {
-    
-	font: 14pt &quot;黑体&quot;;
-	background-color: rgb(244, 244, 244);
-     border: 1px solid #8f8f91;
-     border-radius: 3px;
- }
-
- QTabWidget::tab-bar 
- {
-     alignment: center;
- }
-
-QWidget#widget_3
-{
-	background-color: rgb(255, 255, 255);
+QPushButton 
+{    
+	font: 14px &quot;微软雅黑&quot;;
+	background-color: rgb(244, 244, 244, 0);
+    border: none;
 }
 
-QWidget#widget_4
-{
-background-color: rgb(250, 250, 250);
+QTabWidget::tab-bar 
+{    
+ alignment: center;
 }
+
 
 /*
  QTabBar::tab {
@@ -109,7 +82,7 @@ background-color: rgb(250, 250, 250);
 */
 </string>
   </property>
-  <layout class="QGridLayout" name="gridLayout_66">
+  <layout class="QGridLayout" name="gridLayout_73">
    <property name="margin">
     <number>0</number>
    </property>
@@ -119,45 +92,49 @@ background-color: rgb(250, 250, 250);
    <item row="0" column="0">
     <widget class="QWidget" name="widget_4" native="true">
      <property name="styleSheet">
-      <string notr="true">QPushButton
-{   
-   background-color: rgb(255, 255, 255, 0);
-   border:0px solid red;
-   border-radius:0px;
-   font:bold 16px;
-   min-width: 100px;
-   min-height: 35px;
-}
-
-QPushButton:focus
+      <string notr="true">QWidget#widget_4
 {
-   border-left-width:0px;
-   border-right-width:0px;
-   border-top-width:0px;
-   border-bottom-width:2px;   
-   border-bottom-color:  rgb(66, 189, 170);
-   color:  rgb(66, 189, 170);
+   min-height:40px;
+   max-height:40px;
+   background-color: #E9E9E9;
 }</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_17">
       <property name="leftMargin">
-       <number>9</number>
+       <number>20</number>
       </property>
       <property name="topMargin">
        <number>0</number>
       </property>
       <property name="rightMargin">
-       <number>9</number>
+       <number>20</number>
       </property>
       <property name="bottomMargin">
        <number>0</number>
       </property>
-      <property name="horizontalSpacing">
-       <number>2</number>
-      </property>
-      <property name="verticalSpacing">
+      <property name="spacing">
        <number>0</number>
       </property>
+      <item row="0" column="3">
+       <spacer name="horizontalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="6">
+       <widget class="QPushButton" name="detectorBtn">
+        <property name="text">
+         <string>探测器参数</string>
+        </property>
+       </widget>
+      </item>
       <item row="0" column="0">
        <widget class="QPushButton" name="funcBtn">
         <property name="text">
@@ -185,7 +162,7 @@ QPushButton:focus
         </property>
        </widget>
       </item>
-      <item row="0" column="3">
+      <item row="0" column="4">
        <widget class="QPushButton" name="testBtn">
         <property name="styleSheet">
          <string notr="true"/>
@@ -195,7 +172,7 @@ QPushButton:focus
         </property>
        </widget>
       </item>
-      <item row="0" column="5">
+      <item row="0" column="7">
        <spacer name="horizontalSpacer_3">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -208,25 +185,40 @@ QPushButton:focus
         </property>
        </spacer>
       </item>
-      <item row="0" column="6">
+      <item row="0" column="8">
        <widget class="QPushButton" name="logoutBtn">
         <property name="text">
          <string>注销</string>
         </property>
        </widget>
       </item>
-      <item row="0" column="4">
-       <widget class="QPushButton" name="detectorBtn">
-        <property name="text">
-         <string>探测器参数</string>
+      <item row="0" column="5">
+       <spacer name="horizontalSpacer_5">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
         </property>
-       </widget>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
       </item>
      </layout>
     </widget>
    </item>
    <item row="1" column="0">
     <widget class="Line" name="line">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
@@ -248,16 +240,7 @@ QPushButton:focus
        <string>设备信息</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_14">
-       <property name="leftMargin">
-        <number>9</number>
-       </property>
-       <property name="topMargin">
-        <number>0</number>
-       </property>
-       <property name="rightMargin">
-        <number>9</number>
-       </property>
-       <property name="bottomMargin">
+       <property name="margin">
         <number>0</number>
        </property>
        <property name="spacing">
@@ -272,6 +255,9 @@ QPushButton:focus
           <number>0</number>
          </property>
          <widget class="QWidget" name="page">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
           <layout class="QGridLayout" name="gridLayout_20">
            <property name="margin">
             <number>0</number>
@@ -282,30 +268,14 @@ QPushButton:focus
            <item row="0" column="0">
             <widget class="QWidget" name="widget_3" native="true">
              <property name="styleSheet">
-              <string notr="true">QPushButton
-{   
-   background-color: rgb(125, 125, 125, 0);
-   border:0px solid red;
-   border-radius:0px;
-   font:bold 14px;
-   min-width: 100px;
-   min-height: 30px;
-}
-
-QPushButton:focus
+              <string notr="true">QWidget#widget_3
 {
-   border-left-width:0px;
-   border-right-width:0px;
-   border-top-width:0px;
-   border-bottom-width:2px;   
-   border-bottom-color:  rgb(66, 189, 170);
-   color:  rgb(66, 189, 170);
-}
-</string>
+   min-height:30px;
+}</string>
              </property>
              <layout class="QGridLayout" name="gridLayout_16">
               <property name="leftMargin">
-               <number>40</number>
+               <number>20</number>
               </property>
               <property name="topMargin">
                <number>0</number>
@@ -316,41 +286,50 @@ QPushButton:focus
               <property name="bottomMargin">
                <number>0</number>
               </property>
-              <property name="horizontalSpacing">
-               <number>2</number>
-              </property>
-              <property name="verticalSpacing">
+              <property name="spacing">
                <number>0</number>
               </property>
-              <item row="0" column="0">
-               <widget class="QPushButton" name="runStateBtn">
-                <property name="text">
-                 <string>运行状态</string>
-                </property>
-               </widget>
-              </item>
               <item row="0" column="1">
+               <spacer name="horizontalSpacer_6">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="0" column="3">
+               <spacer name="horizontalSpacer_7">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="0" column="2">
                <widget class="QPushButton" name="testParamBtn">
                 <property name="text">
                  <string>测量参数</string>
                 </property>
                </widget>
               </item>
-              <item row="0" column="2">
-               <widget class="QPushButton" name="alphaBtn">
-                <property name="text">
-                 <string>α参数</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="3">
+              <item row="0" column="6">
                <widget class="QPushButton" name="betaBtn">
                 <property name="text">
                  <string>β参数</string>
                 </property>
                </widget>
               </item>
-              <item row="0" column="4">
+              <item row="0" column="7">
                <spacer name="horizontalSpacer">
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
@@ -358,6 +337,33 @@ QPushButton:focus
                 <property name="sizeHint" stdset="0">
                  <size>
                   <width>280</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="0" column="4">
+               <widget class="QPushButton" name="alphaBtn">
+                <property name="text">
+                 <string>α参数</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QPushButton" name="runStateBtn">
+                <property name="text">
+                 <string>运行状态</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="5">
+               <spacer name="horizontalSpacer_8">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
                   <height>20</height>
                  </size>
                 </property>
@@ -379,6 +385,11 @@ QPushButton:focus
                <string notr="true">QFrame#frame_19, #frame_20,  #frame_21,  #frame_22,  #frame_23,  #frame_24,  #frame_25,  #frame_26,  #frame_27,  #frame_28,  #frame_29 
 {
    min-height:50px;
+}
+
+QFrame &gt; QLabel
+{
+   font: 14px &quot;微软雅黑&quot;;
 }</string>
               </property>
               <attribute name="title">
@@ -408,11 +419,14 @@ QPushButton:focus
                     <item row="0" column="0">
                      <widget class="QWidget" name="widget_18" native="true">
                       <property name="styleSheet">
-                       <string notr="true">background-color:  rgb(250, 250, 250);
+                       <string notr="true">background-color: #E9E9E9;
 min-height:30px;
 max-height:30px;</string>
                       </property>
                       <layout class="QGridLayout" name="gridLayout_43">
+                       <property name="leftMargin">
+                        <number>20</number>
+                       </property>
                        <property name="topMargin">
                         <number>0</number>
                        </property>
@@ -445,6 +459,9 @@ max-height:30px;</string>
                     <item row="2" column="0">
                      <widget class="QWidget" name="widget_19" native="true">
                       <layout class="QGridLayout" name="gridLayout_42">
+                       <property name="leftMargin">
+                        <number>20</number>
+                       </property>
                        <property name="topMargin">
                         <number>0</number>
                        </property>
@@ -466,8 +483,14 @@ max-height:30px;</string>
                           <enum>QFrame::Raised</enum>
                          </property>
                          <layout class="QGridLayout" name="gridLayout_45">
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
                           <property name="topMargin">
                            <number>0</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>20</number>
                           </property>
                           <property name="bottomMargin">
                            <number>0</number>
@@ -514,8 +537,14 @@ max-height:30px;</string>
                           <enum>QFrame::Raised</enum>
                          </property>
                          <layout class="QGridLayout" name="gridLayout_46">
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
                           <property name="topMargin">
                            <number>0</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>20</number>
                           </property>
                           <property name="bottomMargin">
                            <number>0</number>
@@ -562,8 +591,14 @@ max-height:30px;</string>
                           <enum>QFrame::Raised</enum>
                          </property>
                          <layout class="QGridLayout" name="gridLayout_47">
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
                           <property name="topMargin">
                            <number>0</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>20</number>
                           </property>
                           <property name="bottomMargin">
                            <number>0</number>
@@ -612,11 +647,14 @@ max-height:30px;</string>
                     <item row="0" column="0">
                      <widget class="QWidget" name="widget_16" native="true">
                       <property name="styleSheet">
-                       <string notr="true">background-color:  rgb(250, 250, 250);
+                       <string notr="true">background-color:  #E9E9E9;
 min-height:30px;
 max-height:30px;</string>
                       </property>
                       <layout class="QGridLayout" name="gridLayout_40">
+                       <property name="leftMargin">
+                        <number>20</number>
+                       </property>
                        <property name="topMargin">
                         <number>0</number>
                        </property>
@@ -649,6 +687,9 @@ max-height:30px;</string>
                     <item row="2" column="0">
                      <widget class="QWidget" name="widget_14" native="true">
                       <layout class="QGridLayout" name="gridLayout_36">
+                       <property name="leftMargin">
+                        <number>20</number>
+                       </property>
                        <property name="topMargin">
                         <number>0</number>
                        </property>
@@ -670,8 +711,14 @@ max-height:30px;</string>
                           <enum>QFrame::Raised</enum>
                          </property>
                          <layout class="QGridLayout" name="gridLayout_5">
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
                           <property name="topMargin">
                            <number>0</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>20</number>
                           </property>
                           <property name="bottomMargin">
                            <number>0</number>
@@ -718,8 +765,14 @@ max-height:30px;</string>
                           <enum>QFrame::Raised</enum>
                          </property>
                          <layout class="QGridLayout" name="gridLayout_26">
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
                           <property name="topMargin">
                            <number>0</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>20</number>
                           </property>
                           <property name="bottomMargin">
                            <number>0</number>
@@ -796,11 +849,14 @@ max-height:30px;</string>
                     <item row="0" column="0">
                      <widget class="QWidget" name="widget_21" native="true">
                       <property name="styleSheet">
-                       <string notr="true">background-color:  rgb(250, 250, 250);
+                       <string notr="true">background-color:  #E9E9E9;
 min-height:30px;
 max-height:30px;</string>
                       </property>
                       <layout class="QGridLayout" name="gridLayout_49">
+                       <property name="leftMargin">
+                        <number>20</number>
+                       </property>
                        <property name="topMargin">
                         <number>0</number>
                        </property>
@@ -833,6 +889,9 @@ max-height:30px;</string>
                     <item row="2" column="0">
                      <widget class="QWidget" name="widget_22" native="true">
                       <layout class="QGridLayout" name="gridLayout_50">
+                       <property name="leftMargin">
+                        <number>20</number>
+                       </property>
                        <property name="topMargin">
                         <number>0</number>
                        </property>
@@ -854,8 +913,14 @@ max-height:30px;</string>
                           <enum>QFrame::Raised</enum>
                          </property>
                          <layout class="QGridLayout" name="gridLayout_51">
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
                           <property name="topMargin">
                            <number>0</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>20</number>
                           </property>
                           <property name="bottomMargin">
                            <number>0</number>
@@ -938,11 +1003,14 @@ max-height:30px;</string>
                     <item row="0" column="0">
                      <widget class="QWidget" name="widget_27" native="true">
                       <property name="styleSheet">
-                       <string notr="true">background-color:  rgb(250, 250, 250);
+                       <string notr="true">background-color: #E9E9E9;
 min-height:30px;
 max-height:30px;</string>
                       </property>
                       <layout class="QGridLayout" name="gridLayout_57">
+                       <property name="leftMargin">
+                        <number>20</number>
+                       </property>
                        <property name="topMargin">
                         <number>0</number>
                        </property>
@@ -975,6 +1043,9 @@ max-height:30px;</string>
                     <item row="2" column="0">
                      <widget class="QWidget" name="widget_28" native="true">
                       <layout class="QGridLayout" name="gridLayout_58">
+                       <property name="leftMargin">
+                        <number>20</number>
+                       </property>
                        <property name="topMargin">
                         <number>0</number>
                        </property>
@@ -996,8 +1067,14 @@ max-height:30px;</string>
                           <enum>QFrame::Raised</enum>
                          </property>
                          <layout class="QGridLayout" name="gridLayout_59">
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
                           <property name="topMargin">
                            <number>0</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>20</number>
                           </property>
                           <property name="bottomMargin">
                            <number>0</number>
@@ -1044,8 +1121,14 @@ max-height:30px;</string>
                           <enum>QFrame::Raised</enum>
                          </property>
                          <layout class="QGridLayout" name="gridLayout_60">
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
                           <property name="topMargin">
                            <number>0</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>20</number>
                           </property>
                           <property name="bottomMargin">
                            <number>0</number>
@@ -1092,8 +1175,14 @@ max-height:30px;</string>
                           <enum>QFrame::Raised</enum>
                          </property>
                          <layout class="QGridLayout" name="gridLayout_61">
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
                           <property name="topMargin">
                            <number>0</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>20</number>
                           </property>
                           <property name="bottomMargin">
                            <number>0</number>
@@ -1140,8 +1229,14 @@ max-height:30px;</string>
                           <enum>QFrame::Raised</enum>
                          </property>
                          <layout class="QGridLayout" name="gridLayout_62">
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
                           <property name="topMargin">
                            <number>0</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>20</number>
                           </property>
                           <property name="bottomMargin">
                            <number>0</number>
@@ -1197,11 +1292,14 @@ max-height:30px;</string>
                     <item row="0" column="0">
                      <widget class="QWidget" name="widget_24" native="true">
                       <property name="styleSheet">
-                       <string notr="true">background-color:  rgb(250, 250, 250);
+                       <string notr="true">background-color: #E9E9E9;
 min-height:30px;
 max-height:30px;</string>
                       </property>
                       <layout class="QGridLayout" name="gridLayout_53">
+                       <property name="leftMargin">
+                        <number>20</number>
+                       </property>
                        <property name="topMargin">
                         <number>0</number>
                        </property>
@@ -1234,6 +1332,9 @@ max-height:30px;</string>
                     <item row="2" column="0">
                      <widget class="QWidget" name="widget_25" native="true">
                       <layout class="QGridLayout" name="gridLayout_54">
+                       <property name="leftMargin">
+                        <number>20</number>
+                       </property>
                        <property name="topMargin">
                         <number>0</number>
                        </property>
@@ -1255,11 +1356,14 @@ max-height:30px;</string>
                           <enum>QFrame::Raised</enum>
                          </property>
                          <layout class="QGridLayout" name="gridLayout_55">
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
                           <property name="topMargin">
                            <number>0</number>
                           </property>
                           <property name="rightMargin">
-                           <number>9</number>
+                           <number>20</number>
                           </property>
                           <property name="bottomMargin">
                            <number>0</number>
@@ -1325,6 +1429,11 @@ max-height:30px;</string>
                <string notr="true">QFrame#frame, #frame_2, #frame_3, #frame_4, #frame_5, #frame_6
 {
    min-height:50px;
+}
+
+QFrame &gt; QLabel
+{
+   font: 14px &quot;微软雅黑&quot;;
 }</string>
               </property>
               <attribute name="title">
@@ -1347,13 +1456,13 @@ max-height:30px;</string>
                <item row="0" column="0">
                 <widget class="QWidget" name="widget_7" native="true">
                  <property name="styleSheet">
-                  <string notr="true">background-color:  rgb(250, 250, 250);
+                  <string notr="true">background-color: #E9E9E9;
 min-height:30px;
 max-height:30px;</string>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_37">
                   <property name="leftMargin">
-                   <number>18</number>
+                   <number>20</number>
                   </property>
                   <property name="topMargin">
                    <number>0</number>
@@ -1391,7 +1500,7 @@ max-height:30px;</string>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_25">
                   <property name="leftMargin">
-                   <number>9</number>
+                   <number>20</number>
                   </property>
                   <property name="topMargin">
                    <number>0</number>
@@ -1447,13 +1556,13 @@ max-height:30px;</string>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_2">
                      <property name="leftMargin">
-                      <number>9</number>
+                      <number>0</number>
                      </property>
                      <property name="topMargin">
                       <number>0</number>
                      </property>
                      <property name="rightMargin">
-                      <number>9</number>
+                      <number>20</number>
                      </property>
                      <property name="bottomMargin">
                       <number>0</number>
@@ -1488,15 +1597,18 @@ max-height:30px;</string>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_6">
                      <property name="leftMargin">
-                      <number>9</number>
+                      <number>0</number>
                      </property>
                      <property name="topMargin">
                       <number>0</number>
                      </property>
                      <property name="rightMargin">
-                      <number>9</number>
+                      <number>20</number>
                      </property>
                      <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="spacing">
                       <number>0</number>
                      </property>
                      <item row="0" column="0">
@@ -1526,15 +1638,18 @@ max-height:30px;</string>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_15">
                      <property name="leftMargin">
-                      <number>9</number>
+                      <number>0</number>
                      </property>
                      <property name="topMargin">
                       <number>0</number>
                      </property>
                      <property name="rightMargin">
-                      <number>9</number>
+                      <number>20</number>
                      </property>
                      <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="spacing">
                       <number>0</number>
                      </property>
                      <item row="0" column="0">
@@ -1564,15 +1679,18 @@ max-height:30px;</string>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_22">
                      <property name="leftMargin">
-                      <number>9</number>
+                      <number>0</number>
                      </property>
                      <property name="topMargin">
                       <number>0</number>
                      </property>
                      <property name="rightMargin">
-                      <number>9</number>
+                      <number>20</number>
                      </property>
                      <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="spacing">
                       <number>0</number>
                      </property>
                      <item row="0" column="0">
@@ -1602,15 +1720,18 @@ max-height:30px;</string>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_23">
                      <property name="leftMargin">
-                      <number>9</number>
+                      <number>0</number>
                      </property>
                      <property name="topMargin">
                       <number>0</number>
                      </property>
                      <property name="rightMargin">
-                      <number>9</number>
+                      <number>20</number>
                      </property>
                      <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="spacing">
                       <number>0</number>
                      </property>
                      <item row="0" column="0">
@@ -1640,13 +1761,13 @@ max-height:30px;</string>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_24">
                      <property name="leftMargin">
-                      <number>9</number>
+                      <number>0</number>
                      </property>
                      <property name="topMargin">
                       <number>0</number>
                      </property>
                      <property name="rightMargin">
-                      <number>9</number>
+                      <number>20</number>
                      </property>
                      <property name="bottomMargin">
                       <number>0</number>
@@ -1691,6 +1812,11 @@ max-height:30px;</string>
                <string notr="true">QFrame#frame_7, #frame_8, #frame_9, #frame_10, #frame_11, #frame_12
 {
    min-height:50px;
+}
+
+QFrame &gt; QLabel
+{
+   font: 14px &quot;微软雅黑&quot;;
 }</string>
               </property>
               <attribute name="title">
@@ -1714,6 +1840,9 @@ max-height:30px;</string>
                <item row="2" column="0" colspan="2">
                 <widget class="QWidget" name="widget_9" native="true">
                  <layout class="QGridLayout" name="gridLayout_30">
+                  <property name="leftMargin">
+                   <number>20</number>
+                  </property>
                   <property name="topMargin">
                    <number>0</number>
                   </property>
@@ -1735,8 +1864,14 @@ max-height:30px;</string>
                      <enum>QFrame::Raised</enum>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_4">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
                      <property name="topMargin">
                       <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>20</number>
                      </property>
                      <property name="bottomMargin">
                       <number>0</number>
@@ -1783,8 +1918,14 @@ max-height:30px;</string>
                      <enum>QFrame::Raised</enum>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_13">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
                      <property name="topMargin">
                       <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>20</number>
                      </property>
                      <property name="bottomMargin">
                       <number>0</number>
@@ -1831,8 +1972,14 @@ max-height:30px;</string>
                      <enum>QFrame::Raised</enum>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_18">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
                      <property name="topMargin">
                       <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>20</number>
                      </property>
                      <property name="bottomMargin">
                       <number>0</number>
@@ -1879,8 +2026,14 @@ max-height:30px;</string>
                      <enum>QFrame::Raised</enum>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_29">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
                      <property name="topMargin">
                       <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>20</number>
                      </property>
                      <property name="bottomMargin">
                       <number>0</number>
@@ -1927,8 +2080,14 @@ max-height:30px;</string>
                      <enum>QFrame::Raised</enum>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_27">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
                      <property name="topMargin">
                       <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>20</number>
                      </property>
                      <property name="bottomMargin">
                       <number>0</number>
@@ -1975,8 +2134,14 @@ max-height:30px;</string>
                      <enum>QFrame::Raised</enum>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_28">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
                      <property name="topMargin">
                       <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>20</number>
                      </property>
                      <property name="bottomMargin">
                       <number>0</number>
@@ -2027,7 +2192,7 @@ max-height:30px;</string>
                <item row="0" column="0" colspan="2">
                 <widget class="QWidget" name="widget_8" native="true">
                  <property name="styleSheet">
-                  <string notr="true">background-color:  rgb(250, 250, 250);
+                  <string notr="true">background-color: #E9E9E9;
 min-height:30px;
 max-height:30px;</string>
                  </property>
@@ -2064,6 +2229,11 @@ max-height:30px;</string>
                <string notr="true">QFrame#frame_13, #frame_14, #frame_15, #frame_16, #frame_17, #frame_18
 {
    min-height:50px;
+}
+
+QFrame &gt; QLabel
+{
+   font: 14px &quot;微软雅黑&quot;;
 }</string>
               </property>
               <attribute name="title">
@@ -2079,7 +2249,7 @@ max-height:30px;</string>
                <item row="0" column="0">
                 <widget class="QWidget" name="widget_11" native="true">
                  <property name="styleSheet">
-                  <string notr="true">background-color:  rgb(250, 250, 250);
+                  <string notr="true">background-color: #E9E9E9;
 min-height:30px;
 max-height:30px;</string>
                  </property>
@@ -2119,6 +2289,9 @@ max-height:30px;</string>
                <item row="2" column="0">
                 <widget class="QWidget" name="widget_12" native="true">
                  <layout class="QGridLayout" name="gridLayout_34">
+                  <property name="leftMargin">
+                   <number>20</number>
+                  </property>
                   <property name="topMargin">
                    <number>0</number>
                   </property>
@@ -2140,8 +2313,14 @@ max-height:30px;</string>
                      <enum>QFrame::Raised</enum>
                     </property>
                     <layout class="QGridLayout" name="gridLayout">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
                      <property name="topMargin">
                       <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>20</number>
                      </property>
                      <property name="bottomMargin">
                       <number>0</number>
@@ -2188,8 +2367,14 @@ max-height:30px;</string>
                      <enum>QFrame::Raised</enum>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_3">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
                      <property name="topMargin">
                       <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>20</number>
                      </property>
                      <property name="bottomMargin">
                       <number>0</number>
@@ -2236,8 +2421,14 @@ max-height:30px;</string>
                      <enum>QFrame::Raised</enum>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_12">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
                      <property name="topMargin">
                       <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>20</number>
                      </property>
                      <property name="bottomMargin">
                       <number>0</number>
@@ -2284,8 +2475,14 @@ max-height:30px;</string>
                      <enum>QFrame::Raised</enum>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_19">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
                      <property name="topMargin">
                       <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>20</number>
                      </property>
                      <property name="bottomMargin">
                       <number>0</number>
@@ -2332,8 +2529,14 @@ max-height:30px;</string>
                      <enum>QFrame::Raised</enum>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_32">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
                      <property name="topMargin">
                       <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>20</number>
                      </property>
                      <property name="bottomMargin">
                       <number>0</number>
@@ -2380,8 +2583,14 @@ max-height:30px;</string>
                      <enum>QFrame::Raised</enum>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_33">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
                      <property name="topMargin">
                       <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>20</number>
                      </property>
                      <property name="bottomMargin">
                       <number>0</number>
@@ -2458,350 +2667,404 @@ max-height:30px;</string>
 
 QFrame#frame_30, #frame_31,  #frame_32,  #frame_33,  #frame_34,  #frame_35,  #frame_36
 {
-   min-height:0px;
+   min-height:50px;
    max-height:50px;
+}
+
+QLabel
+{
+   font:14px &quot;微软雅黑&quot;;
 }</string>
       </property>
       <attribute name="title">
        <string>测量信息</string>
       </attribute>
-      <layout class="QGridLayout" name="gridLayout_7" rowstretch="2,3" columnstretch="5,8">
+      <layout class="QGridLayout" name="gridLayout_66" columnstretch="2,3">
        <property name="leftMargin">
-        <number>9</number>
+        <number>0</number>
        </property>
        <property name="topMargin">
         <number>0</number>
        </property>
        <property name="rightMargin">
-        <number>9</number>
+        <number>0</number>
        </property>
        <property name="bottomMargin">
+        <number>20</number>
+       </property>
+       <property name="spacing">
         <number>0</number>
        </property>
-       <property name="horizontalSpacing">
-        <number>3</number>
-       </property>
-       <property name="verticalSpacing">
-        <number>0</number>
-       </property>
-       <item row="0" column="0" rowspan="2">
+       <item row="0" column="0">
         <widget class="DeTableView" name="widget_2" native="true"/>
        </item>
        <item row="0" column="1">
-        <layout class="QGridLayout" name="gridLayout_81">
+        <layout class="QGridLayout" name="gridLayout_7" rowstretch="1,3">
+         <property name="spacing">
+          <number>0</number>
+         </property>
          <item row="0" column="0">
-          <layout class="QGridLayout" name="gridLayout_69">
+          <layout class="QGridLayout" name="gridLayout_81">
            <property name="spacing">
-            <number>0</number>
+            <number>2</number>
            </property>
            <item row="0" column="0">
-            <widget class="QWidget" name="widget_33" native="true">
-             <property name="styleSheet">
-              <string notr="true">background-color:  rgb(250, 250, 250);
+            <layout class="QGridLayout" name="gridLayout_69">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QWidget" name="widget_33" native="true">
+               <property name="styleSheet">
+                <string notr="true">background-color:  rgb(250, 250, 250);
 min-height:30px;
 max-height:30px;</string>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_70">
-              <property name="topMargin">
-               <number>0</number>
-              </property>
-              <property name="rightMargin">
-               <number>0</number>
-              </property>
-              <property name="bottomMargin">
-               <number>0</number>
-              </property>
-              <property name="spacing">
-               <number>0</number>
-              </property>
-              <item row="0" column="0">
-               <widget class="QLabel" name="label">
-                <property name="text">
-                 <string>时间选择</string>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_70">
+                <property name="topMargin">
+                 <number>0</number>
                 </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label">
+                  <property name="text">
+                   <string>时间选择</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="Line" name="line_43">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QWidget" name="widget_32" native="true">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 255, 255);</string>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_68">
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QFrame" name="frame_30">
+                  <property name="styleSheet">
+                   <string notr="true"/>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::NoFrame</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_10">
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <item row="0" column="0">
+                    <widget class="QPushButton" name="datetimeBtn">
+                     <property name="text">
+                      <string>2017-8-27</string>
+                     </property>
+                     <property name="flat">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="Line" name="line_41">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QFrame" name="frame_31">
+                  <property name="styleSheet">
+                   <string notr="true"/>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::NoFrame</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_11">
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <item row="0" column="0">
+                    <widget class="QPushButton" name="pushButton_17">
+                     <property name="text">
+                      <string>本周</string>
+                     </property>
+                     <property name="flat">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="Line" name="line_42">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QFrame" name="frame_32">
+                  <property name="styleSheet">
+                   <string notr="true"/>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::NoFrame</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_67">
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <item row="0" column="0">
+                    <widget class="QPushButton" name="pushButton_18">
+                     <property name="text">
+                      <string>本日</string>
+                     </property>
+                     <property name="flat">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
            </item>
-           <item row="1" column="0">
-            <widget class="Line" name="line_43">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+           <item row="0" column="1">
+            <layout class="QGridLayout" name="gridLayout_76">
+             <property name="spacing">
+              <number>0</number>
              </property>
-            </widget>
-           </item>
-           <item row="2" column="0">
-            <widget class="QWidget" name="widget_32" native="true">
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(255, 255, 255);</string>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_68">
-              <property name="topMargin">
-               <number>0</number>
-              </property>
-              <property name="rightMargin">
-               <number>0</number>
-              </property>
-              <property name="bottomMargin">
-               <number>0</number>
-              </property>
-              <property name="spacing">
-               <number>0</number>
-              </property>
-              <item row="0" column="0">
-               <widget class="QFrame" name="frame_30">
-                <property name="styleSheet">
-                 <string notr="true"/>
+             <item row="0" column="0">
+              <widget class="QWidget" name="widget_36" native="true">
+               <property name="styleSheet">
+                <string notr="true">background-color:  rgb(250, 250, 250);
+min-height:30px;
+max-height:30px;</string>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_77">
+                <property name="topMargin">
+                 <number>0</number>
                 </property>
-                <property name="frameShape">
-                 <enum>QFrame::NoFrame</enum>
+                <property name="rightMargin">
+                 <number>0</number>
                 </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
+                <property name="bottomMargin">
+                 <number>0</number>
                 </property>
-                <layout class="QGridLayout" name="gridLayout_10">
-                 <property name="topMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="spacing">
-                  <number>0</number>
-                 </property>
-                 <item row="0" column="0">
-                  <widget class="QPushButton" name="datetimeBtn">
-                   <property name="text">
-                    <string>2017-8-27</string>
-                   </property>
-                   <property name="flat">
-                    <bool>true</bool>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item row="1" column="0">
-               <widget class="Line" name="line_41">
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
+                <property name="spacing">
+                 <number>0</number>
                 </property>
-               </widget>
-              </item>
-              <item row="2" column="0">
-               <widget class="QFrame" name="frame_31">
-                <property name="styleSheet">
-                 <string notr="true"/>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_23">
+                  <property name="text">
+                   <string>图形显示</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="Line" name="line_46">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QWidget" name="widget_37" native="true">
+               <property name="styleSheet">
+                <string notr="true">#widget_37
+{
+background-color: rgb(255, 255, 255);
+}</string>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_78">
+                <property name="leftMargin">
+                 <number>10</number>
                 </property>
-                <property name="frameShape">
-                 <enum>QFrame::NoFrame</enum>
+                <property name="topMargin">
+                 <number>30</number>
                 </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
+                <property name="rightMargin">
+                 <number>10</number>
                 </property>
-                <layout class="QGridLayout" name="gridLayout_11">
-                 <property name="topMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="spacing">
-                  <number>0</number>
-                 </property>
-                 <item row="0" column="0">
-                  <widget class="QPushButton" name="pushButton_17">
-                   <property name="text">
-                    <string>本周</string>
-                   </property>
-                   <property name="flat">
-                    <bool>true</bool>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item row="3" column="0">
-               <widget class="Line" name="line_42">
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
+                <property name="bottomMargin">
+                 <number>30</number>
                 </property>
-               </widget>
-              </item>
-              <item row="4" column="0">
-               <widget class="QFrame" name="frame_32">
-                <property name="styleSheet">
-                 <string notr="true"/>
+                <property name="horizontalSpacing">
+                 <number>24</number>
                 </property>
-                <property name="frameShape">
-                 <enum>QFrame::NoFrame</enum>
+                <property name="verticalSpacing">
+                 <number>0</number>
                 </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
-                </property>
-                <layout class="QGridLayout" name="gridLayout_67">
-                 <property name="topMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="spacing">
-                  <number>0</number>
-                 </property>
-                 <item row="0" column="0">
-                  <widget class="QPushButton" name="pushButton_18">
-                   <property name="text">
-                    <string>本日</string>
-                   </property>
-                   <property name="flat">
-                    <bool>true</bool>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-             </layout>
-            </widget>
+                <item row="0" column="0">
+                 <layout class="QGridLayout" name="gridLayout_74">
+                  <property name="horizontalSpacing">
+                   <number>10</number>
+                  </property>
+                  <property name="verticalSpacing">
+                   <number>0</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_50">
+                    <property name="styleSheet">
+                     <string notr="true">image: url(:/Demo/Resources/xitongshezhi-zuoshou-wuwuran.png);
+min-width:26px;
+min-height:62px;
+max-width:26px;
+max-height:62px;</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QLabel" name="label_51">
+                    <property name="styleSheet">
+                     <string notr="true">image: url(:/Demo/Resources/xitongshezhi-youshou-wuwuran.png);
+min-width:26px;
+min-height:62px;
+max-width:26px;
+max-height:62px;</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="0" column="1">
+                 <layout class="QGridLayout" name="gridLayout_75">
+                  <property name="horizontalSpacing">
+                   <number>10</number>
+                  </property>
+                  <property name="verticalSpacing">
+                   <number>0</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_52">
+                    <property name="styleSheet">
+                     <string notr="true">image: url(:/Demo/Resources/xitongshezhi-zuojiao-wuwuran.png);
+min-width:30px;
+min-height:68px;
+max-width:30px;
+max-height:68px;</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QLabel" name="label_53">
+                    <property name="styleSheet">
+                     <string notr="true">image: url(:/Demo/Resources/xitongshezhi-youjiao-wuwuran.png);
+min-width:30px;
+min-height:68px;
+max-width:30px;
+max-height:68px;</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="label_44">
+                  <property name="text">
+                   <string>手部污染</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QLabel" name="label_25">
+                  <property name="text">
+                   <string>脚步污染</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
            </item>
           </layout>
          </item>
-         <item row="0" column="1">
-          <layout class="QGridLayout" name="gridLayout_76">
-           <property name="spacing">
-            <number>0</number>
-           </property>
-           <item row="0" column="0">
-            <widget class="QWidget" name="widget_36" native="true">
-             <property name="styleSheet">
-              <string notr="true">background-color:  rgb(250, 250, 250);
-min-height:30px;
-max-height:30px;</string>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_77">
-              <property name="topMargin">
-               <number>0</number>
-              </property>
-              <property name="rightMargin">
-               <number>0</number>
-              </property>
-              <property name="bottomMargin">
-               <number>0</number>
-              </property>
-              <property name="spacing">
-               <number>0</number>
-              </property>
-              <item row="0" column="0">
-               <widget class="QLabel" name="label_23">
-                <property name="text">
-                 <string>图形显示</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <widget class="Line" name="line_46">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="0">
-            <widget class="QWidget" name="widget_37" native="true">
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(255, 255, 255);</string>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_78">
-              <property name="margin">
-               <number>0</number>
-              </property>
-              <property name="spacing">
-               <number>0</number>
-              </property>
-              <item row="2" column="0">
-               <widget class="QFrame" name="frame_35">
-                <property name="styleSheet">
-                 <string notr="true"/>
-                </property>
-                <property name="frameShape">
-                 <enum>QFrame::NoFrame</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
-                </property>
-                <layout class="QGridLayout" name="gridLayout_79">
-                 <property name="topMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="spacing">
-                  <number>0</number>
-                 </property>
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="label_25">
-                   <property name="text">
-                    <string>脚步污染</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item row="0" column="0">
-               <widget class="QFrame" name="frame_36">
-                <property name="styleSheet">
-                 <string notr="true"/>
-                </property>
-                <property name="frameShape">
-                 <enum>QFrame::NoFrame</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
-                </property>
-                <layout class="QGridLayout" name="gridLayout_80">
-                 <property name="topMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="spacing">
-                  <number>0</number>
-                 </property>
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="label_44">
-                   <property name="text">
-                    <string>手部污染</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item row="1" column="0">
-               <widget class="Line" name="line_47">
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-          </layout>
+         <item row="1" column="0">
+          <widget class="DeTableView" name="widget" native="true"/>
          </item>
         </layout>
-       </item>
-       <item row="1" column="1">
-        <widget class="DeTableView" name="widget" native="true"/>
        </item>
       </layout>
      </widget>
@@ -2812,203 +3075,234 @@ max-height:30px;</string>
    border:1px solid gray;
    border-radius:5px;
    height:30px;
-   font:16pt bold &quot;黑体&quot;;
+   font:14pt bold &quot;微软雅黑&quot;;
 }
 
 QPushButton {
     
-	font: bold 16pt &quot;黑体&quot;;
+	font:14pt bold &quot;微软雅黑&quot;;
     border: 0px solid #8f8f91;
     border-radius: 5px;
-    min-height: 30px;
-    color: rgb(254, 255, 253);
-    background-color: rgb(66, 189, 170);
+    color: #FFFFFF;
+    min-height:30px;
+    max-height:30px;
+    background-color: #42BDAA;
  }</string>
       </property>
       <attribute name="title">
        <string>探测器参数</string>
       </attribute>
-      <layout class="QGridLayout" name="gridLayout_72" rowstretch="0,0" columnstretch="1,1,1">
-       <property name="spacing">
-        <number>0</number>
-       </property>
-       <item row="0" column="0" colspan="3">
+      <layout class="QGridLayout" name="gridLayout_79">
+       <item row="0" column="0">
         <widget class="DeTableView" name="channelTabelView" native="true"/>
        </item>
        <item row="1" column="0">
-        <widget class="QWidget" name="widget_34" native="true">
-         <layout class="QGridLayout" name="gridLayout_8">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_2">
-            <property name="text">
-             <string>通道号</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="DeValueSelectWidget" name="widget_35" native="true"/>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="label_9">
-            <property name="text">
-             <string>计数时间</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0">
-           <widget class="DeValueSelectWidget" name="widget_38" native="true"/>
-          </item>
-          <item row="4" column="0">
-           <widget class="QLabel" name="label_22">
-            <property name="text">
-             <string>高压</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="0">
-           <widget class="QLineEdit" name="lineEdit">
-            <property name="text">
-             <string>46</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-            <property name="readOnly">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QWidget" name="widget_39" native="true">
-         <layout class="QGridLayout" name="gridLayout_9">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_45">
-            <property name="text">
-             <string>阀值1(mV)</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLineEdit" name="lineEdit_2">
-            <property name="text">
-             <string>1</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-            <property name="readOnly">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="label_46">
-            <property name="text">
-             <string>阀值2(mV)</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0">
-           <widget class="QLineEdit" name="lineEdit_3">
-            <property name="text">
-             <string>2</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-            <property name="readOnly">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="0">
-           <widget class="QLabel" name="label_47">
-            <property name="text">
-             <string>阀值3(mV)</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="0">
-           <widget class="QLineEdit" name="lineEdit_4">
-            <property name="text">
-             <string>3</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-            <property name="readOnly">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="QWidget" name="widget_40" native="true">
-         <layout class="QGridLayout" name="gridLayout_71">
-          <item row="3" column="0" colspan="2">
-           <widget class="QLineEdit" name="lineEdit_6">
-            <property name="text">
-             <string>6</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-            <property name="readOnly">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0" colspan="2">
-           <widget class="QLabel" name="label_49">
-            <property name="text">
-             <string>高压误差(%)</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0" colspan="2">
-           <widget class="QLineEdit" name="lineEdit_5">
-            <property name="text">
-             <string>显示信息</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-            <property name="readOnly">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="0">
-           <widget class="QPushButton" name="pushButton_3">
-            <property name="text">
-             <string>读取</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="1">
-           <widget class="QPushButton" name="pushButton_4">
-            <property name="text">
-             <string>设置</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_48">
-            <property name="text">
-             <string>信息</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="0" colspan="2">
-           <widget class="QWidget" name="widget_41" native="true"/>
-          </item>
-         </layout>
-        </widget>
+        <layout class="QGridLayout" name="gridLayout_72" columnstretch="1,1,1">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QWidget" name="widget_34" native="true">
+           <layout class="QGridLayout" name="gridLayout_8">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_2">
+              <property name="text">
+               <string>通道号</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="DeValueSelectWidget" name="widget_35" native="true">
+              <property name="styleSheet">
+               <string notr="true">QPushButton 
+{    
+    background-color: #42BDAA;
+}
+
+QLabel
+{
+   
+	background-color: rgb(255, 255, 255);
+}</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_9">
+              <property name="text">
+               <string>计数时间</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="DeValueSelectWidget" name="widget_38" native="true">
+              <property name="styleSheet">
+               <string notr="true">QPushButton 
+{    
+    background-color: #42BDAA;
+}
+
+QLabel
+{
+   
+	background-color: rgb(255, 255, 255);
+}</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_22">
+              <property name="text">
+               <string>高压</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLineEdit" name="lineEdit">
+              <property name="text">
+               <string>46</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QWidget" name="widget_39" native="true">
+           <layout class="QGridLayout" name="gridLayout_9">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_45">
+              <property name="text">
+               <string>阀值1(mV)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLineEdit" name="lineEdit_2">
+              <property name="text">
+               <string>1</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_46">
+              <property name="text">
+               <string>阀值2(mV)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLineEdit" name="lineEdit_3">
+              <property name="text">
+               <string>2</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_47">
+              <property name="text">
+               <string>阀值3(mV)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLineEdit" name="lineEdit_4">
+              <property name="text">
+               <string>3</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QWidget" name="widget_40" native="true">
+           <layout class="QGridLayout" name="gridLayout_71">
+            <item row="3" column="0" colspan="2">
+             <widget class="QLineEdit" name="lineEdit_6">
+              <property name="text">
+               <string>6</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" colspan="2">
+             <widget class="QLabel" name="label_49">
+              <property name="text">
+               <string>高压误差(%)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="2">
+             <widget class="QLineEdit" name="lineEdit_5">
+              <property name="text">
+               <string>显示信息</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QPushButton" name="pushButton_3">
+              <property name="text">
+               <string>读取</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1">
+             <widget class="QPushButton" name="pushButton_4">
+              <property name="text">
+               <string>设置</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_48">
+              <property name="text">
+               <string>信息</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0" colspan="2">
+             <widget class="QWidget" name="widget_41" native="true"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
        </item>
       </layout>
      </widget>
@@ -3031,7 +3325,9 @@ QPushButton {
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="demo.qrc"/>
+ </resources>
  <connections/>
  <buttongroups>
   <buttongroup name="buttonGroup"/>

@@ -12,8 +12,6 @@ DeModifyUserDlg::DeModifyUserDlg(QWidget *parent)
 	ui.setupUi(this);
 
 	ui.okBtn->setEnabled(false);
-	ui.keyBoradWidget->hide();
-	ui.passwdLineEdit->installEventFilter(this);
 
 	//ÔÝÊ±Òþ²Ø
 	ui.label_3->hide();
@@ -25,21 +23,6 @@ DeModifyUserDlg::DeModifyUserDlg(QWidget *parent)
 DeModifyUserDlg::~DeModifyUserDlg()
 {
 
-}
-//----------------------------------------------------------------------------
-bool DeModifyUserDlg::eventFilter(QObject *obj, QEvent *event)
-{
-	if (event->type() == QEvent::MouseButtonRelease) 
-	{
-		ui.keyBoradWidget->setEditControl((QLineEdit *)obj);
-		ui.keyBoradWidget->show();
-		return true;
-	}
-	else 
-	{
-		// standard event processing
-		return QObject::eventFilter(obj, event);
-	}
 }
 //----------------------------------------------------------------------------
 void DeModifyUserDlg::on_okBtn_clicked()

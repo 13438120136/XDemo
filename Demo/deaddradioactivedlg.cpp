@@ -9,13 +9,13 @@ DeAddRadioactiveDlg::DeAddRadioactiveDlg(QWidget *parent)
 {
 	ui.setupUi(this);
 
-	ui.keyBoradWidget->hide();
 	ui.okBtn->setEnabled(false);
-	ui.dateEdit->setDate(QDate::currentDate());
-	ui.dateEdit->calendarWidget()->setGridVisible(true);
 
 	ui.idLineEdit->installEventFilter(this);
 	ui.originalLineEdit->installEventFilter(this);
+	ui.lineEdit->setText(QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss"));
+	ui.widget_3->addItem(tr("²âÊÔ1"));
+	ui.widget_3->addItem(tr("²âÊÔ2"));
 
 	connect(ui.idLineEdit, SIGNAL(textChanged(const QString &)), this, SLOT(slotIDLineEdit(const QString &)));
 	connect(ui.originalLineEdit, SIGNAL(textChanged(const QString &)), this, SLOT(slotValueLineEdit(const QString &)));
@@ -30,7 +30,7 @@ void DeAddRadioactiveDlg::on_okBtn_clicked()
 {
 	int id = ui.idLineEdit->text().toInt();
 	int value = ui.originalLineEdit->text().toInt();
-	quint64 time = ui.dateEdit->dateTime().currentMSecsSinceEpoch();
+	quint64 time = 0;// ui.dateEdit->dateTime().currentMSecsSinceEpoch();
 
 	Demo *demo = qApp->property("_mainWin").value<Demo *>();
 	DeSqlDataBase *dataBase = demo->dataBase();
@@ -48,21 +48,6 @@ void DeAddRadioactiveDlg::on_cancelBtn_clicked()
 {
 	Demo *demo = qApp->property("_mainWin").value<Demo *>();
 	demo->slotBackMainWidget();	
-}
-//----------------------------------------------------------------------------
-bool DeAddRadioactiveDlg::eventFilter(QObject *obj, QEvent *event)
-{
-	if (event->type() == QEvent::MouseButtonRelease) 
-	{
-		ui.keyBoradWidget->setEditControl((QLineEdit *)obj);
-		ui.keyBoradWidget->show();
-		return true;
-	}
-	else 
-	{
-		// standard event processing
-		return QObject::eventFilter(obj, event);
-	}
 }
 //----------------------------------------------------------------------------
 void DeAddRadioactiveDlg::slotIDLineEdit(const QString & text)

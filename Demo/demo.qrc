@@ -1,5 +1,24 @@
 <RCC>
   <qresource prefix="/Demo">
+    <file>Resources/xitongshezhi-youjiao-wuran.png</file>
+    <file>Resources/xitongshezhi-youjiao-wuwuran.png</file>
+    <file>Resources/xitongshezhi-youshou-shoubeiwuran.png</file>
+    <file>Resources/xitongshezhi-youshou-shouxinwuran.png</file>
+    <file>Resources/xitongshezhi-youshou-shuangmianwuran.png</file>
+    <file>Resources/xitongshezhi-youshou-wuwuran.png</file>
+    <file>Resources/xitongshezhi-zuojiao-wuran.png</file>
+    <file>Resources/xitongshezhi-zuojiao-wuwuran.png</file>
+    <file>Resources/xitongshezhi-zuoshou-shoubeiwuran.png</file>
+    <file>Resources/xitongshezhi-zuoshou-shouxinwuran.png</file>
+    <file>Resources/xitongshezhi-zuoshou-shuangmianwuran.png</file>
+    <file>Resources/xitongshezhi-zuoshou-wuwuran.png</file>
+    <file>Resources/guanliyemian-chakan.png</file>
+    <file>Resources/guanliyemian-daochu.png</file>
+    <file>Resources/guanliyemian-fangsheyuanriqi.png</file>
+    <file>Resources/guanliyemian-wenjianriqi.png</file>
+    <file>Resources/guanliyemian-shanchu.png</file>
+    <file>Resources/guanliyemian-tianjia.png</file>
+    <file>Resources/guanliyemian-xiugai.png</file>
     <file>Resources/xitongceshi-jiaobuyali.png</file>
     <file>Resources/xitongceshi-jiaobuyali-yichang.png</file>
     <file>Resources/xitongceshi-jiaobuyali-zhengchang.png</file>

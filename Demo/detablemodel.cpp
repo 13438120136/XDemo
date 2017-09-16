@@ -23,11 +23,18 @@ QVariant DeTableModel::data(const QModelIndex &index, int role) const
 	int row = index.row();
 
 	///œ‘ æ±≥æ∞—’…´
-	if ((role == Qt::BackgroundColorRole)
-		&& (row%2 == 0))
+	if (role == Qt::BackgroundColorRole)
 	{
-		QColor color(209, 209, 209, 30);
-		return color;
+		if (row%2 == 1)
+		{
+			QColor color(219, 219, 219);
+			return color;
+		}
+		else
+		{
+			QColor color(233, 233, 233);
+			return color;
+		}
 	}
 
 	if (role == Qt::TextAlignmentRole)

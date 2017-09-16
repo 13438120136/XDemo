@@ -14,38 +14,35 @@
    <string>DeTableView</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QPushButton {
-    
-	font: 16pt &quot;新宋体&quot;;
-	background-color: rgb(244, 244, 244);
-     border: 1px solid #8f8f91;
-     border-radius: 6px;
-     min-width: 80px;
-     min-height: 30px;
- }
+   <string notr="true">QPushButton
+{
+     border: 1px solid black;
+     border-radius:2px;
+     min-width: 18px;
+     min-height: 18px;
+}
 
 QLabel
 {
-    padding-left:15px;
-    padding-right:15px;
-    min-width:40px;
+   font:14px &quot;微软雅黑&quot;;
 }
-
- QPushButton:pressed {
-	background-color: rgb(255, 255, 255);
- }
 
 QTableView
 {
-	font: bold 12pt &quot;宋体&quot;;
+	font: bold 13px &quot;微软雅黑&quot;;    
     border:none;
-	selection-background-color: rgb(66, 189, 170);
-	selection-color: rgb(254, 255, 253);
+    background-color: #E9E9E9;
+	selection-background-color: #42BDAA;
+	selection-color: #FFFFFF;
+}
+
+QTableView
+{
+	gridline-color: #E9E9E9;
 }
 
  QTableView QTableCornerButton::section
  {
-     background: white;
      border: 0px outset rgb(209, 209, 209);
      border-bottom-width:1px;
      border-right-width:1px;
@@ -54,21 +51,18 @@ QTableView
 
 QHeaderView::section
 {
-	background-color: rgb(130, 130, 130);
-    color: rgb(255, 255, 255);
-    border: 0px solid white;
-	border-color: rgb(209, 209, 209);	
+    border:1px solid white;
+	background-color: #C2C2C2;    
+	color: rgb(255, 255, 255);    
 	border-top-width:0px;
 	border-bottom-width:1px;	
 	border-right-width:1px;
 	border-left-width:0px;
+    font:bold 14px &quot;微软雅黑&quot;;
+    min-height:32px;
+    border-color: #E9E9E9;
 }
-
-QHeaderView
-{
-   min-height:25px;
-   font: bold 12pt &quot;宋体&quot;;
-}</string>
+</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <property name="margin">
@@ -92,9 +86,12 @@ QHeaderView
    </item>
    <item row="1" column="0">
     <widget class="QWidget" name="widget" native="true">
+     <property name="styleSheet">
+      <string notr="true">background-color: #E9E9E9;</string>
+     </property>
      <layout class="QGridLayout" name="gridLayout">
       <property name="horizontalSpacing">
-       <number>2</number>
+       <number>18</number>
       </property>
       <property name="verticalSpacing">
        <number>0</number>
@@ -118,38 +115,50 @@ QHeaderView
       <item row="0" column="1">
        <widget class="QPushButton" name="firstBtn">
         <property name="text">
-         <string>首页</string>
+         <string>|&lt;</string>
         </property>
        </widget>
       </item>
       <item row="0" column="2">
        <widget class="QPushButton" name="prevBtn">
         <property name="text">
-         <string>上一页</string>
+         <string>&lt;</string>
         </property>
        </widget>
       </item>
       <item row="0" column="3">
        <widget class="QLabel" name="label">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="baseSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
         <property name="styleSheet">
-         <string notr="true">font: 10pt &quot;宋体&quot;;</string>
+         <string notr="true"/>
         </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string>1</string>
         </property>
        </widget>
       </item>
       <item row="0" column="4">
        <widget class="QPushButton" name="nextBtn">
         <property name="text">
-         <string>下一页</string>
+         <string>&gt;</string>
         </property>
        </widget>
       </item>
       <item row="0" column="5">
        <widget class="QPushButton" name="lastBtn">
         <property name="text">
-         <string>末页</string>
+         <string>&gt;|</string>
         </property>
        </widget>
       </item>

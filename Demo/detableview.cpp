@@ -7,6 +7,7 @@ DeTableView::DeTableView(QWidget *parent)
 {
 	ui.setupUi(this);
 	ui.tableView->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
+	ui.tableView->verticalHeader()->setDefaultSectionSize(30);
 }
 //----------------------------------------------------------------------------
 DeTableView::~DeTableView()
