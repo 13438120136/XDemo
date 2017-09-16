@@ -29,6 +29,11 @@ DeInitWidget::DeInitWidget(QWidget *parent)
 	connect(ui.pushButton_2, SIGNAL(clicked()), this, SLOT(on_englishBtn_clicked()));
 	connect(ui.pushButton_10, SIGNAL(clicked()), this, SLOT(on_englishBtn_clicked()));
 	connect(ui.pushButton_14, SIGNAL(clicked()), this, SLOT(on_englishBtn_clicked()));
+	
+	///没有进入维护模式
+	connect(ui.pushButton_3, SIGNAL(clicked()), this, SLOT(on_deviceBtn_clicked()));
+	connect(ui.pushButton_11, SIGNAL(clicked()), this, SLOT(on_deviceBtn_clicked()));
+	connect(ui.pushButton_15, SIGNAL(clicked()), this, SLOT(on_deviceBtn_clicked()));
 }
 //----------------------------------------------------------------------------
 DeInitWidget::~DeInitWidget()

@@ -159,7 +159,7 @@ QLabel
          <string notr="true">background-color: #E9E9E9;</string>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab">
          <property name="styleSheet">
@@ -1519,7 +1519,7 @@ max-height:126px;</string>
    max-height:24px;
    font: 13px &quot;微软雅黑&quot;;
    color: #FFFFFF;
-   background-color: #349485;
+   background-color: #42BDAA;
    border:none;
    border-radius:5px;
 }</string>
@@ -1550,7 +1550,7 @@ max-height:126px;</string>
    max-height:24px;
    font: 13px &quot;微软雅黑&quot;;
    color: #FFFFFF;
-   background-color: #349485;   
+   background-color:  #42BDAA;   
    border:none;
    border-radius:5px;
 }</string>
@@ -1812,7 +1812,7 @@ Key part measuring</string>
    max-height:24px;
    font: 13px &quot;微软雅黑&quot;;
    color: #FFFFFF;
-   background-color: #349485;
+   background-color:  #42BDAA;
    border:none;
    border-radius:5px;
 }</string>
@@ -1843,7 +1843,7 @@ Key part measuring</string>
    max-height:24px;
    font: 13px &quot;微软雅黑&quot;;
    color: #FFFFFF;
-   background-color: #349485;   
+   background-color:  #42BDAA;
    border:none;
    border-radius:5px;
 }</string>

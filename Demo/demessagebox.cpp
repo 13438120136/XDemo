@@ -6,15 +6,15 @@ DeMessageBox::DeMessageBox(QWidget *parent)
 {
 	setWindowFlags(Qt::ToolTip);
 	setIcon(QMessageBox::Information);
-	this->setStyleSheet("QLabel{font: 16px \"ºÚÌå\";} \
+	this->setStyleSheet("QLabel{font: 14px \"Î¢ÈíÑÅºÚ\";} \
 						QPushButton { \
-						font: bold 16pt \"ºÚÌå\"; \
-						border: 0px solid #8f8f91; \
+						font: 14pt \"Î¢ÈíÑÅºÚ\"; \
+						border: none; \
 						border-radius: 5px; \
-						color: rgb(254, 255, 253); \
-						background-color: rgb(66, 189, 170); \
+						color: #FFFFFF; \
+						background-color:  #42BDAA; \
 						min-width: 100px; \
-						min-height: 38px;  }");
+						min-height: 30px;  }");
 }
 //----------------------------------------------------------------------------
 DeMessageBox::~DeMessageBox()
@@ -24,7 +24,7 @@ DeMessageBox::~DeMessageBox()
 //----------------------------------------------------------------------------
 void DeMessageBox::resizeEvent(QResizeEvent *event)
 {
-	setFixedSize(300, 200);
+	setFixedSize(300, 140);
 	QMessageBox::resizeEvent(event);
 }
 //----------------------------------------------------------------------------

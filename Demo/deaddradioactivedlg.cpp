@@ -13,7 +13,7 @@ DeAddRadioactiveDlg::DeAddRadioactiveDlg(QWidget *parent)
 
 	ui.idLineEdit->installEventFilter(this);
 	ui.originalLineEdit->installEventFilter(this);
-	ui.lineEdit->setText(QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss"));
+	ui.lineEdit->setText(QDateTime::currentDateTime().toString("yyyy/MM/dd"));
 	ui.widget_3->addItem(tr("测试1"));
 	ui.widget_3->addItem(tr("测试2"));
 
@@ -66,5 +66,35 @@ void DeAddRadioactiveDlg::slotValueLineEdit(const QString & text)
 	QString value = ui.originalLineEdit->text();
 
 	ui.okBtn->setEnabled (!id.isEmpty() && !value.isEmpty());
+}
+//----------------------------------------------------------------------------
+void DeAddRadioactiveDlg::on_dateBtn_clicked()
+{
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	///自定义系统的日期选择菜单
+	QCalendarWidget *calendarWidget = new QCalendarWidget;
+	connect(calendarWidget, SIGNAL(activated(const QDate & date)), this, SLOT(slotDateClicked(const QDate & date)));
+
+	calendarWidget->setGridVisible(true);
+	calendarWidget->setStyleSheet("QToolButton{min-width:60px; min-height:40px;border:none} \
+								  QWidget{font:24px bold \"微软雅黑\";}");
+
+	QWidget *contentWidget = calendarWidget->findChild<QWidget *>("qt_calendar_calendarview");
+	contentWidget->setStyleSheet("selection-background-color: rgb(66, 189, 170); \
+								 selection-color: rgb(254, 255, 253);");
+
+	QWidget *headWidget = calendarWidget->findChild<QWidget *>("qt_calendar_navigationbar");
+	headWidget->setStyleSheet("background-color: rgb(240, 240, 240); \
+							  color: rgb(66, 189, 170)");
+
+	demo->slotSetWidget(calendarWidget);
+}
+//----------------------------------------------------------------------------
+void DeAddRadioactiveDlg::slotDateClicked(const QDate & date)
+{
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	demo->slotBackMainWidget();
+
+	ui.lineEdit->setText(date.currentDate().toString("yyyy/MM/dd"));
 }
 //----------------------------------------------------------------------------

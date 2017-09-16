@@ -15,8 +15,6 @@ DeAddUserDlg::DeAddUserDlg(QWidget *parent)
 	ui.widgePermission->addItem(QString::fromLocal8Bit("维护人员"));
 	this->setWindowFlags(Qt::ToolTip);
 
-	ui.okBtn->setEnabled(false);
-
 	///暂时隐藏
 	ui.label_3->hide();
 	ui.widgePermission->hide();

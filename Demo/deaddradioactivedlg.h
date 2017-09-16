@@ -4,6 +4,7 @@
 #include <QDialog>
 #include "ui_deaddradioactivedlg.h"
 #include "deradioactivesourcetable.h"
+#include <QDate>
 
 class DeAddRadioactiveDlg : public QDialog
 {
@@ -18,8 +19,10 @@ public:
 public Q_SLOTS:
 	void on_okBtn_clicked();
 	void on_cancelBtn_clicked();
+	void on_dateBtn_clicked();
 	void slotIDLineEdit(const QString & text);
 	void slotValueLineEdit(const QString & text);
+	void slotDateClicked(const QDate & date);
 
 private:
 	Ui::DeAddRadioactiveDlg ui;
