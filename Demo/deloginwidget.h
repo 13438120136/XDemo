@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "ui_deloginwidget.h"
+#include "deinputdelegate.h"
 
 class DeLoginWidget : public QDialog
 {
@@ -17,6 +18,10 @@ public:
 
 private:
 	Ui::DeLoginWidget ui;
+
+	/// ‰»Î¥˙¿Ì
+	DeInputDelegate m_inputTextDelegate;
+	DePasswordDelegate m_passwdDelegate;
 };
 
 #endif // DELOGINWIDGET_H

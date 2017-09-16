@@ -19,6 +19,9 @@ public:
 	///设置输入控件
 	void setEditControl(QLineEdit *lineEdit);
 
+Q_SIGNALS:
+	void signalOk();
+
 public Q_SLOTS:
 	///上档按键事件
 	void on_shiftBtn_clicked();
@@ -34,6 +37,8 @@ public Q_SLOTS:
 	void on_changeNumBtn_clicked();
 	///切换到字母键盘
 	void on_changeCharBtn_clicked();
+	///响应确定按钮
+	void on_okBtn_clicked();
 
 private:
 	Ui::DeVirtualKeyboradWidget ui;

@@ -209,6 +209,9 @@ QPushButton
            <property name="maxLength">
             <number>32</number>
            </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
           </widget>
          </item>
          <item row="2" column="0" colspan="2">
@@ -246,6 +249,9 @@ QPushButton
              <property name="styleSheet">
               <string notr="true">border-top-right-radius:0px;
 border-bottom-right-radius:0px;</string>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
@@ -332,6 +338,9 @@ border-bottom-left-radius:3px;
            </property>
            <property name="maxLength">
             <number>32</number>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
            </property>
           </widget>
          </item>

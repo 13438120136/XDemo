@@ -12,8 +12,10 @@ INCLUDEPATH += ./GeneratedFiles \
     ./GeneratedFiles/Debug \
     . \
     ../DeSqlDataBase
+	
 LIBS += -L"../" \
     -lDeSqlDataBase
+	
 DEPENDPATH += .
 MOC_DIR += ./GeneratedFiles/debug
 OBJECTS_DIR += debug
@@ -44,6 +46,7 @@ FORMS += \
 	devalueselectwidget.ui \
 	delogowidget.ui \
 	devalueselectwidget.ui \
+	dekeyboradwidget.ui \
     devirtualkeyboradwidget.ui
 
 HEADERS += \
@@ -81,6 +84,8 @@ HEADERS += \
 	dedetectormodel.h \
 	devalueselectwidget.h \
 	delogowidget.h \
+	dekeyboradwidget.h \
+	deinputdelegate.h \
 	devalueselectwidget.h \
     devirtualkeyboradwidget.h 
 
@@ -116,6 +121,8 @@ SOURCES += \
 	depropertyeditwidget.cpp \
 	delogger.cpp \
 	deloginterface.cpp \
+	dekeyboradwidget.cpp \
+	deinputdelegate.cpp \
 	delogitem.cpp \
 	dedetectormodel.cpp \
 	devalueselectwidget.cpp \

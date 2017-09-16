@@ -105,3 +105,8 @@ void DeVirtualKeyboradWidget::on_changeCharBtn_clicked()
 	ui.tabWidget->setCurrentIndex(0);
 }
 //----------------------------------------------------------------------------
+void DeVirtualKeyboradWidget::on_okBtn_clicked()
+{
+	emit signalOk();
+}
+//----------------------------------------------------------------------------

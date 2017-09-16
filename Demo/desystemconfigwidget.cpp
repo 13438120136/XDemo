@@ -596,9 +596,11 @@ void DeSystemConfigWidget::on_logoutBtn_clicked()
 void DeSystemConfigWidget::on_datetimeBtn_clicked()
 {
 	Demo *demo = qApp->property("_mainWin").value<Demo *>();
-	demo->slotBackMainWidget();
 	///自定义系统的日期选择菜单
 	QCalendarWidget *calendarWidget = new QCalendarWidget;
+	calendarWidget->setSelectionMode(QCalendarWidget::SingleSelection);
+	connect(calendarWidget, SIGNAL(clicked(const QDate &)), this, SLOT(slotDateClicked(const QDate &)), Qt::QueuedConnection);
+
 	calendarWidget->setGridVisible(true);
 	calendarWidget->setStyleSheet("QToolButton{min-width:60px; min-height:40px;border:none} \
 								  QWidget{font:24px bold \"黑体\";}");
@@ -612,5 +614,14 @@ void DeSystemConfigWidget::on_datetimeBtn_clicked()
 							  color: rgb(66, 189, 170)");
 
 	demo->slotSetWidget(calendarWidget);
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::slotDateClicked(const QDate & date)
+{
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+
+	QCalendarWidget *widget = (QCalendarWidget *)sender();
+	ui.datetimeBtn->setText(widget->selectedDate().toString("yyyy-MM-dd"));
+	demo->slotBackMainWidget();
 }
 //----------------------------------------------------------------------------

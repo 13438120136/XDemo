@@ -2,7 +2,7 @@
 #include <demo.h>
 #include <deusertable.h>
 #include "demenuwidget.h"
-#include <QTranslator>
+#include "dekeyboradwidget.h"
 
 Q_DECLARE_METATYPE(Demo *)
 //----------------------------------------------------------------------------
@@ -11,7 +11,9 @@ DeLoginWidget::DeLoginWidget(QWidget *parent)
 {
 	ui.setupUi(this);
 	this->setWindowFlags(Qt::ToolTip);
-	ui.okBtn->setFocus();
+
+	ui.userLineEdit->installEventFilter(&m_inputTextDelegate);
+	ui.passwdLineEdit->installEventFilter(&m_passwdDelegate);
 }
 //----------------------------------------------------------------------------
 DeLoginWidget::~DeLoginWidget()
@@ -46,4 +48,3 @@ void DeLoginWidget::on_cancelBtn_clicked()
 	demo->slotBackMainWidget();
 }
 //----------------------------------------------------------------------------
-

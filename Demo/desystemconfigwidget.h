@@ -72,6 +72,7 @@ public Q_SLOTS:
 	void on_logoutBtn_clicked();
 	///日期选择
 	void on_datetimeBtn_clicked();
+	void slotDateClicked(const QDate & date);
 
 private:
 	///初始化编辑

@@ -73,7 +73,8 @@ void DeAddRadioactiveDlg::on_dateBtn_clicked()
 	Demo *demo = qApp->property("_mainWin").value<Demo *>();
 	///自定义系统的日期选择菜单
 	QCalendarWidget *calendarWidget = new QCalendarWidget;
-	connect(calendarWidget, SIGNAL(activated(const QDate & date)), this, SLOT(slotDateClicked(const QDate & date)));
+	calendarWidget->setSelectionMode(QCalendarWidget::SingleSelection);
+	connect(calendarWidget, SIGNAL(clicked(const QDate &)), this, SLOT(slotDateClicked(const QDate &)), Qt::QueuedConnection);
 
 	calendarWidget->setGridVisible(true);
 	calendarWidget->setStyleSheet("QToolButton{min-width:60px; min-height:40px;border:none} \
@@ -93,8 +94,9 @@ void DeAddRadioactiveDlg::on_dateBtn_clicked()
 void DeAddRadioactiveDlg::slotDateClicked(const QDate & date)
 {
 	Demo *demo = qApp->property("_mainWin").value<Demo *>();
-	demo->slotBackMainWidget();
 
-	ui.lineEdit->setText(date.currentDate().toString("yyyy/MM/dd"));
+	QCalendarWidget *widget = (QCalendarWidget *)sender();
+	ui.lineEdit->setText(widget->selectedDate().toString("yyyy/MM/dd"));
+	demo->slotBackMainWidget();
 }
 //----------------------------------------------------------------------------

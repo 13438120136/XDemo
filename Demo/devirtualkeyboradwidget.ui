@@ -498,7 +498,7 @@ max-width:100000px;</string>
           </widget>
          </item>
          <item row="0" column="2">
-          <widget class="QPushButton" name="pushButton_17">
+          <widget class="QPushButton" name="okBtn">
            <property name="styleSheet">
             <string notr="true">max-width:133px;</string>
            </property>
