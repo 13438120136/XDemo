@@ -27,7 +27,7 @@ void DeAddRadioactiveDlg::on_okBtn_clicked()
 {
 	int id = ui.idLineEdit->text().toInt();
 	int value = ui.originalLineEdit->text().toInt();
-	quint64 time = 0;// ui.dateEdit->dateTime().currentMSecsSinceEpoch();
+	quint64 time = QDateTime::fromString(ui.lineEdit->text(), "yyyy/MM/dd").currentMSecsSinceEpoch();
 
 	Demo *demo = qApp->property("_mainWin").value<Demo *>();
 	DeSqlDataBase *dataBase = demo->dataBase();
@@ -95,5 +95,9 @@ void DeAddRadioactiveDlg::slotDateClicked(const QDate & date)
 	QCalendarWidget *widget = (QCalendarWidget *)sender();
 	ui.lineEdit->setText(widget->selectedDate().toString("yyyy/MM/dd"));
 	demo->slotBackMainWidget();
+}
+//----------------------------------------------------------------------------
+void DeAddRadioactiveDlg::setData(DeRadioactiveSourceTable tableData)
+{
 }
 //----------------------------------------------------------------------------

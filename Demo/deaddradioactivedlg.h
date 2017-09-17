@@ -15,6 +15,7 @@ public:
 	DeAddRadioactiveDlg(QWidget *parent = 0);
 	~DeAddRadioactiveDlg();
 
+	void setData(DeRadioactiveSourceTable tableData);
 	Q_SIGNAL void signalAddRadioactiveData(DeRadioactiveSourceTable tableData);
 
 public Q_SLOTS:

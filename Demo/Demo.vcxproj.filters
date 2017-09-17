@@ -46,12 +46,12 @@
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="Generated Files\Debug">
-      <UniqueIdentifier>{658ab054-a625-4f12-9f8a-1dca29469ac4}</UniqueIdentifier>
+      <UniqueIdentifier>{b6e19ae8-00d3-4d36-ba4d-89c1e5796ab4}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Generated Files\Release">
-      <UniqueIdentifier>{3ebbe115-1716-4c25-b6b4-7fc2b3207a7d}</UniqueIdentifier>
+      <UniqueIdentifier>{2e0fe8e3-c523-4417-8df8-47d008326cc2}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
@@ -82,6 +82,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="deinitwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="deinputdelegate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dekeyboradwidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="delogdatabase.cpp">
@@ -216,6 +222,18 @@
     <ClCompile Include="GeneratedFiles\Release\moc_deinitwidget.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_deinputdelegate.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_deinputdelegate.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_dekeyboradwidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_dekeyboradwidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_deloginwidget.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
@@ -339,24 +357,6 @@
     <ClCompile Include="GeneratedFiles\qrc_demo.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
-    <ClCompile Include="dekeyboradwidget.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_dekeyboradwidget.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_dekeyboradwidget.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_deinputdelegate.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_deinputdelegate.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="deinputdelegate.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Demo.aps">
@@ -387,6 +387,12 @@
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="deinitwidget.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="deinputdelegate.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="dekeyboradwidget.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
     <ClInclude Include="delogdatabase.h">
@@ -479,6 +485,9 @@
     <ClInclude Include="GeneratedFiles\ui_deinitwidget.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_dekeyboradwidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_deloginwidget.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
@@ -515,9 +524,6 @@
     <ClInclude Include="GeneratedFiles\ui_devirtualkeyboradwidget.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_dekeyboradwidget.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GeneratedFiles\debug\moc_devalueselectwidget.cpp">
@@ -541,6 +547,9 @@
       <Filter>Form Files</Filter>
     </CustomBuild>
     <CustomBuild Include="deinitwidget.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="dekeyboradwidget.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
     <CustomBuild Include="deloginwidget.ui">
@@ -578,15 +587,6 @@
     </CustomBuild>
     <CustomBuild Include="devirtualkeyboradwidget.ui">
       <Filter>Form Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="dekeyboradwidget.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="dekeyboradwidget.ui">
-      <Filter>Form Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="deinputdelegate.h">
-      <Filter>Header Files</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
@@ -837,6 +837,14 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="Resources\xitongshezhi-zuoshou-wuwuran.png">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="demo_en.ts">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="demo_zh.ts">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

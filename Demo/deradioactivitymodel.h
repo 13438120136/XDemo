@@ -23,6 +23,7 @@ protected:
 	virtual QVariant dataShow(const QModelIndex &index) const;
 	///要显示数据的总大小
 	virtual int dataSize();
+	Qt::ItemFlags flags(const QModelIndex &index) const;
 
 private:
 	QList<DeRadioactiveSourceTable> m_data;

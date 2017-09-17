@@ -1,8 +1,7 @@
 #include "demodifyuserdlg.h"
 #include "demo.h"
 #include "deusertable.h"
-#include <qmessagebox.h>
-#include <QTranslator>
+#include <demessagebox.h>
 
 Q_DECLARE_METATYPE(Demo *)
 //----------------------------------------------------------------------------
@@ -34,6 +33,7 @@ void DeModifyUserDlg::on_okBtn_clicked()
 	DeSqlDataBase *dataBase = demo->dataBase();
 	DeUserTable data(dataBase);
 	data.setUserName(ui.userLineEdit->text());
+	data.setUserPasswd(ui.passwdLineEdit->text());
 	data.setUserPermission(DeUserTable::UserPermission(permission));
 	data.setUserPermissionName((permission == 0)
 		?QString::fromLocal8Bit("管理员"):QString::fromLocal8Bit("维护人员"));

@@ -23,6 +23,7 @@ DeManageWidget::DeManageWidget(QWidget *parent)
 	connect(ui.delUserBtn, SIGNAL(clicked()), this, SLOT(delUserSlot()));	
 	connect(ui.changeUserBtn, SIGNAL(clicked()), this, SLOT(modifySlot()));
 	connect(ui.addRadioactivityBtn, SIGNAL(clicked()), this, SLOT(addRadioactivitySlot()));
+	connect(ui.modifyRadioactivityBtn, SIGNAL(clicked()), this, SLOT(slotModifyRadioactiveData()));
 
 	///数据库对象
 	Demo *demo = qApp->property("_mainWin").value<Demo *>();
@@ -62,6 +63,29 @@ DeManageWidget::~DeManageWidget()
 
 }
 //----------------------------------------------------------------------------
+void DeManageWidget::slotModifyRadioactiveData()
+{
+	QItemSelectionModel *itemSelectionModel = ui.widget_2->tableView()->selectionModel();
+	QModelIndexList indexList = itemSelectionModel->selectedIndexes();
+	if (indexList.isEmpty())
+	{
+		DeMessageBox msgBox(this);
+		msgBox.setText(tr("请先选中一行数据"));
+		msgBox.setStandardButtons(QMessageBox::Ok);
+		msgBox.exec();
+		return ;
+	}
+
+	///第几行
+	int nRow = indexList[0].row();
+	DeRadioactiveSourceTable &data = m_activeityModel->data()[nRow];
+
+	DeAddRadioactiveDlg *dlg = new DeAddRadioactiveDlg;
+	dlg->setData(data);
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	demo->slotSetWidget(dlg);
+}
+//----------------------------------------------------------------------------
 void DeManageWidget::addUserSlot()
 {
 	Demo *demo = qApp->property("_mainWin").value<Demo *>();
@@ -76,7 +100,7 @@ void DeManageWidget::modifySlot()
 	if (nRow == -1)
 	{
 		DeMessageBox msgBox(this);
-		msgBox.setText("Empty");
+		msgBox.setText(tr("请先选择修改用户"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.exec();
 		return ;
@@ -97,7 +121,7 @@ void DeManageWidget::delUserSlot()
 	if (nRow == -1)
 	{
 		DeMessageBox msgBox(this);
-		msgBox.setText("Empty");
+		msgBox.setText(tr("请先选中要删除用户"));
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.exec();
 		return ;
@@ -105,13 +129,22 @@ void DeManageWidget::delUserSlot()
 	
 	QString str = m_userModel->data()[nRow].getUerName();
 	DeMessageBox msgBox(this);
-	msgBox.setText(str);
-	msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
-	if (msgBox.exec() == QMessageBox::Yes)
+	msgBox.setText(tr("是否删除 %1").arg(str));
+
+	QPushButton *okButton = msgBox.addButton(tr("yes"), QMessageBox::AcceptRole);  
+	msgBox.addButton(tr("no"), QMessageBox::RejectRole); 
+	msgBox.exec();
+	if ((QPushButton*)msgBox.clickedButton() == okButton)  
 	{
 		///系统用户不能删除
 		if (str == "admin")
+		{
+			DeMessageBox msgBox(this);
+			msgBox.setText(tr("系统预设账号不能删除!"));
+			msgBox.setStandardButtons(QMessageBox::Ok);
+			msgBox.exec();
 			return ;
+		}
 
 		///更新数据库
 		Demo *demo = qApp->property("_mainWin").value<Demo *>();
@@ -134,10 +167,12 @@ void DeManageWidget::slotAddUser(DeUserTable data)
 void DeManageWidget::slotUpdateUser(DeUserTable data)
 {
 	///更新数据库
-
-	///更新界面
 	int nRow = selectCurrentRow();
-	m_userModel->data()[nRow] = data;
+	DeUserTable &oldData = m_userModel->data()[nRow];
+	data.updateUser(oldData.getUerName());
+
+	///更新界面	
+	oldData = data;
 	ui.widget->setModel(m_userModel);
 }
 //----------------------------------------------------------------------------

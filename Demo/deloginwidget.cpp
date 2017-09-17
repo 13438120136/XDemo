@@ -3,6 +3,7 @@
 #include <deusertable.h>
 #include "demenuwidget.h"
 #include "dekeyboradwidget.h"
+#include "demessagebox.h"
 
 Q_DECLARE_METATYPE(Demo *)
 //----------------------------------------------------------------------------
@@ -34,12 +35,21 @@ void DeLoginWidget::on_okBtn_clicked()
 
 	///是否合法 可以登录
 	bool bOk = table.isValid();
-
-	DeMenuWidget widget;	
-	widget.move(demo->pos());
-	widget.resize(demo->width(), demo->height());
-	widget.setWindowOpacity(0.9);
-	widget.exec();
+	if (bOk)
+	{
+		DeMenuWidget widget;	
+		widget.move(demo->pos());
+		widget.resize(demo->width(), demo->height());
+		widget.setWindowOpacity(0.9);
+		widget.exec();
+	}
+	else
+	{
+		DeMessageBox msgBox(this);
+		msgBox.setText(tr("输入的用户名或者密码不正确"));
+		msgBox.setStandardButtons(QMessageBox::Ok);
+		msgBox.exec();
+	}
 }
 //----------------------------------------------------------------------------
 void DeLoginWidget::on_cancelBtn_clicked()

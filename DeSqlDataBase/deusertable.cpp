@@ -127,6 +127,14 @@ bool DeUserTable::isValid()
 	return true;
 }
 //----------------------------------------------------------------------------
+bool DeUserTable::updateUser(const QString &userName)
+{
+	QString sql = QString("update %1 set name = '%2', passwd = '%3' where name = '%4'")
+		.arg(tableName).arg(m_user).arg(md5sum(m_passwd)).arg(userName);
+
+	return execSql(sql);
+}
+//----------------------------------------------------------------------------
 QString DeUserTable::md5sum(const QString &passwd)
 {
 	QCryptographicHash hash(QCryptographicHash::Md5);

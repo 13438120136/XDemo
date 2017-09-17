@@ -27,6 +27,7 @@ public Q_SLOTS:
 
 	void addRadioactivitySlot();
 	void slotAddRadioactiveData(DeRadioactiveSourceTable tableData);
+	void slotModifyRadioactiveData();
 
 	///
 	void on_userBtn_clicked();

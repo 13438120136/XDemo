@@ -199,6 +199,9 @@ QPushButton
              <height>32</height>
             </size>
            </property>
+           <property name="text">
+            <string>admin</string>
+           </property>
            <property name="maxLength">
             <number>32</number>
            </property>
@@ -236,6 +239,9 @@ QPushButton
              <width>322</width>
              <height>32</height>
             </size>
+           </property>
+           <property name="text">
+            <string>123456</string>
            </property>
            <property name="maxLength">
             <number>32</number>

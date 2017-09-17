@@ -42,6 +42,8 @@ public:
 	int getUserPermission();
 	///用户表是否为空
 	bool isEmptyTable();
+	///更新当前用户名和密码
+	bool updateUser(const QString &userName);
 
 protected:
 	QString execAddString();

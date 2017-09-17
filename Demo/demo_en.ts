@@ -9,43 +9,48 @@
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="deaddradioactivedlg.ui" line="105"/>
+        <location filename="deaddradioactivedlg.ui" line="160"/>
         <source>添加放射源记录</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="deaddradioactivedlg.ui" line="113"/>
-        <source>编号</source>
+        <location filename="deaddradioactivedlg.ui" line="178"/>
+        <source>编     号</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="deaddradioactivedlg.ui" line="131"/>
+        <location filename="deaddradioactivedlg.ui" line="191"/>
         <source>原始活度</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="deaddradioactivedlg.ui" line="149"/>
+        <location filename="deaddradioactivedlg.ui" line="226"/>
         <source>生产日期</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="deaddradioactivedlg.ui" line="168"/>
-        <source>yyyy-M-d</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message utf8="true">
-        <location filename="deaddradioactivedlg.ui" line="182"/>
+        <location filename="deaddradioactivedlg.ui" line="285"/>
         <source>放射源类</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="deaddradioactivedlg.ui" line="217"/>
+        <location filename="deaddradioactivedlg.ui" line="124"/>
         <source>Y</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="deaddradioactivedlg.ui" line="224"/>
+        <location filename="deaddradioactivedlg.ui" line="131"/>
         <source>N</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="deaddradioactivedlg.cpp" line="14"/>
+        <source>²âÊÔ1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="deaddradioactivedlg.cpp" line="15"/>
+        <source>²âÊÔ2</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -57,32 +62,40 @@
         <translation></translation>
     </message>
     <message utf8="true">
-        <location filename="deadduserdlg.ui" line="95"/>
+        <location filename="deadduserdlg.ui" line="109"/>
         <source>添加用户</source>
         <translation>Add User Group</translation>
     </message>
     <message utf8="true">
-        <location filename="deadduserdlg.ui" line="110"/>
         <source>用户名:</source>
-        <translation>username:</translation>
+        <translation type="obsolete">username:</translation>
     </message>
     <message utf8="true">
-        <location filename="deadduserdlg.ui" line="130"/>
         <source>密  码:</source>
-        <translation>password:</translation>
+        <translation type="obsolete">password:</translation>
     </message>
     <message utf8="true">
-        <location filename="deadduserdlg.ui" line="153"/>
+        <location filename="deadduserdlg.ui" line="124"/>
+        <source>用户名</source>
+        <translation>Username</translation>
+    </message>
+    <message utf8="true">
+        <location filename="deadduserdlg.ui" line="144"/>
+        <source>密   码</source>
+        <translation>Password</translation>
+    </message>
+    <message utf8="true">
+        <location filename="deadduserdlg.ui" line="167"/>
         <source>权  限:</source>
         <translation>authority:</translation>
     </message>
     <message utf8="true">
-        <location filename="deadduserdlg.ui" line="179"/>
+        <location filename="deadduserdlg.ui" line="200"/>
         <source>确定</source>
         <translation>Ok</translation>
     </message>
     <message utf8="true">
-        <location filename="deadduserdlg.ui" line="189"/>
+        <location filename="deadduserdlg.ui" line="210"/>
         <source>取消</source>
         <translation>Cancel</translation>
     </message>
@@ -131,83 +144,189 @@
         <translation></translation>
     </message>
     <message utf8="true">
-        <location filename="deinitwidget.ui" line="97"/>
+        <location filename="deinitwidget.ui" line="104"/>
         <source>退出程序</source>
         <translation>Quit</translation>
     </message>
     <message utf8="true">
-        <location filename="deinitwidget.ui" line="104"/>
+        <location filename="deinitwidget.ui" line="111"/>
         <source>手足污染测量仪</source>
         <translation>Hand foot contamination</translation>
     </message>
     <message utf8="true">
-        <location filename="deinitwidget.ui" line="114"/>
+        <location filename="deinitwidget.ui" line="121"/>
         <source>登录</source>
         <translation>Login</translation>
     </message>
-    <message utf8="true">
-        <location filename="deinitwidget.ui" line="189"/>
-        <location filename="deinitwidget.ui" line="320"/>
-        <location filename="deinitwidget.ui" line="579"/>
-        <location filename="deinitwidget.ui" line="730"/>
-        <source>α</source>
-        <translation></translation>
-    </message>
     <message>
-        <location filename="deinitwidget.ui" line="202"/>
-        <location filename="deinitwidget.ui" line="228"/>
-        <location filename="deinitwidget.ui" line="333"/>
-        <location filename="deinitwidget.ui" line="359"/>
-        <location filename="deinitwidget.ui" line="592"/>
-        <location filename="deinitwidget.ui" line="618"/>
-        <location filename="deinitwidget.ui" line="743"/>
-        <location filename="deinitwidget.ui" line="769"/>
-        <source>0</source>
-        <translation></translation>
+        <location filename="deinitwidget.ui" line="669"/>
+        <source>Tab 2</source>
+        <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="deinitwidget.ui" line="215"/>
-        <location filename="deinitwidget.ui" line="346"/>
-        <location filename="deinitwidget.ui" line="605"/>
-        <location filename="deinitwidget.ui" line="756"/>
-        <source>β</source>
-        <translation></translation>
+        <location filename="deinitwidget.ui" line="733"/>
+        <location filename="deinitwidget.ui" line="831"/>
+        <source>未连接</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="deinitwidget.ui" line="763"/>
+        <source>故障
+Fault</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="deinitwidget.ui" line="1036"/>
+        <location filename="deinitwidget.ui" line="1528"/>
+        <location filename="deinitwidget.ui" line="1821"/>
+        <source>设备信息</source>
+        <translation type="unfinished">Device Information</translation>
+    </message>
+    <message utf8="true">
+        <location filename="deinitwidget.ui" line="1067"/>
+        <location filename="deinitwidget.ui" line="1559"/>
+        <location filename="deinitwidget.ui" line="1852"/>
+        <source>测量信息</source>
+        <translation type="unfinished">Measure Information</translation>
+    </message>
+    <message utf8="true">
+        <location filename="deinitwidget.ui" line="1110"/>
+        <location filename="deinitwidget.ui" line="1589"/>
+        <source>页</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="deinitwidget.ui" line="1174"/>
+        <location filename="deinitwidget.ui" line="1460"/>
+        <location filename="deinitwidget.ui" line="1478"/>
+        <source>β   -
+α   -</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="deinitwidget.ui" line="1205"/>
+        <source>检测中
+Meassuring</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="deinitwidget.ui" line="1273"/>
+        <source>β -
+α -</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="deinitwidget.ui" line="1618"/>
+        <source>重点部位测量
+Key part measuring</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="deinitwidget.ui" line="444"/>
-        <location filename="deinitwidget.ui" line="799"/>
+        <location filename="deinitwidget.ui" line="1043"/>
+        <location filename="deinitwidget.ui" line="1535"/>
+        <location filename="deinitwidget.ui" line="1736"/>
+        <location filename="deinitwidget.ui" line="1828"/>
         <source>TextLabel</source>
         <translation></translation>
     </message>
     <message utf8="true">
-        <location filename="deinitwidget.ui" line="514"/>
+        <location filename="deinitwidget.ui" line="459"/>
+        <location filename="deinitwidget.ui" line="896"/>
+        <location filename="deinitwidget.ui" line="1352"/>
+        <location filename="deinitwidget.ui" line="1680"/>
         <source>中文</source>
         <translation>Chinese</translation>
     </message>
     <message>
-        <location filename="deinitwidget.ui" line="521"/>
+        <location filename="deinitwidget.ui" line="169"/>
+        <source>Tab 1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="deinitwidget.ui" line="258"/>
+        <source>自检
+Self-Checking</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="deinitwidget.ui" line="408"/>
+        <location filename="deinitwidget.ui" line="911"/>
+        <location filename="deinitwidget.ui" line="1367"/>
+        <location filename="deinitwidget.ui" line="1695"/>
         <source>English</source>
         <translation>English</translation>
     </message>
     <message>
-        <location filename="deinitwidget.cpp" line="39"/>
+        <location filename="deinitwidget.cpp" line="62"/>
+        <location filename="deinitwidget.cpp" line="63"/>
+        <location filename="deinitwidget.cpp" line="64"/>
+        <location filename="deinitwidget.cpp" line="65"/>
         <source>%1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="deinitwidget.cpp" line="45"/>
+        <location filename="deinitwidget.cpp" line="71"/>
         <source>exit?</source>
         <translation>exit the system?</translation>
     </message>
     <message>
-        <location filename="deinitwidget.cpp" line="46"/>
+        <location filename="deinitwidget.cpp" line="72"/>
         <source>yes</source>
         <translation>Yes</translation>
     </message>
     <message>
-        <location filename="deinitwidget.cpp" line="47"/>
+        <location filename="deinitwidget.cpp" line="73"/>
         <source>no</source>
         <translation>No</translation>
+    </message>
+    <message>
+        <location filename="deinitwidget.cpp" line="110"/>
+        <source>×Ô¼ì
+Self-checking</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="deinitwidget.cpp" line="196"/>
+        <source>±¾µ×¼ì²âÖÐ
+BKG Meassuring</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="deinitwidget.cpp" line="211"/>
+        <source>ÇëÀë¿ª¼ì²âÇøÓò
+Please leave</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="deinitwidget.cpp" line="221"/>
+        <source>ÎÛÈ¾
+Contaminated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="deinitwidget.cpp" line="231"/>
+        <source>×¼±¸¾ÍÐ÷
+Ready</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="deinitwidget.cpp" line="241"/>
+        <source>Î´ÎÛÈ¾
+Not Contaminated</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DeKeyBoradWidget</name>
+    <message>
+        <location filename="dekeyboradwidget.ui" line="14"/>
+        <source>DeKeyBoradWidget</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="dekeyboradwidget.ui" line="70"/>
+        <source>返回</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -218,25 +337,36 @@
         <translation></translation>
     </message>
     <message utf8="true">
-        <location filename="deloginwidget.ui" line="136"/>
-        <location filename="deloginwidget.ui" line="178"/>
+        <location filename="deloginwidget.ui" line="150"/>
+        <location filename="deloginwidget.ui" line="166"/>
         <source>登录</source>
         <translation>Login</translation>
     </message>
     <message utf8="true">
-        <location filename="deloginwidget.ui" line="149"/>
+        <location filename="deloginwidget.ui" line="114"/>
         <source>取消</source>
         <translation>Exit</translation>
     </message>
     <message utf8="true">
-        <location filename="deloginwidget.ui" line="198"/>
+        <location filename="deloginwidget.ui" line="184"/>
         <source>用户名</source>
         <translation>Username</translation>
     </message>
+    <message>
+        <location filename="deloginwidget.ui" line="203"/>
+        <source>admin</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message utf8="true">
         <location filename="deloginwidget.ui" line="225"/>
-        <source>密  码</source>
+        <source>密    码</source>
+        <oldsource>密  码</oldsource>
         <translation>Password</translation>
+    </message>
+    <message>
+        <location filename="deloginwidget.ui" line="244"/>
+        <source>123456</source>
+        <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
         <source>用户:</source>
@@ -245,6 +375,49 @@
     <message utf8="true">
         <source>密码:</source>
         <translation type="obsolete">password:</translation>
+    </message>
+    <message>
+        <location filename="deloginwidget.cpp" line="49"/>
+        <source>ÊäÈëµÄÓÃ»§Ãû»òÕßÃÜÂë²»ÕýÈ·</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DeManageWidget</name>
+    <message>
+        <location filename="demangewidget.cpp" line="73"/>
+        <source>ÇëÏÈÑ¡ÖÐÒ»ÐÐÊý¾Ý</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="demangewidget.cpp" line="103"/>
+        <source>ÇëÏÈÑ¡ÔñÐÞ¸ÄÓÃ»§</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="demangewidget.cpp" line="124"/>
+        <source>ÇëÏÈÑ¡ÖÐÒªÉ¾³ýÓÃ»§</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="demangewidget.cpp" line="132"/>
+        <source>ÊÇ·ñÉ¾³ý %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="demangewidget.cpp" line="134"/>
+        <source>yes</source>
+        <translation type="unfinished">Yes</translation>
+    </message>
+    <message>
+        <location filename="demangewidget.cpp" line="135"/>
+        <source>no</source>
+        <translation type="unfinished">No</translation>
+    </message>
+    <message>
+        <location filename="demangewidget.cpp" line="143"/>
+        <source>ÏµÍ³Ô¤ÉèÕËºÅ²»ÄÜÉ¾³ý!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -255,56 +428,50 @@
         <translation></translation>
     </message>
     <message utf8="true">
-        <location filename="demangewidget.ui" line="121"/>
+        <location filename="demangewidget.ui" line="158"/>
         <source>功能选择</source>
         <translation>Function</translation>
     </message>
     <message utf8="true">
-        <location filename="demangewidget.ui" line="141"/>
-        <location filename="demangewidget.ui" line="189"/>
+        <location filename="demangewidget.ui" line="129"/>
+        <location filename="demangewidget.ui" line="205"/>
         <source>用户管理</source>
         <translation>User Nanagement</translation>
     </message>
     <message utf8="true">
-        <location filename="demangewidget.ui" line="168"/>
+        <location filename="demangewidget.ui" line="148"/>
         <source>注销</source>
         <translation>Logout</translation>
     </message>
     <message utf8="true">
-        <location filename="demangewidget.ui" line="216"/>
         <source>添加用户</source>
-        <translation>Add</translation>
+        <translation type="obsolete">Add</translation>
     </message>
     <message utf8="true">
-        <location filename="demangewidget.ui" line="203"/>
         <source>删除用户</source>
-        <translation>Delete</translation>
+        <translation type="obsolete">Delete</translation>
     </message>
     <message utf8="true">
-        <location filename="demangewidget.ui" line="242"/>
         <source>修改用户</source>
-        <translation>Modify</translation>
+        <translation type="obsolete">Modify</translation>
     </message>
     <message utf8="true">
-        <location filename="demangewidget.ui" line="148"/>
-        <location filename="demangewidget.ui" line="255"/>
+        <location filename="demangewidget.ui" line="136"/>
+        <location filename="demangewidget.ui" line="323"/>
         <source>放射源管理</source>
         <translation>Radioactive source management</translation>
     </message>
     <message utf8="true">
-        <location filename="demangewidget.ui" line="295"/>
         <source>添加记录</source>
-        <translation>Add</translation>
+        <translation type="obsolete">Add</translation>
     </message>
     <message utf8="true">
-        <location filename="demangewidget.ui" line="269"/>
         <source>删除记录</source>
-        <translation>Delete</translation>
+        <translation type="obsolete">Delete</translation>
     </message>
     <message utf8="true">
-        <location filename="demangewidget.ui" line="308"/>
         <source>修改记录</source>
-        <translation>Modify</translation>
+        <translation type="obsolete">Modify</translation>
     </message>
     <message>
         <source>OK</source>
@@ -318,27 +485,18 @@
         <source>DeMenuWidget</source>
         <translation></translation>
     </message>
-    <message>
-        <location filename="demenuwidget.ui" line="84"/>
-        <location filename="demenuwidget.ui" line="102"/>
-        <location filename="demenuwidget.ui" line="155"/>
-        <location filename="demenuwidget.ui" line="173"/>
-        <location filename="demenuwidget.ui" line="191"/>
-        <source>x</source>
-        <translation></translation>
-    </message>
     <message utf8="true">
-        <location filename="demenuwidget.ui" line="91"/>
+        <location filename="demenuwidget.ui" line="234"/>
         <source>退  出</source>
         <translation>Exit</translation>
     </message>
     <message utf8="true">
-        <location filename="demenuwidget.ui" line="198"/>
+        <location filename="demenuwidget.ui" line="213"/>
         <source>日  志</source>
         <translation>Log</translation>
     </message>
     <message utf8="true">
-        <location filename="demenuwidget.ui" line="223"/>
+        <location filename="demenuwidget.ui" line="265"/>
         <source>功能选择</source>
         <translation>Function</translation>
     </message>
@@ -347,17 +505,17 @@
         <translation type="obsolete">Login</translation>
     </message>
     <message utf8="true">
-        <location filename="demenuwidget.ui" line="162"/>
+        <location filename="demenuwidget.ui" line="171"/>
         <source>管  理</source>
         <translation>Manage</translation>
     </message>
     <message utf8="true">
-        <location filename="demenuwidget.ui" line="109"/>
+        <location filename="demenuwidget.ui" line="148"/>
         <source>系统设置</source>
         <translation>Setting</translation>
     </message>
     <message utf8="true">
-        <location filename="demenuwidget.ui" line="180"/>
+        <location filename="demenuwidget.ui" line="192"/>
         <source>系统测试</source>
         <translation>Test</translation>
     </message>
@@ -390,32 +548,32 @@
         <translation></translation>
     </message>
     <message utf8="true">
-        <location filename="demodifyuserdlg.ui" line="95"/>
+        <location filename="demodifyuserdlg.ui" line="110"/>
         <source>修改用户</source>
         <translation>Modify User Group</translation>
     </message>
     <message utf8="true">
-        <location filename="demodifyuserdlg.ui" line="110"/>
+        <location filename="demodifyuserdlg.ui" line="125"/>
         <source>用户名:</source>
         <translation>user:</translation>
     </message>
     <message utf8="true">
-        <location filename="demodifyuserdlg.ui" line="133"/>
+        <location filename="demodifyuserdlg.ui" line="148"/>
         <source>密  码:</source>
         <translation>pass:</translation>
     </message>
     <message utf8="true">
-        <location filename="demodifyuserdlg.ui" line="156"/>
+        <location filename="demodifyuserdlg.ui" line="174"/>
         <source>权  限:</source>
         <translation>author:</translation>
     </message>
     <message utf8="true">
-        <location filename="demodifyuserdlg.ui" line="182"/>
+        <location filename="demodifyuserdlg.ui" line="207"/>
         <source>确定</source>
         <translation>Yes</translation>
     </message>
     <message utf8="true">
-        <location filename="demodifyuserdlg.ui" line="189"/>
+        <location filename="demodifyuserdlg.ui" line="214"/>
         <source>取消</source>
         <translation>Cancel</translation>
     </message>
@@ -451,98 +609,99 @@
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="169"/>
+        <location filename="desystemconfigwidget.ui" line="151"/>
         <source>功能选择</source>
         <translation>Function</translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="189"/>
-        <location filename="desystemconfigwidget.ui" line="246"/>
+        <location filename="desystemconfigwidget.ui" line="171"/>
+        <location filename="desystemconfigwidget.ui" line="253"/>
         <source>设备信息</source>
         <translation>Device Information</translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="219"/>
+        <location filename="desystemconfigwidget.ui" line="204"/>
         <source>注销</source>
         <translation>Logout</translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="317"/>
-        <location filename="desystemconfigwidget.ui" line="374"/>
+        <location filename="desystemconfigwidget.ui" line="375"/>
+        <location filename="desystemconfigwidget.ui" line="416"/>
         <source>运行状态</source>
         <translation>Run Status</translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="477"/>
-        <location filename="desystemconfigwidget.ui" line="525"/>
-        <location filename="desystemconfigwidget.ui" line="573"/>
-        <location filename="desystemconfigwidget.ui" line="681"/>
-        <location filename="desystemconfigwidget.ui" line="729"/>
-        <location filename="desystemconfigwidget.ui" line="1007"/>
-        <location filename="desystemconfigwidget.ui" line="1055"/>
-        <location filename="desystemconfigwidget.ui" line="1103"/>
-        <location filename="desystemconfigwidget.ui" line="1151"/>
+        <location filename="desystemconfigwidget.ui" line="531"/>
+        <location filename="desystemconfigwidget.ui" line="585"/>
+        <location filename="desystemconfigwidget.ui" line="639"/>
+        <location filename="desystemconfigwidget.ui" line="759"/>
+        <location filename="desystemconfigwidget.ui" line="813"/>
+        <location filename="desystemconfigwidget.ui" line="1115"/>
+        <location filename="desystemconfigwidget.ui" line="1169"/>
+        <location filename="desystemconfigwidget.ui" line="1223"/>
+        <location filename="desystemconfigwidget.ui" line="1277"/>
         <source>√</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="518"/>
+        <location filename="desystemconfigwidget.ui" line="578"/>
         <source>β</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="624"/>
+        <location filename="desystemconfigwidget.ui" line="693"/>
         <source>报警模式</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="674"/>
+        <location filename="desystemconfigwidget.ui" line="752"/>
         <source>静态阀值</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="722"/>
+        <location filename="desystemconfigwidget.ui" line="806"/>
         <source>动态阀值</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="808"/>
+        <location filename="desystemconfigwidget.ui" line="895"/>
         <source>IP地址</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.ui" line="858"/>
+        <location filename="desystemconfigwidget.ui" line="954"/>
         <source>IP</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="950"/>
+        <location filename="desystemconfigwidget.ui" line="1049"/>
         <source>测量通道配置</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.ui" line="1096"/>
-        <location filename="desystemconfigwidget.ui" line="1577"/>
-        <location filename="desystemconfigwidget.ui" line="1842"/>
-        <location filename="desystemconfigwidget.ui" line="2247"/>
+        <location filename="desystemconfigwidget.ui" line="1216"/>
+        <location filename="desystemconfigwidget.ui" line="1726"/>
+        <location filename="desystemconfigwidget.ui" line="2020"/>
+        <location filename="desystemconfigwidget.ui" line="2469"/>
+        <location filename="desystemconfigwidget.ui" line="3249"/>
         <source>3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.ui" line="1048"/>
-        <location filename="desystemconfigwidget.ui" line="1539"/>
-        <location filename="desystemconfigwidget.ui" line="1794"/>
-        <location filename="desystemconfigwidget.ui" line="2199"/>
-        <location filename="desystemconfigwidget.ui" line="2657"/>
-        <location filename="desystemconfigwidget.ui" line="3000"/>
+        <location filename="desystemconfigwidget.ui" line="1162"/>
+        <location filename="desystemconfigwidget.ui" line="1685"/>
+        <location filename="desystemconfigwidget.ui" line="1966"/>
+        <location filename="desystemconfigwidget.ui" line="2415"/>
+        <location filename="desystemconfigwidget.ui" line="3229"/>
         <source>2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.ui" line="1000"/>
-        <location filename="desystemconfigwidget.ui" line="1501"/>
-        <location filename="desystemconfigwidget.ui" line="1746"/>
-        <location filename="desystemconfigwidget.ui" line="2151"/>
+        <location filename="desystemconfigwidget.ui" line="1108"/>
+        <location filename="desystemconfigwidget.ui" line="1644"/>
+        <location filename="desystemconfigwidget.ui" line="1912"/>
+        <location filename="desystemconfigwidget.ui" line="2361"/>
+        <location filename="desystemconfigwidget.ui" line="3209"/>
         <source>1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -555,20 +714,20 @@
         <translation type="obsolete">IP Address:</translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.ui" line="1144"/>
-        <location filename="desystemconfigwidget.ui" line="1615"/>
-        <location filename="desystemconfigwidget.ui" line="1890"/>
-        <location filename="desystemconfigwidget.ui" line="2295"/>
+        <location filename="desystemconfigwidget.ui" line="1270"/>
+        <location filename="desystemconfigwidget.ui" line="1767"/>
+        <location filename="desystemconfigwidget.ui" line="2074"/>
+        <location filename="desystemconfigwidget.ui" line="2523"/>
         <source>4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.ui" line="865"/>
+        <location filename="desystemconfigwidget.ui" line="961"/>
         <source>127.0.0.1</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="1269"/>
+        <location filename="desystemconfigwidget.ui" line="1404"/>
         <source>正常</source>
         <translation type="unfinished"></translation>
     </message>
@@ -589,210 +748,236 @@
         <translation type="obsolete">Channel:</translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="470"/>
+        <location filename="desystemconfigwidget.ui" line="524"/>
         <source>α</source>
         <translation></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="566"/>
+        <location filename="desystemconfigwidget.ui" line="632"/>
         <source>α+β</source>
         <translation></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="324"/>
-        <location filename="desystemconfigwidget.ui" line="1320"/>
-        <location filename="desystemconfigwidget.ui" line="1362"/>
+        <location filename="desystemconfigwidget.ui" line="341"/>
+        <location filename="desystemconfigwidget.ui" line="1460"/>
+        <location filename="desystemconfigwidget.ui" line="1502"/>
         <source>测量参数</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="1532"/>
+        <location filename="desystemconfigwidget.ui" line="1678"/>
         <source>本底检测平滑因子：</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.ui" line="1463"/>
+        <location filename="desystemconfigwidget.ui" line="1603"/>
         <source>12</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.ui" line="1656"/>
-        <location filename="desystemconfigwidget.ui" line="1938"/>
-        <location filename="desystemconfigwidget.ui" line="2343"/>
+        <location filename="desystemconfigwidget.ui" line="1808"/>
+        <location filename="desystemconfigwidget.ui" line="2128"/>
+        <location filename="desystemconfigwidget.ui" line="2577"/>
         <source>5</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="331"/>
-        <location filename="desystemconfigwidget.ui" line="1686"/>
-        <location filename="desystemconfigwidget.ui" line="2042"/>
+        <location filename="desystemconfigwidget.ui" line="368"/>
+        <location filename="desystemconfigwidget.ui" line="1843"/>
+        <location filename="desystemconfigwidget.ui" line="2238"/>
         <source>α参数</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.ui" line="1986"/>
-        <location filename="desystemconfigwidget.ui" line="2391"/>
+        <location filename="desystemconfigwidget.ui" line="2182"/>
+        <location filename="desystemconfigwidget.ui" line="2631"/>
+        <location filename="desystemconfigwidget.ui" line="3268"/>
         <source>6</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="338"/>
-        <location filename="desystemconfigwidget.ui" line="2059"/>
-        <location filename="desystemconfigwidget.ui" line="2094"/>
+        <location filename="desystemconfigwidget.ui" line="348"/>
+        <location filename="desystemconfigwidget.ui" line="2260"/>
+        <location filename="desystemconfigwidget.ui" line="2295"/>
         <source>β参数</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="199"/>
-        <location filename="desystemconfigwidget.ui" line="2455"/>
+        <location filename="desystemconfigwidget.ui" line="141"/>
+        <location filename="desystemconfigwidget.ui" line="3113"/>
+        <source>探测器参数</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="desystemconfigwidget.ui" line="181"/>
+        <location filename="desystemconfigwidget.ui" line="2700"/>
         <source>测量信息</source>
         <translation>Measure Information</translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="420"/>
+        <location filename="desystemconfigwidget.ui" line="465"/>
         <source>通道选择</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="1209"/>
-        <location filename="desystemconfigwidget.ui" line="1262"/>
+        <location filename="desystemconfigwidget.ui" line="1338"/>
+        <location filename="desystemconfigwidget.ui" line="1397"/>
         <source>设备状态</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="1456"/>
+        <location filename="desystemconfigwidget.ui" line="1596"/>
         <source>测量时间(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="1494"/>
+        <location filename="desystemconfigwidget.ui" line="1637"/>
         <source>强制本底测量时间(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="1570"/>
+        <location filename="desystemconfigwidget.ui" line="1719"/>
         <source>辐射测量平滑因子</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="1608"/>
+        <location filename="desystemconfigwidget.ui" line="1760"/>
         <source>人员屏蔽补偿因子</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="1649"/>
+        <location filename="desystemconfigwidget.ui" line="1801"/>
         <source>报警自恢复时间(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="1739"/>
-        <location filename="desystemconfigwidget.ui" line="2144"/>
+        <location filename="desystemconfigwidget.ui" line="1905"/>
+        <location filename="desystemconfigwidget.ui" line="2354"/>
         <source>低本底报警阀值(CPS)</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="1787"/>
-        <location filename="desystemconfigwidget.ui" line="2192"/>
+        <location filename="desystemconfigwidget.ui" line="1959"/>
+        <location filename="desystemconfigwidget.ui" line="2408"/>
         <source>高本底报警阀值(CPS)</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="1835"/>
-        <location filename="desystemconfigwidget.ui" line="2240"/>
+        <location filename="desystemconfigwidget.ui" line="2013"/>
+        <location filename="desystemconfigwidget.ui" line="2462"/>
         <source>报警系数</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="1883"/>
-        <location filename="desystemconfigwidget.ui" line="2288"/>
+        <location filename="desystemconfigwidget.ui" line="2067"/>
+        <location filename="desystemconfigwidget.ui" line="2516"/>
         <source>严重报警系数</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="1931"/>
-        <location filename="desystemconfigwidget.ui" line="2336"/>
+        <location filename="desystemconfigwidget.ui" line="2121"/>
+        <location filename="desystemconfigwidget.ui" line="2570"/>
         <source>报警阀值(CPS)</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="1979"/>
-        <location filename="desystemconfigwidget.ui" line="2384"/>
+        <location filename="desystemconfigwidget.ui" line="2175"/>
+        <location filename="desystemconfigwidget.ui" line="2624"/>
         <source>严重报警阀值(CPS)</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="2503"/>
-        <source>报警记录</source>
+        <location filename="desystemconfigwidget.ui" line="3060"/>
+        <source>手部污染</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="2510"/>
-        <source>测量记录</source>
+        <location filename="desystemconfigwidget.ui" line="3070"/>
+        <source>脚步污染</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="2550"/>
-        <source>测量数据</source>
+        <location filename="desystemconfigwidget.ui" line="3130"/>
+        <source>通道号</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="2566"/>
-        <source>报警事件</source>
+        <location filename="desystemconfigwidget.ui" line="3153"/>
+        <source>计数时间</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="2607"/>
+        <location filename="desystemconfigwidget.ui" line="3176"/>
+        <source>高压</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="desystemconfigwidget.ui" line="3183"/>
+        <source>46</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="desystemconfigwidget.ui" line="3202"/>
+        <source>阀值1(mV)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="desystemconfigwidget.ui" line="3222"/>
+        <source>阀值2(mV)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="desystemconfigwidget.ui" line="3242"/>
+        <source>阀值3(mV)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="desystemconfigwidget.ui" line="3281"/>
+        <source>高压误差(%)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="desystemconfigwidget.ui" line="3288"/>
+        <source>显示信息</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="desystemconfigwidget.ui" line="3301"/>
+        <source>读取</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="desystemconfigwidget.ui" line="3308"/>
+        <source>设置</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="desystemconfigwidget.ui" line="3315"/>
+        <source>信息</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="desystemconfigwidget.ui" line="2940"/>
         <source>图形显示</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="2667"/>
-        <source>脚步污染情况</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="desystemconfigwidget.ui" line="2698"/>
-        <location filename="desystemconfigwidget.ui" line="3044"/>
-        <source>100</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="2708"/>
-        <source>手部污染情况</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="2766"/>
+        <location filename="desystemconfigwidget.ui" line="2759"/>
         <source>时间选择</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.ui" line="2822"/>
+        <location filename="desystemconfigwidget.ui" line="2815"/>
         <source>2017-8-27</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="2904"/>
+        <location filename="desystemconfigwidget.ui" line="2897"/>
         <source>本日</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="2944"/>
-        <source>污染与测量次数</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="3010"/>
-        <source>污染次数</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="3054"/>
-        <source>测量次数</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message utf8="true">
-        <location filename="desystemconfigwidget.ui" line="2863"/>
+        <location filename="desystemconfigwidget.ui" line="2856"/>
         <source>本周</source>
         <translation type="unfinished"></translation>
     </message>
@@ -801,94 +986,8 @@
         <translation type="obsolete">Back</translation>
     </message>
     <message>
-        <location filename="desystemconfigwidget.cpp" line="67"/>
-        <source>Ç¿ÖÆ±¾µ×²âÁ¿Ê±¼ä</source>
-        <oldsource>IPµØÖ·ÉèÖÃ</oldsource>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="desystemconfigwidget.cpp" line="66"/>
-        <source>²âÁ¿Ê±¼ä</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="desystemconfigwidget.cpp" line="68"/>
-        <source>±¾µ×¼ì²âÆ½»¬Òò×Ó</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="desystemconfigwidget.cpp" line="69"/>
-        <source>·øÉä¼ì²âÆ½»¬Òò×Ó</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="desystemconfigwidget.cpp" line="70"/>
-        <source>ÈËÔ±ÆÁ±Î²¹³¥Òò×Ó</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="desystemconfigwidget.cpp" line="71"/>
-        <source>±¨¾¯×Ô¶¯»Ö¸´Ê±¼ä</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="desystemconfigwidget.cpp" line="73"/>
-        <source>alpha µÍ±¾µ×±¨¾¯·§Öµ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="desystemconfigwidget.cpp" line="74"/>
-        <source>alpha ¸ß±¾µ×±¨¾¯·§Öµ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="desystemconfigwidget.cpp" line="75"/>
-        <source>alpha ±¨¾¯ÏµÊý</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="desystemconfigwidget.cpp" line="76"/>
-        <source>alpha ÑÏÖØ±¨¾¯ÏµÊý</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="desystemconfigwidget.cpp" line="77"/>
-        <source>alpha ±¨¾¯·§Öµ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="desystemconfigwidget.cpp" line="78"/>
-        <source>alpha ÑÏÖØ±¨¾¯·§Öµ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="desystemconfigwidget.cpp" line="80"/>
-        <source>beta µÍ±¾µ×±¨¾¯·§Öµ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="desystemconfigwidget.cpp" line="81"/>
-        <source>beta ¸ß±¾µ×±¨¾¯·§Öµ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="desystemconfigwidget.cpp" line="82"/>
-        <source>beta ±¨¾¯ÏµÊý</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="desystemconfigwidget.cpp" line="83"/>
-        <source>beta ÑÏÖØ±¨¾¯ÏµÊý</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="desystemconfigwidget.cpp" line="84"/>
-        <source>beta ±¨¾¯·§Öµ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="desystemconfigwidget.cpp" line="85"/>
-        <source>beta ÑÏÖØ±¨¾¯·§Öµ</source>
+        <location filename="desystemconfigwidget.cpp" line="33"/>
+        <source>·µ»Ø</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -900,142 +999,192 @@
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemtestwidget.ui" line="174"/>
-        <location filename="desystemtestwidget.ui" line="219"/>
+        <location filename="desystemtestwidget.ui" line="173"/>
+        <location filename="desystemtestwidget.ui" line="218"/>
         <source>IO测试</source>
         <translation>IO</translation>
     </message>
     <message utf8="true">
-        <location filename="desystemtestwidget.ui" line="181"/>
-        <location filename="desystemtestwidget.ui" line="521"/>
+        <location filename="desystemtestwidget.ui" line="180"/>
+        <location filename="desystemtestwidget.ui" line="647"/>
         <source>通道测试</source>
         <translation>Channel</translation>
     </message>
     <message utf8="true">
-        <location filename="desystemtestwidget.ui" line="195"/>
+        <location filename="desystemtestwidget.ui" line="194"/>
         <source>注销</source>
         <translation>Logout</translation>
     </message>
     <message utf8="true">
-        <location filename="desystemtestwidget.ui" line="257"/>
-        <source>状态:未测试</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message utf8="true">
-        <location filename="desystemtestwidget.ui" line="324"/>
+        <location filename="desystemtestwidget.ui" line="287"/>
         <source>左手对射式红外</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemtestwidget.ui" line="373"/>
+        <location filename="desystemtestwidget.ui" line="327"/>
         <source>右手对射式红外</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemtestwidget.ui" line="427"/>
+        <location filename="desystemtestwidget.ui" line="585"/>
         <source>右手探测器拆卸</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemtestwidget.ui" line="463"/>
+        <location filename="desystemtestwidget.ui" line="525"/>
         <source>脚步压力</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemtestwidget.ui" line="500"/>
+        <location filename="desystemtestwidget.ui" line="373"/>
+        <source>状态: 未测试</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="desystemtestwidget.ui" line="478"/>
         <source>人员接近</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemtestwidget.ui" line="547"/>
+        <location filename="desystemtestwidget.ui" line="673"/>
         <source>物理测试</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemtestwidget.ui" line="557"/>
+        <location filename="desystemtestwidget.ui" line="683"/>
         <source>电测试</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemtestwidget.ui" line="580"/>
+        <location filename="desystemtestwidget.ui" line="706"/>
         <source>α</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemtestwidget.ui" line="587"/>
+        <location filename="desystemtestwidget.ui" line="713"/>
         <source>α+β</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemtestwidget.ui" line="661"/>
+        <location filename="desystemtestwidget.ui" line="787"/>
         <source>高压值：</source>
         <translation type="unfinished"></translation>
     </message>
+    <message utf8="true">
+        <location filename="desystemtestwidget.ui" line="897"/>
+        <source>通道选择：</source>
+        <translation type="unfinished">Channel:</translation>
+    </message>
     <message>
-        <location filename="desystemtestwidget.ui" line="807"/>
+        <location filename="desystemtestwidget.ui" line="925"/>
         <source>3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="desystemtestwidget.ui" line="814"/>
+        <location filename="desystemtestwidget.ui" line="904"/>
         <source>2</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemtestwidget.ui" line="617"/>
+        <location filename="desystemtestwidget.ui" line="743"/>
         <source>阀值：</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemtestwidget.ui" line="167"/>
+        <location filename="desystemtestwidget.ui" line="166"/>
         <source>功能选择</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Function</translation>
     </message>
     <message utf8="true">
-        <location filename="desystemtestwidget.ui" line="610"/>
+        <location filename="desystemtestwidget.ui" line="736"/>
         <source>修正系数1：</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemtestwidget.ui" line="648"/>
+        <location filename="desystemtestwidget.ui" line="774"/>
         <source>修正系数2：</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemtestwidget.ui" line="837"/>
+        <location filename="desystemtestwidget.ui" line="979"/>
+        <source>上限</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="desystemtestwidget.ui" line="986"/>
+        <source>下限</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="desystemtestwidget.ui" line="993"/>
+        <source>步进</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="desystemtestwidget.ui" line="1000"/>
+        <source>高压</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="desystemtestwidget.ui" line="1016"/>
+        <source>低压</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="desystemtestwidget.ui" line="1038"/>
         <source>测量次数：</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemtestwidget.ui" line="188"/>
-        <location filename="desystemtestwidget.ui" line="746"/>
+        <location filename="desystemtestwidget.ui" line="187"/>
+        <location filename="desystemtestwidget.ui" line="872"/>
         <source>效率标定</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="desystemtestwidget.ui" line="770"/>
-        <source>Alpha</source>
+    <message utf8="true">
+        <location filename="desystemtestwidget.ui" line="1045"/>
+        <source>通道号</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="desystemtestwidget.ui" line="1074"/>
+        <source>表面发射率(bq)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="desystemtestwidget.ui" line="1081"/>
+        <source>放射源类型：</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="desystemtestwidget.ui" line="763"/>
+        <location filename="desystemtestwidget.ui" line="1088"/>
+        <source>Alpha</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="desystemtestwidget.ui" line="1095"/>
+        <source>类型:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="desystemtestwidget.ui" line="1102"/>
         <source>Bete</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="desystemtestwidget.ui" line="692"/>
-        <location filename="desystemtestwidget.ui" line="882"/>
+        <location filename="desystemtestwidget.ui" line="818"/>
+        <location filename="desystemtestwidget.ui" line="1140"/>
         <source>测试结果:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="desystemtestwidget.ui" line="793"/>
+        <location filename="desystemtestwidget.ui" line="911"/>
         <source>1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="desystemtestwidget.ui" line="800"/>
-        <location filename="desystemtestwidget.ui" line="844"/>
+        <location filename="desystemtestwidget.ui" line="918"/>
+        <location filename="desystemtestwidget.ui" line="1052"/>
         <source>4</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1048,10 +1197,20 @@
         <translation type="obsolete">Back</translation>
     </message>
     <message utf8="true">
-        <location filename="desystemtestwidget.ui" line="277"/>
-        <location filename="desystemtestwidget.ui" line="712"/>
-        <location filename="desystemtestwidget.ui" line="902"/>
+        <location filename="desystemtestwidget.ui" line="405"/>
+        <location filename="desystemtestwidget.ui" line="838"/>
+        <location filename="desystemtestwidget.ui" line="1160"/>
         <source>开始测试</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="desystemtestwidget.cpp" line="139"/>
+        <source>È¡Ïû²âÊÔ</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="desystemtestwidget.cpp" line="140"/>
+        <source>×´Ì¬: ÒÑ²âÊÔ</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1062,30 +1221,46 @@
         <source>DeTableView</source>
         <translation></translation>
     </message>
-    <message utf8="true">
-        <location filename="detableview.ui" line="80"/>
-        <source>首页</source>
-        <translation>Fisrt</translation>
-    </message>
-    <message utf8="true">
-        <location filename="detableview.ui" line="127"/>
-        <source>上一页</source>
-        <translation>Perv</translation>
-    </message>
-    <message utf8="true">
-        <location filename="detableview.ui" line="120"/>
-        <source>下一页</source>
-        <translation>Next</translation>
-    </message>
-    <message utf8="true">
-        <location filename="detableview.ui" line="87"/>
-        <source>末页</source>
-        <translation>Last</translation>
+    <message>
+        <location filename="detableview.ui" line="118"/>
+        <source>|&lt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="detableview.ui" line="137"/>
-        <source>TextLabel</source>
-        <translation></translation>
+        <location filename="detableview.ui" line="125"/>
+        <source>&lt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="detableview.ui" line="147"/>
+        <source>1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="detableview.ui" line="154"/>
+        <source>&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="detableview.ui" line="161"/>
+        <source>&gt;|</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <source>首页</source>
+        <translation type="obsolete">Fisrt</translation>
+    </message>
+    <message utf8="true">
+        <source>上一页</source>
+        <translation type="obsolete">Perv</translation>
+    </message>
+    <message utf8="true">
+        <source>下一页</source>
+        <translation type="obsolete">Next</translation>
+    </message>
+    <message utf8="true">
+        <source>末页</source>
+        <translation type="obsolete">Last</translation>
     </message>
 </context>
 <context>
@@ -1102,6 +1277,19 @@
     </message>
 </context>
 <context>
+    <name>DeValueSelectWidget</name>
+    <message>
+        <location filename="devalueselectwidget.ui" line="14"/>
+        <source>DeValueSelectWidget</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="devalueselectwidget.ui" line="78"/>
+        <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DeVirtualKeyboradWidget</name>
     <message>
         <location filename="devirtualkeyboradwidget.ui" line="20"/>
@@ -1109,219 +1297,258 @@
         <translation></translation>
     </message>
     <message utf8="true">
-        <location filename="devirtualkeyboradwidget.ui" line="151"/>
+        <location filename="devirtualkeyboradwidget.ui" line="99"/>
         <source>字母</source>
         <translation>Letter</translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="172"/>
+        <location filename="devirtualkeyboradwidget.ui" line="119"/>
         <source>q</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="182"/>
+        <location filename="devirtualkeyboradwidget.ui" line="129"/>
         <source>w</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="192"/>
+        <location filename="devirtualkeyboradwidget.ui" line="139"/>
         <source>e</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="202"/>
+        <location filename="devirtualkeyboradwidget.ui" line="149"/>
         <source>r</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="212"/>
+        <location filename="devirtualkeyboradwidget.ui" line="159"/>
         <source>t</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="222"/>
+        <location filename="devirtualkeyboradwidget.ui" line="169"/>
         <source>y</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="232"/>
+        <location filename="devirtualkeyboradwidget.ui" line="179"/>
         <source>u</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="242"/>
+        <location filename="devirtualkeyboradwidget.ui" line="189"/>
         <source>i</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="252"/>
+        <location filename="devirtualkeyboradwidget.ui" line="199"/>
         <source>o</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="262"/>
+        <location filename="devirtualkeyboradwidget.ui" line="239"/>
         <source>a</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="272"/>
+        <location filename="devirtualkeyboradwidget.ui" line="249"/>
         <source>s</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="282"/>
+        <location filename="devirtualkeyboradwidget.ui" line="259"/>
         <source>d</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="292"/>
+        <location filename="devirtualkeyboradwidget.ui" line="269"/>
         <source>f</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="302"/>
+        <location filename="devirtualkeyboradwidget.ui" line="279"/>
         <source>g</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="312"/>
+        <location filename="devirtualkeyboradwidget.ui" line="289"/>
         <source>h</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="322"/>
+        <location filename="devirtualkeyboradwidget.ui" line="299"/>
         <source>j</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="332"/>
+        <location filename="devirtualkeyboradwidget.ui" line="309"/>
         <source>k</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="342"/>
+        <location filename="devirtualkeyboradwidget.ui" line="319"/>
         <source>l</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="352"/>
+        <location filename="devirtualkeyboradwidget.ui" line="373"/>
         <source>z</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="362"/>
+        <location filename="devirtualkeyboradwidget.ui" line="383"/>
         <source>x</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="372"/>
+        <location filename="devirtualkeyboradwidget.ui" line="393"/>
         <source>c</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="382"/>
+        <location filename="devirtualkeyboradwidget.ui" line="403"/>
         <source>v</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="392"/>
+        <location filename="devirtualkeyboradwidget.ui" line="413"/>
         <source>b</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="402"/>
+        <location filename="devirtualkeyboradwidget.ui" line="423"/>
         <source>n</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="412"/>
+        <location filename="devirtualkeyboradwidget.ui" line="433"/>
         <source>m</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="422"/>
+        <location filename="devirtualkeyboradwidget.ui" line="669"/>
+        <source>ABC</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="devirtualkeyboradwidget.ui" line="209"/>
         <source>p</source>
         <translation></translation>
     </message>
     <message utf8="true">
-        <location filename="devirtualkeyboradwidget.ui" line="444"/>
+        <location filename="devirtualkeyboradwidget.ui" line="361"/>
         <source>上档</source>
         <translation>Shift</translation>
     </message>
+    <message>
+        <location filename="devirtualkeyboradwidget.ui" line="476"/>
+        <source>123</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message utf8="true">
-        <location filename="devirtualkeyboradwidget.ui" line="452"/>
+        <location filename="devirtualkeyboradwidget.ui" line="506"/>
+        <location filename="devirtualkeyboradwidget.ui" line="686"/>
+        <source>确定</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="devirtualkeyboradwidget.ui" line="528"/>
         <source>数字</source>
         <translation>Number</translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="467"/>
+        <location filename="devirtualkeyboradwidget.ui" line="536"/>
         <source>1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="477"/>
+        <location filename="devirtualkeyboradwidget.ui" line="546"/>
         <source>2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="487"/>
+        <location filename="devirtualkeyboradwidget.ui" line="556"/>
         <source>3</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="497"/>
+        <location filename="devirtualkeyboradwidget.ui" line="626"/>
         <source>0</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="507"/>
+        <location filename="devirtualkeyboradwidget.ui" line="566"/>
         <source>4</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="517"/>
+        <location filename="devirtualkeyboradwidget.ui" line="576"/>
         <source>5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="527"/>
+        <location filename="devirtualkeyboradwidget.ui" line="586"/>
         <source>6</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="537"/>
+        <location filename="devirtualkeyboradwidget.ui" line="596"/>
         <source>7</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="547"/>
+        <location filename="devirtualkeyboradwidget.ui" line="606"/>
         <source>8</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="557"/>
+        <location filename="devirtualkeyboradwidget.ui" line="616"/>
         <source>9</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="devirtualkeyboradwidget.ui" line="567"/>
+        <location filename="devirtualkeyboradwidget.ui" line="654"/>
         <source>.</source>
         <translation></translation>
     </message>
     <message utf8="true">
-        <location filename="devirtualkeyboradwidget.ui" line="594"/>
+        <location filename="devirtualkeyboradwidget.ui" line="496"/>
+        <location filename="devirtualkeyboradwidget.ui" line="676"/>
         <source>空格</source>
         <translation>Space</translation>
     </message>
     <message utf8="true">
-        <location filename="devirtualkeyboradwidget.ui" line="614"/>
+        <location filename="devirtualkeyboradwidget.ui" line="458"/>
         <source>回退</source>
         <translation>Back</translation>
     </message>
     <message utf8="true">
-        <location filename="devirtualkeyboradwidget.ui" line="638"/>
         <source>隐藏</source>
-        <translation>Hide</translation>
+        <translation type="obsolete">Hide</translation>
+    </message>
+</context>
+<context>
+    <name>DelogoWidget</name>
+    <message>
+        <location filename="delogowidget.ui" line="20"/>
+        <source>DelogoWidget</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="delogowidget.ui" line="77"/>
+        <source>1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="delogowidget.ui" line="148"/>
+        <source>西南自动化研究所</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="delogowidget.ui" line="170"/>
+        <source>手足污染测量仪</source>
+        <translation type="unfinished">Hand foot contamination</translation>
     </message>
 </context>
 <context>
@@ -1331,7 +1558,7 @@
         <translation type="obsolete">Administrator</translation>
     </message>
     <message>
-        <location filename="demo.cpp" line="39"/>
+        <location filename="demo.cpp" line="47"/>
         <source>sys user</source>
         <translation>adminstrator</translation>
     </message>

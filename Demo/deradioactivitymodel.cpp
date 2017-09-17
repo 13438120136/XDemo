@@ -67,6 +67,12 @@ QVariant DeRadioactivityModel::dataShow(const QModelIndex &index) const
 		return "";
 	default:
 		return QVariant();
-	}	
+	}
+}
+//----------------------------------------------------------------------------
+Qt::ItemFlags DeRadioactivityModel::flags(const QModelIndex &index) const
+{
+	Q_UNUSED(index)
+	return Qt::ItemIsSelectable | Qt::ItemIsEnabled;
 }
 //----------------------------------------------------------------------------
