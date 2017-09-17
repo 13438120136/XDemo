@@ -183,6 +183,7 @@ void Demo::slotKeyMeasuring()
 //----------------------------------------------------------------------------
 void Demo::slotDeviceFault(DeviceStatus device)
 {
+	m_deviceData = device;
 	widget->deviceFault(device);
 }
 //----------------------------------------------------------------------------
@@ -214,5 +215,10 @@ void Demo::slotFlipPalm()
 void Demo::slotPositionError()
 {
 	widget->posError();	
+}
+//----------------------------------------------------------------------------
+DeviceStatus &slotGetCurrentDeviceFault()
+{
+	return m_deviceData;
 }
 //----------------------------------------------------------------------------

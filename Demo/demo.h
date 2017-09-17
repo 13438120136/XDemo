@@ -65,6 +65,8 @@ public Q_SLOTS:
 	void slotDeviceSelfChecking();
 	///设备发生故障
 	void slotDeviceFault(DeviceStatus device);
+	///
+	DeviceStatus &slotGetCurrentDeviceFault();
 	///本地检测中
 	void slotChecking();
 	///请离开检测区
@@ -85,6 +87,9 @@ private:
     bool m_currLanguage;
 	QTranslator *m_translator;
 	DeInitWidget *widget;
+
+	///状态数据
+	DeviceStatus m_deviceData;
 };
 
 #endif // DEMO_H
