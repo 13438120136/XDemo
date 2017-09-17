@@ -217,7 +217,7 @@ void Demo::slotPositionError()
 	widget->posError();	
 }
 //----------------------------------------------------------------------------
-DeviceStatus &slotGetCurrentDeviceFault()
+DeviceStatus &Demo::slotGetCurrentDeviceFault()
 {
 	return m_deviceData;
 }
