@@ -51,6 +51,11 @@ public Q_SLOTS:
 	void dorsumWuran();
 	void dorsumNoWuran();
 
+	///反转手掌
+	void flipPalm();
+	///位置错误
+	void posError();
+
 private:
 	void playLabelForGif(QLabel *label, const QString &gif, int speed = 1);
 

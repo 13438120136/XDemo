@@ -58,6 +58,8 @@ public Q_SLOTS:
 	void slotKeyContaminated();
 	///重点部位不污染
 	void slotKeyNoContaminated();
+	///位置错误
+	void slotPositionError();
 
 	///本地自检测界面
 	void slotDeviceSelfChecking();
@@ -69,6 +71,8 @@ public Q_SLOTS:
 	void slotPleaseLeave();
 	///准备就绪
 	void slotReady();
+	///请反转手掌
+	void slotFlipPalm();
 
 protected:
     virtual void changeEvent(QEvent *);

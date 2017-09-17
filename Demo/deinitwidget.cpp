@@ -283,13 +283,17 @@ void DeInitWidget::dorsumNoWuran()
 void DeInitWidget::keyPartMeasuring()
 {
 	ui.tabWidget->setCurrentIndex(3);
+	ui.label_38->setText(tr("重点部位测量\nKey Part Measuring"));
 	playLabelForGif(ui.label_39, ":/Demo/Resources/jianceyemian-teshu-jiancezhong.gif");
+
+	ui.pushButton_15->hide();
+	ui.pushButton_16->hide();
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::keyPartContaminated()
 {
 	ui.tabWidget->setCurrentIndex(3);
-	ui.label_38->setText(tr("污染"));
+	ui.label_38->setText(tr("污染\nContaminated"));
 	QString str = "image: url(:/Demo/Resources/jianceyemian-teshu-wuran.png); \
 				  min-width:96px; \
 				  min-height:124px;   \
@@ -427,6 +431,74 @@ void DeInitWidget::dorsumChecking()
 	playLabelForGif(ui.label_31, ":/Demo/Resources/jianceyemian-left-jiancezhong.gif", 2);
 	playLabelForGif(ui.label_33, ":/Demo/Resources/jianceyemian-jiao-left-jiancezhong.gif", 2);
 	playLabelForGif(ui.label_34, ":/Demo/Resources/jianceyemian-jiao-right-jiancezhong.gif", 2);
+
+	ui.pushButton_11->hide();
+	ui.pushButton_12->hide();
+}
+//----------------------------------------------------------------------------
+void DeInitWidget::flipPalm()
+{
+	ui.tabWidget->setCurrentIndex(2);
+	ui.label_30->setText(tr("请反转手掌\nPlease Filp Palm"));
+	ui.label_29->setText("β   -\nα   -");
+	ui.label_32->setText("β   -\nα   -");
+	ui.label_36->setText("β   -\nα   -");
+	ui.label_37->setText("β   -\nα   -");
+
+	ui.label_26->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-right-zhunbeijiuxu.png); \
+							   min-width:94px; \
+							   min-height:98px; \
+							   max-width:94px; \
+							   max-height:98px;");
+	ui.label_31->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-left-zhunbeijiuxu.png); \
+							   min-width:94px; \
+							   min-height:98px; \
+							   max-width:94px; \
+							   max-height:98px;");
+	ui.label_33->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-left-jiuwei.png);\
+							   min-width:50px; \
+							   min-height:126px;\
+							   max-width:50px;\
+							   max-height:126px;");
+	ui.label_34->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-right-jiuwei.png);\
+							   min-width:50px; \
+							   min-height:126px;\
+							   max-width:50px;\
+							   max-height:126px;");
+
+	ui.pushButton_11->hide();
+	ui.pushButton_12->hide();
+}
+//----------------------------------------------------------------------------
+void DeInitWidget::posError()
+{
+	ui.tabWidget->setCurrentIndex(2);
+	ui.label_30->setText(tr("位置错误\nCorrect position"));
+	ui.label_29->setText("β   -\nα   -");
+	ui.label_32->setText("β   -\nα   -");
+	ui.label_36->setText("β   -\nα   -");
+	ui.label_37->setText("β   -\nα   -");
+
+	ui.label_26->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-left-jiuwei.png); \
+							   min-width:94px; \
+							   min-height:98px; \
+							   max-width:94px; \
+							   max-height:98px;");
+	ui.label_31->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-right-jiuwei.png); \
+							   min-width:94px; \
+							   min-height:98px; \
+							   max-width:94px; \
+							   max-height:98px;");
+	ui.label_33->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-left-jiuwei.png);\
+							   min-width:50px; \
+							   min-height:126px;\
+							   max-width:50px;\
+							   max-height:126px;");
+	ui.label_34->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-right-jiuwei.png);\
+							   min-width:50px; \
+							   min-height:126px;\
+							   max-width:50px;\
+							   max-height:126px;");
 
 	ui.pushButton_11->hide();
 	ui.pushButton_12->hide();

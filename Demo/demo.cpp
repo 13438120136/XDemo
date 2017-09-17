@@ -49,7 +49,7 @@ Demo::Demo(QWidget *parent, Qt::WFlags flags)
 	}
 
 	QTimer::singleShot(1000, this, SLOT(slotBackMainWidget()));
-	slotKeyNoContaminated();
+	slotPositionError();
 }
 //----------------------------------------------------------------------------
 Demo::~Demo()
@@ -204,5 +204,15 @@ void Demo::slotKeyContaminated()
 void Demo::slotKeyNoContaminated()
 {
 	widget->keyPartNoContaminated();
+}
+//----------------------------------------------------------------------------
+void Demo::slotFlipPalm()
+{
+	widget->flipPalm();
+}
+//----------------------------------------------------------------------------
+void Demo::slotPositionError()
+{
+	widget->posError();	
 }
 //----------------------------------------------------------------------------
