@@ -8,11 +8,8 @@ DeAddRadioactiveDlg::DeAddRadioactiveDlg(QWidget *parent)
 	: QDialog(parent)
 {
 	ui.setupUi(this);
-
-	ui.okBtn->setEnabled(false);
-
-	ui.idLineEdit->installEventFilter(this);
-	ui.originalLineEdit->installEventFilter(this);
+	ui.idLineEdit->installEventFilter(&m_inputTextDelegate);
+	ui.originalLineEdit->installEventFilter(&m_inputTextDelegate);
 	ui.lineEdit->setText(QDateTime::currentDateTime().toString("yyyy/MM/dd"));
 	ui.widget_3->addItem(tr("≤‚ ‘1"));
 	ui.widget_3->addItem(tr("≤‚ ‘2"));

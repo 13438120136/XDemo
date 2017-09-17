@@ -9,6 +9,9 @@ DeVirtualKeyboradWidget::DeVirtualKeyboradWidget(QWidget *parent)
 	ui.setupUi(this);
 	ui.tabWidget->findChild<QTabBar*>()->hide();
 	initAllKeyEvent();
+
+	connect(ui.pushButton_20, SIGNAL(clicked()), this, SIGNAL(signalOk()));
+	connect(ui.pushButton_19, SIGNAL(clicked()), this, SLOT(on_spaceBtn_clicked()));
 }
 //----------------------------------------------------------------------------
 DeVirtualKeyboradWidget::~DeVirtualKeyboradWidget()

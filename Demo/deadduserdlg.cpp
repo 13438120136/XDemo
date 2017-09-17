@@ -14,6 +14,9 @@ DeAddUserDlg::DeAddUserDlg(QWidget *parent)
 	ui.widgePermission->addItem(QString::fromLocal8Bit("管理员"));
 	ui.widgePermission->addItem(QString::fromLocal8Bit("维护人员"));
 	this->setWindowFlags(Qt::ToolTip);
+	
+	ui.userLineEdit->installEventFilter(&m_inputTextDelegate);
+	ui.passwdLineEdit->installEventFilter(&m_passwdDelegate);	
 
 	///暂时隐藏
 	ui.label_3->hide();

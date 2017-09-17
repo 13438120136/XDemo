@@ -84,63 +84,27 @@ DeSystemConfigWidget::~DeSystemConfigWidget()
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::initEdit()
 {
-	//ui.ipEdit->setProperty("customText", tr("IP地址设置"));
-	ui.timeEdit->setProperty("customText", tr("测量时间"));
-	ui.forceTestTimeEdit->setProperty("customText", tr("强制本底测量时间"));
-	ui.checkFatorEdit->setProperty("customText", tr("本底检测平滑因子"));
-	ui.rCheckFatorEdit->setProperty("customText", tr("辐射检测平滑因子"));
-	ui.personFatorEdit->setProperty("customText", tr("人员屏蔽补偿因子"));
-	ui.resetTimeEdit->setProperty("customText", tr("报警自动恢复时间"));
+	ui.ipEdit->installEventFilter(&m_textDelegate);
+	ui.timeEdit->installEventFilter(&m_intDelegate);
+	ui.forceTestTimeEdit->installEventFilter(&m_intDelegate);
+	ui.checkFatorEdit->installEventFilter(&m_intDelegate);
+	ui.rCheckFatorEdit->installEventFilter(&m_intDelegate);
+	ui.personFatorEdit->installEventFilter(&m_doubleDelegate);
+	ui.resetTimeEdit->installEventFilter(&m_intDelegate);
 
-	ui.alphaLowEdit->setProperty("customText", tr("alpha 低本底报警阀值"));
-	ui.alphaHighEdit->setProperty("customText", tr("alpha 高本底报警阀值"));
-	ui.alphaAlarmEdit->setProperty("customText", tr("alpha 报警系数"));
-	ui.alphaSAlarmEdit->setProperty("customText", tr("alpha 严重报警系数"));
-	ui.alphaThresholdEdit->setProperty("customText", tr("alpha 报警阀值"));
-	ui.alphaSThresholdEdit->setProperty("customText", tr("alpha 严重报警阀值"));
+	ui.alphaLowEdit->installEventFilter(&m_intDelegate);
+	ui.alphaHighEdit->installEventFilter(&m_intDelegate);
+	ui.alphaAlarmEdit->installEventFilter(&m_intDelegate);
+	ui.alphaSAlarmEdit->installEventFilter(&m_intDelegate);
+	ui.alphaThresholdEdit->installEventFilter(&m_intDelegate);
+	ui.alphaSThresholdEdit->installEventFilter(&m_intDelegate);
 
-	ui.betaLowEdit->setProperty("customText", tr("beta 低本底报警阀值"));
-	ui.betaHighEdit->setProperty("customText", tr("beta 高本底报警阀值"));
-	ui.betaAlarmEdit->setProperty("customText", tr("beta 报警系数"));
-	ui.betaSAlarmEdit->setProperty("customText", tr("beta 严重报警系数"));
-	ui.betaThresholdEdit->setProperty("customText", tr("beta 报警阀值"));
-	ui.betaSThresholdEdit->setProperty("customText", tr("beta 严重报警阀值"));
-
-	////新建执行索引
-	//ui.ipEdit->setProperty("customIndex", 1);
-	ui.timeEdit->setProperty("customIndex", 2);
-	ui.forceTestTimeEdit->setProperty("customIndex", 3);
-	ui.checkFatorEdit->setProperty("customIndex", 4);
-	ui.rCheckFatorEdit->setProperty("customIndex", 5);
-	ui.personFatorEdit->setProperty("customIndex", 6);
-	ui.resetTimeEdit->setProperty("customIndex", 7);
-
-	ui.alphaLowEdit->setProperty("customIndex", 8);
-	ui.alphaHighEdit->setProperty("customIndex", 9);
-	ui.alphaAlarmEdit->setProperty("customIndex", 10);
-	ui.alphaSAlarmEdit->setProperty("customIndex", 11);
-	ui.alphaThresholdEdit->setProperty("customIndex", 12);
-	ui.alphaSThresholdEdit->setProperty("customIndex", 13);
-
-	ui.betaLowEdit->setProperty("customIndex", 14);
-	ui.betaHighEdit->setProperty("customIndex", 15);
-	ui.betaAlarmEdit->setProperty("customIndex", 16);
-	ui.betaSAlarmEdit->setProperty("customIndex", 17);
-	ui.betaThresholdEdit->setProperty("customIndex", 18);
-	ui.betaSThresholdEdit->setProperty("customIndex", 19);
-
-	QSignalMapper *signalMapper = new QSignalMapper(this);
-	QList<QAbstractButton *> listButtons = ui.buttonGroup->buttons();
-	int nCount = listButtons.size();
-	for (int i = 0; i < nCount; i++)
-	{
-		QPushButton *button = (QPushButton *)listButtons[i];
-		connect(button, SIGNAL(clicked()), signalMapper, SLOT(map()));
-		signalMapper->setMapping(button, button);
-	}
-
-	connect(signalMapper, SIGNAL(mapped(QWidget *)),
-		this, SLOT(propertyEditSlot(QWidget *)));
+	ui.betaLowEdit->installEventFilter(&m_intDelegate);
+	ui.betaHighEdit->installEventFilter(&m_intDelegate);
+	ui.betaAlarmEdit->installEventFilter(&m_intDelegate);
+	ui.betaSAlarmEdit->installEventFilter(&m_intDelegate);
+	ui.betaThresholdEdit->installEventFilter(&m_intDelegate);
+	ui.betaSThresholdEdit->installEventFilter(&m_intDelegate);
 }
 //----------------------------------------------------------------------------
 bool DeSystemConfigWidget::execValidAndSave(const QString &str)
@@ -268,16 +232,6 @@ bool DeSystemConfigWidget::execValidAndSave(const QString &str)
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::propertyEditSlot(QWidget *w)
 {
-	DePropertyEditWidget *widget = new DePropertyEditWidget(this);
-	QPushButton *button = (QPushButton *)w;
-	QString header = button->property("customText").toString();
-	widget->setSystemConfigWidget(this);
-	widget->setHeadTitle(header);
-	widget->setContentText(button->text());
-	m_execIndex = button->property("customIndex").toInt();
-
-	Demo *demo = qApp->property("_mainWin").value<Demo *>();
-	demo->slotSetWidget(widget);
 }
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::updateDataBase()

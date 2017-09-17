@@ -11,7 +11,8 @@ DeModifyUserDlg::DeModifyUserDlg(QWidget *parent)
 {
 	ui.setupUi(this);
 
-	ui.okBtn->setEnabled(false);
+	ui.userLineEdit->installEventFilter(&m_inputTextDelegate);
+	ui.passwdLineEdit->installEventFilter(&m_passwdDelegate);
 
 	//ÔİÊ±Òş²Ø
 	ui.label_3->hide();

@@ -4,6 +4,7 @@
 #include <QDialog>
 #include "ui_deadduserdlg.h"
 #include "deusertable.h"
+#include "deinputdelegate.h"
 
 class DeAddUserDlg : public QDialog
 {
@@ -23,6 +24,8 @@ public Q_SLOTS:
 
 private:
 	Ui::DeAddUserDlg ui;
+	DeInputDelegate m_inputTextDelegate;
+	DePasswordDelegate m_passwdDelegate;
 };
 
 #endif // DEADDUSERDLG_H

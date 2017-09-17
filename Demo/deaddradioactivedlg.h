@@ -5,6 +5,7 @@
 #include "ui_deaddradioactivedlg.h"
 #include "deradioactivesourcetable.h"
 #include <QDate>
+#include "deinputdelegate.h"
 
 class DeAddRadioactiveDlg : public QDialog
 {
@@ -26,6 +27,7 @@ public Q_SLOTS:
 
 private:
 	Ui::DeAddRadioactiveDlg ui;
+	DeIntDelegate m_inputTextDelegate;
 };
 
 #endif // DEADDRADIOACTIVEDLG_H

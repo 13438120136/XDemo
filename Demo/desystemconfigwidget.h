@@ -4,6 +4,7 @@
 #include <QDialog>
 #include "ui_desystemconfigwidget.h"
 #include "desystemparam.h"
+#include "deinputdelegate.h"
 
 /*
  * 系统参数对话框
@@ -87,6 +88,11 @@ private:
 	DeSystemParam m_systemParamData;
 	int m_execIndex;
 	bool m_isMaintain;  ///当前是否为维护模式 true-维护
+
+	////////////////////////////////////
+	DeButtonIPDelegate m_textDelegate;
+	DeButtonIntDelegate m_intDelegate;
+	DeButtonDoubleDelegate m_doubleDelegate;
 };
 
 #endif // DESYSTEMCONFIGWIDGET_H

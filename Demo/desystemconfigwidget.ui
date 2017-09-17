@@ -956,7 +956,7 @@ max-height:30px;</string>
                            </widget>
                           </item>
                           <item row="0" column="1">
-                           <widget class="QPushButton" name="pushButton_10">
+                           <widget class="QPushButton" name="ipEdit">
                             <property name="text">
                              <string>127.0.0.1</string>
                             </property>

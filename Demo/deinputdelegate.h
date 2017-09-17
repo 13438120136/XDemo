@@ -2,6 +2,7 @@
 #define DEINPUTDELEGATE_H
 
 #include <QObject>
+#include <QPushButton>
 #include "dekeyboradwidget.h"
 
 /* 这里列出所有的键盘输入代理类
@@ -26,6 +27,54 @@ protected:
      bool eventFilter(QObject *obj, QEvent *event);	
 };
 
+///只能输入整数
+class DeIntDelegate : public QObject
+{
+	Q_OBJECT
+
+protected:
+     bool eventFilter(QObject *obj, QEvent *event);	
+};
+
+///按钮ip输入
+class DeButtonIPDelegate : public QObject
+{
+	Q_OBJECT
+
+protected:
+     bool eventFilter(QObject *obj, QEvent *event);	
+	 QPushButton *m_button;
+
+	public Q_SLOTS:
+		void slotButtonChange(const QString &);
+};
+
+///按钮整数输入
+class DeButtonIntDelegate : public QObject
+{
+	Q_OBJECT
+
+protected:
+     bool eventFilter(QObject *obj, QEvent *event);	
+	 QPushButton *m_button;
+
+	public Q_SLOTS:
+		void slotButtonChange(const QString &);
+};
+
+
+///按钮小数输入
+class DeButtonDoubleDelegate : public QObject
+{
+	Q_OBJECT
+
+protected:
+     bool eventFilter(QObject *obj, QEvent *event);	
+	 QPushButton *m_button;
+
+	public Q_SLOTS:
+		void slotButtonChange(const QString &);
+};
 
 
 #endif // DEINPUTDELEGATE_H

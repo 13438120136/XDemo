@@ -12,7 +12,10 @@ public:
 	enum KeyBoradType
 	{
 		Normal = 1,
-		Password
+		Password,
+		Int,
+		Float,
+		Ip,
 	};
 
 	DeKeyBoradWidget(const QString &text, DeKeyBoradWidget::KeyBoradType type = DeKeyBoradWidget::Normal, QWidget *parent = 0);
