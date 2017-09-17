@@ -110,10 +110,216 @@ void DeInitWidget::deviceSelfChecking()
 	ui.msgLabel->setText(tr("×Ô¼ì\nSelf-checking"));
 }
 //----------------------------------------------------------------------------
-void DeInitWidget::deviceFault(bool first, bool sec, bool three, bool four)
-{	
+void DeInitWidget::deviceChecking()
+{
+	ui.tabWidget->setCurrentIndex(2);
+	ui.label_30->setText(tr("±¾µ×¼ì²âÖĞ\nBKG Meassuring"));
+	ui.label_29->setText("¦Â   -\n¦Á   -");
+	ui.label_32->setText("¦Â   -\n¦Á   -");
+	ui.label_36->setText("¦Â   -\n¦Á   -");
+	ui.label_37->setText("¦Â   -\n¦Á   -");
+
+	playLabelForGif(ui.label_26, ":/Demo/Resources/jianceyemian-left-bendijiance.gif", 2);
+	playLabelForGif(ui.label_31, ":/Demo/Resources/jianceyemian-right-bendijiance.gif", 2);
+	playLabelForGif(ui.label_33, ":/Demo/Resources/jianceyemian-jiao-left-bendijiance.gif", 2);
+	playLabelForGif(ui.label_34, ":/Demo/Resources/jianceyemian-jiao-right-bendijiance.gif", 2);
+
+	ui.pushButton_11->hide();
+	ui.pushButton_12->hide();
+}
+//----------------------------------------------------------------------------
+void DeInitWidget::pleaseLeave()
+{
+	ui.tabWidget->setCurrentIndex(2);
+	ui.label_30->setText(tr("ÇëÀë¿ª¼ì²âÇøÓò\nPlease leave"));
+	ui.label_29->setText("¦Â   -\n¦Á   -");
+	ui.label_32->setText("¦Â   -\n¦Á   -");
+	ui.label_36->setText("¦Â   -\n¦Á   -");
+	ui.label_37->setText("¦Â   -\n¦Á   -");
+
+	playLabelForGif(ui.label_26, ":/Demo/Resources/jianceyemian-left-bendijiance.gif", 2);
+	playLabelForGif(ui.label_31, ":/Demo/Resources/jianceyemian-right-bendijiance.gif", 2);
+	playLabelForGif(ui.label_33, ":/Demo/Resources/jianceyemian-jiao-left-bendijiance.gif", 2);
+	playLabelForGif(ui.label_34, ":/Demo/Resources/jianceyemian-jiao-right-bendijiance.gif", 2);
+
+	ui.pushButton_11->hide();
+	ui.pushButton_12->hide();
+}
+//----------------------------------------------------------------------------
+void DeInitWidget::palmWuran()
+{
+	ui.tabWidget->setCurrentIndex(2);
+	ui.label_30->setText(tr("ÊÖĞÄÎÛÈ¾\nContaminated"));
+	ui.label_29->setText("¦Â   -\n¦Á   -");
+	ui.label_32->setText("¦Â   -\n¦Á   -");
+	ui.label_36->setText("¦Â   -\n¦Á   -");
+	ui.label_37->setText("¦Â   -\n¦Á   -");
+
+	ui.label_26->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-left-wuran.png); \
+							   min-width:94px; \
+							   min-height:98px; \
+							   max-width:94px; \
+							   max-height:98px;");
+	ui.label_31->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-right-wuran.png); \
+							   min-width:94px; \
+							   min-height:98px; \
+							   max-width:94px; \
+							   max-height:98px;");
+	ui.label_33->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-left-wuran.png);\
+							   min-width:50px; \
+							   min-height:126px;\
+							   max-width:50px;\
+							   max-height:126px;");
+	ui.label_34->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-right-wuran.png);\
+							   min-width:50px; \
+							   min-height:126px;\
+							   max-width:50px;\
+							   max-height:126px;");
+}
+//----------------------------------------------------------------------------
+void DeInitWidget::dorsumWuran()
+{
+	ui.tabWidget->setCurrentIndex(2);
+	ui.label_30->setText(tr("ÊÖ±³ÎÛÈ¾\nContaminated"));
+	ui.label_29->setText("¦Â   -\n¦Á   -");
+	ui.label_32->setText("¦Â   -\n¦Á   -");
+	ui.label_36->setText("¦Â   -\n¦Á   -");
+	ui.label_37->setText("¦Â   -\n¦Á   -");
+
+	ui.label_26->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-right-wuran.png); \
+							   min-width:94px; \
+							   min-height:98px; \
+							   max-width:94px; \
+							   max-height:98px;");
+	ui.label_31->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-left-wuran.png); \
+							   min-width:94px; \
+							   min-height:98px; \
+							   max-width:94px; \
+							   max-height:98px;");
+	ui.label_33->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-left-wuran.png);\
+							   min-width:50px; \
+							   min-height:126px;\
+							   max-width:50px;\
+							   max-height:126px;");
+	ui.label_34->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-right-wuran.png);\
+							   min-width:50px; \
+							   min-height:126px;\
+							   max-width:50px;\
+							   max-height:126px;");
+}
+//----------------------------------------------------------------------------
+void DeInitWidget::ready()
+{
+	ui.tabWidget->setCurrentIndex(2);
+	ui.label_30->setText(tr("×¼±¸¾ÍĞ÷\nReady"));
+	ui.label_29->setText("¦Â   -\n¦Á   -");
+	ui.label_32->setText("¦Â   -\n¦Á   -");
+	ui.label_36->setText("¦Â   -\n¦Á   -");
+	ui.label_37->setText("¦Â   -\n¦Á   -");
+}
+//----------------------------------------------------------------------------
+void DeInitWidget::palmNoWuran()
+{
+	ui.tabWidget->setCurrentIndex(2);
+	ui.label_30->setText(tr("ÊÖĞÄÎ´ÎÛÈ¾\nNot Contaminated"));
+	ui.label_29->setText("¦Â   -\n¦Á   -");
+	ui.label_32->setText("¦Â   -\n¦Á   -");
+	ui.label_36->setText("¦Â   -\n¦Á   -");
+	ui.label_37->setText("¦Â   -\n¦Á   -");
+
+	ui.label_26->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-left-wuwuran.png); \
+							   min-width:94px; \
+							   min-height:98px; \
+							   max-width:94px; \
+							   max-height:98px;");
+	ui.label_31->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-right-wuwuran.png); \
+							   min-width:94px; \
+							   min-height:98px; \
+							   max-width:94px; \
+							   max-height:98px;");
+	ui.label_33->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-left-wuwuran.png);\
+							   min-width:50px; \
+							   min-height:126px;\
+							   max-width:50px;\
+							   max-height:126px;");
+	ui.label_34->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-right-wuwuran.png);\
+							   min-width:50px; \
+							   min-height:126px;\
+							   max-width:50px;\
+							   max-height:126px;");
+}
+//----------------------------------------------------------------------------
+void DeInitWidget::dorsumNoWuran()
+{
+	ui.tabWidget->setCurrentIndex(2);
+	ui.label_30->setText(tr("ÊÖ±³Î´ÎÛÈ¾\nNot Contaminated"));
+	ui.label_29->setText("¦Â   -\n¦Á   -");
+	ui.label_32->setText("¦Â   -\n¦Á   -");
+	ui.label_36->setText("¦Â   -\n¦Á   -");
+	ui.label_37->setText("¦Â   -\n¦Á   -");
+
+	ui.label_26->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-right-wuwuran.png); \
+							   min-width:94px; \
+							   min-height:98px; \
+							   max-width:94px; \
+							   max-height:98px;");
+	ui.label_31->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-left-wuwuran.png); \
+							   min-width:94px; \
+							   min-height:98px; \
+							   max-width:94px; \
+							   max-height:98px;");
+	ui.label_33->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-left-wuwuran.png);\
+							   min-width:50px; \
+							   min-height:126px;\
+							   max-width:50px;\
+							   max-height:126px;");
+	ui.label_34->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-right-wuwuran.png);\
+							   min-width:50px; \
+							   min-height:126px;\
+							   max-width:50px;\
+							   max-height:126px;");
+}
+//----------------------------------------------------------------------------
+void DeInitWidget::keyPartMeasuring()
+{
+	ui.tabWidget->setCurrentIndex(3);
+	playLabelForGif(ui.label_39, ":/Demo/Resources/jianceyemian-teshu-jiancezhong.gif");
+}
+//----------------------------------------------------------------------------
+void DeInitWidget::keyPartContaminated()
+{
+	ui.tabWidget->setCurrentIndex(3);
+	ui.label_38->setText(tr("ÎÛÈ¾"));
+	QString str = "image: url(:/Demo/Resources/jianceyemian-teshu-wuran.png); \
+				  min-width:96px; \
+				  min-height:124px;   \
+				  max-width:96px; \
+				  max-height:124px;";
+	ui.label_39->setStyleSheet(str);
+}
+//----------------------------------------------------------------------------
+void DeInitWidget::keyPartNoContaminated()
+{
+	ui.tabWidget->setCurrentIndex(3);
+	ui.label_38->setText(tr("Î´ÎÛÈ¾"));
+	QString str = "image: url(:/Demo/Resources/jianceyemian-teshu-wuwuran.png); \
+				  min-width:96px; \
+				  min-height:124px;   \
+				  max-width:96px; \
+				  max-height:124px;";
+	ui.label_39->setStyleSheet(str);
+}
+//----------------------------------------------------------------------------
+void DeInitWidget::deviceFault(DeviceStatus device)
+{
 	ui.tabWidget->setCurrentIndex(1);
-	if (first)
+
+	QString errorMsg;
+	if (device.ultrasonic != 1)
+		errorMsg += tr("ºìÍâ³¬Éù²¨´íÎó\n");	
+	ui.label_3->setText(errorMsg);
+
+	if (device.can_1)
 	{
 		QString str = "image: url(:/Demo/Resources/jianceyemian-shou-left-zhunbeijiuxu.png); \
 					  min-width:94px; \
@@ -132,7 +338,7 @@ void DeInitWidget::deviceFault(bool first, bool sec, bool three, bool four)
 		ui.label_2->setStyleSheet(str);
 	}
 
-	if (sec)
+	if (device.can_2)
 	{
 		QString str = "image: url(:/Demo/Resources/jianceyemian-shou-right-zhunbeijiuxu.png); \
 					  min-width:94px; \
@@ -151,7 +357,7 @@ void DeInitWidget::deviceFault(bool first, bool sec, bool three, bool four)
 		ui.label_4->setStyleSheet(str);
 	}
 
-	if (three)
+	if (device.can_3)
 	{
 		QString str = "image: url(:/Demo/Resources/jianceyemian-jiao-left-zhunbeijiuxu.png); \
 					  min-width:50px; \
@@ -170,7 +376,7 @@ void DeInitWidget::deviceFault(bool first, bool sec, bool three, bool four)
 		ui.label_5->setStyleSheet(str);
 	}
 
-	if (four)
+	if (device.can_4)
 	{
 		QString str = "image: url(:/Demo/Resources/jianceyemian-jiao-right-zhunbeijiuxu.png); \
 					  min-width:50px; \
@@ -190,64 +396,39 @@ void DeInitWidget::deviceFault(bool first, bool sec, bool three, bool four)
 	}
 }
 //----------------------------------------------------------------------------
-void DeInitWidget::deviceChecking()
+void DeInitWidget::palmChecking()
 {
 	ui.tabWidget->setCurrentIndex(2);
-	ui.label_30->setText(tr("±¾µ×¼ì²âÖĞ\nBKG Meassuring"));
+	ui.label_30->setText(tr("ÊÖĞÄ¼ì²âÖĞ\nMeasuring"));
 	ui.label_29->setText("¦Â   -\n¦Á   -");
 	ui.label_32->setText("¦Â   -\n¦Á   -");
 	ui.label_36->setText("¦Â   -\n¦Á   -");
 	ui.label_37->setText("¦Â   -\n¦Á   -");
 
-	playLabelForGif(ui.label_26, ":/Demo/Resources/jianceyemian-left-bendijiance.gif", 2);
-	playLabelForGif(ui.label_31, ":/Demo/Resources/jianceyemian-right-bendijiance.gif", 2);
-	playLabelForGif(ui.label_33, ":/Demo/Resources/jianceyemian-jiao-left-bendijiance.gif", 2);
-	playLabelForGif(ui.label_34, ":/Demo/Resources/jianceyemian-jiao-right-bendijiance.gif", 2);
+	playLabelForGif(ui.label_26, ":/Demo/Resources/jianceyemian-left-jiancezhong.gif", 2);
+	playLabelForGif(ui.label_31, ":/Demo/Resources/jianceyemian-right-jiancezhong.gif", 2);
+	playLabelForGif(ui.label_33, ":/Demo/Resources/jianceyemian-jiao-left-jiancezhong.gif", 2);
+	playLabelForGif(ui.label_34, ":/Demo/Resources/jianceyemian-jiao-right-jiancezhong.gif", 2);
+
+	ui.pushButton_11->hide();
+	ui.pushButton_12->hide();
 }
 //----------------------------------------------------------------------------
-void DeInitWidget::pleaseLeave()
+void DeInitWidget::dorsumChecking()
 {
 	ui.tabWidget->setCurrentIndex(2);
-	ui.label_30->setText(tr("ÇëÀë¿ª¼ì²âÇøÓò\nPlease leave"));
+	ui.label_30->setText(tr("ÊÖ±³¼ì²âÖĞ\nMeasuring"));
 	ui.label_29->setText("¦Â   -\n¦Á   -");
 	ui.label_32->setText("¦Â   -\n¦Á   -");
 	ui.label_36->setText("¦Â   -\n¦Á   -");
 	ui.label_37->setText("¦Â   -\n¦Á   -");
-}
-//----------------------------------------------------------------------------
-void DeInitWidget::wuran()
-{
-	ui.tabWidget->setCurrentIndex(2);
-	ui.label_30->setText(tr("ÎÛÈ¾\nContaminated"));
-	ui.label_29->setText("¦Â   -\n¦Á   -");
-	ui.label_32->setText("¦Â   -\n¦Á   -");
-	ui.label_36->setText("¦Â   -\n¦Á   -");
-	ui.label_37->setText("¦Â   -\n¦Á   -");
-}
-//----------------------------------------------------------------------------
-void DeInitWidget::ready()
-{
-	ui.tabWidget->setCurrentIndex(2);
-	ui.label_30->setText(tr("×¼±¸¾ÍĞ÷\nReady"));
-	ui.label_29->setText("¦Â   -\n¦Á   -");
-	ui.label_32->setText("¦Â   -\n¦Á   -");
-	ui.label_36->setText("¦Â   -\n¦Á   -");
-	ui.label_37->setText("¦Â   -\n¦Á   -");
-}
-//----------------------------------------------------------------------------
-void DeInitWidget::nowuran()
-{
-	ui.tabWidget->setCurrentIndex(2);
-	ui.label_30->setText(tr("Î´ÎÛÈ¾\nNot Contaminated"));
-	ui.label_29->setText("¦Â   -\n¦Á   -");
-	ui.label_32->setText("¦Â   -\n¦Á   -");
-	ui.label_36->setText("¦Â   -\n¦Á   -");
-	ui.label_37->setText("¦Â   -\n¦Á   -");
-}
-//----------------------------------------------------------------------------
-void DeInitWidget::keyPartMeasuring()
-{
-	ui.tabWidget->setCurrentIndex(3);
-	playLabelForGif(ui.label_39, ":/Demo/Resources/jianceyemian-teshu-jiancezhong.gif");
+
+	playLabelForGif(ui.label_26, ":/Demo/Resources/jianceyemian-right-jiancezhong.gif", 2);
+	playLabelForGif(ui.label_31, ":/Demo/Resources/jianceyemian-left-jiancezhong.gif", 2);
+	playLabelForGif(ui.label_33, ":/Demo/Resources/jianceyemian-jiao-left-jiancezhong.gif", 2);
+	playLabelForGif(ui.label_34, ":/Demo/Resources/jianceyemian-jiao-right-jiancezhong.gif", 2);
+
+	ui.pushButton_11->hide();
+	ui.pushButton_12->hide();
 }
 //----------------------------------------------------------------------------

@@ -32,7 +32,6 @@ Demo::Demo(QWidget *parent, Qt::WFlags flags)
 	DelogoWidget *logoWidget = new DelogoWidget;
 	slotSetWidget(logoWidget);
 
-	initClickEvents();
 	this->setWindowFlags(Qt::FramelessWindowHint);
 	m_loginStatus = QString::fromLocal8Bit("Î´µÇÂ¼");
 
@@ -50,17 +49,12 @@ Demo::Demo(QWidget *parent, Qt::WFlags flags)
 	}
 
 	QTimer::singleShot(1000, this, SLOT(slotBackMainWidget()));
+	slotKeyNoContaminated();
 }
 //----------------------------------------------------------------------------
 Demo::~Demo()
 {
 	m_sqlDatabase.closeDataBase();
-}
-//----------------------------------------------------------------------------
-void Demo::initClickEvents()
-{
-	widget->installEventFilter(this);
-	//ui.menuWidget->setVisible(false);
 }
 //----------------------------------------------------------------------------
 void Demo::slotSetWidget(QWidget *widget)
@@ -147,11 +141,6 @@ void Demo::slotDeviceSelfChecking()
 	widget->deviceSelfChecking();
 }
 //----------------------------------------------------------------------------
-void Demo::slotDeviceFault(bool first, bool sec, bool three, bool four)
-{
-	widget->deviceFault(first, sec, three, four);
-}
-//----------------------------------------------------------------------------
 void Demo::slotChecking()
 {
 	widget->deviceChecking();
@@ -162,9 +151,14 @@ void Demo::slotPleaseLeave()
 	widget->pleaseLeave();
 }
 //----------------------------------------------------------------------------
-void Demo::slotContaminated()
+void Demo::slotPalmContaminated()
 {
-	widget->wuran();
+	widget->palmWuran();
+}
+//----------------------------------------------------------------------------
+void Demo::slotDorsumContaminated()
+{
+	widget->dorsumWuran();
 }
 //----------------------------------------------------------------------------
 void Demo::slotReady()
@@ -172,13 +166,43 @@ void Demo::slotReady()
 	widget->ready();
 }
 //----------------------------------------------------------------------------
-void Demo::slotNoContaminated()
+void Demo::slotPalmNoContaminated()
 {
-	widget->nowuran();
+	widget->palmNoWuran();
+}
+//----------------------------------------------------------------------------
+void Demo::slotDorsumNoContaminated()
+{
+	widget->dorsumNoWuran();
 }
 //----------------------------------------------------------------------------
 void Demo::slotKeyMeasuring()
 {
 	widget->keyPartMeasuring();
+}
+//----------------------------------------------------------------------------
+void Demo::slotDeviceFault(DeviceStatus device)
+{
+	widget->deviceFault(device);
+}
+//----------------------------------------------------------------------------
+void Demo::slotPalmChecking()
+{
+	widget->palmChecking();
+}
+//----------------------------------------------------------------------------
+void Demo::slotDorsumChecking()
+{
+	widget->dorsumChecking();
+}
+//----------------------------------------------------------------------------
+void Demo::slotKeyContaminated()
+{
+	widget->keyPartContaminated();
+}
+//----------------------------------------------------------------------------
+void Demo::slotKeyNoContaminated()
+{
+	widget->keyPartNoContaminated();
 }
 //----------------------------------------------------------------------------

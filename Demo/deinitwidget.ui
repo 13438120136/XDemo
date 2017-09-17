@@ -159,7 +159,7 @@ QLabel
          <string notr="true">background-color: #E9E9E9;</string>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>3</number>
         </property>
         <widget class="QWidget" name="tab">
          <property name="styleSheet">
@@ -1733,7 +1733,7 @@ Key part measuring</string>
 }</string>
                 </property>
                 <property name="text">
-                 <string>TextLabel</string>
+                 <string/>
                 </property>
                </widget>
               </item>

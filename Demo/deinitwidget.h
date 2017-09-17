@@ -4,6 +4,7 @@
 #include <QWidget>
 #include "ui_deinitwidget.h"
 #include <QMouseEvent>
+#include <decommondef.h>
 
 class DeInitWidget : public QWidget
 {
@@ -27,16 +28,32 @@ public Q_SLOTS:
 
 	///需要被Demo调用的
 	void deviceSelfChecking();
-	void deviceFault(bool first, bool sec, bool three, bool four);
+	void deviceFault(DeviceStatus device);
 	void deviceChecking();
 	void pleaseLeave();
-	void wuran();
+	
 	void ready();
-	void nowuran();
+
+	///重点部位
 	void keyPartMeasuring();
+	///重点污染
+	void keyPartContaminated();
+	///重点不污染
+	void keyPartNoContaminated();
+
+	///手心
+	void palmChecking();
+	void palmWuran();
+	void palmNoWuran();
+
+	///手背
+	void dorsumChecking();
+	void dorsumWuran();
+	void dorsumNoWuran();
 
 private:
 	void playLabelForGif(QLabel *label, const QString &gif, int speed = 1);
+
 private:
 	Ui::DeInitWidget ui;
 };

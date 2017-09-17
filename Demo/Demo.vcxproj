@@ -364,6 +364,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="decommondef.h" />
     <ClInclude Include="Demo.aps" />
     <ClInclude Include="GeneratedFiles\ui_deaddradioactivedlg.h" />
     <ClInclude Include="GeneratedFiles\ui_deadduserdlg.h" />

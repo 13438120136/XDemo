@@ -86,7 +86,8 @@ HEADERS += \
 	delogowidget.h \
 	dekeyboradwidget.h \
 	deinputdelegate.h \
-	devalueselectwidget.h \
+	devalueselectwidget.h \ 
+	decommondef.h \
     devirtualkeyboradwidget.h 
 
 SOURCES += \

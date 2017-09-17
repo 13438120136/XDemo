@@ -40,29 +40,38 @@ public Q_SLOTS:
 
 ///接口部分
 public Q_SLOTS:
+	///手心检测中
+	void slotPalmChecking();
+	///手背检测中
+	void slotDorsumChecking();
+	///手心污染了
+	void slotPalmContaminated();
+	///手背污染了
+	void slotDorsumContaminated();
+	///手心未污染
+	void slotPalmNoContaminated();
+	///手背未污染
+	void slotDorsumNoContaminated();
+	///重点部位测量
+	void slotKeyMeasuring();
+	///重点部位污染
+	void slotKeyContaminated();
+	///重点部位不污染
+	void slotKeyNoContaminated();
+
 	///本地自检测界面
 	void slotDeviceSelfChecking();
 	///设备发生故障
-	void slotDeviceFault(bool first, bool sec, bool three, bool four);
+	void slotDeviceFault(DeviceStatus device);
 	///本地检测中
 	void slotChecking();
 	///请离开检测区
 	void slotPleaseLeave();
-	///污染了
-	void slotContaminated();
 	///准备就绪
 	void slotReady();
-	///未污染
-	void slotNoContaminated();
-	///重点部位测量
-	void slotKeyMeasuring();
 
 protected:
     virtual void changeEvent(QEvent *);
-
-private:
-	void initClickEvents();
-	///设置初始状态菜单中按钮状态
 
 private:
 	Ui::DemoClass ui;
