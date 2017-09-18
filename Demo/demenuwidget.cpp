@@ -13,8 +13,10 @@ DeMenuWidget::DeMenuWidget(QWidget *parent)
 {
 	ui.setupUi(this);
 	m_isLogIn = false;
-	this->setWindowFlags(Qt::ToolTip);
+	this->setWindowFlags(Qt::ToolTip | Qt::FramelessWindowHint);
 	m_demo = qApp->property("_mainWin").value<Demo *>();
+	this->setGeometry(m_demo->geometry());
+	setAttribute(Qt::WA_TranslucentBackground, true);
 }
 //----------------------------------------------------------------------------
 DeMenuWidget::~DeMenuWidget()

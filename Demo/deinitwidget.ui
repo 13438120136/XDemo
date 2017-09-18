@@ -6,23 +6,31 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>480</height>
+    <width>702</width>
+    <height>503</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>DeInitWidget</string>
   </property>
   <property name="autoFillBackground">
-   <bool>true</bool>
+   <bool>false</bool>
   </property>
   <property name="styleSheet">
    <string notr="true">QTabWidget
 {
-   border:none;
+   border: none;
+}
+
+#DeInitWidget
+{
+  background-color: #E9E9E9;
 }</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <property name="sizeConstraint">
+    <enum>QLayout::SetDefaultConstraint</enum>
+   </property>
    <property name="margin">
     <number>0</number>
    </property>
@@ -156,14 +164,15 @@ QLabel
       <item row="1" column="0">
        <widget class="QTabWidget" name="tabWidget">
         <property name="styleSheet">
-         <string notr="true">background-color: #E9E9E9;</string>
+         <string notr="true">background-color: #E9E9E9;
+</string>
         </property>
         <property name="currentIndex">
-         <number>3</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab">
          <property name="styleSheet">
-          <string notr="true">background-color: #E9E9E9;</string>
+          <string notr="true"/>
          </property>
          <attribute name="title">
           <string>Tab 1</string>
@@ -663,7 +672,7 @@ max-height:126px;</string>
         </widget>
         <widget class="QWidget" name="tab_2">
          <property name="styleSheet">
-          <string notr="true">background-color: #E9E9E9;</string>
+          <string notr="true"/>
          </property>
          <attribute name="title">
           <string>Tab 2</string>
@@ -1104,7 +1113,7 @@ max-height:126px;</string>
         </widget>
         <widget class="QWidget" name="tab_3">
          <property name="styleSheet">
-          <string notr="true">background-color: #E9E9E9;</string>
+          <string notr="true"/>
          </property>
          <attribute name="title">
           <string>页</string>
@@ -1583,7 +1592,7 @@ max-height:126px;</string>
         </widget>
         <widget class="QWidget" name="tab_7">
          <property name="styleSheet">
-          <string notr="true">background-color: #E9E9E9;</string>
+          <string notr="true"/>
          </property>
          <attribute name="title">
           <string>页</string>

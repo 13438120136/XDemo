@@ -4,6 +4,7 @@
 #include "demenuwidget.h"
 #include "dekeyboradwidget.h"
 #include "demessagebox.h"
+#include "deloginmainwidget.h"
 
 Q_DECLARE_METATYPE(Demo *)
 //----------------------------------------------------------------------------
@@ -37,10 +38,10 @@ void DeLoginWidget::on_okBtn_clicked()
 	bool bOk = table.isValid();
 	if (bOk)
 	{
+		demo->slotBackMainWidget();
+		demo->slotSetWidget(new DeLoginMainWidget);
+
 		DeMenuWidget widget;	
-		widget.move(demo->pos());
-		widget.resize(demo->width(), demo->height());
-		widget.setWindowOpacity(0.9);
 		widget.exec();
 	}
 	else

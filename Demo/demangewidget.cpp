@@ -229,13 +229,9 @@ void DeManageWidget::on_radioBtn_clicked()
 }
 //---------------------------------------------------------------------------
 void DeManageWidget::on_funcBtn_clicked()
-{
-	Demo *demo = qApp->property("_mainWin").value<Demo *>();	
+{	
 	DeMenuWidget widget;
 	widget.setShowMenuStatus(1);
-	widget.move(demo->pos());
-	widget.resize(demo->width(), demo->height());
-	widget.setWindowOpacity(0.9);
 	widget.exec();
 }
 //---------------------------------------------------------------------------

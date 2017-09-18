@@ -552,13 +552,9 @@ void DeSystemConfigWidget::on_betaBtn_clicked()
 void DeSystemConfigWidget::on_funcBtn_clicked()
 {
 	if (m_isMaintain)
-	{
-		Demo *demo = qApp->property("_mainWin").value<Demo *>();	
+	{	
 		DeMenuWidget widget;
 		widget.setShowMenuStatus(2);
-		widget.move(demo->pos());
-		widget.resize(demo->width(), demo->height());
-		widget.setWindowOpacity(0.9);
 		widget.exec();	
 	}
 	else
@@ -597,7 +593,7 @@ void DeSystemConfigWidget::slotDatetimeBtn()
 	demo->slotSetWidget(calendarWidget);
 }
 //----------------------------------------------------------------------------
-void DeSystemConfigWidget::slotDateClicked(const QDate & date)
+void DeSystemConfigWidget::slotDateClicked(const QDate &)
 {
 	Demo *demo = qApp->property("_mainWin").value<Demo *>();
 

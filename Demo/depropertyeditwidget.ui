@@ -42,7 +42,7 @@ QGroupBox {
      subcontrol-position: top center; /* position at the top center */
      padding: 0 10px;
      background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                       stop: 0 #FFOECE, stop: 1 #FFFFFF);
+                                       start: 0 #FFOE0E, stop: 1 #FFFFFF);
  }
 
 QPushButton {

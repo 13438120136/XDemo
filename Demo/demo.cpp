@@ -48,8 +48,8 @@ Demo::Demo(QWidget *parent, Qt::WFlags flags)
 		userTable.insertDataToDB();
 	}
 
-	QTimer::singleShot(1000, this, SLOT(slotBackMainWidget()));
-	slotPositionError();
+	QTimer::singleShot(10, this, SLOT(slotBackMainWidget()));
+	slotKeyMeasuring();
 }
 //----------------------------------------------------------------------------
 Demo::~Demo()

@@ -1182,7 +1182,7 @@ background-color: #E9E9E9;
    min-width:108px;
    max-width:108px;
    min-height:24px;
-   max-hegith:24px;
+   max-height:24px;
 }
 </string>
                   </property>
@@ -1213,7 +1213,7 @@ background-color: #E9E9E9;
    min-width:108px;
    max-width:108px;
    min-height:24px;
-   max-hegith:24px;
+   max-height:24px;
 }</string>
                   </property>
                   <property name="text">
@@ -1396,7 +1396,7 @@ background-color: #E9E9E9;
     color: #FFFFFF;
     background-color: #42BDAA;
     min-height:24px;
-    max-hegiht:24px;
+    max-height:24px;
 }</string>
                 </property>
                 <property name="text">

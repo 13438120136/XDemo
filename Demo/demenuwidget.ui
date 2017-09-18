@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>819</width>
-    <height>527</height>
+    <width>757</width>
+    <height>507</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,9 +24,14 @@ padding-bottom:18px;
 padding-left:32px;
 text-align:left;
 outline:none;
+}
+
+#widget_2
+{
+   max-width:200px;
 }</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout_10">
+  <layout class="QGridLayout" name="gridLayout_2">
    <property name="margin">
     <number>0</number>
    </property>
@@ -36,7 +41,7 @@ outline:none;
    <item row="0" column="0">
     <widget class="QWidget" name="widget_2" native="true">
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">background-color: rgb(233, 233, 233, 225);</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_9">
       <property name="margin">
@@ -55,7 +60,7 @@ outline:none;
           <property name="styleSheet">
            <string notr="true">QWidget
 {
-background-color: #E9E9E9;
+	background-color: rgb(255, 255, 255, 0);
 }
 
 QWidget &gt; QLabel
@@ -288,7 +293,7 @@ max-height:1px;</string>
         <property name="styleSheet">
          <string notr="true">QWidget
 {
-background-color: #E9E9E9;
+	background-color: rgb(255, 255, 255, 0);
 }</string>
         </property>
        </widget>
@@ -297,17 +302,11 @@ background-color: #E9E9E9;
     </widget>
    </item>
    <item row="0" column="1">
-    <spacer name="horizontalSpacer">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+    <widget class="QWidget" name="widget_4" native="true">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(40, 40, 40, 120);</string>
      </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>596</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
+    </widget>
    </item>
   </layout>
  </widget>
