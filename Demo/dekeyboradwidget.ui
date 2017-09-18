@@ -64,6 +64,9 @@ QPushButton {
      <layout class="QGridLayout" name="gridLayout_2">
       <item row="0" column="0" colspan="3">
        <layout class="QGridLayout" name="gridLayout">
+        <property name="leftMargin">
+         <number>10</number>
+        </property>
         <item row="0" column="0">
          <widget class="QPushButton" name="backBtn">
           <property name="text">

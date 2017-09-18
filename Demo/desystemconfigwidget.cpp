@@ -33,11 +33,9 @@ DeSystemConfigWidget::DeSystemConfigWidget(bool isMaintain, QWidget *parent)
 		ui.funcBtn->setText(tr("返回"));
 	}
 
+	initUI();
 	initEdit();
 	readDataFromDB();
-
-	//ui.dateEdit->setDate(QDate::currentDate());
-	//ui.dateEdit->calendarWidget()->setGridVisible(true);
 
 	///测量次数
 	DeTestDataModel *mm = new DeTestDataModel(this);
@@ -82,6 +80,29 @@ DeSystemConfigWidget::~DeSystemConfigWidget()
 
 }
 //----------------------------------------------------------------------------
+void DeSystemConfigWidget::initUI()
+{
+	ui.widget_31->setInitValue(tr("静态阀值"), true);
+	ui.widget_42->setInitValue(tr("动态阀值"), false);
+
+	ui.widget_43->setInitValue(tr("α"), true);
+	ui.widget_44->setInitValue(tr("β"), false);
+	ui.widget_45->setInitValue(tr("α+β"), false);	
+
+	ui.widget_46->setInitValue(tr("1"), true);	
+	ui.widget_47->setInitValue(tr("2"), true);	
+	ui.widget_48->setInitValue(tr("3"), true);	
+	ui.widget_49->setInitValue(tr("4"), true);	
+
+	ui.datetimeBtn->setInitValue(QDateTime::currentDateTime().toString("yyyy-MM-dd"), true);
+	ui.dateWeekBtn->setInitValue(tr("本周"), false);
+	ui.dateDayBtn->setInitValue(tr("本日"), false);
+
+	connect(ui.datetimeBtn, SIGNAL(signalCheckedChanged(bool)), this, SLOT(slotDatetimeBtn()));
+	connect(ui.dateWeekBtn, SIGNAL(signalCheckedChanged(bool)), this, SLOT(slotDateWeekBtn()));
+	connect(ui.dateDayBtn, SIGNAL(signalCheckedChanged(bool)), this, SLOT(slotDateDayBtn()));
+}
+//----------------------------------------------------------------------------
 void DeSystemConfigWidget::initEdit()
 {
 	ui.ipEdit->installEventFilter(&m_textDelegate);
@@ -105,6 +126,12 @@ void DeSystemConfigWidget::initEdit()
 	ui.betaSAlarmEdit->installEventFilter(&m_intDelegate);
 	ui.betaThresholdEdit->installEventFilter(&m_intDelegate);
 	ui.betaSThresholdEdit->installEventFilter(&m_intDelegate);
+
+	ui.lineEdit_2->installEventFilter(&m_tIntDelegate);
+	ui.lineEdit_3->installEventFilter(&m_tIntDelegate);
+	ui.lineEdit_6->installEventFilter(&m_tIntDelegate);
+	ui.lineEdit_4->installEventFilter(&m_tIntDelegate);
+	ui.lineEdit->installEventFilter(&m_tIntDelegate);
 }
 //----------------------------------------------------------------------------
 bool DeSystemConfigWidget::execValidAndSave(const QString &str)
@@ -547,7 +574,7 @@ void DeSystemConfigWidget::on_logoutBtn_clicked()
 	demo->slotBackMainWidget();
 }
 //----------------------------------------------------------------------------
-void DeSystemConfigWidget::on_datetimeBtn_clicked()
+void DeSystemConfigWidget::slotDatetimeBtn()
 {
 	Demo *demo = qApp->property("_mainWin").value<Demo *>();
 	///自定义系统的日期选择菜单
@@ -575,7 +602,23 @@ void DeSystemConfigWidget::slotDateClicked(const QDate & date)
 	Demo *demo = qApp->property("_mainWin").value<Demo *>();
 
 	QCalendarWidget *widget = (QCalendarWidget *)sender();
-	ui.datetimeBtn->setText(widget->selectedDate().toString("yyyy-MM-dd"));
+	ui.datetimeBtn->setInitValue(widget->selectedDate().toString("yyyy-MM-dd"), true);
+	ui.dateWeekBtn->setChecked(false);
+	ui.dateDayBtn->setChecked(false);
 	demo->slotBackMainWidget();
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::slotDateWeekBtn()
+{
+	ui.datetimeBtn->setChecked(false);
+	ui.dateWeekBtn->setChecked(true);
+	ui.dateDayBtn->setChecked(false);
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::slotDateDayBtn()
+{
+	ui.datetimeBtn->setChecked(false);
+	ui.dateWeekBtn->setChecked(false);
+	ui.dateDayBtn->setChecked(true);
 }
 //----------------------------------------------------------------------------

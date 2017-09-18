@@ -72,7 +72,9 @@ public Q_SLOTS:
 	void on_funcBtn_clicked();
 	void on_logoutBtn_clicked();
 	///日期选择
-	void on_datetimeBtn_clicked();
+	void slotDatetimeBtn();
+	void slotDateWeekBtn();
+	void slotDateDayBtn();
 	void slotDateClicked(const QDate & date);
 
 private:
@@ -82,6 +84,8 @@ private:
 	void updateDataBase();
 	///读取数据库数据并更新界面
 	void readDataFromDB();
+	///初始化界面显示
+	void initUI();
 
 private:
 	Ui::DeSystemConfigWidget ui;
@@ -93,6 +97,7 @@ private:
 	DeButtonIPDelegate m_textDelegate;
 	DeButtonIntDelegate m_intDelegate;
 	DeButtonDoubleDelegate m_doubleDelegate;
+	DeIntDelegate m_tIntDelegate;
 };
 
 #endif // DESYSTEMCONFIGWIDGET_H

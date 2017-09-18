@@ -19,6 +19,22 @@
 background-color: #E9E9E9;
 }
 
+DeValueSelectWidget &gt; QPushButton
+{
+   color: #FFFFFF;
+   background-color: #42BDAA;
+}
+
+DeValueSelectWidget &gt; QLabel
+{
+   background-color: #FFFFFF;
+}
+
+DeCheckBox &gt; QLabel
+{
+    font:  14px &quot;微软雅黑&quot;;
+}
+
 
 QTabWidget::pane { border: 0; }
 
@@ -101,7 +117,7 @@ QTabWidget::tab-bar
 
 QPushButton
 {
-   padding:5px;
+   padding:8px;
    min-width:100px;
    text-align:center;
 }</string>
@@ -519,24 +535,7 @@ max-height:30px;</string>
                            <number>0</number>
                           </property>
                           <item row="0" column="0">
-                           <widget class="QLabel" name="label_32">
-                            <property name="text">
-                             <string>α</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item row="0" column="1">
-                           <widget class="QPushButton" name="pushButton_6">
-                            <property name="text">
-                             <string>√</string>
-                            </property>
-                            <property name="autoDefault">
-                             <bool>true</bool>
-                            </property>
-                            <property name="flat">
-                             <bool>true</bool>
-                            </property>
-                           </widget>
+                           <widget class="DeCheckBox" name="widget_43" native="true"/>
                           </item>
                          </layout>
                         </widget>
@@ -573,24 +572,7 @@ max-height:30px;</string>
                            <number>0</number>
                           </property>
                           <item row="0" column="0">
-                           <widget class="QLabel" name="label_33">
-                            <property name="text">
-                             <string>β</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item row="0" column="1">
-                           <widget class="QPushButton" name="pushButton_7">
-                            <property name="text">
-                             <string>√</string>
-                            </property>
-                            <property name="autoDefault">
-                             <bool>true</bool>
-                            </property>
-                            <property name="flat">
-                             <bool>true</bool>
-                            </property>
-                           </widget>
+                           <widget class="DeCheckBox" name="widget_44" native="true"/>
                           </item>
                          </layout>
                         </widget>
@@ -627,24 +609,7 @@ max-height:30px;</string>
                            <number>0</number>
                           </property>
                           <item row="0" column="0">
-                           <widget class="QLabel" name="label_34">
-                            <property name="text">
-                             <string>α+β</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item row="0" column="1">
-                           <widget class="QPushButton" name="pushButton_9">
-                            <property name="text">
-                             <string>√</string>
-                            </property>
-                            <property name="autoDefault">
-                             <bool>true</bool>
-                            </property>
-                            <property name="flat">
-                             <bool>true</bool>
-                            </property>
-                           </widget>
+                           <widget class="DeCheckBox" name="widget_45" native="true"/>
                           </item>
                          </layout>
                         </widget>
@@ -747,24 +712,7 @@ max-height:30px;</string>
                            <number>0</number>
                           </property>
                           <item row="0" column="0">
-                           <widget class="QLabel" name="label_28">
-                            <property name="text">
-                             <string>静态阀值</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item row="0" column="1">
-                           <widget class="QPushButton" name="pushButton">
-                            <property name="text">
-                             <string>√</string>
-                            </property>
-                            <property name="autoDefault">
-                             <bool>true</bool>
-                            </property>
-                            <property name="flat">
-                             <bool>true</bool>
-                            </property>
-                           </widget>
+                           <widget class="DeCheckBox" name="widget_31" native="true"/>
                           </item>
                          </layout>
                         </widget>
@@ -801,24 +749,7 @@ max-height:30px;</string>
                            <number>0</number>
                           </property>
                           <item row="0" column="0">
-                           <widget class="QLabel" name="label_29">
-                            <property name="text">
-                             <string>动态阀值</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item row="0" column="1">
-                           <widget class="QPushButton" name="pushButton_5">
-                            <property name="text">
-                             <string>√</string>
-                            </property>
-                            <property name="autoDefault">
-                             <bool>true</bool>
-                            </property>
-                            <property name="flat">
-                             <bool>true</bool>
-                            </property>
-                           </widget>
+                           <widget class="DeCheckBox" name="widget_42" native="true"/>
                           </item>
                          </layout>
                         </widget>
@@ -1103,24 +1034,7 @@ max-height:30px;</string>
                            <number>0</number>
                           </property>
                           <item row="0" column="0">
-                           <widget class="QLabel" name="label_40">
-                            <property name="text">
-                             <string>1</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item row="0" column="1">
-                           <widget class="QPushButton" name="pushButton_13">
-                            <property name="text">
-                             <string>√</string>
-                            </property>
-                            <property name="autoDefault">
-                             <bool>true</bool>
-                            </property>
-                            <property name="flat">
-                             <bool>true</bool>
-                            </property>
-                           </widget>
+                           <widget class="DeCheckBox" name="widget_46" native="true"/>
                           </item>
                          </layout>
                         </widget>
@@ -1157,24 +1071,7 @@ max-height:30px;</string>
                            <number>0</number>
                           </property>
                           <item row="0" column="0">
-                           <widget class="QLabel" name="label_41">
-                            <property name="text">
-                             <string>2</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item row="0" column="1">
-                           <widget class="QPushButton" name="pushButton_14">
-                            <property name="text">
-                             <string>√</string>
-                            </property>
-                            <property name="autoDefault">
-                             <bool>true</bool>
-                            </property>
-                            <property name="flat">
-                             <bool>true</bool>
-                            </property>
-                           </widget>
+                           <widget class="DeCheckBox" name="widget_47" native="true"/>
                           </item>
                          </layout>
                         </widget>
@@ -1211,24 +1108,7 @@ max-height:30px;</string>
                            <number>0</number>
                           </property>
                           <item row="0" column="0">
-                           <widget class="QLabel" name="label_42">
-                            <property name="text">
-                             <string>3</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item row="0" column="1">
-                           <widget class="QPushButton" name="pushButton_15">
-                            <property name="text">
-                             <string>√</string>
-                            </property>
-                            <property name="autoDefault">
-                             <bool>true</bool>
-                            </property>
-                            <property name="flat">
-                             <bool>true</bool>
-                            </property>
-                           </widget>
+                           <widget class="DeCheckBox" name="widget_48" native="true"/>
                           </item>
                          </layout>
                         </widget>
@@ -1265,24 +1145,7 @@ max-height:30px;</string>
                            <number>0</number>
                           </property>
                           <item row="0" column="0">
-                           <widget class="QLabel" name="label_43">
-                            <property name="text">
-                             <string>4</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item row="0" column="1">
-                           <widget class="QPushButton" name="pushButton_16">
-                            <property name="text">
-                             <string>√</string>
-                            </property>
-                            <property name="autoDefault">
-                             <bool>true</bool>
-                            </property>
-                            <property name="flat">
-                             <bool>true</bool>
-                            </property>
-                           </widget>
+                           <widget class="DeCheckBox" name="widget_49" native="true"/>
                           </item>
                          </layout>
                         </widget>
@@ -2810,14 +2673,7 @@ max-height:30px;</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QPushButton" name="datetimeBtn">
-                     <property name="text">
-                      <string>2017-8-27</string>
-                     </property>
-                     <property name="flat">
-                      <bool>true</bool>
-                     </property>
-                    </widget>
+                    <widget class="DeCheckBox" name="datetimeBtn" native="true"/>
                    </item>
                   </layout>
                  </widget>
@@ -2851,14 +2707,7 @@ max-height:30px;</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QPushButton" name="pushButton_17">
-                     <property name="text">
-                      <string>本周</string>
-                     </property>
-                     <property name="flat">
-                      <bool>true</bool>
-                     </property>
-                    </widget>
+                    <widget class="DeCheckBox" name="dateWeekBtn" native="true"/>
                    </item>
                   </layout>
                  </widget>
@@ -2892,14 +2741,7 @@ max-height:30px;</string>
                     <number>0</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QPushButton" name="pushButton_18">
-                     <property name="text">
-                      <string>本日</string>
-                     </property>
-                     <property name="flat">
-                      <bool>true</bool>
-                     </property>
-                    </widget>
+                    <widget class="DeCheckBox" name="dateDayBtn" native="true"/>
                    </item>
                   </layout>
                  </widget>
@@ -3134,16 +2976,7 @@ QPushButton {
             <item row="1" column="0">
              <widget class="DeValueSelectWidget" name="widget_35" native="true">
               <property name="styleSheet">
-               <string notr="true">QPushButton 
-{    
-    background-color: #42BDAA;
-}
-
-QLabel
-{
-   
-	background-color: rgb(255, 255, 255);
-}</string>
+               <string notr="true"/>
               </property>
              </widget>
             </item>
@@ -3157,16 +2990,7 @@ QLabel
             <item row="3" column="0">
              <widget class="DeValueSelectWidget" name="widget_38" native="true">
               <property name="styleSheet">
-               <string notr="true">QPushButton 
-{    
-    background-color: #42BDAA;
-}
-
-QLabel
-{
-   
-	background-color: rgb(255, 255, 255);
-}</string>
+               <string notr="true"/>
               </property>
              </widget>
             </item>
@@ -3284,6 +3108,9 @@ QLabel
             </item>
             <item row="1" column="0" colspan="2">
              <widget class="QLineEdit" name="lineEdit_5">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
               <property name="text">
                <string>显示信息</string>
               </property>
@@ -3342,6 +3169,12 @@ QLabel
    <class>DeValueSelectWidget</class>
    <extends>QWidget</extends>
    <header location="global">devalueselectwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>DeCheckBox</class>
+   <extends>QWidget</extends>
+   <header location="global">decheckbox.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

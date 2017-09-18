@@ -21,25 +21,27 @@ DeSystemTestWidget::DeSystemTestWidget(QWidget *parent)
 	ui.widget_5->setModel(inforModel);
 	
 	connect(ui.physicalTest, SIGNAL(toggled(bool)), this, SLOT(slotPhysicalTest(bool)));
+
+	on_ioBtn_clicked();
+
+	ui.lineEdit->installEventFilter(&m_tIntDelegate);
+	ui.lineEdit_2->installEventFilter(&m_tIntDelegate);
+	ui.lineEdit_3->installEventFilter(&m_tIntDelegate);
+	ui.lineEdit_4->installEventFilter(&m_tIntDelegate);
+
+	ui.lineEdit_5->installEventFilter(&m_tIntDelegate);
+	ui.lineEdit_6->installEventFilter(&m_tIntDelegate);
+	ui.lineEdit_7->installEventFilter(&m_tIntDelegate);
+	ui.lineEdit_8->installEventFilter(&m_tIntDelegate);
+	ui.lineEdit_9->installEventFilter(&m_tIntDelegate);
+	ui.lineEdit_10->installEventFilter(&m_tIntDelegate);
+	ui.lineEdit_11->installEventFilter(&m_tIntDelegate);
 }
 //----------------------------------------------------------------------------
 DeSystemTestWidget::~DeSystemTestWidget()
 {
 	
 }
-//----------------------------------------------------------------------------
-bool DeSystemTestWidget::eventFilter(QObject *obj, QEvent *event)
- {
-	 if (event->type() == QEvent::MouseButtonRelease) 
-	 {
-         return true;
-     }
-	 else 
-	 {
-         // standard event processing
-         return QObject::eventFilter(obj, event);
-     }
- }
 //----------------------------------------------------------------------------
 void DeSystemTestWidget::slotPhysicalTest(bool enable)
 {
@@ -49,16 +51,43 @@ void DeSystemTestWidget::slotPhysicalTest(bool enable)
 void DeSystemTestWidget::on_ioBtn_clicked()
 {
 	ui.tabWidget->setCurrentIndex(0);
+	ui.ioBtn->setStyleSheet("border:2px solid black; \
+								border-top-width:0px; \
+								border-right-width:0px; \
+								border-left-width:0px; \
+								border-bottom-width:2px; \
+								border-bottom-color:#42BDAA; \
+								color: #42BDAA;");
+	ui.channelBtn->setStyleSheet("border:none;");
+	ui.xiaolvBtn->setStyleSheet("border:none;");
 }
 //----------------------------------------------------------------------------
 void DeSystemTestWidget::on_channelBtn_clicked()
 {
 	ui.tabWidget->setCurrentIndex(1);
+	ui.channelBtn->setStyleSheet("border:2px solid black; \
+								border-top-width:0px; \
+								border-right-width:0px; \
+								border-left-width:0px; \
+								border-bottom-width:2px; \
+								border-bottom-color:#42BDAA; \
+								color: #42BDAA;");
+	ui.ioBtn->setStyleSheet("border:none;");
+	ui.xiaolvBtn->setStyleSheet("border:none;");
 }
 //----------------------------------------------------------------------------
 void DeSystemTestWidget::on_xiaolvBtn_clicked()
 {
 	ui.tabWidget->setCurrentIndex(2);
+	ui.xiaolvBtn->setStyleSheet("border:2px solid black; \
+								border-top-width:0px; \
+								border-right-width:0px; \
+								border-left-width:0px; \
+								border-bottom-width:2px; \
+								border-bottom-color:#42BDAA; \
+								color: #42BDAA;");
+	ui.ioBtn->setStyleSheet("border:none;");
+	ui.channelBtn->setStyleSheet("border:none;");
 }
 //----------------------------------------------------------------------------
 void DeSystemTestWidget::on_funcBtn_clicked()

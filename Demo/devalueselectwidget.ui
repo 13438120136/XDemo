@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>416</width>
-    <height>52</height>
+    <width>314</width>
+    <height>43</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <string notr="true">QLabel
 {   
 	background-color: rgb(255, 255, 255);
-    font:15px bold &quot;微软雅黑&quot;;
+    font:14px bold &quot;微软雅黑&quot;;
 }
 
 QPushButton
@@ -34,6 +34,12 @@ QPushButton
    </property>
    <item row="0" column="0">
     <widget class="QPushButton" name="prevBtn">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="styleSheet">
       <string notr="true">QPushButton
 {
@@ -42,18 +48,24 @@ QPushButton
     border-top-right-radius:0px;
     border-bottom-right-radius:0px;
     border-bottom-left-radius:5px;
-    min-height:30px;    
+    max-height:100px;    
     min-width:30px;
     max-width:30px;
 }</string>
      </property>
      <property name="text">
-      <string/>
+      <string>&lt;</string>
      </property>
     </widget>
    </item>
    <item row="0" column="2">
     <widget class="QPushButton" name="nextBtn">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="styleSheet">
       <string notr="true">QPushButton
 {
@@ -62,13 +74,13 @@ QPushButton
     border-top-right-radius:5px;
     border-bottom-right-radius:5px;
     border-bottom-left-radius:0px;
-    min-height:30px;  
+    max-height:100px;  
     min-width:30px;
     max-width:30px;
 }</string>
      </property>
      <property name="text">
-      <string/>
+      <string>&gt;</string>
      </property>
     </widget>
    </item>

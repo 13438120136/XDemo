@@ -1,9 +1,10 @@
 #ifndef DESYSTEMTESTWIDGET_H
 #define DESYSTEMTESTWIDGET_H
 
-#include <QDialog>
 #include "ui_desystemtestwidget.h"
+#include "deinputdelegate.h"
 #include <QBitArray>
+#include <QDialog>
 
 class DeSystemTestWidget : public QDialog
 {
@@ -36,13 +37,11 @@ public Q_SLOTS:
 	//µ¥»÷IOÍ¨µÀ²âÊÔ
 	void on_ioTestBtn_clicked();
 
-protected:
-	virtual bool eventFilter(QObject *obj, QEvent *event);
-
 private:
 	Ui::DeSystemTestWidget ui;
 	QBitArray m_stateBitArray;
 	bool m_isIOTest;
+	DeIntDelegate m_tIntDelegate;
 };
 
 #endif // DESYSTEMTESTWIDGET_H

@@ -7,14 +7,25 @@
     <x>0</x>
     <y>0</y>
     <width>615</width>
-    <height>544</height>
+    <height>558</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>DeSystemTestWidget</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QTabWidget::pane
+   <string notr="true">DeValueSelectWidget &gt; QPushButton
+{
+   color: #FFFFFF;
+   background-color: #42BDAA;
+}
+
+DeValueSelectWidget &gt; QLabel
+{
+   background-color: #FFFFFF;
+}
+
+QTabWidget::pane
 {   
 	background-color: #E9E9E9;
     border: 0px;
@@ -131,9 +142,10 @@ QProgressBar::chunk {
 
 QPushButton
 {
-   padding:5px;
+   padding:8px;
    min-width:100px;
    text-align:center;
+   border-radius:0px;
 }</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_18">
@@ -197,7 +209,7 @@ QPushButton
       <string notr="true"/>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tab">
       <property name="styleSheet">
@@ -744,23 +756,11 @@ max-height:106px;
             <item row="1" column="0">
              <widget class="DeValueSelectWidget" name="widget_3" native="true">
               <property name="styleSheet">
-               <string notr="true">QPushButton 
-{    
-    background-color: #42BDAA;
-}
-
-QLabel
-{
-   
-	background-color: rgb(255, 255, 255);
-}
-
-QWidget
+               <string notr="true">#widget_3
 {
    min-width:180px;
    max-width:180px;
    min-height:24px;
-   max-hegith:24px;
 }</string>
               </property>
              </widget>
@@ -1177,13 +1177,14 @@ background-color: #E9E9E9;
                 <item row="0" column="1">
                  <widget class="DeValueSelectWidget" name="widget_7" native="true">
                   <property name="styleSheet">
-                   <string notr="true">QWidget
+                   <string notr="true">#widget_7
 {
    min-width:108px;
    max-width:108px;
    min-height:24px;
    max-hegith:24px;
-}</string>
+}
+</string>
                   </property>
                  </widget>
                 </item>

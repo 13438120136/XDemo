@@ -357,6 +357,15 @@
     <ClCompile Include="GeneratedFiles\qrc_demo.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
+    <ClCompile Include="decheckbox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_decheckbox.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_decheckbox.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Demo.aps">
@@ -527,6 +536,9 @@
     <ClInclude Include="decommondef.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_decheckbox.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GeneratedFiles\debug\moc_devalueselectwidget.cpp">
@@ -589,6 +601,12 @@
       <Filter>Form Files</Filter>
     </CustomBuild>
     <CustomBuild Include="devirtualkeyboradwidget.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="decheckbox.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="decheckbox.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
   </ItemGroup>
