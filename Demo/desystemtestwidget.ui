@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>615</width>
-    <height>518</height>
+    <height>544</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,59 +16,54 @@
   <property name="styleSheet">
    <string notr="true">QTabWidget::pane
 {   
-	background-color: rgb(255, 255, 255);
+	background-color: #E9E9E9;
     border: 0px;
+}
+
+QGroupBox
+{
+   border:none;
 }
 
 QLabel
 {
-   font:14px &quot;微软雅黑&quot;;
-   color: #000000;
+font:  12px &quot;微软雅黑&quot;;
+}
+
+QPushButton[flat=&quot;true&quot;]
+{
+     font: 14px &quot;微软雅黑&quot;;
+     border: none;
+	 background-color:rgba(85, 255, 0, 0);
+     text-align:right; 
+}
+
+QPushButton 
+{    
+	font: 14px &quot;微软雅黑&quot;;
+	background-color: rgb(244, 244, 244, 0);
+    border: none;
+    border-radius:5px;
 }
 
 QLineEdit
 {
 border:1px solid gray;
 border-radius:5px;
-font: 16pt &quot;黑体&quot;;
+font:  12px &quot;微软雅黑&quot;;
+min-height:22px;
+max-height:22px;
 }
 
 QCheckBox
 {
-font: 14pt &quot;黑体&quot;;
+font:  12px &quot;微软雅黑&quot;;
 }
 
 QRadioButton
 {
-font: 14pt &quot;黑体&quot;;
+font: 14px &quot;微软雅黑&quot;;
 }
-
-QGroupBox 
-{
-     border: 1px solid gray;
-}
-
-QGroupBox::title 
-{
-     subcontrol-origin: margin;
-     subcontrol-position: top center; /* position at the top center */
-     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                       stop: 0 #FFOECE, stop: 1 #FFFFFF);
- }
-
-QPushButton {
-    
-	font: 16pt &quot;黑体&quot;;
-	background-color: rgb(244, 244, 244);
-    border: 0px solid #8f8f91;
-    border-radius: 5px;
-    min-width: 100px;
-    min-height: 30px;
- }
-
- QPushButton:pressed {
-	background-color: rgb(255, 255, 255);
- }
 
  QTabWidget::tab-bar {
      alignment: center;
@@ -106,9 +101,11 @@ QPushButton {
 
 QProgressBar {
     border: 1px solid grey;
-    border-radius: 5px;
+    border-radius: 3px;
     text-align: center;
-    min-height:30px;
+    min-height:24px;
+    max-height:24px;
+    font: 14px &quot;微软雅黑&quot;;
 }
 
 QProgressBar::chunk {
@@ -125,29 +122,18 @@ QProgressBar::chunk {
    <item row="0" column="0">
     <widget class="QWidget" name="widget_2" native="true">
      <property name="styleSheet">
-      <string notr="true">QPushButton
-{   
-   background-color: rgb(255, 255, 255, 0);
-   border:0px solid red;
-   border-radius:0px;
-   font:bold 16px;
-   min-width: 100px;
-   min-height: 35px;
+      <string notr="true">.QWidget
+{
+   min-height:40px;
+   max-height:40px;
+   background-color: #D7D7D7;
 }
 
-QPushButton:focus
+QPushButton
 {
-   border-left-width:0px;
-   border-right-width:0px;
-   border-top-width:0px;
-   border-bottom-width:2px;   
-   border-bottom-color:  rgb(66, 189, 170);
-   color:  rgb(66, 189, 170);
-}
-
-.QWidget
-{
-background-color: rgb(250, 250, 250);
+   padding:5px;
+   min-width:100px;
+   text-align:center;
 }</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_18">
@@ -214,6 +200,9 @@ background-color: rgb(250, 250, 250);
       <number>0</number>
      </property>
      <widget class="QWidget" name="tab">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <attribute name="title">
        <string>IO测试</string>
       </attribute>
@@ -638,23 +627,32 @@ max-height:106px;
      </widget>
      <widget class="QWidget" name="tab_2">
       <property name="styleSheet">
-       <string notr="true">QGroupBox
-{
-   border:none;
-}</string>
+       <string notr="true"/>
       </property>
       <attribute name="title">
        <string>通道测试</string>
       </attribute>
-      <layout class="QGridLayout" name="gridLayout_21">
-       <property name="margin">
+      <layout class="QGridLayout" name="gridLayout_21" columnstretch="1,2">
+       <property name="topMargin">
         <number>0</number>
        </property>
-       <property name="spacing">
+       <property name="rightMargin">
+        <number>20</number>
+       </property>
+       <property name="bottomMargin">
+        <number>20</number>
+       </property>
+       <property name="horizontalSpacing">
+        <number>24</number>
+       </property>
+       <property name="verticalSpacing">
         <number>0</number>
        </property>
        <item row="0" column="0">
-        <layout class="QGridLayout" name="gridLayout_12">
+        <layout class="QGridLayout" name="gridLayout_12" rowstretch="1,1,1,1,2">
+         <property name="leftMargin">
+          <number>20</number>
+         </property>
          <item row="0" column="0">
           <widget class="QGroupBox" name="groupBox_3">
            <property name="maximumSize">
@@ -667,6 +665,24 @@ max-height:106px;
             <string/>
            </property>
            <layout class="QGridLayout" name="gridLayout_10">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>20</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>20</number>
+            </property>
+            <property name="horizontalSpacing">
+             <number>0</number>
+            </property>
+            <property name="verticalSpacing">
+             <number>20</number>
+            </property>
             <item row="0" column="0" colspan="2">
              <widget class="QRadioButton" name="physicalTest">
               <property name="text">
@@ -700,17 +716,52 @@ max-height:106px;
             <string/>
            </property>
            <layout class="QGridLayout" name="gridLayout_22">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>10</number>
+            </property>
+            <property name="horizontalSpacing">
+             <number>0</number>
+            </property>
+            <property name="verticalSpacing">
+             <number>12</number>
+            </property>
             <item row="0" column="0">
-             <widget class="QCheckBox" name="checkBox_3">
+             <widget class="QLabel" name="label_29">
               <property name="text">
-               <string>α</string>
+               <string>通道选择:</string>
               </property>
              </widget>
             </item>
             <item row="1" column="0">
-             <widget class="QCheckBox" name="checkBox_4">
-              <property name="text">
-               <string>α+β</string>
+             <widget class="DeValueSelectWidget" name="widget_3" native="true">
+              <property name="styleSheet">
+               <string notr="true">QPushButton 
+{    
+    background-color: #42BDAA;
+}
+
+QLabel
+{
+   
+	background-color: rgb(255, 255, 255);
+}
+
+QWidget
+{
+   min-width:180px;
+   max-width:180px;
+   min-height:24px;
+   max-hegith:24px;
+}</string>
               </property>
              </widget>
             </item>
@@ -730,6 +781,24 @@ max-height:106px;
             <string/>
            </property>
            <layout class="QGridLayout" name="gridLayout_9">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>20</number>
+            </property>
+            <property name="horizontalSpacing">
+             <number>0</number>
+            </property>
+            <property name="verticalSpacing">
+             <number>10</number>
+            </property>
             <item row="5" column="0">
              <widget class="QLabel" name="label_13">
               <property name="text">
@@ -749,6 +818,12 @@ max-height:106px;
               <property name="text">
                <string/>
               </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
              </widget>
             </item>
             <item row="4" column="0">
@@ -756,15 +831,34 @@ max-height:106px;
               <property name="text">
                <string/>
               </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
              </widget>
             </item>
             <item row="2" column="0">
-             <widget class="QLineEdit" name="lineEdit"/>
+             <widget class="QLineEdit" name="lineEdit">
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
             </item>
             <item row="8" column="0">
              <widget class="QLineEdit" name="lineEdit_4">
               <property name="text">
                <string/>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
@@ -795,23 +889,34 @@ max-height:106px;
        </item>
        <item row="0" column="1">
         <layout class="QGridLayout" name="gridLayout_20">
+         <property name="spacing">
+          <number>0</number>
+         </property>
          <item row="0" column="0">
           <widget class="QWidget" name="widget" native="true">
            <property name="styleSheet">
-            <string notr="true">QPushButton
+            <string notr="true">.QWidget
 {
-    font:bold 16px;
-    color: rgb(254, 255, 253);
-    background-color: rgb(66, 189, 170);
-}
-
-.QWidget
-{
-max-height:50px;
-background-color: rgb(255, 255, 255);
+max-height:60px;
+background-color: #E9E9E9;
 }</string>
            </property>
            <layout class="QGridLayout" name="gridLayout_19">
+            <property name="leftMargin">
+             <number>10</number>
+            </property>
+            <property name="topMargin">
+             <number>20</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>9</number>
+            </property>
+            <property name="spacing">
+             <number>0</number>
+            </property>
             <item row="0" column="0">
              <widget class="QLabel" name="label_16">
               <property name="text">
@@ -834,6 +939,18 @@ background-color: rgb(255, 255, 255);
             </item>
             <item row="0" column="2">
              <widget class="QPushButton" name="pushButton_2">
+              <property name="styleSheet">
+               <string notr="true">QPushButton
+{
+    font:14px &quot;微软雅黑&quot;;
+    color: #FFFFFF;
+    background-color: #42BDAA;
+    min-width:100px;
+    max-width:100px;
+    min-height:24px;
+    max-height:24px;
+}</string>
+              </property>
               <property name="text">
                <string>开始测试</string>
               </property>
@@ -851,6 +968,12 @@ background-color: rgb(255, 255, 255);
             <string/>
            </property>
            <layout class="QGridLayout" name="gridLayout_11">
+            <property name="margin">
+             <number>0</number>
+            </property>
+            <property name="spacing">
+             <number>0</number>
+            </property>
             <item row="1" column="0">
              <widget class="DeTableView" name="widget_4" native="true"/>
             </item>
@@ -863,25 +986,34 @@ background-color: rgb(255, 255, 255);
      </widget>
      <widget class="QWidget" name="tab_3">
       <property name="styleSheet">
-       <string notr="true">QGroupBox
-{
-   border:none;
-}</string>
+       <string notr="true"/>
       </property>
       <attribute name="title">
        <string>效率标定</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_27">
+       <property name="margin">
+        <number>0</number>
+       </property>
        <property name="spacing">
         <number>0</number>
        </property>
        <item row="0" column="0">
-        <layout class="QGridLayout" name="gridLayout_26" columnstretch="0,0">
+        <layout class="QGridLayout" name="gridLayout_26" columnstretch="1,3">
+         <property name="rightMargin">
+          <number>20</number>
+         </property>
+         <property name="bottomMargin">
+          <number>20</number>
+         </property>
          <property name="spacing">
           <number>0</number>
          </property>
          <item row="0" column="0">
-          <layout class="QGridLayout" name="gridLayout_17" rowstretch="1,0,0,0,0">
+          <layout class="QGridLayout" name="gridLayout_17" rowstretch="1,1,1,1,2">
+           <property name="rightMargin">
+            <number>24</number>
+           </property>
            <property name="spacing">
             <number>0</number>
            </property>
@@ -891,6 +1023,24 @@ background-color: rgb(255, 255, 255);
               <string/>
              </property>
              <layout class="QGridLayout" name="gridLayout_14">
+              <property name="leftMargin">
+               <number>20</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>10</number>
+              </property>
+              <property name="horizontalSpacing">
+               <number>0</number>
+              </property>
+              <property name="verticalSpacing">
+               <number>10</number>
+              </property>
               <item row="0" column="0" colspan="2">
                <widget class="QLabel" name="label_21">
                 <property name="text">
@@ -954,14 +1104,131 @@ background-color: rgb(255, 255, 255);
              <property name="title">
               <string/>
              </property>
-             <layout class="QGridLayout" name="gridLayout_15" columnstretch="0,0">
-              <property name="margin">
+             <layout class="QGridLayout" name="gridLayout_34">
+              <property name="leftMargin">
+               <number>20</number>
+              </property>
+              <property name="topMargin">
+               <number>10</number>
+              </property>
+              <property name="rightMargin">
                <number>0</number>
               </property>
-              <property name="spacing">
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <property name="horizontalSpacing">
+               <number>0</number>
+              </property>
+              <property name="verticalSpacing">
                <number>6</number>
               </property>
-              <item row="2" column="0" colspan="2">
+              <item row="0" column="0">
+               <layout class="QGridLayout" name="gridLayout_33">
+                <property name="horizontalSpacing">
+                 <number>34</number>
+                </property>
+                <property name="verticalSpacing">
+                 <number>0</number>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_30">
+                  <property name="text">
+                   <string>通道设置:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QPushButton" name="pushButton_4">
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton
+{
+    font:14px &quot;微软雅黑&quot;;
+    color: #FFFFFF;
+    background-color: #42BDAA;
+    min-width:80px;
+    max-width:80px;
+    min-height:24px;
+    max-height:24px;
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>保存</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="1" column="0">
+               <layout class="QGridLayout" name="gridLayout_15">
+                <property name="horizontalSpacing">
+                 <number>30</number>
+                </property>
+                <property name="verticalSpacing">
+                 <number>0</number>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_22">
+                  <property name="text">
+                   <string>通道号:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="DeValueSelectWidget" name="widget_7" native="true">
+                  <property name="styleSheet">
+                   <string notr="true">QWidget
+{
+   min-width:108px;
+   max-width:108px;
+   min-height:24px;
+   max-hegith:24px;
+}</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="2" column="0">
+               <layout class="QGridLayout" name="gridLayout_32">
+                <property name="horizontalSpacing">
+                 <number>18</number>
+                </property>
+                <property name="verticalSpacing">
+                 <number>0</number>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_18">
+                  <property name="text">
+                   <string>测量次数：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLineEdit" name="lineEdit_5">
+                  <property name="styleSheet">
+                   <string notr="true">QLineEdit
+{
+   min-width:108px;
+   max-width:108px;
+   min-height:24px;
+   max-hegith:24px;
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>4</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                  <property name="readOnly">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="3" column="0">
                <widget class="QWidget" name="widget_8" native="true">
                 <property name="minimumSize">
                  <size>
@@ -1002,13 +1269,34 @@ background-color: rgb(255, 255, 255);
                   </widget>
                  </item>
                  <item row="1" column="1">
-                  <widget class="QLineEdit" name="lineEdit_6"/>
+                  <widget class="QLineEdit" name="lineEdit_6">
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="readOnly">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
                  </item>
                  <item row="1" column="2">
-                  <widget class="QLineEdit" name="lineEdit_7"/>
+                  <widget class="QLineEdit" name="lineEdit_7">
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="readOnly">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
                  </item>
                  <item row="1" column="3">
-                  <widget class="QLineEdit" name="lineEdit_8"/>
+                  <widget class="QLineEdit" name="lineEdit_8">
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="readOnly">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
                  </item>
                  <item row="2" column="0">
                   <widget class="QLabel" name="label_27">
@@ -1018,45 +1306,36 @@ background-color: rgb(255, 255, 255);
                   </widget>
                  </item>
                  <item row="2" column="1">
-                  <widget class="QLineEdit" name="lineEdit_9"/>
+                  <widget class="QLineEdit" name="lineEdit_9">
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="readOnly">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
                  </item>
                  <item row="2" column="2">
-                  <widget class="QLineEdit" name="lineEdit_10"/>
+                  <widget class="QLineEdit" name="lineEdit_10">
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="readOnly">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
                  </item>
                  <item row="2" column="3">
-                  <widget class="QLineEdit" name="lineEdit_11"/>
+                  <widget class="QLineEdit" name="lineEdit_11">
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="readOnly">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
                  </item>
                 </layout>
-               </widget>
-              </item>
-              <item row="1" column="1">
-               <widget class="DeValueSelectWidget" name="widget_7" native="true"/>
-              </item>
-              <item row="0" column="0">
-               <widget class="QLabel" name="label_18">
-                <property name="text">
-                 <string>测量次数：</string>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="0">
-               <widget class="QLabel" name="label_22">
-                <property name="text">
-                 <string>通道号</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QLineEdit" name="lineEdit_5">
-                <property name="text">
-                 <string>4</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-                <property name="readOnly">
-                 <bool>true</bool>
-                </property>
                </widget>
               </item>
              </layout>
@@ -1068,38 +1347,73 @@ background-color: rgb(255, 255, 255);
               <string/>
              </property>
              <layout class="QGridLayout" name="gridLayout_13">
-              <item row="1" column="0" colspan="3">
-               <widget class="QLabel" name="label_20">
-                <property name="text">
-                 <string>表面发射率(bq)</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="0" colspan="2">
-               <widget class="QLabel" name="label_19">
-                <property name="text">
-                 <string>放射源类型：</string>
-                </property>
-               </widget>
-              </item>
-              <item row="3" column="2">
-               <widget class="QRadioButton" name="radioButton_3">
-                <property name="text">
-                 <string>Alpha</string>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="0" colspan="2">
+              <property name="leftMargin">
+               <number>20</number>
+              </property>
+              <property name="topMargin">
+               <number>20</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>10</number>
+              </property>
+              <property name="horizontalSpacing">
+               <number>0</number>
+              </property>
+              <property name="verticalSpacing">
+               <number>8</number>
+              </property>
+              <item row="4" column="0">
                <widget class="QLabel" name="label_28">
                 <property name="text">
                  <string>类型:</string>
                 </property>
                </widget>
               </item>
-              <item row="3" column="0" colspan="2">
+              <item row="4" column="3">
+               <widget class="QRadioButton" name="radioButton_3">
+                <property name="text">
+                 <string>Alpha</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1" colspan="2">
                <widget class="QRadioButton" name="radioButton_4">
                 <property name="text">
                  <string>Bete</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0" colspan="4">
+               <widget class="QPushButton" name="pushButton">
+                <property name="styleSheet">
+                 <string notr="true">QPushButton
+{
+    font:14px &quot;微软雅黑&quot;;
+    color: #FFFFFF;
+    background-color: #42BDAA;
+    min-height:24px;
+    max-hegiht:24px;
+}</string>
+                </property>
+                <property name="text">
+                 <string>打开放射源</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0" colspan="4">
+               <widget class="QLabel" name="label_20">
+                <property name="text">
+                 <string>表面发射率(bq)</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0" colspan="4">
+               <widget class="QLabel" name="label_19">
+                <property name="text">
+                 <string>放射源类型：</string>
                 </property>
                </widget>
               </item>
@@ -1120,24 +1434,32 @@ background-color: rgb(255, 255, 255);
            <item row="0" column="0">
             <widget class="QWidget" name="widget_6" native="true">
              <property name="styleSheet">
-              <string notr="true">QPushButton
+              <string notr="true">.QWidget
 {
-    font:bold 16px;
-    color: rgb(254, 255, 253);
-    background-color: rgb(66, 189, 170);
-}
-
-.QWidget
-{
-max-height:50px;
-background-color: rgb(255, 255, 255);
+max-height:60px;
+background-color: #E9E9E9;
 }</string>
              </property>
              <layout class="QGridLayout" name="gridLayout_23">
+              <property name="leftMargin">
+               <number>10</number>
+              </property>
+              <property name="topMargin">
+               <number>20</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>9</number>
+              </property>
+              <property name="spacing">
+               <number>0</number>
+              </property>
               <item row="0" column="0">
                <widget class="QLabel" name="label_17">
                 <property name="text">
-                 <string>测试结果:</string>
+                 <string>测量信息:</string>
                 </property>
                </widget>
               </item>
@@ -1156,6 +1478,18 @@ background-color: rgb(255, 255, 255);
               </item>
               <item row="0" column="2">
                <widget class="QPushButton" name="pushButton_3">
+                <property name="styleSheet">
+                 <string notr="true">QPushButton
+{
+    font:14px &quot;微软雅黑&quot;;
+    color: #FFFFFF;
+    background-color: #42BDAA;
+    min-width:100px;
+    max-width:100px;
+    min-height:24px;
+    max-height:24px;
+}</string>
+                </property>
                 <property name="text">
                  <string>开始测试</string>
                 </property>
@@ -1166,16 +1500,25 @@ background-color: rgb(255, 255, 255);
            </item>
            <item row="1" column="0">
             <widget class="QGroupBox" name="groupBox_8">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
              <property name="styleSheet">
-              <string notr="true">QGroupBox#groupBox_8
-{
-min-width:400px;
-}</string>
+              <string notr="true"/>
              </property>
              <property name="title">
               <string/>
              </property>
              <layout class="QGridLayout" name="gridLayout_16">
+              <property name="margin">
+               <number>0</number>
+              </property>
+              <property name="spacing">
+               <number>0</number>
+              </property>
               <item row="0" column="0">
                <widget class="DeTableView" name="widget_5" native="true"/>
               </item>

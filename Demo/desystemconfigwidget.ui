@@ -96,7 +96,7 @@ QTabWidget::tab-bar
 {
    min-height:40px;
    max-height:40px;
-   background-color: #E9E9E9;
+   background-color: #D7D7D7;
 }
 
 QPushButton
@@ -243,7 +243,7 @@ QPushButton
       <string notr="true"/>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tab">
       <property name="styleSheet">
