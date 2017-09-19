@@ -11,8 +11,8 @@ DeAddRadioactiveDlg::DeAddRadioactiveDlg(QWidget *parent)
 	ui.idLineEdit->installEventFilter(&m_inputTextDelegate);
 	ui.originalLineEdit->installEventFilter(&m_inputTextDelegate);
 	ui.lineEdit->setText(QDateTime::currentDateTime().toString("yyyy/MM/dd"));
-	ui.widget_3->addItem(tr("²âÊÔ1"));
-	ui.widget_3->addItem(tr("²âÊÔ2"));
+	ui.widget_3->addItem("alpha");
+	ui.widget_3->addItem("beta");
 
 	connect(ui.idLineEdit, SIGNAL(textChanged(const QString &)), this, SLOT(slotIDLineEdit(const QString &)));
 	connect(ui.originalLineEdit, SIGNAL(textChanged(const QString &)), this, SLOT(slotValueLineEdit(const QString &)));

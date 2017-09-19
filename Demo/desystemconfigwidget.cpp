@@ -70,8 +70,10 @@ DeSystemConfigWidget::DeSystemConfigWidget(bool isMaintain, QWidget *parent)
 	ui.channelTabelView->hideMenu();
 
 	QList<int> intTMpList;
-	intTMpList << 2 << 3 << 5 << 7 << 101;
+	intTMpList << 1 << 2 << 3 << 4;
 	ui.widget_35->setValueList(intTMpList);
+	intTMpList.clear();
+	intTMpList << 200 << 250 << 500 << 1000;
 	ui.widget_38->setValueList(intTMpList);
 }
 //----------------------------------------------------------------------------
@@ -101,6 +103,9 @@ void DeSystemConfigWidget::initUI()
 	connect(ui.datetimeBtn, SIGNAL(signalCheckedChanged(bool)), this, SLOT(slotDatetimeBtn()));
 	connect(ui.dateWeekBtn, SIGNAL(signalCheckedChanged(bool)), this, SLOT(slotDateWeekBtn()));
 	connect(ui.dateDayBtn, SIGNAL(signalCheckedChanged(bool)), this, SLOT(slotDateDayBtn()));
+
+	connect(ui.widget_31, SIGNAL(signalCheckedChanged(bool)), this, SLOT(slotDynamicValue()));
+	connect(ui.widget_42, SIGNAL(signalCheckedChanged(bool)), this, SLOT(slotStaticValue()));
 }
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::initEdit()
@@ -616,5 +621,17 @@ void DeSystemConfigWidget::slotDateDayBtn()
 	ui.datetimeBtn->setChecked(false);
 	ui.dateWeekBtn->setChecked(false);
 	ui.dateDayBtn->setChecked(true);
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::slotDynamicValue()
+{
+	ui.widget_31->setChecked(true);
+	ui.widget_42->setChecked(false);
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::slotStaticValue()
+{
+	ui.widget_42->setChecked(true);
+	ui.widget_31->setChecked(false);
 }
 //----------------------------------------------------------------------------

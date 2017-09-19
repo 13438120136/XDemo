@@ -3,8 +3,18 @@
 #include "detestinformodel.h"
 #include "demo.h"
 #include "demenuwidget.h"
+#include <QMovie>
 
 Q_DECLARE_METATYPE(Demo *)
+void playLabelForGif(QLabel *label, const QString &gif, int speed)
+{
+	QMovie *movie = new QMovie(gif);
+	label->setMovie(movie);
+	if (speed >= 1)
+		movie->setSpeed(speed * 100);
+	movie->setScaledSize(QSize(80,80));
+	movie->start();
+}
 //----------------------------------------------------------------------------
 DeSystemTestWidget::DeSystemTestWidget(QWidget *parent)
 	: QDialog(parent)
@@ -36,6 +46,12 @@ DeSystemTestWidget::DeSystemTestWidget(QWidget *parent)
 	ui.lineEdit_9->installEventFilter(&m_tIntDelegate);
 	ui.lineEdit_10->installEventFilter(&m_tIntDelegate);
 	ui.lineEdit_11->installEventFilter(&m_tIntDelegate);
+
+	playLabelForGif(ui.label, ":/Demo/Resources/xitongceshi-jinxingzhong.gif", 1);
+	QList<int> intTMpList;
+	intTMpList << 1 << 2 << 3 << 4;
+	ui.widget_3->setValueList(intTMpList);
+	ui.widget_7->setValueList(intTMpList);
 }
 //----------------------------------------------------------------------------
 DeSystemTestWidget::~DeSystemTestWidget()
@@ -116,7 +132,6 @@ void DeSystemTestWidget::setIOTestReulst(const QBitArray &value)
 		ui.label->setStyleSheet(propertyStr + "image: url(:/Demo/Resources/xitongceshi-renyuanjiejin-zhengchang.png);");
 	else
 		ui.label->setStyleSheet(propertyStr + "image: url(:/Demo/Resources/xitongceshi-renyuanjiejin-yichang.png);");
-
 
 	propertyStr = "min-width:114px; \
 				  max-width:114px; \

@@ -76,6 +76,9 @@ public Q_SLOTS:
 	void slotDateWeekBtn();
 	void slotDateDayBtn();
 	void slotDateClicked(const QDate & date);
+	///动态和静态阔值选择
+	void slotDynamicValue();
+	void slotStaticValue();
 
 private:
 	///初始化编辑
