@@ -77,6 +77,7 @@ bool DeButtonIPDelegate::eventFilter(QObject *obj, QEvent *event)
 void DeButtonIPDelegate::slotButtonChange(const QString &text)
 {
 	m_button->setText(text);
+	emit signalOwnerObj(m_button);
 }
 //----------------------------------------------------------------------------
 bool DeButtonIntDelegate::eventFilter(QObject *obj, QEvent *event)
@@ -101,6 +102,7 @@ bool DeButtonIntDelegate::eventFilter(QObject *obj, QEvent *event)
 void DeButtonIntDelegate::slotButtonChange(const QString &text)
 {
 	m_button->setText(text);
+	emit signalOwnerObj(m_button);
 }
 //----------------------------------------------------------------------------
 bool DeButtonDoubleDelegate::eventFilter(QObject *obj, QEvent *event)
@@ -125,5 +127,6 @@ bool DeButtonDoubleDelegate::eventFilter(QObject *obj, QEvent *event)
 void DeButtonDoubleDelegate::slotButtonChange(const QString &text)
 {
 	m_button->setText(text);
+	emit signalOwnerObj(m_button);
 }
 //----------------------------------------------------------------------------

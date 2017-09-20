@@ -41,9 +41,11 @@ class DeButtonIPDelegate : public QObject
 {
 	Q_OBJECT
 
+	Q_SIGNAL void signalOwnerObj(QObject *);
+
 protected:
-     bool eventFilter(QObject *obj, QEvent *event);	
-	 QPushButton *m_button;
+	bool eventFilter(QObject *obj, QEvent *event);	
+	QPushButton *m_button;	 
 
 	public Q_SLOTS:
 		void slotButtonChange(const QString &);
@@ -54,9 +56,10 @@ class DeButtonIntDelegate : public QObject
 {
 	Q_OBJECT
 
+	Q_SIGNAL void signalOwnerObj(QObject *);
 protected:
-     bool eventFilter(QObject *obj, QEvent *event);	
-	 QPushButton *m_button;
+	bool eventFilter(QObject *obj, QEvent *event);	
+	QPushButton *m_button;
 
 	public Q_SLOTS:
 		void slotButtonChange(const QString &);
@@ -68,9 +71,10 @@ class DeButtonDoubleDelegate : public QObject
 {
 	Q_OBJECT
 
+	Q_SIGNAL void signalOwnerObj(QObject *);
 protected:
-     bool eventFilter(QObject *obj, QEvent *event);	
-	 QPushButton *m_button;
+	bool eventFilter(QObject *obj, QEvent *event);	
+	QPushButton *m_button;
 
 	public Q_SLOTS:
 		void slotButtonChange(const QString &);

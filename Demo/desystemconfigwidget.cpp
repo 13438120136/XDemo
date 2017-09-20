@@ -4,7 +4,6 @@
 #include "dealermeventmodel.h"
 #include <demo.h>
 #include <QSignalMapper>
-#include <depropertyeditwidget.h>
 #include "dedevicetable.h"
 #include "demenuwidget.h"
 #include <qcalendarwidget.h>
@@ -137,129 +136,128 @@ void DeSystemConfigWidget::initEdit()
 	ui.lineEdit_6->installEventFilter(&m_tIntDelegate);
 	ui.lineEdit_4->installEventFilter(&m_tIntDelegate);
 	ui.lineEdit->installEventFilter(&m_tIntDelegate);
+
+	connect(&m_tIntDelegate, SIGNAL(signalOwnerObj(QObject *)), this, SLOT(slotUpdateDatabase(QObject *)));
 }
 //----------------------------------------------------------------------------
-bool DeSystemConfigWidget::execValidAndSave(const QString &str)
+void DeSystemConfigWidget::slotUpdateDatabase(QObject *object)
 {
-	switch(m_execIndex)
+	if (ui.ipEdit == object)
 	{
-	case 1:
-		{
-			setIpAddress(str);
-			break;
-		}
-	case 2:
-		{
-			int time = str.toInt();
-			setMeasurementTime(time);
-			break;
-		}
-	case 3:
-		{
-			int time = str.toInt();
-			setCheckTime(time);
-			break;
-		}
-	case 4:
-		{
-			int time = str.toInt();
-			setcheckFactor(time);
-			break;
-		}
-	case 5:
-		{
-			int time = str.toInt();
-			setRadiationCheckFactor(time);
-			break;
-		}
-	case 6:
-		{
-			float time = str.toFloat();
-			setPersonnelFactor(time);
-			break;
-		}
-	case 7:
-		{
-			int time = str.toInt();
-			setAlarmResetTime(time);
-			break;
-		}
-
-	case 8:
-		{
-			int time = str.toInt();
-			setAlphaLowAlarmThreshold(time);
-			break;
-		}
-	case 9:
-		{
-			int time = str.toInt();
-			setAlphaHighAlarmThreshold(time);
-			break;
-		}
-	case 10:
-		{
-			int time = str.toInt();
-			setAlphaAlramCoefficient(time);
-			break;
-		}
-	case 11:
-		{
-			int time = str.toInt();
-			setAlphaSeriousAlramCoefficient(time);
-			break;
-		}
-	case 12:
-		{
-			int time = str.toInt();
-			setAlphaThreshold(time);
-			break;
-		}
-	case 13:
-		{
-			int time = str.toInt();
-			setAlphaSeriousThreshold(time);
-			break;
-		}
-		///////////////////////Beta//////////////////////////
-	case 14:
-		{
-			int time = str.toInt();
-			setBetaLowAlarmThreshold(time);
-			break;
-		}
-	case 15:
-		{
-			int time = str.toInt();
-			setBetaHighAlarmThreshold(time);
-			break;
-		}
-	case 16:
-		{
-			int time = str.toInt();
-			setBetaAlramCoefficient(time);
-			break;
-		}
-	case 17:
-		{
-			int time = str.toInt();
-			setBetaSeriousAlramCoefficient(time);
-			break;
-		}
-	case 18:
-		{
-			int time = str.toInt();
-			setBetaThreshold(time);
-			break;
-		}
-	case 19:
-		{
-			int time = str.toInt();
-			setBetaSeriousThreshold(time);
-			break;
-		}
+		m_systemParamData.setIp(ui.ipEdit->text());		
 	}
-	return true;
+
+	if (ui.timeEdit == object)
+	{
+		int time = ui.timeEdit->text().toInt();
+		m_systemParamData.setMeasurementTime(time);
+	}
+
+	if (ui.forceTestTimeEdit == object)
+	{
+		int time = ui.forceTestTimeEdit->text().toInt();
+		m_systemParamData.setCheckTime(time);
+	}
+
+	if (ui.checkFatorEdit == object)
+	{
+		int factor = ui.checkFatorEdit->text().toInt();
+		m_systemParamData.setcheckFactor(factor);
+	}
+
+	if (ui.rCheckFatorEdit == object)
+	{
+		int factor = ui.rCheckFatorEdit->text().toInt();
+		m_systemParamData.setRadiationCheckFactor(factor);
+	}
+
+	if (ui.personFatorEdit == object)
+	{
+		float factor = ui.personFatorEdit->text().toFloat();
+		m_systemParamData.setPersonnelFactor(factor);
+	}
+
+	///////////////////////alpha//////////////////////////
+	if (ui.resetTimeEdit == object)
+	{
+		int  alarmTime = ui.resetTimeEdit->text().toInt();
+		m_systemParamData.setAlarmResetTime(alarmTime);
+	}
+
+	if (ui.alphaLowEdit == object)
+	{
+		int low = ui.alphaLowEdit->text().toInt();
+		m_systemParamData.setAlphaLowAlarmThreshold(low);
+	}
+
+	if (ui.alphaHighEdit == object)
+	{
+		int high = ui.alphaHighEdit->text().toInt();
+		m_systemParamData.setAlphaHighAlarmThreshold(high);
+	}
+
+	if (ui.alphaAlarmEdit == object)
+	{			
+		int coefficient = ui.alphaAlarmEdit->text().toInt();
+		m_systemParamData.setAlphaAlramCoefficient(coefficient);
+	}
+
+	if (ui.alphaSAlarmEdit == object)
+	{			
+		int coefficient = ui.alphaSAlarmEdit->text().toInt();
+		m_systemParamData.setAlphaSeriousAlramCoefficient(coefficient);
+	}
+
+	if (ui.alphaThresholdEdit == object)
+	{			
+		int threshold = ui.alphaThresholdEdit->text().toInt();
+		m_systemParamData.setAlphaThreshold(threshold);
+	}
+
+	if (ui.alphaSThresholdEdit == object)
+	{			
+		int threshold = ui.alphaSThresholdEdit->text().toInt();
+		m_systemParamData.setAlphaSeriousThreshold(threshold);
+	}
+
+	///////////////////////Beta//////////////////////////
+	if (ui.betaLowEdit == object)
+	{
+		int low = ui.betaLowEdit->text().toInt();
+		m_systemParamData.setBetaLowAlarmThreshold(low);
+	}
+
+	if (ui.betaHighEdit == object)
+	{
+		int high = ui.betaHighEdit->text().toInt();
+		m_systemParamData.setBetaHighAlarmThreshold(high);
+	}
+
+	if (ui.betaAlarmEdit == object)
+	{
+		int coefficient = ui.betaAlarmEdit->text().toInt();
+		m_systemParamData.setBetaAlramCoefficient(coefficient);
+	}
+
+	if (ui.betaSAlarmEdit == object)
+	{
+		int coefficient = ui.betaSAlarmEdit->text().toInt();
+		m_systemParamData.setBetaSeriousAlramCoefficient(coefficient);
+	}
+
+	if (ui.betaThresholdEdit == object)
+	{
+		int threshold = ui.betaThresholdEdit->text().toInt();
+		m_systemParamData.setBetaThreshold(threshold);
+	}
+
+	if (ui.betaSThresholdEdit == object)
+	{
+		int threshold = ui.betaSThresholdEdit->text().toInt();
+		m_systemParamData.setBetaSeriousThreshold(threshold);
+	}
+
+	updateDataBase();
 }
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::propertyEditSlot(QWidget *w)
@@ -301,155 +299,6 @@ void DeSystemConfigWidget::readDataFromDB()
 	ui.betaSAlarmEdit->setText(QString::number(m_systemParamData.getBetaSeriousAlramCoefficient()));
 	ui.betaThresholdEdit->setText(QString::number(m_systemParamData.getBetaThreshold()));
 	ui.betaSThresholdEdit->setText(QString::number(m_systemParamData.getBetaSeriousThreshold()));
-}
-//----------------------------------------------------------------------------
-void DeSystemConfigWidget::setIpAddress(const QString &ip)
-{
-	//ui.ipEdit->setText(ip);
-	m_systemParamData.setIp(ip);
-	updateDataBase();
-}
-//----------------------------------------------------------------------------
-void DeSystemConfigWidget::setLanguage()
-{
-	updateDataBase();
-}
-//----------------------------------------------------------------------------
-void DeSystemConfigWidget::setThresholdType(int type)
-{
-	m_systemParamData.setThresholdType(type);
-	updateDataBase();
-}
-//----------------------------------------------------------------------------
-void DeSystemConfigWidget::setMeasurementTime(int time)
-{
-	ui.timeEdit->setText(QString::number(time));
-	m_systemParamData.setMeasurementTime(time);
-	updateDataBase();
-}
-//----------------------------------------------------------------------------
-void DeSystemConfigWidget::setCheckTime(int time)
-{
-	ui.forceTestTimeEdit->setText(QString::number(time));
-	m_systemParamData.setCheckTime(time);
-	updateDataBase();
-}
-//----------------------------------------------------------------------------
-void DeSystemConfigWidget::setcheckFactor(int factor)
-{
-	ui.checkFatorEdit->setText(QString::number(factor));
-	m_systemParamData.setcheckFactor(factor);
-	updateDataBase();
-}
-//----------------------------------------------------------------------------
-void DeSystemConfigWidget::setRadiationCheckFactor(int factor)
-{
-	ui.rCheckFatorEdit->setText(QString::number(factor));
-	m_systemParamData.setRadiationCheckFactor(factor);
-	updateDataBase();
-}
-//----------------------------------------------------------------------------
-void DeSystemConfigWidget::setPersonnelFactor(float factor)
-{
-	ui.personFatorEdit->setText(QString::number(factor));
-	m_systemParamData.setPersonnelFactor(factor);
-	updateDataBase();
-}
-//----------------------------------------------------------------------------
-void DeSystemConfigWidget::setAlarmResetTime(int alarmTime)
-{
-	ui.resetTimeEdit->setText(QString::number(alarmTime));
-	m_systemParamData.setAlarmResetTime(alarmTime);
-	updateDataBase();
-}
-//----------------------------------------------------------------------------
-void DeSystemConfigWidget::setAlarmTime(int alarmTime)
-{
-
-}
-//----------------------------------------------------------------------------
-void DeSystemConfigWidget::setAlphaLowAlarmThreshold(int low)
-{
-	ui.alphaLowEdit->setText(QString::number(low));
-	m_systemParamData.setAlphaLowAlarmThreshold(low);
-	updateDataBase();
-}
-//----------------------------------------------------------------------------
-void DeSystemConfigWidget::setAlphaHighAlarmThreshold(int high)
-{
-	ui.alphaHighEdit->setText(QString::number(high));
-	m_systemParamData.setAlphaHighAlarmThreshold(high);
-	updateDataBase();
-}
-//----------------------------------------------------------------------------
-void DeSystemConfigWidget::setAlphaAlramCoefficient(int coefficient)
-{
-	ui.alphaAlarmEdit->setText(QString::number(coefficient));
-	m_systemParamData.setAlphaAlramCoefficient(coefficient);
-	updateDataBase();
-}
-//----------------------------------------------------------------------------
-void DeSystemConfigWidget::setAlphaSeriousAlramCoefficient(int coefficient)
-{
-	ui.alphaSAlarmEdit->setText(QString::number(coefficient));
-	m_systemParamData.setAlphaSeriousAlramCoefficient(coefficient);
-	updateDataBase();
-}
-//----------------------------------------------------------------------------
-void DeSystemConfigWidget::setAlphaThreshold(int threshold)
-{
-	ui.alphaThresholdEdit->setText(QString::number(threshold));
-	m_systemParamData.setAlphaThreshold(threshold);
-	updateDataBase();
-}
-//----------------------------------------------------------------------------
-void DeSystemConfigWidget::setAlphaSeriousThreshold(int threshold)
-{
-	ui.alphaSThresholdEdit->setText(QString::number(threshold));
-	m_systemParamData.setAlphaSeriousThreshold(threshold);
-	updateDataBase();
-}
-//----------------------------------------------------------------------------
-void DeSystemConfigWidget::setBetaLowAlarmThreshold(int low)
-{
-	ui.betaLowEdit->setText(QString::number(low));
-	m_systemParamData.setBetaLowAlarmThreshold(low);
-	updateDataBase();
-}
-//----------------------------------------------------------------------------
-void DeSystemConfigWidget::setBetaHighAlarmThreshold(int high)
-{
-	ui.betaHighEdit->setText(QString::number(high));
-	m_systemParamData.setBetaHighAlarmThreshold(high);
-	updateDataBase();
-}
-//----------------------------------------------------------------------------
-void DeSystemConfigWidget::setBetaAlramCoefficient(int coefficient)
-{
-	ui.betaAlarmEdit->setText(QString::number(coefficient));
-	m_systemParamData.setBetaAlramCoefficient(coefficient);
-	updateDataBase();
-}
-//----------------------------------------------------------------------------
-void DeSystemConfigWidget::setBetaSeriousAlramCoefficient(int coefficient)
-{
-	ui.betaSAlarmEdit->setText(QString::number(coefficient));
-	m_systemParamData.setBetaSeriousAlramCoefficient(coefficient);
-	updateDataBase();
-}
-//----------------------------------------------------------------------------
-void DeSystemConfigWidget::setBetaThreshold(int threshold)
-{
-	ui.betaThresholdEdit->setText(QString::number(threshold));
-	m_systemParamData.setBetaThreshold(threshold);
-	updateDataBase();
-}
-//----------------------------------------------------------------------------
-void DeSystemConfigWidget::setBetaSeriousThreshold(int threshold)
-{
-	ui.betaSThresholdEdit->setText(QString::number(threshold));
-	m_systemParamData.setBetaSeriousThreshold(threshold);
-	updateDataBase();
 }
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::on_deviceBtn_clicked()

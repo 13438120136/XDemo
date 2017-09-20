@@ -126,9 +126,6 @@
     <ClCompile Include="demodifyuserdlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="depropertyeditwidget.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="deradiationmmeasurestate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -280,12 +277,6 @@
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Release\moc_demodifyuserdlg.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_depropertyeditwidget.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_depropertyeditwidget.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_deradiationmmeasurestate.cpp">
@@ -449,9 +440,6 @@
     <CustomBuild Include="demodifyuserdlg.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="depropertyeditwidget.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
     <CustomBuild Include="deradiationmmeasurestate.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
@@ -524,9 +512,6 @@
     <ClInclude Include="GeneratedFiles\ui_demodifyuserdlg.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_depropertyeditwidget.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_desystemconfigwidget.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
@@ -595,9 +580,6 @@
       <Filter>Form Files</Filter>
     </CustomBuild>
     <CustomBuild Include="demodifyuserdlg.ui">
-      <Filter>Form Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="depropertyeditwidget.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
     <CustomBuild Include="desystemconfigwidget.ui">
