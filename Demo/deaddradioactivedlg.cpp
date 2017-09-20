@@ -90,6 +90,7 @@ void DeAddRadioactiveDlg::on_dateBtn_clicked()
 //----------------------------------------------------------------------------
 void DeAddRadioactiveDlg::slotDateClicked(const QDate & date)
 {
+	Q_UNUSED(date);
 	Demo *demo = qApp->property("_mainWin").value<Demo *>();
 
 	QCalendarWidget *widget = (QCalendarWidget *)sender();

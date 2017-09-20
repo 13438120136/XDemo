@@ -50,12 +50,45 @@ Demo::Demo(QWidget *parent, Qt::WFlags flags)
 
 	QTimer::singleShot(10, this, SLOT(slotBackMainWidget()));
 	slotKeyMeasuring();
+
+	///////////////////////////////////////////////////
+	m_startTimer = QDateTime::currentMSecsSinceEpoch();
+	this->startTimer(10000);
+	qApp->installEventFilter(this);
 }
 //----------------------------------------------------------------------------
 Demo::~Demo()
 {
 	m_sqlDatabase.closeDataBase();
 }
+//----------------------------------------------------------------------------
+void Demo::timerEvent(QTimerEvent *ev)
+{
+	Q_UNUSED(ev);
+
+	quint64 currTime = QDateTime::currentMSecsSinceEpoch();
+	///2分钟没有操作就退出登录
+	if (currTime - m_startTimer > 1000 * 120)
+	{
+		while (m_widgetStack.size() > 1)
+			slotBackMainWidget();
+
+		emit singalCloseMenu();
+	}
+}
+//----------------------------------------------------------------------------
+bool Demo::eventFilter(QObject *obj, QEvent *event)
+{
+	switch (event->type())
+	{
+	case QEvent::MouseButtonRelease:
+	case QEvent::MouseMove:
+		m_startTimer = QDateTime::currentMSecsSinceEpoch();
+		break;
+	}
+
+	return QObject::eventFilter(obj, event);
+ }
 //----------------------------------------------------------------------------
 void Demo::slotSetWidget(QWidget *widget)
 {

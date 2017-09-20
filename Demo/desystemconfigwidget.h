@@ -19,7 +19,6 @@ public:
 	~DeSystemConfigWidget();
 
 public Q_SLOTS:
-	void propertyEditSlot(QWidget *);
 	void on_deviceBtn_clicked();
 	void on_testBtn_clicked();
 	///Ì½²âÆ÷²ÎÊý

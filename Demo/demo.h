@@ -27,6 +27,8 @@ Q_SIGNALS:
 	void signalLogout();
 	///辐射检测
 	void signalRadiationCheck();
+	///关闭菜单信号
+	void singalCloseMenu();
 
 public Q_SLOTS:
 	///切换页面到指定窗口
@@ -78,6 +80,8 @@ public Q_SLOTS:
 
 protected:
     virtual void changeEvent(QEvent *);
+	virtual void timerEvent(QTimerEvent * event);
+	virtual bool eventFilter(QObject *obj, QEvent *event);
 
 private:
 	Ui::DemoClass ui;
@@ -90,6 +94,9 @@ private:
 
 	///状态数据
 	DeviceStatus m_deviceData;
+
+	///记录起始时间
+	quint64 m_startTimer;
 };
 
 #endif // DEMO_H

@@ -3,7 +3,6 @@
 #include "detestdatamodel.h"
 #include "dealermeventmodel.h"
 #include <demo.h>
-#include <QSignalMapper>
 #include "dedevicetable.h"
 #include "demenuwidget.h"
 #include <qcalendarwidget.h>
@@ -137,7 +136,9 @@ void DeSystemConfigWidget::initEdit()
 	ui.lineEdit_4->installEventFilter(&m_tIntDelegate);
 	ui.lineEdit->installEventFilter(&m_tIntDelegate);
 
-	connect(&m_tIntDelegate, SIGNAL(signalOwnerObj(QObject *)), this, SLOT(slotUpdateDatabase(QObject *)));
+	connect(&m_textDelegate, SIGNAL(signalOwnerObj(QObject *)), this, SLOT(slotUpdateDatabase(QObject *)));
+	connect(&m_intDelegate, SIGNAL(signalOwnerObj(QObject *)), this, SLOT(slotUpdateDatabase(QObject *)));
+	connect(&m_doubleDelegate, SIGNAL(signalOwnerObj(QObject *)), this, SLOT(slotUpdateDatabase(QObject *)));
 }
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::slotUpdateDatabase(QObject *object)
@@ -260,10 +261,6 @@ void DeSystemConfigWidget::slotUpdateDatabase(QObject *object)
 	updateDataBase();
 }
 //----------------------------------------------------------------------------
-void DeSystemConfigWidget::propertyEditSlot(QWidget *w)
-{
-}
-//----------------------------------------------------------------------------
 void DeSystemConfigWidget::updateDataBase()
 {
 	Demo *demo = qApp->property("_mainWin").value<Demo *>();
@@ -278,7 +275,7 @@ void DeSystemConfigWidget::readDataFromDB()
 	DeDeviceTable deviceTable(demo->dataBase());
 	m_systemParamData = deviceTable.selectDB();
 
-	//ui.ipEdit->setText(m_systemParamData.getIp());
+	ui.ipEdit->setText(m_systemParamData.getIp());
 	ui.timeEdit->setText(QString::number(m_systemParamData.getMeasurementTime()));
 	ui.forceTestTimeEdit->setText(QString::number(m_systemParamData.getCheckTime()));
 	ui.checkFatorEdit->setText(QString::number(m_systemParamData.getcheckFactor()));
