@@ -66,9 +66,6 @@
     <ClCompile Include="dealermeventmodel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="debottommenuwidget.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="dechanneltestmodel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -181,12 +178,6 @@
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Release\moc_dealermeventmodel.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_debottommenuwidget.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_debottommenuwidget.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_dechanneltestmodel.cpp">
@@ -380,9 +371,6 @@
     <CustomBuild Include="dealermeventmodel.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="debottommenuwidget.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
     <CustomBuild Include="dechanneltestmodel.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
@@ -482,9 +470,6 @@
     <ClInclude Include="GeneratedFiles\ui_deadduserdlg.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_debottommenuwidget.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_decombobox.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
@@ -550,9 +535,6 @@
       <Filter>Form Files</Filter>
     </CustomBuild>
     <CustomBuild Include="deadduserdlg.ui">
-      <Filter>Form Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="debottommenuwidget.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
     <CustomBuild Include="decombobox.ui">
