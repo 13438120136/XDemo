@@ -54,19 +54,15 @@ HEADERS += \
     dealermeventmodel.h \
     dechanneltestmodel.h \
     decombobox.h \
-    dedeviceselfcheckstate.h \
     deinitwidget.h \
     deloginwidget.h \
-    demaintainstate.h \
     demangewidget.h \
     demenuwidget.h \
     demessagebox.h \
     Demo.aps \
     demo.h \
     demodifyuserdlg.h \
-    deradiationmmeasurestate.h \
     deradioactivitymodel.h \
-    destatemachine.h \
     desystemconfigwidget.h \
     desystemtestwidget.h \
     detablemodel.h \
@@ -96,18 +92,14 @@ SOURCES += \
 	delogowidget.cpp \
 	devalueselectwidget.cpp \
     decombobox.cpp \
-    dedeviceselfcheckstate.cpp \
     deinitwidget.cpp \
     deloginwidget.cpp \
-    demaintainstate.cpp \
     demangewidget.cpp \
     demenuwidget.cpp \
     demessagebox.cpp \
     demo.cpp \
     demodifyuserdlg.cpp \
-    deradiationmmeasurestate.cpp \
     deradioactivitymodel.cpp \
-    destatemachine.cpp \
     desystemconfigwidget.cpp \
     desystemtestwidget.cpp \
     detablemodel.cpp \

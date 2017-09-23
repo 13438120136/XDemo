@@ -1,7 +1,7 @@
 #include <QtGui/QApplication>
 #include <QTranslator>
 #include <QTextCodec>
-#include "destatemachine.h"
+#include <demo.h>
 
 int main(int argc, char *argv[])
 {
@@ -21,7 +21,5 @@ int main(int argc, char *argv[])
 	demo.setFixedSize(640, 480);
 	demo.show();
 
-	//DeStateMachine stateMachine;
-	//stateMachine.start();
 	return a.exec();
 }
