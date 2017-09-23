@@ -43,7 +43,6 @@ FORMS += \
     detableview.ui \
 	devalueselectwidget.ui \
 	delogowidget.ui \
-	devalueselectwidget.ui \
 	dekeyboradwidget.ui \
 	decheckbox.ui \
 	deloginmainwidget.ui \
@@ -80,7 +79,6 @@ HEADERS += \
 	delogitem.h \
 	delogdatabase.h \
 	dedetectormodel.h \
-	devalueselectwidget.h \
 	delogowidget.h \
 	dekeyboradwidget.h \
 	deinputdelegate.h \
@@ -124,7 +122,6 @@ SOURCES += \
 	deinputdelegate.cpp \
 	delogitem.cpp \
 	dedetectormodel.cpp \
-	devalueselectwidget.cpp \
 	delogdatabase.cpp \
 	deloginmainwidget.cpp \
 	decheckbox.cpp \
