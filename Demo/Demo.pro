@@ -31,7 +31,6 @@ RESOURCES += \
 FORMS += \
     deaddradioactivedlg.ui \
     deadduserdlg.ui \
-    debottommenuwidget.ui \
     decombobox.ui \
     deinitwidget.ui \
     deloginwidget.ui \
@@ -42,7 +41,6 @@ FORMS += \
     desystemconfigwidget.ui \
     desystemtestwidget.ui \
     detableview.ui \
-	depropertyeditwidget.ui \
 	devalueselectwidget.ui \
 	delogowidget.ui \
 	devalueselectwidget.ui \
@@ -55,7 +53,6 @@ HEADERS += \
     deaddradioactivedlg.h \
     deadduserdlg.h \
     dealermeventmodel.h \
-    debottommenuwidget.h \
     dechanneltestmodel.h \
     decombobox.h \
     dedeviceselfcheckstate.h \
@@ -78,7 +75,6 @@ HEADERS += \
     detestdatamodel.h \
     detestinformodel.h \
     deuserlistmodel.h \
-	depropertyeditwidget.h \
 	delogger.h \
 	deloginterface.h \
 	delogitem.h \
@@ -98,7 +94,6 @@ SOURCES += \
     deaddradioactivedlg.cpp \
     deadduserdlg.cpp \
     dealermeventmodel.cpp \
-    debottommenuwidget.cpp \
     dechanneltestmodel.cpp \
 	delogowidget.cpp \
 	devalueselectwidget.cpp \
@@ -123,7 +118,6 @@ SOURCES += \
     detestinformodel.cpp \
     deuserlistmodel.cpp \
     devirtualkeyboradwidget.cpp \
-	depropertyeditwidget.cpp \
 	delogger.cpp \
 	deloginterface.cpp \
 	dekeyboradwidget.cpp \
