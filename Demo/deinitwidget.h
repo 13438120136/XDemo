@@ -29,8 +29,12 @@ public Q_SLOTS:
 	///需要被Demo调用的
 	void deviceSelfChecking();
 	void deviceFault(DeviceStatus device);
+	///本底检测
 	void deviceChecking();
+	///请离开
 	void pleaseLeave();
+	///本底污染状态
+	void bottomWuran();
 	
 	void ready();
 

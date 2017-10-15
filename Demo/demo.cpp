@@ -56,6 +56,8 @@ Demo::Demo(QWidget *parent, Qt::WFlags flags)
 	m_startTimer = QDateTime::currentMSecsSinceEpoch();
 	this->startTimer(10000);
 	qApp->installEventFilter(this);
+
+	slotCommunication(TYPE_BOTTOMCHECKING);
 }
 //----------------------------------------------------------------------------
 Demo::~Demo()
@@ -179,6 +181,9 @@ void Demo::slotCommunication(int type)
 {
 	switch(type)
 	{
+	case TYPE_BOTTOMCHECKING:
+		widget->bottomWuran();
+		break;
 	case TYPE_DEVICESELFCHECK:
 		widget->deviceSelfChecking();
 		break;

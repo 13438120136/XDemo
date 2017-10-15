@@ -8,6 +8,7 @@ enum COMM_WITH_TYPE
     TYPE_DEVICE_STATUS = 1,   //DeviceStatus
 	TYPE_DEVICESELFCHECK,     //本地自检测界面
 	TYPE_CHECKING,            //本地检测中
+	TYPE_BOTTOMCHECKING,      ///本底检测污染状态
 	TYPE_PLEASELEAVE,         ///请离开检测区域
 	TYPE_READY,				  ///准备就绪
 	TYPE_FLIPPALM, 			  ///请反转手掌
@@ -52,13 +53,19 @@ struct DeviceStatus
 ///alpha和beta的值 通道是否污染状态
 struct AlphaAndBeta
 {
-	int abValue[4][2];    ///alpha和beta的值
-	int channelContaminatedStatus[4];  ///0-未污染 否则-污染
+	int abValue[6][2];    ///alpha和beta的值
+	int channelContaminatedStatus[6];  ///0-未污染 否则-污染
+	int abBottomValue[6][2];        ///本底值
+	int thesholdValue[6][2];        ///阈值
+	int alarmStates[6];             ///本底检测污染状态 0-未污染 否则-污染
 
 	AlphaAndBeta()
 	{
 		memset(abValue, 0, sizeof(abValue));
 		memset(channelContaminatedStatus, 0, sizeof(channelContaminatedStatus));
+		memset(abBottomValue, 0, sizeof(abBottomValue));
+		memset(thesholdValue, 0, sizeof(thesholdValue));
+		memset(alarmStates, 0, sizeof(alarmStates));
 	}
 };
 

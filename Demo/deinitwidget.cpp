@@ -128,6 +128,95 @@ void DeInitWidget::deviceChecking()
 	ui.pushButton_12->hide();
 }
 //----------------------------------------------------------------------------
+void DeInitWidget::bottomWuran()
+{
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	AlphaAndBeta &pValue = demo->get_AlphaAndBeta();
+
+	ui.tabWidget->setCurrentIndex(2);
+	ui.label_30->setText(tr("Œ€»æ\nComtaminated"));
+	ui.label_29->setText("¶¬   -\n¶¡   -");
+	ui.label_32->setText("¶¬   -\n¶¡   -");
+	ui.label_36->setText("¶¬   -\n¶¡   -");
+	ui.label_37->setText("¶¬   -\n¶¡   -");
+
+	ui.label_26->setMovie(NULL);
+	ui.label_31->setMovie(NULL);
+	ui.label_33->setMovie(NULL);
+	ui.label_34->setMovie(NULL);
+
+	if (pValue.alarmStates[0] == 0)
+	{
+		ui.label_26->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-left-zhunbeijiuxu.png); \
+								   min-width:94px; \
+								   min-height:98px; \
+								   max-width:94px; \
+								   max-height:98px;");
+	}
+	else
+	{
+		ui.label_26->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-left-wuran.png); \
+								   min-width:94px; \
+								   min-height:98px; \
+								   max-width:94px; \
+								   max-height:98px;");
+	}
+
+	if (pValue.alarmStates[1] == 0)
+	{
+		ui.label_31->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-right-zhunbeijiuxu.png); \
+								   min-width:94px; \
+								   min-height:98px; \
+								   max-width:94px; \
+								   max-height:98px;");
+	}
+	else
+	{
+		ui.label_31->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-right-wuran.png); \
+								   min-width:94px; \
+								   min-height:98px; \
+								   max-width:94px; \
+								   max-height:98px;");
+	}
+
+	if (pValue.alarmStates[2] == 0)
+	{
+		ui.label_33->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-left-zhunbeijiuxu.png);\
+								   min-width:50px; \
+								   min-height:126px;\
+								   max-width:50px;\
+								   max-height:126px;");
+	}
+	else
+	{
+		ui.label_33->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-left-wuran.png);\
+								   min-width:50px; \
+								   min-height:126px;\
+								   max-width:50px;\
+								   max-height:126px;");
+	}
+
+	if (pValue.alarmStates[3] == 0)
+	{
+		ui.label_34->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-right-zhunbeijiuxu.png);\
+								   min-width:50px; \
+								   min-height:126px;\
+								   max-width:50px;\
+								   max-height:126px;");
+	}
+	else
+	{
+		ui.label_34->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-right-wuran.png);\
+								   min-width:50px; \
+								   min-height:126px;\
+								   max-width:50px;\
+								   max-height:126px;");
+	}
+
+	ui.pushButton_11->show();
+	ui.pushButton_12->hide();
+}
+//----------------------------------------------------------------------------
 void DeInitWidget::pleaseLeave()
 {
 	ui.tabWidget->setCurrentIndex(2);
@@ -149,52 +238,10 @@ void DeInitWidget::pleaseLeave()
 void DeInitWidget::palmWuran()
 {
 	Demo *demo = qApp->property("_mainWin").value<Demo *>();
-	int **pValue = (int **)demo->get_AlphaAndBeta().abValue;
-
-	ui.tabWidget->setCurrentIndex(2);
-	ui.label_30->setText(tr(" ÷–ƒŒ€»æ\nContaminated"));
-	ui.label_29->setText(QString("¶¬   %1\n¶¡   %2").arg(pValue[0][0]).arg(pValue[0][1]));
-	ui.label_32->setText(QString("¶¬   %1\n¶¡   %2").arg(pValue[1][0]).arg(pValue[1][1]));
-	ui.label_36->setText(QString("¶¬   %1\n¶¡   %2").arg(pValue[2][0]).arg(pValue[2][1]));
-	ui.label_37->setText(QString("¶¬   %1\n¶¡   %2").arg(pValue[3][0]).arg(pValue[3][1]));
-
-	ui.label_26->setMovie(NULL);
-	ui.label_31->setMovie(NULL);
-	ui.label_33->setMovie(NULL);
-	ui.label_34->setMovie(NULL);
-
-	ui.label_26->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-left-wuran.png); \
-							   min-width:94px; \
-							   min-height:98px; \
-							   max-width:94px; \
-							   max-height:98px;");
-	ui.label_31->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-right-wuran.png); \
-							   min-width:94px; \
-							   min-height:98px; \
-							   max-width:94px; \
-							   max-height:98px;");
-	ui.label_33->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-left-wuran.png);\
-							   min-width:50px; \
-							   min-height:126px;\
-							   max-width:50px;\
-							   max-height:126px;");
-	ui.label_34->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-right-wuran.png);\
-							   min-width:50px; \
-							   min-height:126px;\
-							   max-width:50px;\
-							   max-height:126px;");
-
-	ui.pushButton_11->show();
-	ui.pushButton_12->hide();
-}
-//----------------------------------------------------------------------------
-void DeInitWidget::dorsumWuran()
-{
-	Demo *demo = qApp->property("_mainWin").value<Demo *>();
 	AlphaAndBeta &pValue = demo->get_AlphaAndBeta();
 
 	ui.tabWidget->setCurrentIndex(2);
-	ui.label_30->setText(tr(" ÷±≥Œ€»æ\nContaminated"));
+	ui.label_30->setText(tr(" ÷–ƒŒ€»æ\nContaminated"));
 	ui.label_29->setText(QString("¶¬   %2\n¶¡   %1")
 		.arg(pValue.abValue[0][0], 2, 10, QLatin1Char( ' ' ) )
 		.arg(pValue.abValue[0][1], 2, 10, QLatin1Char( ' ' ) ));
@@ -213,26 +260,171 @@ void DeInitWidget::dorsumWuran()
 	ui.label_33->setMovie(NULL);
 	ui.label_34->setMovie(NULL);
 
-	ui.label_26->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-right-wuran.png); \
+	if (pValue.channelContaminatedStatus[0] == 0)
+	{
+		ui.label_26->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-left-wuwuran.png); \
+								   min-width:94px; \
+								   min-height:98px; \
+								   max-width:94px; \
+								   max-height:98px;");
+	}
+	else
+	{
+		ui.label_26->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-left-wuran.png); \
+								   min-width:94px; \
+								   min-height:98px; \
+								   max-width:94px; \
+								   max-height:98px;");
+	}
+
+	if (pValue.channelContaminatedStatus[1] == 0)
+	{
+		ui.label_31->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-right-wuwuran.png); \
+								   min-width:94px; \
+								   min-height:98px; \
+								   max-width:94px; \
+								   max-height:98px;");
+	}
+	else
+	{
+		ui.label_31->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-right-wuran.png); \
+								   min-width:94px; \
+								   min-height:98px; \
+								   max-width:94px; \
+								   max-height:98px;");
+	}
+
+	if (pValue.channelContaminatedStatus[2] == 0)
+	{
+		ui.label_33->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-left-wuwuran.png);\
+								   min-width:50px; \
+								   min-height:126px;\
+								   max-width:50px;\
+								   max-height:126px;");
+	}
+	else
+	{
+		ui.label_33->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-left-wuran.png);\
+								   min-width:50px; \
+								   min-height:126px;\
+								   max-width:50px;\
+								   max-height:126px;");
+	}
+
+	if (pValue.channelContaminatedStatus[3] == 0)
+	{
+		ui.label_34->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-right-wuwuran.png);\
+								   min-width:50px; \
+								   min-height:126px;\
+								   max-width:50px;\
+								   max-height:126px;");
+	}
+	else
+	{
+		ui.label_34->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-right-wuran.png);\
+								   min-width:50px; \
+								   min-height:126px;\
+								   max-width:50px;\
+								   max-height:126px;");
+	}
+
+	ui.pushButton_11->show();
+	ui.pushButton_12->hide();
+}
+//----------------------------------------------------------------------------
+void DeInitWidget::dorsumWuran()
+{
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	AlphaAndBeta &pValue = demo->get_AlphaAndBeta();
+
+	ui.tabWidget->setCurrentIndex(2);
+	ui.label_30->setText(tr(" ÷±≥Œ€»æ\nContaminated"));
+	ui.label_29->setText(QString("¶¬   %2\n¶¡   %1")
+		.arg(pValue.abValue[4][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[4][1], 2, 10, QLatin1Char( ' ' ) ));
+	ui.label_32->setText(QString("¶¬   %2\n¶¡   %1")
+		.arg(pValue.abValue[5][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[5][1], 2, 10, QLatin1Char( ' ' ) ));
+	ui.label_36->setText(QString("¶¬   %2\n¶¡   %1")
+		.arg(pValue.abValue[2][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[2][1], 2, 10, QLatin1Char( ' ' ) ));
+	ui.label_37->setText(QString("¶¬   %2\n¶¡   %1")
+		.arg(pValue.abValue[3][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[3][1], 2, 10, QLatin1Char( ' ' ) ));
+
+	ui.label_26->setMovie(NULL);
+	ui.label_31->setMovie(NULL);
+	ui.label_33->setMovie(NULL);
+	ui.label_34->setMovie(NULL);
+
+	if (pValue.channelContaminatedStatus[4] == 0)
+	{
+	ui.label_26->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-right-wuwuran.png); \
 							   min-width:94px; \
 							   min-height:98px; \
 							   max-width:94px; \
 							   max-height:98px;");
-	ui.label_31->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-left-wuran.png); \
-							   min-width:94px; \
-							   min-height:98px; \
-							   max-width:94px; \
-							   max-height:98px;");
-	ui.label_33->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-left-wuran.png);\
-							   min-width:50px; \
-							   min-height:126px;\
-							   max-width:50px;\
-							   max-height:126px;");
-	ui.label_34->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-right-wuran.png);\
-							   min-width:50px; \
-							   min-height:126px;\
-							   max-width:50px;\
-							   max-height:126px;");
+	}
+	else
+	{
+		ui.label_26->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-right-wuran.png); \
+								   min-width:94px; \
+								   min-height:98px; \
+								   max-width:94px; \
+								   max-height:98px;");
+	}
+
+	if (pValue.channelContaminatedStatus[5] == 0)
+	{
+		ui.label_31->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-left-wuwuran.png); \
+								   min-width:94px; \
+								   min-height:98px; \
+								   max-width:94px; \
+								   max-height:98px;");
+	}
+	else
+	{
+		ui.label_31->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-left-wuran.png); \
+								   min-width:94px; \
+								   min-height:98px; \
+								   max-width:94px; \
+								   max-height:98px;");
+	}
+
+	if (pValue.channelContaminatedStatus[2] == 0)
+	{
+		ui.label_33->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-left-wuwuran.png);\
+								   min-width:50px; \
+								   min-height:126px;\
+								   max-width:50px;\
+								   max-height:126px;");
+
+	}
+	else
+	{
+		ui.label_33->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-left-wuran.png);\
+								   min-width:50px; \
+								   min-height:126px;\
+								   max-width:50px;\
+								   max-height:126px;");
+	}
+
+	if (pValue.channelContaminatedStatus[3] == 0)
+	{
+		ui.label_34->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-right-wuwuran.png);\
+								   min-width:50px; \
+								   min-height:126px;\
+								   max-width:50px;\
+								   max-height:126px;");
+	}
+	else
+	{
+		ui.label_34->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-right-wuran.png);\
+								   min-width:50px; \
+								   min-height:126px;\
+								   max-width:50px;\
+								   max-height:126px;");
+	}
 
 	ui.pushButton_11->show();
 	ui.pushButton_12->hide();
@@ -311,11 +503,11 @@ void DeInitWidget::dorsumNoWuran()
 	ui.tabWidget->setCurrentIndex(2);
 	ui.label_30->setText(tr(" ÷±≥Œ¥Œ€»æ\nNot Contaminated"));
 	ui.label_29->setText(QString("¶¬   %2\n¶¡   %1")
-		.arg(pValue.abValue[0][0], 2, 10, QLatin1Char( ' ' ) )
-		.arg(pValue.abValue[0][1], 2, 10, QLatin1Char( ' ' ) ));
+		.arg(pValue.abValue[4][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[4][1], 2, 10, QLatin1Char( ' ' ) ));
 	ui.label_32->setText(QString("¶¬   %2\n¶¡   %1")
-		.arg(pValue.abValue[1][0], 2, 10, QLatin1Char( ' ' ) )
-		.arg(pValue.abValue[1][1], 2, 10, QLatin1Char( ' ' ) ));
+		.arg(pValue.abValue[5][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[5][1], 2, 10, QLatin1Char( ' ' ) ));
 	ui.label_36->setText(QString("¶¬   %2\n¶¡   %1")
 		.arg(pValue.abValue[2][0], 2, 10, QLatin1Char( ' ' ) )
 		.arg(pValue.abValue[2][1], 2, 10, QLatin1Char( ' ' ) ));
@@ -365,6 +557,9 @@ void DeInitWidget::keyPartMeasuring()
 //----------------------------------------------------------------------------
 void DeInitWidget::keyPartContaminated()
 {
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	AlphaAndBeta &pValue = demo->get_AlphaAndBeta();
+
 	ui.tabWidget->setCurrentIndex(3);
 	ui.label_38->setText(tr("Œ€»æ\nContaminated"));
 	QString str = "image: url(:/Demo/Resources/jianceyemian-teshu-wuran.png); \
@@ -381,6 +576,9 @@ void DeInitWidget::keyPartContaminated()
 //----------------------------------------------------------------------------
 void DeInitWidget::keyPartNoContaminated()
 {
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	AlphaAndBeta &pValue = demo->get_AlphaAndBeta();
+
 	ui.tabWidget->setCurrentIndex(3);
 	ui.label_38->setText(tr("Œ¥Œ€»æ"));
 	QString str = "image: url(:/Demo/Resources/jianceyemian-teshu-wuwuran.png); \
