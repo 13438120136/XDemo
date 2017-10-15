@@ -6,6 +6,11 @@
 enum COMM_WITH_TYPE
 {
     TYPE_DEVICE_STATUS = 1,   //DeviceStatus
+	TYPE_DEVICESELFCHECK,     //本地自检测界面
+	TYPE_CHECKING,            //本地检测中
+	TYPE_PLEASELEAVE,         ///请离开检测区域
+	TYPE_READY,				  ///准备就绪
+	TYPE_FLIPPALM, 			  ///请反转手掌
 	TYPE_PALMCHECKING,		  ///手心检测
 	TYPE_DORSUMCHECKING,	  ///手背检测
 	TYPE_PALMCONTAMINATED,	  ///手心污染
@@ -44,16 +49,18 @@ struct DeviceStatus
 	bool can_4;
 };
 
+///alpha和beta的值 通道是否污染状态
 struct AlphaAndBeta
 {
-	int alpha[4];
-	int beta[4];
+	int abValue[4][2];    ///alpha和beta的值
+	int channelContaminatedStatus[4];  ///0-未污染 否则-污染
 };
 
 struct KeyAlphaAndBeta
 {
 	int alpha;
 	int beta;
+	int contaminatedStatus; ///0-未污染 否则-污染
 };
 
 #endif

@@ -107,7 +107,7 @@ void DeInitWidget::on_deviceBtn_clicked()
 void DeInitWidget::deviceSelfChecking()
 {
 	ui.tabWidget->setCurrentIndex(0);
-	ui.msgLabel->setText(tr("×Ô¼ì\nSelf-checking"));
+	ui.msgLabel->setText(tr("×Ô¼ì\nSelf-Checking"));
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::deviceChecking()
@@ -155,6 +155,11 @@ void DeInitWidget::palmWuran()
 	ui.label_36->setText("¦Â   -\n¦Á   -");
 	ui.label_37->setText("¦Â   -\n¦Á   -");
 
+	ui.label_26->setMovie(NULL);
+	ui.label_31->setMovie(NULL);
+	ui.label_33->setMovie(NULL);
+	ui.label_34->setMovie(NULL);
+
 	ui.label_26->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-left-wuran.png); \
 							   min-width:94px; \
 							   min-height:98px; \
@@ -175,6 +180,9 @@ void DeInitWidget::palmWuran()
 							   min-height:126px;\
 							   max-width:50px;\
 							   max-height:126px;");
+
+	ui.pushButton_11->show();
+	ui.pushButton_12->hide();
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::dorsumWuran()
@@ -185,6 +193,11 @@ void DeInitWidget::dorsumWuran()
 	ui.label_32->setText("¦Â   -\n¦Á   -");
 	ui.label_36->setText("¦Â   -\n¦Á   -");
 	ui.label_37->setText("¦Â   -\n¦Á   -");
+
+	ui.label_26->setMovie(NULL);
+	ui.label_31->setMovie(NULL);
+	ui.label_33->setMovie(NULL);
+	ui.label_34->setMovie(NULL);
 
 	ui.label_26->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-right-wuran.png); \
 							   min-width:94px; \
@@ -206,6 +219,9 @@ void DeInitWidget::dorsumWuran()
 							   min-height:126px;\
 							   max-width:50px;\
 							   max-height:126px;");
+
+	ui.pushButton_11->show();
+	ui.pushButton_12->hide();
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::ready()
@@ -216,6 +232,11 @@ void DeInitWidget::ready()
 	ui.label_32->setText("¦Â   -\n¦Á   -");
 	ui.label_36->setText("¦Â   -\n¦Á   -");
 	ui.label_37->setText("¦Â   -\n¦Á   -");
+
+	ui.label_26->setMovie(NULL);
+	ui.label_31->setMovie(NULL);
+	ui.label_33->setMovie(NULL);
+	ui.label_34->setMovie(NULL);
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::palmNoWuran()
@@ -226,6 +247,11 @@ void DeInitWidget::palmNoWuran()
 	ui.label_32->setText("¦Â   -\n¦Á   -");
 	ui.label_36->setText("¦Â   -\n¦Á   -");
 	ui.label_37->setText("¦Â   -\n¦Á   -");
+
+	ui.label_26->setMovie(NULL);
+	ui.label_31->setMovie(NULL);
+	ui.label_33->setMovie(NULL);
+	ui.label_34->setMovie(NULL);
 
 	ui.label_26->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-left-wuwuran.png); \
 							   min-width:94px; \
@@ -247,6 +273,9 @@ void DeInitWidget::palmNoWuran()
 							   min-height:126px;\
 							   max-width:50px;\
 							   max-height:126px;");
+
+	ui.pushButton_11->show();
+	ui.pushButton_12->hide();
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::dorsumNoWuran()
@@ -257,6 +286,11 @@ void DeInitWidget::dorsumNoWuran()
 	ui.label_32->setText("¦Â   -\n¦Á   -");
 	ui.label_36->setText("¦Â   -\n¦Á   -");
 	ui.label_37->setText("¦Â   -\n¦Á   -");
+
+	ui.label_26->setMovie(NULL);
+	ui.label_31->setMovie(NULL);
+	ui.label_33->setMovie(NULL);
+	ui.label_34->setMovie(NULL);
 
 	ui.label_26->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-right-wuwuran.png); \
 							   min-width:94px; \
@@ -278,6 +312,9 @@ void DeInitWidget::dorsumNoWuran()
 							   min-height:126px;\
 							   max-width:50px;\
 							   max-height:126px;");
+
+	ui.pushButton_11->show();
+	ui.pushButton_12->hide();
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::keyPartMeasuring()
@@ -300,6 +337,10 @@ void DeInitWidget::keyPartContaminated()
 				  max-width:96px; \
 				  max-height:124px;";
 	ui.label_39->setStyleSheet(str);
+	ui.label_39->setMovie(NULL);
+
+	ui.pushButton_15->show();
+	ui.pushButton_16->hide();
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::keyPartNoContaminated()
@@ -312,6 +353,10 @@ void DeInitWidget::keyPartNoContaminated()
 				  max-width:96px; \
 				  max-height:124px;";
 	ui.label_39->setStyleSheet(str);
+	ui.label_39->setMovie(NULL);
+
+	ui.pushButton_15->show();
+	ui.pushButton_16->hide();
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::deviceFault(DeviceStatus device)
@@ -445,6 +490,11 @@ void DeInitWidget::flipPalm()
 	ui.label_36->setText("¦Â   -\n¦Á   -");
 	ui.label_37->setText("¦Â   -\n¦Á   -");
 
+	ui.label_26->setMovie(NULL);
+	ui.label_31->setMovie(NULL);
+	ui.label_33->setMovie(NULL);
+	ui.label_34->setMovie(NULL);
+
 	ui.label_26->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-right-zhunbeijiuxu.png); \
 							   min-width:94px; \
 							   min-height:98px; \
@@ -477,7 +527,13 @@ void DeInitWidget::posError()
 	ui.label_29->setText("¦Â   -\n¦Á   -");
 	ui.label_32->setText("¦Â   -\n¦Á   -");
 	ui.label_36->setText("¦Â   -\n¦Á   -");
-	ui.label_37->setText("¦Â   -\n¦Á   -");
+	ui.label_37->setText("¦Â   -\n¦Á   -");	
+	
+	ui.label_26->setMovie(NULL);
+	ui.label_31->setMovie(NULL);
+	ui.label_33->setMovie(NULL);
+	ui.label_34->setMovie(NULL);
+
 
 	ui.label_26->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-left-jiuwei.png); \
 							   min-width:94px; \

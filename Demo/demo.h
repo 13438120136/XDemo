@@ -43,22 +43,6 @@ public Q_SLOTS:
 
 ///接口部分
 public Q_SLOTS:
-
-	///本地自检测界面
-	void slotDeviceSelfChecking();
-	///设备发生故障
-	void slotDeviceFault(DeviceStatus device);
-	///
-	DeviceStatus &slotGetCurrentDeviceFault();
-	///本地检测中
-	void slotChecking();
-	///请离开检测区
-	void slotPleaseLeave();
-	///准备就绪
-	void slotReady();
-	///请反转手掌
-	void slotFlipPalm();
-
 	///与底层通讯数据区
 	void communicate_with_demo(int type);
 	void slotCommunication(int type);
@@ -76,9 +60,6 @@ private:
     bool m_currLanguage;
 	QTranslator *m_translator;
 	DeInitWidget *widget;
-
-	///状态数据
-	//DeviceStatus m_deviceData;
 	///记录起始时间
 	quint64 m_startTimer;
 

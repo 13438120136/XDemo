@@ -170,41 +170,6 @@ void Demo::eventSleep(int msec)
 	ev.exec();
 }
 //----------------------------------------------------------------------------
-void Demo::slotDeviceSelfChecking()
-{
-	widget->deviceSelfChecking();
-}
-//----------------------------------------------------------------------------
-void Demo::slotChecking()
-{
-	widget->deviceChecking();
-}
-//----------------------------------------------------------------------------
-void Demo::slotPleaseLeave()
-{
-	widget->pleaseLeave();
-}
-//----------------------------------------------------------------------------
-void Demo::slotReady()
-{
-	widget->ready();
-}
-//----------------------------------------------------------------------------
-void Demo::slotDeviceFault(DeviceStatus device)
-{
-	widget->deviceFault(device);
-}
-//----------------------------------------------------------------------------
-void Demo::slotFlipPalm()
-{
-	widget->flipPalm();
-}
-//----------------------------------------------------------------------------
-DeviceStatus &Demo::slotGetCurrentDeviceFault()
-{
-	return m_deviceData;
-}
-//----------------------------------------------------------------------------
 void Demo::communicate_with_demo(int type)
 {
 	emit signalCommunication(type);
@@ -214,6 +179,21 @@ void Demo::slotCommunication(int type)
 {
 	switch(type)
 	{
+	case TYPE_DEVICESELFCHECK:
+		widget->deviceSelfChecking();
+		break;
+	case TYPE_CHECKING:
+		widget->deviceChecking();
+		break;
+	case TYPE_PLEASELEAVE:
+		widget->pleaseLeave();
+		break;
+	case TYPE_READY:
+		widget->ready();
+		break;
+	case TYPE_FLIPPALM:
+		widget->flipPalm();
+		break;
 	case TYPE_PALMCHECKING:
 		widget->palmWuran();
 		break;
