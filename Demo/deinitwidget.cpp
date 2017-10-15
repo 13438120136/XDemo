@@ -148,12 +148,15 @@ void DeInitWidget::pleaseLeave()
 //----------------------------------------------------------------------------
 void DeInitWidget::palmWuran()
 {
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	int **pValue = (int **)demo->get_AlphaAndBeta().abValue;
+
 	ui.tabWidget->setCurrentIndex(2);
 	ui.label_30->setText(tr("ÊÖÐÄÎÛÈ¾\nContaminated"));
-	ui.label_29->setText("¦Â   -\n¦Á   -");
-	ui.label_32->setText("¦Â   -\n¦Á   -");
-	ui.label_36->setText("¦Â   -\n¦Á   -");
-	ui.label_37->setText("¦Â   -\n¦Á   -");
+	ui.label_29->setText(QString("¦Â   %1\n¦Á   %2").arg(pValue[0][0]).arg(pValue[0][1]));
+	ui.label_32->setText(QString("¦Â   %1\n¦Á   %2").arg(pValue[1][0]).arg(pValue[1][1]));
+	ui.label_36->setText(QString("¦Â   %1\n¦Á   %2").arg(pValue[2][0]).arg(pValue[2][1]));
+	ui.label_37->setText(QString("¦Â   %1\n¦Á   %2").arg(pValue[3][0]).arg(pValue[3][1]));
 
 	ui.label_26->setMovie(NULL);
 	ui.label_31->setMovie(NULL);
@@ -187,12 +190,23 @@ void DeInitWidget::palmWuran()
 //----------------------------------------------------------------------------
 void DeInitWidget::dorsumWuran()
 {
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	AlphaAndBeta &pValue = demo->get_AlphaAndBeta();
+
 	ui.tabWidget->setCurrentIndex(2);
 	ui.label_30->setText(tr("ÊÖ±³ÎÛÈ¾\nContaminated"));
-	ui.label_29->setText("¦Â   -\n¦Á   -");
-	ui.label_32->setText("¦Â   -\n¦Á   -");
-	ui.label_36->setText("¦Â   -\n¦Á   -");
-	ui.label_37->setText("¦Â   -\n¦Á   -");
+	ui.label_29->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[0][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[0][1], 2, 10, QLatin1Char( ' ' ) ));
+	ui.label_32->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[1][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[1][1], 2, 10, QLatin1Char( ' ' ) ));
+	ui.label_36->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[2][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[2][1], 2, 10, QLatin1Char( ' ' ) ));
+	ui.label_37->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[3][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[3][1], 2, 10, QLatin1Char( ' ' ) ));
 
 	ui.label_26->setMovie(NULL);
 	ui.label_31->setMovie(NULL);
@@ -241,12 +255,23 @@ void DeInitWidget::ready()
 //----------------------------------------------------------------------------
 void DeInitWidget::palmNoWuran()
 {
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	AlphaAndBeta &pValue = demo->get_AlphaAndBeta();
+
 	ui.tabWidget->setCurrentIndex(2);
 	ui.label_30->setText(tr("ÊÖÐÄÎ´ÎÛÈ¾\nNot Contaminated"));
-	ui.label_29->setText("¦Â   -\n¦Á   -");
-	ui.label_32->setText("¦Â   -\n¦Á   -");
-	ui.label_36->setText("¦Â   -\n¦Á   -");
-	ui.label_37->setText("¦Â   -\n¦Á   -");
+	ui.label_29->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[0][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[0][1], 2, 10, QLatin1Char( ' ' ) ));
+	ui.label_32->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[1][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[1][1], 2, 10, QLatin1Char( ' ' ) ));
+	ui.label_36->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[2][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[2][1], 2, 10, QLatin1Char( ' ' ) ));
+	ui.label_37->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[3][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[3][1], 2, 10, QLatin1Char( ' ' ) ));
 
 	ui.label_26->setMovie(NULL);
 	ui.label_31->setMovie(NULL);
@@ -279,13 +304,24 @@ void DeInitWidget::palmNoWuran()
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::dorsumNoWuran()
-{
+{	
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	AlphaAndBeta &pValue = demo->get_AlphaAndBeta();
+
 	ui.tabWidget->setCurrentIndex(2);
 	ui.label_30->setText(tr("ÊÖ±³Î´ÎÛÈ¾\nNot Contaminated"));
-	ui.label_29->setText("¦Â   -\n¦Á   -");
-	ui.label_32->setText("¦Â   -\n¦Á   -");
-	ui.label_36->setText("¦Â   -\n¦Á   -");
-	ui.label_37->setText("¦Â   -\n¦Á   -");
+	ui.label_29->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[0][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[0][1], 2, 10, QLatin1Char( ' ' ) ));
+	ui.label_32->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[1][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[1][1], 2, 10, QLatin1Char( ' ' ) ));
+	ui.label_36->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[2][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[2][1], 2, 10, QLatin1Char( ' ' ) ));
+	ui.label_37->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[3][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[3][1], 2, 10, QLatin1Char( ' ' ) ));
 
 	ui.label_26->setMovie(NULL);
 	ui.label_31->setMovie(NULL);
@@ -534,6 +570,7 @@ void DeInitWidget::posError()
 	ui.label_33->setMovie(NULL);
 	ui.label_34->setMovie(NULL);
 
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
 
 	ui.label_26->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-left-jiuwei.png); \
 							   min-width:94px; \
@@ -555,6 +592,40 @@ void DeInitWidget::posError()
 							   min-height:126px;\
 							   max-width:50px;\
 							   max-height:126px;");
+
+	switch(demo->get_PostionError().errorIndex)
+	{
+	case 0:
+		ui.label_26->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-left-zhunbeijiuxu.png); \
+								   min-width:94px; \
+								   min-height:98px; \
+								   max-width:94px; \
+								   max-height:98px;");
+		break;
+	case 1:
+		ui.label_31->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-right-zhunbeijiuxu.png); \
+								   min-width:94px; \
+								   min-height:98px; \
+								   max-width:94px; \
+								   max-height:98px;");
+		break;
+	case 2:
+		ui.label_33->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-left-zhunbeijiuxu.png);\
+								   min-width:50px; \
+								   min-height:126px;\
+								   max-width:50px;\
+								   max-height:126px;");
+		break;
+	case 3:
+		ui.label_34->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-jiao-right-zhunbeijiuxu.png);\
+								   min-width:50px; \
+								   min-height:126px;\
+								   max-width:50px;\
+								   max-height:126px;");
+		break;
+	default:
+		break;
+	}
 
 	ui.pushButton_11->hide();
 	ui.pushButton_12->hide();

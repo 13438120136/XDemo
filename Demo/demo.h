@@ -67,6 +67,7 @@ private:
 	MEMBER(DeviceStatus, m_deviceData);
 	MEMBER(AlphaAndBeta, m_alphaBetaData);
 	MEMBER(KeyAlphaAndBeta, m_keyAlphaBetaData);
+	MEMBER(PostionError, m_posError);
 };
 
 #endif // DEMO_H

@@ -54,13 +54,37 @@ struct AlphaAndBeta
 {
 	int abValue[4][2];    ///alphaºÍbetaµÄÖµ
 	int channelContaminatedStatus[4];  ///0-Î´ÎÛÈ¾ ·ñÔò-ÎÛÈ¾
+
+	AlphaAndBeta()
+	{
+		memset(abValue, 0, sizeof(abValue));
+		memset(channelContaminatedStatus, 0, sizeof(channelContaminatedStatus));
+	}
 };
 
 struct KeyAlphaAndBeta
 {
 	int alpha;
 	int beta;
-	int contaminatedStatus; ///0-Î´ÎÛÈ¾ ·ñÔò-ÎÛÈ¾
+	int contaminatedStatus; ///0-Î´ÎÛÈ¾ ·ñÔò-ÎÛÈ¾()
+
+	KeyAlphaAndBeta()
+	{
+		alpha = 0;
+		beta = 0;
+		contaminatedStatus = 0;
+	}
+};
+
+struct PostionError
+{
+	///µÚ¼¸¸öÎ»ÖÃ´íÎó ·¶Î§(0-3)
+	int errorIndex;
+
+	PostionError()
+	{
+		errorIndex = 4;
+	}
 };
 
 #endif
