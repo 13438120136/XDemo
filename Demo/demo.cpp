@@ -17,7 +17,9 @@ Q_DECLARE_METATYPE(Demo *)
 //----------------------------------------------------------------------------
 Demo::Demo(QWidget *parent, Qt::WFlags flags)
 	: QMainWindow(parent, flags)
-{	
+{
+	connect(this, SIGNAL(signalCommunication(int)), this, SLOT(slotCommunication(int)), Qt::QueuedConnection);
+
 	///注册为全局唯一的主窗口对象
 	QVariant variant; 
 	variant.setValue(this);
@@ -49,7 +51,6 @@ Demo::Demo(QWidget *parent, Qt::WFlags flags)
 	}
 
 	QTimer::singleShot(10, this, SLOT(slotBackMainWidget()));
-	slotKeyMeasuring();
 
 	///////////////////////////////////////////////////
 	m_startTimer = QDateTime::currentMSecsSinceEpoch();
@@ -184,60 +185,14 @@ void Demo::slotPleaseLeave()
 	widget->pleaseLeave();
 }
 //----------------------------------------------------------------------------
-void Demo::slotPalmContaminated()
-{
-	widget->palmWuran();
-}
-//----------------------------------------------------------------------------
-void Demo::slotDorsumContaminated()
-{
-	widget->dorsumWuran();
-}
-//----------------------------------------------------------------------------
 void Demo::slotReady()
 {
 	widget->ready();
 }
 //----------------------------------------------------------------------------
-void Demo::slotPalmNoContaminated()
-{
-	widget->palmNoWuran();
-}
-//----------------------------------------------------------------------------
-void Demo::slotDorsumNoContaminated()
-{
-	widget->dorsumNoWuran();
-}
-//----------------------------------------------------------------------------
-void Demo::slotKeyMeasuring()
-{
-	widget->keyPartMeasuring();
-}
-//----------------------------------------------------------------------------
 void Demo::slotDeviceFault(DeviceStatus device)
 {
-	m_deviceData = device;
 	widget->deviceFault(device);
-}
-//----------------------------------------------------------------------------
-void Demo::slotPalmChecking()
-{
-	widget->palmChecking();
-}
-//----------------------------------------------------------------------------
-void Demo::slotDorsumChecking()
-{
-	widget->dorsumChecking();
-}
-//----------------------------------------------------------------------------
-void Demo::slotKeyContaminated()
-{
-	widget->keyPartContaminated();
-}
-//----------------------------------------------------------------------------
-void Demo::slotKeyNoContaminated()
-{
-	widget->keyPartNoContaminated();
 }
 //----------------------------------------------------------------------------
 void Demo::slotFlipPalm()
@@ -245,13 +200,47 @@ void Demo::slotFlipPalm()
 	widget->flipPalm();
 }
 //----------------------------------------------------------------------------
-void Demo::slotPositionError()
-{
-	widget->posError();	
-}
-//----------------------------------------------------------------------------
 DeviceStatus &Demo::slotGetCurrentDeviceFault()
 {
 	return m_deviceData;
+}
+//----------------------------------------------------------------------------
+void Demo::communicate_with_demo(int type)
+{
+	emit signalCommunication(type);
+}
+//----------------------------------------------------------------------------
+void Demo::slotCommunication(int type)
+{
+	switch(type)
+	{
+	case TYPE_PALMCHECKING:
+		widget->palmWuran();
+		break;
+	case TYPE_DORSUMCHECKING:
+		widget->dorsumWuran();
+		break;
+	case TYPE_PALMCONTAMINATED:
+		widget->palmNoWuran();
+		break;
+	case TYPE_DORSUMCONTAMINATED:
+		widget->dorsumWuran();
+		break;
+	case TYPE_PALMNOCONTAMINATED:
+		widget->palmNoWuran();
+		break;
+	case TYPE_DORSUMNOCONTAMINATED:
+		widget->dorsumNoWuran();
+		break;
+	case TYPE_KEYMEASURING:
+		widget->keyPartMeasuring();
+		break;
+	case TYPE_KEYCONTAMINATED:
+		widget->keyPartNoContaminated();
+		break;
+	case TYPE_POSITIONERROR:
+		widget->posError();	
+		break;
+	}
 }
 //----------------------------------------------------------------------------

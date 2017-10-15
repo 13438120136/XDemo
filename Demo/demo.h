@@ -29,6 +29,7 @@ Q_SIGNALS:
 	void signalRadiationCheck();
 	///关闭菜单信号
 	void singalCloseMenu();
+	void signalCommunication(int type);
 
 public Q_SLOTS:
 	///切换页面到指定窗口
@@ -42,26 +43,6 @@ public Q_SLOTS:
 
 ///接口部分
 public Q_SLOTS:
-	///手心检测中
-	void slotPalmChecking();
-	///手背检测中
-	void slotDorsumChecking();
-	///手心污染了
-	void slotPalmContaminated();
-	///手背污染了
-	void slotDorsumContaminated();
-	///手心未污染
-	void slotPalmNoContaminated();
-	///手背未污染
-	void slotDorsumNoContaminated();
-	///重点部位测量
-	void slotKeyMeasuring();
-	///重点部位污染
-	void slotKeyContaminated();
-	///重点部位不污染
-	void slotKeyNoContaminated();
-	///位置错误
-	void slotPositionError();
 
 	///本地自检测界面
 	void slotDeviceSelfChecking();
@@ -78,6 +59,10 @@ public Q_SLOTS:
 	///请反转手掌
 	void slotFlipPalm();
 
+	///与底层通讯数据区
+	void communicate_with_demo(int type);
+	void slotCommunication(int type);
+
 protected:
     virtual void changeEvent(QEvent *);
 	virtual void timerEvent(QTimerEvent * event);
@@ -93,10 +78,12 @@ private:
 	DeInitWidget *widget;
 
 	///状态数据
-	DeviceStatus m_deviceData;
-
+	//DeviceStatus m_deviceData;
 	///记录起始时间
 	quint64 m_startTimer;
+
+	///定义使用的数据
+	DEFINESTRUCT(DeviceStatus, m_deviceData);
 };
 
 #endif // DEMO_H
