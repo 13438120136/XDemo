@@ -83,7 +83,9 @@ private:
 	quint64 m_startTimer;
 
 	///定义使用的数据
-	DEFINESTRUCT(DeviceStatus, m_deviceData);
+	MEMBER(DeviceStatus, m_deviceData);
+	MEMBER(AlphaAndBeta, m_alphaBetaData);
+	MEMBER(KeyAlphaAndBeta, m_keyAlphaBetaData);
 };
 
 #endif // DEMO_H

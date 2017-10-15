@@ -28,6 +28,7 @@ HEADERS += \
     deusertable.h \
 	delogtable.h \
 	desystemparam.h \
+	detectortable.h \
     devalueobjectinterface.h
 
 SOURCES += \
@@ -38,4 +39,5 @@ SOURCES += \
     deusertable.cpp \
 	delogtable.cpp \
 	desystemparam.cpp \
+	detectortable.cpp \
     devalueobjectinterface.cpp

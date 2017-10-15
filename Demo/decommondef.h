@@ -1,11 +1,7 @@
 #ifndef DECOMMONDEF_H
 #define DECOMMONDEF_H
 
-#define DEFINESTRUCT(type, member) \
-	private: \
-		type member; \
-	public: \
-		type &get##type(){return member;}\
+#include "common_def.h"
 
 enum COMM_WITH_TYPE
 {
@@ -19,7 +15,7 @@ enum COMM_WITH_TYPE
 	TYPE_KEYMEASURING,		  ///关键部位测量
 	TYPE_KEYCONTAMINATED,     ///重点部位污染
 	TYPE_KEYNOCONTAMINATED,	  ///重点部位未污染
-	TYPE_POSITIONERROR,	  ///位置错误
+	TYPE_POSITIONERROR,	      ///位置错误 
     //todo_1 -- Add enum type here ...
     //...
 
@@ -46,6 +42,18 @@ struct DeviceStatus
 	bool can_2;
 	bool can_3;
 	bool can_4;
+};
+
+struct AlphaAndBeta
+{
+	int alpha[4];
+	int beta[4];
+};
+
+struct KeyAlphaAndBeta
+{
+	int alpha;
+	int beta;
 };
 
 #endif
