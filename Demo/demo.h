@@ -32,6 +32,8 @@ Q_SIGNALS:
 	void signalCommunication(int type);
 	///更新通道结果
 	void signalChannelResult(ChannelResultData);
+	///更新效率结果
+	void signalEffectResult(EffectResultData);
 
 public Q_SLOTS:
 	///切换页面到指定窗口
@@ -71,6 +73,7 @@ private:
 	MEMBER(KeyAlphaAndBeta, m_keyAlphaBetaData);
 	MEMBER(PostionError, m_posError);
 	MEMBER(ChannelResultData, m_channelResultData);
+	MEMBER(EffectResultData, m_effectResultData);
 };
 
 #endif // DEMO_H

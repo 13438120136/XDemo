@@ -50,7 +50,13 @@ void DeMenuWidget::on_systemTestBtn_clicked()
 //----------------------------------------------------------------------------
 void DeMenuWidget::on_exitBtn_clicked()
 {
-	reject();
+	DeMessageBox msgBox;
+	msgBox.setText(tr("exit?"));
+	QPushButton *okButton = msgBox.addButton(tr("yes"), QMessageBox::AcceptRole);  
+	msgBox.addButton(tr("no"), QMessageBox::RejectRole); 
+	msgBox.exec();
+	if ((QPushButton*)msgBox.clickedButton() == okButton)  
+		qApp->quit();
 }
 //----------------------------------------------------------------------------
 void DeMenuWidget::setShowMenuStatus(int index)

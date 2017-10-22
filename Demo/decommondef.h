@@ -23,7 +23,8 @@ enum COMM_WITH_TYPE
 	TYPE_KEYNOCONTAMINATED,	  ///重点部位未污染
 	TYPE_POSITIONERROR,	      ///位置错误 
 
-	TYPE_CHANNELRESULT        ///通道测试结果
+	TYPE_CHANNELRESULT,       ///通道测试结果
+	TYPE_XIAOLVRESULT		  ///效率标定结果
     //todo_1 -- Add enum type here ...
     //...
 
@@ -102,6 +103,17 @@ struct ChannelResultData
 	int alphaBeta;
 	int alpha;
 	int Beta;
+};
+
+///效率标定结果结构体
+struct EffectResultData
+{
+	int channel;			///通道号
+	int highPressure;		///高压值
+	int thresholdValue;		///阈值
+	int bValue;				///本底值
+	int testValue;			///测量值
+	int efficiency;			///效率
 };
 
 #endif

@@ -50,7 +50,7 @@ Demo::Demo(QWidget *parent, Qt::WFlags flags)
 		userTable.insertDataToDB();
 	}
 
-	QTimer::singleShot(1000, this, SLOT(slotBackMainWidget()));
+	QTimer::singleShot(3000, this, SLOT(slotBackMainWidget()));
 
 	///////////////////////////////////////////////////
 	m_startTimer = QDateTime::currentMSecsSinceEpoch();
@@ -70,8 +70,8 @@ void Demo::timerEvent(QTimerEvent *ev)
 	Q_UNUSED(ev);
 
 	quint64 currTime = QDateTime::currentMSecsSinceEpoch();
-	///2分钟没有操作就退出登录
-	if (currTime - m_startTimer > 1000 * 120)
+	///15分钟没有操作就退出登录
+	if (currTime - m_startTimer > 1000 * 60 * 15)
 	{
 		while (m_widgetStack.size() > 1)
 			slotBackMainWidget();
@@ -228,6 +228,9 @@ void Demo::slotCommunication(int type)
 		break;
 	case TYPE_CHANNELRESULT:
 		emit signalChannelResult(this->get_ChannelResultData());
+		break;
+	case TYPE_XIAOLVRESULT:
+		emit signalEffectResult(this->get_EffectResultData());
 		break;
 	}
 }

@@ -3,6 +3,7 @@
 #include "detestinformodel.h"
 #include "demo.h"
 #include "demenuwidget.h"
+#include "demessagebox.h"
 #include <QMovie>
 
 Q_DECLARE_METATYPE(Demo *)
@@ -38,10 +39,14 @@ DeSystemTestWidget::DeSystemTestWidget(QWidget *parent)
 	m_channelMode = new DeChannelTestModel(this);
 	ui.widget_4->setModel(m_channelMode);
 
-	DeTestInforModel *inforModel = new DeTestInforModel(this);
-	ui.widget_5->setModel(inforModel);
+	m_effectMode = new DeTestInforModel(this);
+	ui.widget_5->setModel(m_effectMode);
 	
 	connect(ui.physicalTest, SIGNAL(toggled(bool)), this, SLOT(slotPhysicalTest(bool)));
+	connect(ui.checkBox, SIGNAL(toggled(bool)), this, SLOT(slotEffectSelectChannel()));
+	connect(ui.checkBox_2, SIGNAL(toggled(bool)), this, SLOT(slotEffectSelectChannel()));
+	connect(ui.checkBox_5, SIGNAL(toggled(bool)), this, SLOT(slotEffectSelectChannel()));
+	connect(ui.checkBox_6, SIGNAL(toggled(bool)), this, SLOT(slotEffectSelectChannel()));
 
 	on_ioBtn_clicked();
 
@@ -62,12 +67,14 @@ DeSystemTestWidget::DeSystemTestWidget(QWidget *parent)
 	QList<int> intTMpList;
 	intTMpList << 1 << 2 << 3 << 4;
 	ui.widget_3->setValueList(intTMpList);
-	ui.widget_7->setValueList(intTMpList);
 
 	Demo *demo = qApp->property("_mainWin").value<Demo *>();
 	connect(demo, SIGNAL(signalChannelResult(ChannelResultData)), this, SLOT(slotChannelResult(ChannelResultData)));
 
 	connect(ui.widget_3, SIGNAL(signalValueChanged(int)), this, SLOT(slotChannelValueChanged(int)));
+	connect(ui.widget_7, SIGNAL(signalValueChanged(int)), this, SLOT(slotEffectValueChanged(int)));
+	slotEffectSelectChannel();
+	slotEffectValueChanged(1);
 }
 //----------------------------------------------------------------------------
 DeSystemTestWidget::~DeSystemTestWidget()
@@ -203,7 +210,6 @@ void DeSystemTestWidget::on_ioTestBtn_clicked()
 
 		QBitArray bitArray;
 		bitArray.fill(false, 6);
-		bitArray.setBit(1);
 		setIOTestReulst(bitArray);
 	}
 	else
@@ -267,9 +273,9 @@ void DeSystemTestWidget::slotChannelValueChanged(int value)
 void DeSystemTestWidget::setChannelParam(int highValue, int value, int coefficient1, int coefficient2)
 {
 	ui.lineEdit->setText(QString::number(highValue));
-	ui.lineEdit_2->setText(QString::number(highValue));
-	ui.lineEdit_3->setText(QString::number(highValue));
-	ui.lineEdit_4->setText(QString::number(highValue));
+	ui.lineEdit_2->setText(QString::number(value));
+	ui.lineEdit_3->setText(QString::number(coefficient1));
+	ui.lineEdit_4->setText(QString::number(coefficient2));
 }
 //----------------------------------------------------------------------------
 void DeSystemTestWidget::slotChannelResult(ChannelResultData data)
@@ -280,5 +286,82 @@ void DeSystemTestWidget::slotChannelResult(ChannelResultData data)
 	resultData.Beta = data.Beta;
 	m_channelMode->data().append(resultData);
 	ui.widget_4->setModel(m_channelMode);
+}
+//----------------------------------------------------------------------------
+void DeSystemTestWidget::on_xiaolvTestBtn_clicked()
+{
+}
+//----------------------------------------------------------------------------
+void DeSystemTestWidget::slotEffectResult(EffectResultData data)
+{
+	EffectTestData result;
+	result.channel = data.channel;
+	result.highPressure = data.highPressure;
+	result.bValue = data.bValue;
+	result.testValue = data.testValue;
+	result.thresholdValue = data.thresholdValue;
+	result.efficiency = data.efficiency;
+
+	m_effectMode->data().append(result);
+	ui.widget_5->setModel(m_effectMode);
+}
+//----------------------------------------------------------------------------
+void DeSystemTestWidget::slotEffectValueChanged(int value)
+{
+	if (value < 1 || value > 4)
+		return ;
+
+	EffectParam &param = m_effectParam[value - 1];
+	ui.lineEdit_5->setText(QString::number(param.testCount));
+
+	ui.lineEdit_6->setText(QString::number(param.highTop));
+	ui.lineEdit_7->setText(QString::number(param.highBottom));
+	ui.lineEdit_8->setText(QString::number(param.highInterval));
+
+	ui.lineEdit_9->setText(QString::number(param.thresholdTop));
+	ui.lineEdit_10->setText(QString::number(param.thresholdBottom));
+	ui.lineEdit_11->setText(QString::number(param.thresholdInterval));
+}
+//----------------------------------------------------------------------------
+void DeSystemTestWidget::on_effectSaveBtn_clicked()
+{
+	int value = ui.widget_7->getCurrentValue();
+	EffectParam &param = m_effectParam[value - 1];
+	param.testCount = ui.lineEdit_5->text().toInt();
+
+	param.highTop = ui.lineEdit_6->text().toInt();
+	param.highBottom = ui.lineEdit_7->text().toInt();
+	param.highInterval = ui.lineEdit_8->text().toInt();
+
+	param.thresholdTop = ui.lineEdit_9->text().toInt();
+	param.thresholdBottom = ui.lineEdit_10->text().toInt();
+	param.thresholdInterval = ui.lineEdit_11->text().toInt();
+}
+//----------------------------------------------------------------------------
+void DeSystemTestWidget::slotEffectSelectChannel()
+{
+	QList<int> intList;
+
+	if (ui.checkBox->isChecked())
+		intList.append(1);
+
+	if (ui.checkBox_6->isChecked())
+		intList.append(2);
+
+	if (ui.checkBox_2->isChecked())
+		intList.append(3);
+
+	if (ui.checkBox_5->isChecked())
+		intList.append(4);
+
+	ui.widget_7->setValueList(intList);
+}
+//----------------------------------------------------------------------------
+void DeSystemTestWidget::showBValueDialog()
+{
+	DeMessageBox msgBox(this);
+	msgBox.setText(tr("«Î∑≈÷√∑≈…‰‘¥!"));
+	msgBox.addButton(tr("yes"), QMessageBox::AcceptRole);  
+	msgBox.exec();
 }
 //----------------------------------------------------------------------------

@@ -3,6 +3,7 @@
 //----------------------------------------------------------------------------
 DeCheckBox::DeCheckBox(QWidget *parent)
 	: QWidget(parent)
+	, m_isReadOnly(false)
 {
 	ui.setupUi(this);
 	ui.label->setText("unkown");
@@ -40,9 +41,12 @@ bool DeCheckBox::eventFilter(QObject *obj, QEvent *event)
  {
      if (event->type() == QEvent::MouseButtonRelease) 
 	 {
-		 m_isEnabled = !m_isEnabled;
-		 setChecked(m_isEnabled);
-		 emit signalCheckedChanged(m_isEnabled);
+		 if (!m_isReadOnly)
+		 {
+			 m_isEnabled = !m_isEnabled;
+			 setChecked(m_isEnabled);
+			 emit signalCheckedChanged(m_isEnabled);
+		 }
          return true;
      } 
 	 else 
@@ -55,5 +59,10 @@ void DeCheckBox::setChecked(bool check)
 		ui.label_2->setText("¡Ì");
 	else
 		ui.label_2->clear();
+}
+//----------------------------------------------------------------------------
+void DeCheckBox::setReadOnly()
+{
+	m_isReadOnly = true;
 }
 //----------------------------------------------------------------------------

@@ -82,13 +82,6 @@ void DeInitWidget::slotTimeOut()
 //----------------------------------------------------------------------------
 void DeInitWidget::on_exitBtn_clicked()
 {
-	DeMessageBox msgBox(this);
-	msgBox.setText(tr("exit?"));
-	QPushButton *okButton = msgBox.addButton(tr("yes"), QMessageBox::AcceptRole);  
-	msgBox.addButton(tr("no"), QMessageBox::RejectRole); 
-	msgBox.exec();
-	if ((QPushButton*)msgBox.clickedButton() == okButton)  
-		qApp->quit();
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::on_loginBtn_clicked()

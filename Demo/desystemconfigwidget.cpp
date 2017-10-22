@@ -23,6 +23,9 @@ DeSystemConfigWidget::DeSystemConfigWidget(bool isMaintain, QWidget *parent)
 	on_deviceBtn_clicked();
 	on_runStateBtn_clicked();
 
+	initUI();
+	readDataFromDB();
+
 	if (!m_isMaintain)
 	{
 		ui.logoutBtn->setText("");
@@ -36,10 +39,8 @@ DeSystemConfigWidget::DeSystemConfigWidget(bool isMaintain, QWidget *parent)
 			oneCheckbox->setReadOnly();
 		}
 	}
-
-	initUI();
-	initEdit();
-	readDataFromDB();
+	else
+		initEdit();
 
 	///²âÁ¿´ÎÊı
 	DeTestDataModel *mm = new DeTestDataModel(this);
