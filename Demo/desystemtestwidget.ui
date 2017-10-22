@@ -209,7 +209,7 @@ QPushButton
       <string notr="true"/>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab">
       <property name="styleSheet">
@@ -938,7 +938,7 @@ background-color: #E9E9E9;
              </spacer>
             </item>
             <item row="0" column="2">
-             <widget class="QPushButton" name="pushButton_2">
+             <widget class="QPushButton" name="channelTestBtn">
               <property name="styleSheet">
                <string notr="true">QPushButton
 {

@@ -26,12 +26,37 @@ int DeChannelTestModel::perPageCount()
 //----------------------------------------------------------------------------
 int DeChannelTestModel::dataSize()
 {
-	return 0;
+	return m_data.size();
 }
 //----------------------------------------------------------------------------
 QVariant DeChannelTestModel::dataShow(const QModelIndex &index) const
 {
-	Q_UNUSED(index)
+	int row = index.row();
+	int column = index.column();
+
+	QList<ChannelData> tmpData = m_data.mid(indexData());	
+	if (row + 1 > tmpData.size())
+		return QVariant();
+
+	switch(column)
+	{
+	case 0:
+		return row;
+	case 1:
+		return tmpData[row].alphaBeta;
+	case 2:
+		return tmpData[row].alpha;
+	case 3:
+		return tmpData[row].Beta;
+	default:
+		return QVariant();
+	}
+
 	return QVariant();	
+}
+//----------------------------------------------------------------------------
+QList<ChannelData> &DeChannelTestModel::data()
+{
+	return m_data;
 }
 //----------------------------------------------------------------------------

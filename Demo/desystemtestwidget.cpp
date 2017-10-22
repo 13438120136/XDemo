@@ -24,8 +24,8 @@ DeSystemTestWidget::DeSystemTestWidget(QWidget *parent)
 	this->setWindowFlags(Qt::ToolTip);
 	ui.tabWidget->findChildren<QTabBar*>().at(0)->hide();
 
-	DeChannelTestModel *model = new DeChannelTestModel(this);
-	ui.widget_4->setModel(model);
+	m_channelMode = new DeChannelTestModel(this);
+	ui.widget_4->setModel(m_channelMode);
 
 	DeTestInforModel *inforModel = new DeTestInforModel(this);
 	ui.widget_5->setModel(inforModel);
@@ -52,6 +52,11 @@ DeSystemTestWidget::DeSystemTestWidget(QWidget *parent)
 	intTMpList << 1 << 2 << 3 << 4;
 	ui.widget_3->setValueList(intTMpList);
 	ui.widget_7->setValueList(intTMpList);
+
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	connect(demo, SIGNAL(signalChannelResult(ChannelResultData)), this, SLOT(slotChannelResult(ChannelResultData)));
+
+	connect(ui.widget_3, SIGNAL(signalValueChanged(int)), this, SLOT(slotChannelValueChanged(int)));
 }
 //----------------------------------------------------------------------------
 DeSystemTestWidget::~DeSystemTestWidget()
@@ -244,5 +249,31 @@ void DeSystemTestWidget::initWidget()
 				  min-height:118px; \
 				  max-height:118px;";
 	ui.label_7->setStyleSheet(propertyStr + "image: url(:/Demo/Resources/xitongceshi-youshouduisheshihongwai.png);");
+}
+//----------------------------------------------------------------------------
+void DeSystemTestWidget::on_channelTestBtn_clicked()
+{
+}
+//----------------------------------------------------------------------------
+void DeSystemTestWidget::slotChannelValueChanged(int value)
+{
+}
+//----------------------------------------------------------------------------
+void DeSystemTestWidget::setChannelParam(int highValue, int value, int coefficient1, int coefficient2)
+{
+	ui.lineEdit->setText(QString::number(highValue));
+	ui.lineEdit_2->setText(QString::number(highValue));
+	ui.lineEdit_3->setText(QString::number(highValue));
+	ui.lineEdit_4->setText(QString::number(highValue));
+}
+//----------------------------------------------------------------------------
+void DeSystemTestWidget::slotChannelResult(ChannelResultData data)
+{
+	ChannelData resultData;
+	resultData.alphaBeta = data.alphaBeta;
+	resultData.alpha = data.alpha;
+	resultData.Beta = data.Beta;
+	m_channelMode->data().append(resultData);
+	ui.widget_4->setModel(m_channelMode);
 }
 //----------------------------------------------------------------------------

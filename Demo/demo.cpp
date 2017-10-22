@@ -226,6 +226,9 @@ void Demo::slotCommunication(int type)
 	case TYPE_POSITIONERROR:
 		widget->posError();	
 		break;
+	case TYPE_CHANNELRESULT:
+		emit signalChannelResult(this->get_ChannelResultData());
+		break;
 	}
 }
 //----------------------------------------------------------------------------

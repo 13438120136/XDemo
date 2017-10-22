@@ -16,6 +16,9 @@ public:
 	void setValueList(const QList<int> &value);
 	int getCurrentValue();
 
+Q_SIGNALS:
+	void signalValueChanged(int currentIndex);
+
 public Q_SLOTS:
 	void on_prevBtn_clicked();
 	void on_nextBtn_clicked();

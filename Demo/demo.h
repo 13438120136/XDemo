@@ -30,6 +30,8 @@ Q_SIGNALS:
 	///关闭菜单信号
 	void singalCloseMenu();
 	void signalCommunication(int type);
+	///更新通道结果
+	void signalChannelResult(ChannelResultData);
 
 public Q_SLOTS:
 	///切换页面到指定窗口
@@ -68,6 +70,7 @@ private:
 	MEMBER(AlphaAndBeta, m_alphaBetaData);
 	MEMBER(KeyAlphaAndBeta, m_keyAlphaBetaData);
 	MEMBER(PostionError, m_posError);
+	MEMBER(ChannelResultData, m_channelResultData);
 };
 
 #endif // DEMO_H

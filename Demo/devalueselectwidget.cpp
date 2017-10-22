@@ -25,6 +25,8 @@ void DeValueSelectWidget::on_prevBtn_clicked()
 
 	m_index--;
 	ui.label->setText(QString::number(m_valueList[m_index]));
+
+	emit signalValueChanged(m_valueList[m_index]);
 }
 //----------------------------------------------------------------------------
 void DeValueSelectWidget::on_nextBtn_clicked()
@@ -37,6 +39,8 @@ void DeValueSelectWidget::on_nextBtn_clicked()
 
 	m_index++;
 	ui.label->setText(QString::number(m_valueList[m_index]));
+
+	emit signalValueChanged(m_valueList[m_index]);
 }
 //----------------------------------------------------------------------------
 void DeValueSelectWidget::setValueList(const QList<int> &value)

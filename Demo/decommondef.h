@@ -22,6 +22,8 @@ enum COMM_WITH_TYPE
 	TYPE_KEYCONTAMINATED,     ///重点部位污染
 	TYPE_KEYNOCONTAMINATED,	  ///重点部位未污染
 	TYPE_POSITIONERROR,	      ///位置错误 
+
+	TYPE_CHANNELRESULT        ///通道测试结果
     //todo_1 -- Add enum type here ...
     //...
 
@@ -92,6 +94,14 @@ struct PostionError
 	{
 		errorIndex = 4;
 	}
+};
+
+///通道结果数据
+struct ChannelResultData
+{
+	int alphaBeta;
+	int alpha;
+	int Beta;
 };
 
 #endif

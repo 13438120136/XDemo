@@ -3,9 +3,11 @@
 
 #include "ui_desystemtestwidget.h"
 #include "deinputdelegate.h"
+#include "demo.h"
 #include <QBitArray>
 #include <QDialog>
 
+class DeChannelTestModel;
 class DeSystemTestWidget : public QDialog
 {
 	Q_OBJECT
@@ -39,12 +41,19 @@ public Q_SLOTS:
 
 	//单击IO通道测试
 	void on_ioTestBtn_clicked();
+	///单击通道测试按钮
+	void on_channelTestBtn_clicked();
+	void slotChannelValueChanged(int value);
+	void setChannelParam(int highValue, int value, int coefficient1, int coefficient2);
+	void slotChannelResult(ChannelResultData);
 
 private:
 	Ui::DeSystemTestWidget ui;
 	QBitArray m_stateBitArray;
 	bool m_isIOTest;
 	DeIntDelegate m_tIntDelegate;
+
+	DeChannelTestModel *m_channelMode;
 };
 
 #endif // DESYSTEMTESTWIDGET_H
