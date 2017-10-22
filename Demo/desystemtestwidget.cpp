@@ -6,6 +6,7 @@
 #include <QMovie>
 
 Q_DECLARE_METATYPE(Demo *)
+//----------------------------------------------------------------------------
 void playLabelForGif(QLabel *label, const QString &gif, int speed)
 {
 	QMovie *movie = new QMovie(gif);
@@ -14,6 +15,16 @@ void playLabelForGif(QLabel *label, const QString &gif, int speed)
 		movie->setSpeed(speed * 100);
 	movie->setScaledSize(QSize(80, 80));
 	movie->start();
+}
+//----------------------------------------------------------------------------
+void stopLabelForGif(QLabel *label)
+{
+	QMovie *movie = label->movie();
+	if (movie == NULL)
+		return ;
+
+	movie->stop();
+	delete movie;
 }
 //----------------------------------------------------------------------------
 DeSystemTestWidget::DeSystemTestWidget(QWidget *parent)
@@ -47,7 +58,7 @@ DeSystemTestWidget::DeSystemTestWidget(QWidget *parent)
 	ui.lineEdit_10->installEventFilter(&m_tIntDelegate);
 	ui.lineEdit_11->installEventFilter(&m_tIntDelegate);
 
-	playLabelForGif(ui.label, ":/Demo/Resources/xitongceshi-jinxingzhong.gif", 2);
+	///playLabelForGif(ui.label, ":/Demo/Resources/xitongceshi-jinxingzhong.gif", 2);
 	QList<int> intTMpList;
 	intTMpList << 1 << 2 << 3 << 4;
 	ui.widget_3->setValueList(intTMpList);
@@ -180,12 +191,6 @@ void DeSystemTestWidget::setIOTestReulst(const QBitArray &value)
 //----------------------------------------------------------------------------
 void DeSystemTestWidget::on_ioTestBtn_clicked()
 {
-	ui.label->setMovie(NULL);
-	ui.label_3->setMovie(NULL);
-	ui.label_9->setMovie(NULL);
-	ui.label_5->setMovie(NULL);
-	ui.label_7->setMovie(NULL);
-
 	m_isIOTest = !m_isIOTest;
 	if (m_isIOTest)
 	{

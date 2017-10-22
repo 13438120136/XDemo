@@ -62,6 +62,7 @@ public Q_SLOTS:
 
 private:
 	void playLabelForGif(QLabel *label, const QString &gif, int speed = 1);
+	void stopLabelForGif(QLabel *label);
 
 private:
 	Ui::DeInitWidget ui;

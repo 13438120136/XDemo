@@ -1066,8 +1066,8 @@ max-height:126px;</string>
    max-width:100px;
    max-height:24px;
    font: 13px &quot;微软雅黑&quot;;
-   color: #FFFFFF;
-   background-color: #42BDAA;   
+   color: #FFFFFF;    
+   background-color:  #42BDAA00; 
    border:none;
    border-radius:5px;
 }</string>
@@ -1559,7 +1559,7 @@ max-height:126px;</string>
    max-height:24px;
    font: 13px &quot;微软雅黑&quot;;
    color: #FFFFFF;
-   background-color:  #42BDAA;   
+   background-color:  #42BDAA00;   
    border:none;
    border-radius:5px;
 }</string>
@@ -1852,7 +1852,7 @@ Key part measuring</string>
    max-height:24px;
    font: 13px &quot;微软雅黑&quot;;
    color: #FFFFFF;
-   background-color:  #42BDAA;
+   background-color:  #42BDAA00;
    border:none;
    border-radius:5px;
 }</string>

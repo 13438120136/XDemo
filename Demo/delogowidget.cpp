@@ -1,5 +1,4 @@
 #include "delogowidget.h"
-#include <QMovie>
 
 //----------------------------------------------------------------------------
 DelogoWidget::DelogoWidget(QWidget *parent)
@@ -16,10 +15,15 @@ DelogoWidget::~DelogoWidget()
 //----------------------------------------------------------------------------
 void DelogoWidget::playGif()
 {
-	QMovie *movie = new QMovie(":/Demo/Resources/xitongceshi-jinxingzhong.gif");
-	ui.label_4->setMovie(movie);
-	movie->setScaledSize(QSize(40, 40));
-	movie->setSpeed(400);
-	movie->start();
+	m_movie = new QMovie(":/Demo/Resources/xitongceshi-jinxingzhong.gif");
+	ui.label_4->setMovie(m_movie);
+	m_movie->setScaledSize(QSize(40, 40));
+	m_movie->setSpeed(400);
+	m_movie->start();
+}
+//----------------------------------------------------------------------------
+void DelogoWidget::hideEvent(QHideEvent * event)
+{
+	m_movie->stop();
 }
 //----------------------------------------------------------------------------

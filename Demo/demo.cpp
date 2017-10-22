@@ -50,7 +50,7 @@ Demo::Demo(QWidget *parent, Qt::WFlags flags)
 		userTable.insertDataToDB();
 	}
 
-	QTimer::singleShot(10, this, SLOT(slotBackMainWidget()));
+	QTimer::singleShot(1000, this, SLOT(slotBackMainWidget()));
 
 	///////////////////////////////////////////////////
 	m_startTimer = QDateTime::currentMSecsSinceEpoch();

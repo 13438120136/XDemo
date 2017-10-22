@@ -29,6 +29,12 @@ DeSystemConfigWidget::DeSystemConfigWidget(bool isMaintain, QWidget *parent)
 		ui.logoutBtn->setEnabled(false);
 		ui.detectorBtn->hide();	
 		ui.funcBtn->setText(tr("·µ»Ø"));
+
+		QList<DeCheckBox *> decheckList = this->findChildren<DeCheckBox *>();
+		foreach (DeCheckBox *oneCheckbox, decheckList)
+		{
+			oneCheckbox->setReadOnly();
+		}
 	}
 
 	initUI();

@@ -17,6 +17,8 @@ public:
 	QString text();
 	bool checked();
 
+	void setReadOnly();
+
 Q_SIGNALS:
 	void signalCheckedChanged(bool checked);
 
@@ -26,6 +28,7 @@ protected:
 private:
 	Ui::DeCheckBox ui;
 	bool m_isEnabled;
+	bool m_isReadOnly;
 };
 
 #endif // DECHECKBOX_H

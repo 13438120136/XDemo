@@ -34,6 +34,11 @@ DeInitWidget::DeInitWidget(QWidget *parent)
 	connect(ui.pushButton_3, SIGNAL(clicked()), this, SLOT(on_deviceBtn_clicked()));
 	connect(ui.pushButton_11, SIGNAL(clicked()), this, SLOT(on_deviceBtn_clicked()));
 	connect(ui.pushButton_15, SIGNAL(clicked()), this, SLOT(on_deviceBtn_clicked()));
+
+	ui.pushButton_12->setEnabled(false);
+	ui.pushButton_12->setText("");
+	ui.pushButton_16->setEnabled(false);
+	ui.pushButton_16->setText("");
 }
 //----------------------------------------------------------------------------
 DeInitWidget::~DeInitWidget()
@@ -49,6 +54,16 @@ void DeInitWidget::playLabelForGif(QLabel *label, const QString &gif, int speed)
 		movie->setSpeed(speed * 100);
 	movie->setScaledSize(QSize(label->width(), label->height()));
 	movie->start();
+}
+//----------------------------------------------------------------------------
+void DeInitWidget::stopLabelForGif(QLabel *label)
+{
+	QMovie *movie = label->movie();
+	if (movie == NULL)
+		return ;
+
+	movie->stop();
+	delete movie;
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::showLabelMsg(const QString &msg)
@@ -125,7 +140,6 @@ void DeInitWidget::deviceChecking()
 	playLabelForGif(ui.label_34, ":/Demo/Resources/jianceyemian-jiao-right-bendijiance.gif", 2);
 
 	ui.pushButton_11->hide();
-	ui.pushButton_12->hide();
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::bottomWuran()
@@ -140,10 +154,10 @@ void DeInitWidget::bottomWuran()
 	ui.label_36->setText("¦Â   -\n¦Á   -");
 	ui.label_37->setText("¦Â   -\n¦Á   -");
 
-	ui.label_26->setMovie(NULL);
-	ui.label_31->setMovie(NULL);
-	ui.label_33->setMovie(NULL);
-	ui.label_34->setMovie(NULL);
+	stopLabelForGif(ui.label_26);
+	stopLabelForGif(ui.label_31);
+	stopLabelForGif(ui.label_33);
+	stopLabelForGif(ui.label_34);
 
 	if (pValue.alarmStates[0] == 0)
 	{
@@ -214,7 +228,6 @@ void DeInitWidget::bottomWuran()
 	}
 
 	ui.pushButton_11->show();
-	ui.pushButton_12->hide();
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::pleaseLeave()
@@ -232,7 +245,6 @@ void DeInitWidget::pleaseLeave()
 	playLabelForGif(ui.label_34, ":/Demo/Resources/jianceyemian-jiao-right-bendijiance.gif", 2);
 
 	ui.pushButton_11->hide();
-	ui.pushButton_12->hide();
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::palmWuran()
@@ -255,10 +267,10 @@ void DeInitWidget::palmWuran()
 		.arg(pValue.abValue[3][0], 2, 10, QLatin1Char( ' ' ) )
 		.arg(pValue.abValue[3][1], 2, 10, QLatin1Char( ' ' ) ));
 
-	ui.label_26->setMovie(NULL);
-	ui.label_31->setMovie(NULL);
-	ui.label_33->setMovie(NULL);
-	ui.label_34->setMovie(NULL);
+	stopLabelForGif(ui.label_26);
+	stopLabelForGif(ui.label_31);
+	stopLabelForGif(ui.label_33);
+	stopLabelForGif(ui.label_34);
 
 	if (pValue.channelContaminatedStatus[0] == 0)
 	{
@@ -329,7 +341,6 @@ void DeInitWidget::palmWuran()
 	}
 
 	ui.pushButton_11->show();
-	ui.pushButton_12->hide();
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::dorsumWuran()
@@ -352,10 +363,10 @@ void DeInitWidget::dorsumWuran()
 		.arg(pValue.abValue[3][0], 2, 10, QLatin1Char( ' ' ) )
 		.arg(pValue.abValue[3][1], 2, 10, QLatin1Char( ' ' ) ));
 
-	ui.label_26->setMovie(NULL);
-	ui.label_31->setMovie(NULL);
-	ui.label_33->setMovie(NULL);
-	ui.label_34->setMovie(NULL);
+	stopLabelForGif(ui.label_26);
+	stopLabelForGif(ui.label_31);
+	stopLabelForGif(ui.label_33);
+	stopLabelForGif(ui.label_34);
 
 	if (pValue.channelContaminatedStatus[4] == 0)
 	{
@@ -427,7 +438,6 @@ void DeInitWidget::dorsumWuran()
 	}
 
 	ui.pushButton_11->show();
-	ui.pushButton_12->hide();
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::ready()
@@ -439,10 +449,10 @@ void DeInitWidget::ready()
 	ui.label_36->setText("¦Â   -\n¦Á   -");
 	ui.label_37->setText("¦Â   -\n¦Á   -");
 
-	ui.label_26->setMovie(NULL);
-	ui.label_31->setMovie(NULL);
-	ui.label_33->setMovie(NULL);
-	ui.label_34->setMovie(NULL);
+	stopLabelForGif(ui.label_26);
+	stopLabelForGif(ui.label_31);
+	stopLabelForGif(ui.label_33);
+	stopLabelForGif(ui.label_34);
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::palmNoWuran()
@@ -465,10 +475,10 @@ void DeInitWidget::palmNoWuran()
 		.arg(pValue.abValue[3][0], 2, 10, QLatin1Char( ' ' ) )
 		.arg(pValue.abValue[3][1], 2, 10, QLatin1Char( ' ' ) ));
 
-	ui.label_26->setMovie(NULL);
-	ui.label_31->setMovie(NULL);
-	ui.label_33->setMovie(NULL);
-	ui.label_34->setMovie(NULL);
+	stopLabelForGif(ui.label_26);
+	stopLabelForGif(ui.label_31);
+	stopLabelForGif(ui.label_33);
+	stopLabelForGif(ui.label_34);
 
 	ui.label_26->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-left-wuwuran.png); \
 							   min-width:94px; \
@@ -492,7 +502,6 @@ void DeInitWidget::palmNoWuran()
 							   max-height:126px;");
 
 	ui.pushButton_11->show();
-	ui.pushButton_12->hide();
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::dorsumNoWuran()
@@ -515,10 +524,10 @@ void DeInitWidget::dorsumNoWuran()
 		.arg(pValue.abValue[3][0], 2, 10, QLatin1Char( ' ' ) )
 		.arg(pValue.abValue[3][1], 2, 10, QLatin1Char( ' ' ) ));
 
-	ui.label_26->setMovie(NULL);
-	ui.label_31->setMovie(NULL);
-	ui.label_33->setMovie(NULL);
-	ui.label_34->setMovie(NULL);
+	stopLabelForGif(ui.label_26);
+	stopLabelForGif(ui.label_31);
+	stopLabelForGif(ui.label_33);
+	stopLabelForGif(ui.label_34);
 
 	ui.label_26->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-right-wuwuran.png); \
 							   min-width:94px; \
@@ -542,7 +551,6 @@ void DeInitWidget::dorsumNoWuran()
 							   max-height:126px;");
 
 	ui.pushButton_11->show();
-	ui.pushButton_12->hide();
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::keyPartMeasuring()
@@ -552,7 +560,6 @@ void DeInitWidget::keyPartMeasuring()
 	playLabelForGif(ui.label_39, ":/Demo/Resources/jianceyemian-teshu-jiancezhong.gif");
 
 	ui.pushButton_15->hide();
-	ui.pushButton_16->hide();
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::keyPartContaminated()
@@ -571,7 +578,6 @@ void DeInitWidget::keyPartContaminated()
 	ui.label_39->setMovie(NULL);
 
 	ui.pushButton_15->show();
-	ui.pushButton_16->hide();
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::keyPartNoContaminated()
@@ -590,7 +596,6 @@ void DeInitWidget::keyPartNoContaminated()
 	ui.label_39->setMovie(NULL);
 
 	ui.pushButton_15->show();
-	ui.pushButton_16->hide();
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::deviceFault(DeviceStatus device)
@@ -694,7 +699,6 @@ void DeInitWidget::palmChecking()
 	playLabelForGif(ui.label_34, ":/Demo/Resources/jianceyemian-jiao-right-jiancezhong.gif", 2);
 
 	ui.pushButton_11->hide();
-	ui.pushButton_12->hide();
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::dorsumChecking()
@@ -712,7 +716,6 @@ void DeInitWidget::dorsumChecking()
 	playLabelForGif(ui.label_34, ":/Demo/Resources/jianceyemian-jiao-right-jiancezhong.gif", 2);
 
 	ui.pushButton_11->hide();
-	ui.pushButton_12->hide();
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::flipPalm()
@@ -724,10 +727,10 @@ void DeInitWidget::flipPalm()
 	ui.label_36->setText("¦Â   -\n¦Á   -");
 	ui.label_37->setText("¦Â   -\n¦Á   -");
 
-	ui.label_26->setMovie(NULL);
-	ui.label_31->setMovie(NULL);
-	ui.label_33->setMovie(NULL);
-	ui.label_34->setMovie(NULL);
+	stopLabelForGif(ui.label_26);
+	stopLabelForGif(ui.label_31);
+	stopLabelForGif(ui.label_33);
+	stopLabelForGif(ui.label_34);
 
 	ui.label_26->setStyleSheet("image: url(:/Demo/Resources/jianceyemian-shou-right-zhunbeijiuxu.png); \
 							   min-width:94px; \
@@ -751,7 +754,6 @@ void DeInitWidget::flipPalm()
 							   max-height:126px;");
 
 	ui.pushButton_11->hide();
-	ui.pushButton_12->hide();
 }
 //----------------------------------------------------------------------------
 void DeInitWidget::posError()
@@ -763,10 +765,10 @@ void DeInitWidget::posError()
 	ui.label_36->setText("¦Â   -\n¦Á   -");
 	ui.label_37->setText("¦Â   -\n¦Á   -");	
 	
-	ui.label_26->setMovie(NULL);
-	ui.label_31->setMovie(NULL);
-	ui.label_33->setMovie(NULL);
-	ui.label_34->setMovie(NULL);
+	stopLabelForGif(ui.label_26);
+	stopLabelForGif(ui.label_31);
+	stopLabelForGif(ui.label_33);
+	stopLabelForGif(ui.label_34);
 
 	Demo *demo = qApp->property("_mainWin").value<Demo *>();
 
@@ -826,6 +828,5 @@ void DeInitWidget::posError()
 	}
 
 	ui.pushButton_11->hide();
-	ui.pushButton_12->hide();
 }
 //----------------------------------------------------------------------------
