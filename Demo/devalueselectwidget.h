@@ -15,6 +15,7 @@ public:
 
 	void setValueList(const QList<int> &value);
 	int getCurrentValue();
+	QList<int> getValues();
 
 Q_SIGNALS:
 	void signalValueChanged(int currentIndex);

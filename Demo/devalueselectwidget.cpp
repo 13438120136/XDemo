@@ -58,3 +58,8 @@ int DeValueSelectWidget::getCurrentValue()
 	return m_valueList[m_index];
 }
 //----------------------------------------------------------------------------
+QList<int> DeValueSelectWidget::getValues()
+{
+	return m_valueList;
+}
+//----------------------------------------------------------------------------
