@@ -1,8 +1,8 @@
 #ifndef DETECTORTABLE_H
 #define DETECTORTABLE_H
 
-#include <devalueobjectinterface.h>
 #include <QString>
+#include "devalueobjectinterface.h"
 #include "desqldatabase_global.h"
 
 ///探测器参数数据库对应表记录
@@ -11,6 +11,9 @@ class DESQLDATABASE_EXPORT DetectorTable : public DeValueObjectInterface
 public:
 	DetectorTable(DeSqlDataBase *db);
 	~DetectorTable();
+
+	///初始化表结构
+	void initTable();
 
 	///设置通道号
 	void setChannelNumber(int number);
@@ -34,6 +37,11 @@ public:
 
 	///通过通道获取对应探测器参数
 	QList<DeValueObjectInterface *> selectDataFromChannelNumber(int number);
+
+protected:
+	QString execAddString();
+	QString execSelectString();
+	QList<DeValueObjectInterface *> selectValue(QSqlQuery *sqlQuery);
 
 private:
 	int m_index;

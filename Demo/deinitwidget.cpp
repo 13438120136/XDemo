@@ -557,8 +557,8 @@ void DeInitWidget::keyPartMeasuring()
 //----------------------------------------------------------------------------
 void DeInitWidget::keyPartContaminated()
 {
-	Demo *demo = qApp->property("_mainWin").value<Demo *>();
-	AlphaAndBeta &pValue = demo->get_AlphaAndBeta();
+	//Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	//AlphaAndBeta &pValue = demo->get_AlphaAndBeta();
 
 	ui.tabWidget->setCurrentIndex(3);
 	ui.label_38->setText(tr("Œ€»æ\nContaminated"));
@@ -576,8 +576,8 @@ void DeInitWidget::keyPartContaminated()
 //----------------------------------------------------------------------------
 void DeInitWidget::keyPartNoContaminated()
 {
-	Demo *demo = qApp->property("_mainWin").value<Demo *>();
-	AlphaAndBeta &pValue = demo->get_AlphaAndBeta();
+	//Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	//AlphaAndBeta &pValue = demo->get_AlphaAndBeta();
 
 	ui.tabWidget->setCurrentIndex(3);
 	ui.label_38->setText(tr("Œ¥Œ€»æ"));

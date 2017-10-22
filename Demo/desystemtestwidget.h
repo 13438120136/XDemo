@@ -26,6 +26,9 @@ public:
 	 */
 	void setIOTestReulst(const QBitArray &value);
 
+	///初始化界面显示
+	void initWidget();
+
 public Q_SLOTS:
 	void slotPhysicalTest(bool);
 	void on_ioBtn_clicked();

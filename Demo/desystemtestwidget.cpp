@@ -12,7 +12,7 @@ void playLabelForGif(QLabel *label, const QString &gif, int speed)
 	label->setMovie(movie);
 	if (speed >= 1)
 		movie->setSpeed(speed * 100);
-	movie->setScaledSize(QSize(80,80));
+	movie->setScaledSize(QSize(80, 80));
 	movie->start();
 }
 //----------------------------------------------------------------------------
@@ -47,7 +47,7 @@ DeSystemTestWidget::DeSystemTestWidget(QWidget *parent)
 	ui.lineEdit_10->installEventFilter(&m_tIntDelegate);
 	ui.lineEdit_11->installEventFilter(&m_tIntDelegate);
 
-	playLabelForGif(ui.label, ":/Demo/Resources/xitongceshi-jinxingzhong.gif", 1);
+	playLabelForGif(ui.label, ":/Demo/Resources/xitongceshi-jinxingzhong.gif", 2);
 	QList<int> intTMpList;
 	intTMpList << 1 << 2 << 3 << 4;
 	ui.widget_3->setValueList(intTMpList);
@@ -175,17 +175,74 @@ void DeSystemTestWidget::setIOTestReulst(const QBitArray &value)
 //----------------------------------------------------------------------------
 void DeSystemTestWidget::on_ioTestBtn_clicked()
 {
-	m_isIOTest = true;
-	ui.ioTestBtn->setText(tr("È¡Ïû²âÊÔ"));
-	ui.label_15->setText(tr("×´Ì¬: ÒÑ²âÊÔ"));
-	QString	propertyStr = ui.ioTestBtn->styleSheet();
-	///ÐÞ¸Ä±³¾°ÑÕÉ«Öµ
-	propertyStr.replace("#42BDAA","#A20000");
-	ui.ioTestBtn->setStyleSheet(propertyStr);
+	ui.label->setMovie(NULL);
+	ui.label_3->setMovie(NULL);
+	ui.label_9->setMovie(NULL);
+	ui.label_5->setMovie(NULL);
+	ui.label_7->setMovie(NULL);
 
-	QBitArray bitArray;
-	bitArray.fill(false, 6);
-	bitArray.setBit(1);
-	setIOTestReulst(bitArray);
+	m_isIOTest = !m_isIOTest;
+	if (m_isIOTest)
+	{
+		ui.ioTestBtn->setText(tr("È¡Ïû²âÊÔ"));
+		ui.label_15->setText(tr("×´Ì¬: ÒÑ²âÊÔ"));
+		QString	propertyStr = ui.ioTestBtn->styleSheet();
+		///ÐÞ¸Ä±³¾°ÑÕÉ«Öµ
+		propertyStr.replace("#42BDAA","#A20000");
+		ui.ioTestBtn->setStyleSheet(propertyStr);
+
+		QBitArray bitArray;
+		bitArray.fill(false, 6);
+		bitArray.setBit(1);
+		setIOTestReulst(bitArray);
+	}
+	else
+	{
+		ui.ioTestBtn->setText(tr("¿ªÊ¼²âÊÔ"));
+		ui.label_15->setText(tr("×´Ì¬: Î´²âÊÔ"));
+		QString	propertyStr = ui.ioTestBtn->styleSheet();
+		///ÐÞ¸Ä±³¾°ÑÕÉ«Öµ
+		propertyStr.replace("#A20000", "#42BDAA");
+		ui.ioTestBtn->setStyleSheet(propertyStr);
+
+		initWidget();
+	}
+}
+//----------------------------------------------------------------------------
+void DeSystemTestWidget::initWidget()
+{
+	QString propertyStr = "min-width:92px; \
+						  max-width:92px; \
+						  min-height:132px; \
+						  max-height:132px;";
+
+	ui.label->setStyleSheet(propertyStr + "image: url(:/Demo/Resources/xitongceshi-renyuanjiejin.png);");
+
+	propertyStr = "min-width:114px; \
+				  max-width:114px; \
+				  min-height:116px; \
+				  max-height:116px;";
+	ui.label_3->setStyleSheet(propertyStr + "image: url(:/Demo/Resources/xitongceshi-jiaobuyali.png);");
+
+
+	propertyStr = "min-width:104px; \
+				  max-width:104px; \
+				  min-height:106px; \
+				  max-height:106px;";
+	ui.label_9->setStyleSheet(propertyStr + "image: url(:/Demo/Resources/xitongceshi-youshoutanceqi.png);");
+
+
+	propertyStr = "min-width:94px; \
+				  max-width:94px; \
+				  min-height:118px; \
+				  max-height:118px;";
+	ui.label_5->setStyleSheet(propertyStr + "image: url(:/Demo/Resources/xitongceshi-zuoshouduisheshihongwai.png);");
+
+
+	propertyStr = "min-width:94px; \
+				  max-width:94px; \
+				  min-height:118px; \
+				  max-height:118px;";
+	ui.label_7->setStyleSheet(propertyStr + "image: url(:/Demo/Resources/xitongceshi-youshouduisheshihongwai.png);");
 }
 //----------------------------------------------------------------------------
