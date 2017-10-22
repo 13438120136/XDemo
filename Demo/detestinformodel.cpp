@@ -9,7 +9,7 @@ DeTestInforModel::DeTestInforModel(QObject *parent)
 	QStringList headLabels;
 	headLabels << QString::fromLocal8Bit("通道号")
 		<< QString::fromLocal8Bit("高压值") 
-		<< QString::fromLocal8Bit("阀值") 
+		<< QString::fromLocal8Bit("阈值") 
 		<< QString::fromLocal8Bit("本底值")
 		<< QString::fromLocal8Bit("测量值")
 		<< QString::fromLocal8Bit("效率");
