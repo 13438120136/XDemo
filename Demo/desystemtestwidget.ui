@@ -1481,7 +1481,7 @@ background-color: #E9E9E9;
                </spacer>
               </item>
               <item row="0" column="2">
-               <widget class="QPushButton" name="pushButton_3">
+               <widget class="QPushButton" name="xiaolvTestBtn">
                 <property name="styleSheet">
                  <string notr="true">QPushButton
 {
