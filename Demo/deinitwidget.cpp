@@ -120,12 +120,23 @@ void DeInitWidget::deviceSelfChecking()
 //----------------------------------------------------------------------------
 void DeInitWidget::deviceChecking()
 {
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	AlphaAndBeta &pValue = demo->get_AlphaAndBeta();
+
 	ui.tabWidget->setCurrentIndex(2);
 	ui.label_30->setText(tr("±¾µ×¼ì²âÖÐ\nBKG Meassuring"));
-	ui.label_29->setText("¦Â   -\n¦Á   -");
-	ui.label_32->setText("¦Â   -\n¦Á   -");
-	ui.label_36->setText("¦Â   -\n¦Á   -");
-	ui.label_37->setText("¦Â   -\n¦Á   -");
+	ui.label_29->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[0][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[0][1], 2, 10, QLatin1Char( ' ' ) ));
+	ui.label_32->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[1][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[1][1], 2, 10, QLatin1Char( ' ' ) ));
+	ui.label_36->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[2][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[2][1], 2, 10, QLatin1Char( ' ' ) ));
+	ui.label_37->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[3][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[3][1], 2, 10, QLatin1Char( ' ' ) ));
 
 	playLabelForGif(ui.label_26, ":/Demo/Resources/jianceyemian-left-bendijiance.gif", 2);
 	playLabelForGif(ui.label_31, ":/Demo/Resources/jianceyemian-right-bendijiance.gif", 2);
@@ -142,10 +153,18 @@ void DeInitWidget::bottomWuran()
 
 	ui.tabWidget->setCurrentIndex(2);
 	ui.label_30->setText(tr("ÎÛÈ¾\nComtaminated"));
-	ui.label_29->setText("¦Â   -\n¦Á   -");
-	ui.label_32->setText("¦Â   -\n¦Á   -");
-	ui.label_36->setText("¦Â   -\n¦Á   -");
-	ui.label_37->setText("¦Â   -\n¦Á   -");
+	ui.label_29->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[0][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[0][1], 2, 10, QLatin1Char( ' ' ) ));
+	ui.label_32->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[1][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[1][1], 2, 10, QLatin1Char( ' ' ) ));
+	ui.label_36->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[2][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[2][1], 2, 10, QLatin1Char( ' ' ) ));
+	ui.label_37->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[3][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[3][1], 2, 10, QLatin1Char( ' ' ) ));
 
 	stopLabelForGif(ui.label_26);
 	stopLabelForGif(ui.label_31);
@@ -225,12 +244,23 @@ void DeInitWidget::bottomWuran()
 //----------------------------------------------------------------------------
 void DeInitWidget::pleaseLeave()
 {
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	AlphaAndBeta &pValue = demo->get_AlphaAndBeta();
+
 	ui.tabWidget->setCurrentIndex(2);
 	ui.label_30->setText(tr("ÇëÀë¿ª¼ì²âÇøÓò\nPlease leave"));
-	ui.label_29->setText("¦Â   -\n¦Á   -");
-	ui.label_32->setText("¦Â   -\n¦Á   -");
-	ui.label_36->setText("¦Â   -\n¦Á   -");
-	ui.label_37->setText("¦Â   -\n¦Á   -");
+	ui.label_29->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[0][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[0][1], 2, 10, QLatin1Char( ' ' ) ));
+	ui.label_32->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[1][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[1][1], 2, 10, QLatin1Char( ' ' ) ));
+	ui.label_36->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[2][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[2][1], 2, 10, QLatin1Char( ' ' ) ));
+	ui.label_37->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[3][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[3][1], 2, 10, QLatin1Char( ' ' ) ));
 
 	playLabelForGif(ui.label_26, ":/Demo/Resources/jianceyemian-left-bendijiance.gif", 2);
 	playLabelForGif(ui.label_31, ":/Demo/Resources/jianceyemian-right-bendijiance.gif", 2);
@@ -436,11 +466,23 @@ void DeInitWidget::dorsumWuran()
 void DeInitWidget::ready()
 {
 	ui.tabWidget->setCurrentIndex(2);
+
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	AlphaAndBeta &pValue = demo->get_AlphaAndBeta();
+
 	ui.label_30->setText(tr("×¼±¸¾ÍÐ÷\nReady"));
-	ui.label_29->setText("¦Â   -\n¦Á   -");
-	ui.label_32->setText("¦Â   -\n¦Á   -");
-	ui.label_36->setText("¦Â   -\n¦Á   -");
-	ui.label_37->setText("¦Â   -\n¦Á   -");
+	ui.label_29->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[0][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[0][1], 2, 10, QLatin1Char( ' ' ) ));
+	ui.label_32->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[1][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[1][1], 2, 10, QLatin1Char( ' ' ) ));
+	ui.label_36->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[2][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[2][1], 2, 10, QLatin1Char( ' ' ) ));
+	ui.label_37->setText(QString("¦Â   %2\n¦Á   %1")
+		.arg(pValue.abValue[3][0], 2, 10, QLatin1Char( ' ' ) )
+		.arg(pValue.abValue[3][1], 2, 10, QLatin1Char( ' ' ) ));
 
 	stopLabelForGif(ui.label_26);
 	stopLabelForGif(ui.label_31);

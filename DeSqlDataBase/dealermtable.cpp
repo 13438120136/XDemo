@@ -110,3 +110,28 @@ QByteArray DeAlermTable::getData()
 	return m_polluteData;
 }
 //----------------------------------------------------------------------------
+QList<DeValueObjectInterface *> DeAlermTable::selectDataFromDBRange(qint64 start, qint64 end)
+{
+	QList<DeValueObjectInterface *> result;
+
+	DeSqlDataBase *db = currSqlDataBase();
+	QSqlQuery sqlQuery(db->dataBase());
+
+	QString sql = QString("select * from %1 where time>=%2 and time<=%3")
+		.arg(tableName).arg(start).arg(end);
+
+	sqlQuery.exec(sql);
+
+	while (sqlQuery.next())
+	{
+		DeAlermTable *table = new DeAlermTable(this->currSqlDataBase());
+		table->m_alermTime = sqlQuery.value(0).value<quint64>();
+		table->m_polluteChannel = sqlQuery.value(1).toString();
+		table->m_polluteData = sqlQuery.value(2).toByteArray();
+
+		result.append(table);
+	}
+	
+	return result;
+}
+//----------------------------------------------------------------------------

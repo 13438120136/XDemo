@@ -27,6 +27,10 @@ public:
 	void setOriginalValue(int originalValue);
 	///获取原始活度
 	int getOriginalValue();
+	///设置类型 1-alpha 2-beta
+	void setType(int type);
+	///获取类型
+	int getType();
 
 protected:
 	QString execAddString();
@@ -37,6 +41,7 @@ private:
 	int m_identifier;				///编号
 	quint64 m_dateOfProduct;		///生产日期
 	int m_originalValue;			///原始活度
+	int m_type;						///当前类型
 };
 
 #endif // DERADIOACTIVESOURCETABLE_H

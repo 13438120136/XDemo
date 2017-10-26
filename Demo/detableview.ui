@@ -29,7 +29,7 @@ QLabel
 
 QTableView
 {
-	font: bold 13px &quot;微软雅黑&quot;;    
+	font: bold 12px &quot;微软雅黑&quot;;    
     border:none;
     background-color: #E9E9E9;
 	selection-background-color: #42BDAA;

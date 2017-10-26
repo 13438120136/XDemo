@@ -59,7 +59,7 @@ Demo::Demo(QWidget *parent, Qt::WFlags flags)
 	qApp->installEventFilter(this);
 
 	slotCommunication(TYPE_BOTTOMCHECKING);
-
+	return ;
 	AlphaAndBeta &data = this->get_AlphaAndBeta();
 	data.alarmStates[0] = 1;
 	saveAlarmData();

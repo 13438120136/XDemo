@@ -35,6 +35,7 @@ void DeAddRadioactiveDlg::on_okBtn_clicked()
 	table.setID(id);
 	table.setDateProduct(time);
 	table.setOriginalValue(value);
+	table.setType(ui.widget_3->currentIndex() + 1);
 	table.insertDataToDB();
 
 	emit signalAddRadioactiveData(table);

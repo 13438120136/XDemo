@@ -7,6 +7,7 @@
 #include "demenuwidget.h"
 #include <qcalendarwidget.h>
 #include "dedetectormodel.h"
+#include <QDateTime>
 
 Q_DECLARE_METATYPE(Demo *)
 //----------------------------------------------------------------------------
@@ -44,7 +45,6 @@ DeSystemConfigWidget::DeSystemConfigWidget(bool isMaintain, QWidget *parent)
 
 	eventModel = new DeAlermEventModel(this);
 	ui.widget_2->setModel(eventModel);
-	//void	clicked ( const QModelIndex & index )
 	connect(ui.widget_2->tableView(), SIGNAL(clicked(const QModelIndex &)), this, SLOT(slotShowWuranData(const QModelIndex &)));
 
 	///测量次数
@@ -483,7 +483,17 @@ void DeSystemConfigWidget::slotDateClicked(const QDate &)
 	ui.datetimeBtn->setInitValue(widget->selectedDate().toString("yyyy-MM-dd"), true);
 	ui.dateWeekBtn->setChecked(false);
 	ui.dateDayBtn->setChecked(false);
+	QDate tmpDate = widget->selectedDate();
 	demo->slotBackMainWidget();
+	
+	///当前时间
+	QDateTime currDateTime(tmpDate);
+	QString beginString = currDateTime.toString("yyyy-MM-dd");
+	QString endString = currDateTime.addDays(1).toString("yyyy-MM-dd");
+	qint64 beginTime = QDateTime::fromString(beginString, "yyyy-MM-dd").toMSecsSinceEpoch();
+	qint64 endTime = QDateTime::fromString(endString, "yyyy-MM-dd").toMSecsSinceEpoch();
+
+	showWuranInfor(beginTime, endTime);
 }
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::slotDateWeekBtn()
@@ -491,6 +501,15 @@ void DeSystemConfigWidget::slotDateWeekBtn()
 	ui.datetimeBtn->setChecked(false);
 	ui.dateWeekBtn->setChecked(true);
 	ui.dateDayBtn->setChecked(false);
+
+	QDateTime currDateTime = QDateTime::currentDateTime();
+	int week = currDateTime.date().dayOfWeek();
+	QString beginString = currDateTime.addDays(week-1).toString("yyyy-MM-dd");
+	QString endString = currDateTime.addDays(8-week).toString("yyyy-MM-dd");
+	qint64 beginTime = QDateTime::fromString(beginString, "yyyy-MM-dd").toMSecsSinceEpoch();
+	qint64 endTime = QDateTime::fromString(endString, "yyyy-MM-dd").toMSecsSinceEpoch();
+
+	showWuranInfor(beginTime, endTime);
 }
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::slotDateDayBtn()
@@ -499,12 +518,21 @@ void DeSystemConfigWidget::slotDateDayBtn()
 	ui.dateWeekBtn->setChecked(false);
 	ui.dateDayBtn->setChecked(true);
 
-	///报警事件
-	eventModel = new DeAlermEventModel(this);
+	///当前时间
+	QDateTime currDateTime = QDateTime::currentDateTime();
+	QString beginString = currDateTime.toString("yyyy-MM-dd");
+	QString endString = currDateTime.addDays(1).toString("yyyy-MM-dd");
+	qint64 beginTime = QDateTime::fromString(beginString, "yyyy-MM-dd").toMSecsSinceEpoch();
+	qint64 endTime = QDateTime::fromString(endString, "yyyy-MM-dd").toMSecsSinceEpoch();
 
+	showWuranInfor(beginTime, endTime);
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::showWuranInfor(qint64 start, qint64 end)
+{
 	Demo *demo = qApp->property("_mainWin").value<Demo *>();
 	DeAlermTable alermData(demo->dataBase());
-	QList<DeValueObjectInterface *> eData = alermData.selectDataFromDB();
+	QList<DeValueObjectInterface *> eData = alermData.selectDataFromDBRange(start, end);
 
 	int nCount = eData.size();
 	QList<DeAlermTable> data;
@@ -516,8 +544,12 @@ void DeSystemConfigWidget::slotDateDayBtn()
 	eventModel->setData(data);
 
 	ui.widget_2->tableView()->setSelectionBehavior(QAbstractItemView::SelectRows);
-	ui.widget_2->tableView()->setSelectionMode(QAbstractItemView::SingleSelection);
+	ui.widget_2->tableView()->setSelectionMode(QAbstractItemView::SingleSelection);	
 	ui.widget_2->setModel(eventModel);
+	ui.widget_2->tableView()->verticalHeader()->setDefaultSectionSize(40);
+
+	testDataModel->setData(QList<TestData>());
+	ui.widget->setModel(testDataModel);
 }
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::slotDynamicValue()

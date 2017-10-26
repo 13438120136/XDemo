@@ -48,7 +48,7 @@ QVariant DeAlermEventModel::dataShow(const QModelIndex &index) const
 	case 0:
 		return (indexData() + row);
 	case 1:
-		return QDateTime::fromMSecsSinceEpoch(tmpData[row].getAlermTime()).toString("hh:mm:ss");
+		return QDateTime::fromMSecsSinceEpoch(tmpData[row].getAlermTime()).toString("yyyy/MM/dd hh:mm:ss.zzz");
 	case 2:
 		return tmpData[row].getChannel();
 	default:

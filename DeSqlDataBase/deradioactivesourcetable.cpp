@@ -21,7 +21,8 @@ void DeRadioactiveSourceTable::initTable()
 	QString sql = QString("CREATE TABLE IF NOT EXISTS %1(   \
 						  id INT, 			    \
 						  date INTEGER, 		\
-						  original INT		    \
+						  original INT,		    \
+						  type INT				\
 						  );").arg(tableName);
 
 	execSql(sql);
@@ -29,8 +30,8 @@ void DeRadioactiveSourceTable::initTable()
 //----------------------------------------------------------------------------
 QString DeRadioactiveSourceTable::execAddString()
 {
-	QString sql = QString("insert into %1 values(%2, %3, %4)")
-		.arg(tableName).arg(m_identifier).arg(m_dateOfProduct).arg(m_originalValue);
+	QString sql = QString("insert into %1 values(%2, %3, %4, %5)")
+		.arg(tableName).arg(m_identifier).arg(m_dateOfProduct).arg(m_originalValue).arg(m_type);
 	return sql;
 }
 //----------------------------------------------------------------------------
@@ -50,6 +51,7 @@ QList<DeValueObjectInterface *> DeRadioactiveSourceTable::selectValue(QSqlQuery 
 		table->m_identifier = sqlQueryObj.value(0).toInt();
 		table->m_dateOfProduct = sqlQueryObj.value(1).value<quint64>();
 		table->m_originalValue = sqlQueryObj.value(2).toInt();
+		table->m_type = sqlQueryObj.value(3).toInt();
 
 		result.append(table);
 	}
@@ -85,5 +87,15 @@ void DeRadioactiveSourceTable::setOriginalValue(int originalValue)
 int DeRadioactiveSourceTable::getOriginalValue()
 {
 	return m_originalValue;
+}
+//----------------------------------------------------------------------------
+void DeRadioactiveSourceTable::setType(int type)
+{
+	m_type = type;
+}
+//----------------------------------------------------------------------------
+int DeRadioactiveSourceTable::getType()
+{
+	return m_type;
 }
 //----------------------------------------------------------------------------

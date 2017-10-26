@@ -27,6 +27,12 @@ public:
 
 	bool insertDataToDataBase();
 
+	/*
+	* 根据时间范围从数据库获取数据
+	* 注意: 查询结果由内部分配控件 一定要在使用之后释放
+	*/
+	QList<DeValueObjectInterface *> selectDataFromDBRange(qint64 start, qint64 end);
+
 protected:
 	QString execAddString();
 	QString execSelectString();

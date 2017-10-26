@@ -59,6 +59,8 @@ private:
 	void readDataFromDB();
 	///初始化界面显示
 	void initUI();
+	///根据时间范围显示污染信息
+	void showWuranInfor(qint64, qint64);
 
 private:
 	Ui::DeSystemConfigWidget ui;

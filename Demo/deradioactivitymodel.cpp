@@ -55,7 +55,7 @@ QVariant DeRadioactivityModel::dataShow(const QModelIndex &index) const
 	case 0:
 		return tmpData[row].getID();
 	case 1:
-		return "";
+		return tmpData[row].getType() == 1 ? "alpha" : "beta";
 	case 2:
 		{
 			quint64 time = tmpData[row].getDateProduct();
