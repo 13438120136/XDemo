@@ -10,7 +10,7 @@ DeTestDataModel::DeTestDataModel(QObject *parent)
 	headLabels << QString::fromLocal8Bit("通道号")
 		<< QString::fromLocal8Bit("本底值") 
 		<< QString::fromLocal8Bit("测量值") 
-		<< QString::fromLocal8Bit("阀值") 
+		<< QString::fromLocal8Bit("阈值") 
 		<< QString::fromLocal8Bit("污染状态") ;
 	this->setHorizontalHeaderLabels(headLabels);
 }
@@ -27,7 +27,7 @@ void DeTestDataModel::setData(const QList<TestData> &data)
 //----------------------------------------------------------------------------
 int DeTestDataModel::perPageCount()
 {
-	return 6;
+	return 5;
 }
 //----------------------------------------------------------------------------
 int DeTestDataModel::dataSize()
@@ -47,7 +47,7 @@ QVariant DeTestDataModel::dataShow(const QModelIndex &index) const
 	switch(column)
 	{
 	case 0:
-		return tmpData[row].channel;
+		return (indexData() + row);
 	case 1:
 		return tmpData[row].value;
 	case 2:

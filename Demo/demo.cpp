@@ -12,6 +12,7 @@
 #include <delogowidget.h>
 #include <QTranslator>
 #include <qdebug.h>
+#include "dealermtable.h"
 
 Q_DECLARE_METATYPE(Demo *)
 //----------------------------------------------------------------------------
@@ -58,6 +59,34 @@ Demo::Demo(QWidget *parent, Qt::WFlags flags)
 	qApp->installEventFilter(this);
 
 	slotCommunication(TYPE_BOTTOMCHECKING);
+
+	AlphaAndBeta &data = this->get_AlphaAndBeta();
+	data.alarmStates[0] = 1;
+	saveAlarmData();
+	data.alarmStates[0] = 0;
+		AlphaAndBeta &data1 = this->get_AlphaAndBeta();
+	data1.alarmStates[1] = 1;
+	saveAlarmData();
+	data.alarmStates[1] = 0;
+
+		AlphaAndBeta &data2 = this->get_AlphaAndBeta();
+	data2.alarmStates[2] = 1;
+	saveAlarmData();
+	data.alarmStates[2] = 0;
+		AlphaAndBeta &data3 = this->get_AlphaAndBeta();
+	data3.alarmStates[3] = 1;
+	saveAlarmData();
+	data.alarmStates[3] = 0;
+
+		AlphaAndBeta &data4 = this->get_AlphaAndBeta();
+	data4.alarmStates[4] = 1;
+	saveAlarmData();
+
+	data.alarmStates[4] = 0;
+		AlphaAndBeta &data5 = this->get_AlphaAndBeta();
+	data5.alarmStates[5] = 1;
+	saveAlarmData();
+	data.alarmStates[5] = 0;
 }
 //----------------------------------------------------------------------------
 Demo::~Demo()
@@ -233,5 +262,24 @@ void Demo::slotCommunication(int type)
 		emit signalEffectResult(this->get_EffectResultData());
 		break;
 	}
+}
+//----------------------------------------------------------------------------
+void Demo::saveAlarmData()
+{
+	AlphaAndBeta &data = this->get_AlphaAndBeta();
+	DeAlermTable table(&m_sqlDatabase);
+
+	QList<int> channelResult;
+	for (int i = 0; i < 6; i++)
+	{
+		if (data.alarmStates[i] == 1)
+			channelResult.append(i);
+	}
+
+	QByteArray byteArray((char *)&data, sizeof(data));
+
+	table.setPolluteChannel(channelResult);
+	table.setPolluteData(byteArray);
+	table.insertDataToDataBase();
 }
 //----------------------------------------------------------------------------

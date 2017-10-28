@@ -23,6 +23,8 @@ public:
 	QString pageMessage();
 	///初始化页面行数
 	void initColumnCount();
+	///当前索引
+	int indexData() const;
 
 protected:
 	QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
@@ -33,8 +35,6 @@ protected:
 	virtual QVariant dataShow(const QModelIndex &index) const;
 	///要显示数据的总大小
 	virtual int dataSize();
-	///当前索引
-	int indexData() const;
 
 private:
 	int m_index;

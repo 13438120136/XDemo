@@ -42,33 +42,15 @@ DeSystemConfigWidget::DeSystemConfigWidget(bool isMaintain, QWidget *parent)
 	else
 		initEdit();
 
-	///测量次数
-	DeTestDataModel *mm = new DeTestDataModel(this);
-
-	QList<TestData> data;
-	data << TestData(1, 12, 100, 200, 0) 
-		 << TestData(2, 12, 100, 200, 0) 
-		 << TestData(3, 12, 100, 200, 0) 
-		 << TestData(4, 12, 100, 200, 0)
-		 << TestData(5, 12, 120, 201, 2)
-		 << TestData(6, 12, 140, 200, 4);
-	mm->setData(data);
-	ui.widget->setModel(mm);
-	ui.widget->hideMenu();
-
-	///报警事件
-	DeAlermEventModel *eventModel = new DeAlermEventModel(this);
-	QList<AlermEventData> eData;
-	eData << AlermEventData(1, 2, 3)
-		<< AlermEventData(4, 5, 6)
-		<< AlermEventData(7, 8, 9)
-		<< AlermEventData(20, 22, 23)
-		<< AlermEventData(20, 22, 23)
-		<< AlermEventData(20, 22, 23);
-	eventModel->setData(eData);	
-	ui.widget_2->tableView()->setSelectionBehavior(QAbstractItemView::SelectRows);
-	ui.widget_2->tableView()->setSelectionMode(QAbstractItemView::SingleSelection);
+	eventModel = new DeAlermEventModel(this);
 	ui.widget_2->setModel(eventModel);
+	//void	clicked ( const QModelIndex & index )
+	connect(ui.widget_2->tableView(), SIGNAL(clicked(const QModelIndex &)), this, SLOT(slotShowWuranData(const QModelIndex &)));
+
+	///测量次数
+	testDataModel = new DeTestDataModel(this);
+	ui.widget->setModel(testDataModel);
+	//ui.widget->hideMenu();
 
 	DeDetectorModel *detectorModel = new DeDetectorModel(this);
 	ui.channelTabelView->setModel(detectorModel);
@@ -516,6 +498,26 @@ void DeSystemConfigWidget::slotDateDayBtn()
 	ui.datetimeBtn->setChecked(false);
 	ui.dateWeekBtn->setChecked(false);
 	ui.dateDayBtn->setChecked(true);
+
+	///报警事件
+	eventModel = new DeAlermEventModel(this);
+
+	Demo *demo = qApp->property("_mainWin").value<Demo *>();
+	DeAlermTable alermData(demo->dataBase());
+	QList<DeValueObjectInterface *> eData = alermData.selectDataFromDB();
+
+	int nCount = eData.size();
+	QList<DeAlermTable> data;
+	for (int i = 0; i < nCount; i++)
+	{
+		data.append(*(DeAlermTable *)eData[i]);
+	}
+	qDeleteAll(eData);
+	eventModel->setData(data);
+
+	ui.widget_2->tableView()->setSelectionBehavior(QAbstractItemView::SelectRows);
+	ui.widget_2->tableView()->setSelectionMode(QAbstractItemView::SingleSelection);
+	ui.widget_2->setModel(eventModel);
 }
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::slotDynamicValue()
@@ -530,5 +532,111 @@ void DeSystemConfigWidget::slotStaticValue()
 	ui.widget_42->setChecked(true);
 	ui.widget_31->setChecked(false);
 	m_systemParamData.setThresholdType(2);
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::slotShowWuranData(const QModelIndex &modelIndex)
+{
+	int nRow = modelIndex.row() + eventModel->indexData();
+	QByteArray by = eventModel->getData()[nRow].getData();
+	AlphaAndBeta *pData = (AlphaAndBeta *)by.data();
+
+	QList<TestData> data;
+	for (int i = 0; i < 6; i++)
+	{
+		TestData testData(i, pData->abBottomValue[i][0], pData->abValue[i][0], pData->thesholdValue[i][0], pData->alarmStates[i]);
+		data.append(testData);
+	}
+
+	for (int i = 0; i < 6; i++)
+	{
+		TestData testData(i, pData->abBottomValue[i][1], pData->abValue[i][1], pData->thesholdValue[i][1], pData->alarmStates[i]);
+		data.append(testData);
+	}
+
+	testDataModel->setData(data);
+	ui.widget->setModel(testDataModel);
+
+	if (pData->alarmStates[0] == 1)
+		ui.label_50->setStyleSheet("image: url(:/Demo/Resources/xitongshezhi-zuoshou-shouxinwuran.png);	\
+								   min-width:26px;													\
+								   min-height:62px;													\
+								   max-width:26px;													\
+								   max-height:62px;");												
+
+	if (pData->alarmStates[1] == 1)
+		ui.label_51->setStyleSheet("image: url(:/Demo/Resources/xitongshezhi-youshou-shouxinwuran.png);	\
+								   min-width:26px;													\
+								   min-height:62px;													\
+								   max-width:26px;													\
+								   max-height:62px;");			
+
+	if (pData->alarmStates[2] == 1)
+		ui.label_52->setStyleSheet("image: url(:/Demo/Resources/xitongshezhi-zuojiao-wuran.png);	\
+								   min-width:30px;														\
+								   min-height:68px; 													\
+								   max-width:30px; 														\
+								   max-height:68px;");
+	else
+		ui.label_52->setStyleSheet("image: url(:/Demo/Resources/xitongshezhi-zuojiao-wuwuran.png);	\
+								   min-width:30px;														\
+								   min-height:68px; 													\
+								   max-width:30px; 														\
+								   max-height:68px;");
+
+	if (pData->alarmStates[3] == 1)
+		ui.label_53->setStyleSheet("image: url(:/Demo/Resources/xitongshezhi-youjiao-wuran.png);	\
+								   min-width:30px;														\
+								   min-height:68px; 													\
+								   max-width:30px; 														\
+								   max-height:68px;");
+	else
+		ui.label_53->setStyleSheet("image: url(:/Demo/Resources/xitongshezhi-youjiao-wuwuran.png);	\
+								   min-width:30px;														\
+								   min-height:68px; 													\
+								   max-width:30px; 														\
+								   max-height:68px;");
+
+	if (pData->alarmStates[4] == 1)
+		ui.label_50->setStyleSheet("image: url(:/Demo/Resources/xitongshezhi-zuoshou-shoubeiwuran.png);	\
+								   min-width:26px;													\
+								   min-height:62px;													\
+								   max-width:26px;													\
+								   max-height:62px;");	
+
+	if (pData->alarmStates[5] == 1)
+		ui.label_51->setStyleSheet("image: url(:/Demo/Resources/xitongshezhi-youshou-shoubeiwuran.png);	\
+								   min-width:26px;													\
+								   min-height:62px;													\
+								   max-width:26px;													\
+								   max-height:62px;");	
+
+	if (pData->alarmStates[0] == 0 && pData->alarmStates[4] == 0)
+		ui.label_50->setStyleSheet("image: url(:/Demo/Resources/xitongshezhi-zuoshou-wuwuran.png);	\
+								   min-width:26px;													\
+								   min-height:62px;													\
+								   max-width:26px;													\
+								   max-height:62px;");	
+
+	if (pData->alarmStates[0] == 1 && pData->alarmStates[4] == 1)
+		ui.label_50->setStyleSheet("image: url(:/Demo/Resources/xitongshezhi-zuoshou-shuangmianwuran.png);	\
+								   min-width:26px;													\
+								   min-height:62px;													\
+								   max-width:26px;													\
+								   max-height:62px;");
+
+	if (pData->alarmStates[1] == 0 && pData->alarmStates[5] == 0)
+		ui.label_51->setStyleSheet("image: url(:/Demo/Resources/xitongshezhi-youshou-wuwuran.png);	\
+								   min-width:26px;													\
+								   min-height:62px;													\
+								   max-width:26px;													\
+								   max-height:62px;");	
+
+	if (pData->alarmStates[1] == 1 && pData->alarmStates[5] == 1)
+		ui.label_51->setStyleSheet("image: url(:/Demo/Resources/xitongshezhi-youshou-shuangmianwuran.png);	\
+								   min-width:26px;													\
+								   min-height:62px;													\
+								   max-width:26px;													\
+								   max-height:62px;");	
+
 }
 //----------------------------------------------------------------------------

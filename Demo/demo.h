@@ -44,6 +44,8 @@ public Q_SLOTS:
 	void setBLanguage(bool bLanguage);
 	///延时 单位:毫秒
 	void eventSleep(int msec);
+	///保存报警数据
+	void saveAlarmData();
 
 ///接口部分
 public Q_SLOTS:

@@ -2,20 +2,7 @@
 #define DEALERMEVENTMODEL_H
 
 #include <detablemodel.h>
-
-struct AlermEventData
-{
-	int orderNumber;		///序号
-	int channel;			///污染通道
-	quint64 time;			///污染时间
-
-	AlermEventData(int orderNumber, int channel, quint64 time)
-	{
-		this->orderNumber = orderNumber;
-		this->channel = channel;
-		this->time = time;
-	}
-};
+#include <dealermtable.h>
 
 ///报警事件数据模型
 class DeAlermEventModel : public DeTableModel
@@ -26,7 +13,8 @@ public:
 	DeAlermEventModel(QObject *parent);
 	~DeAlermEventModel();
 
-	void setData(const QList<AlermEventData> &data);
+	void setData(const QList<DeAlermTable> &data);
+	QList<DeAlermTable> &getData();
 
 protected:
 	///当前表格中每一页要显示的行数 默认只显示一行
@@ -38,7 +26,7 @@ protected:
 	Qt::ItemFlags flags(const QModelIndex &index) const;
 
 private:
-	QList<AlermEventData> m_data;
+	QList<DeAlermTable> m_data;
 };
 
 #endif // DEALERMEVENTMODEL_H

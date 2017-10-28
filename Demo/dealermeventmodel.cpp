@@ -1,4 +1,5 @@
 #include "dealermeventmodel.h"
+#include <QDateTime>
 
 //----------------------------------------------------------------------------
 DeAlermEventModel::DeAlermEventModel(QObject *parent)
@@ -18,14 +19,14 @@ DeAlermEventModel::~DeAlermEventModel()
 
 }
 //----------------------------------------------------------------------------
-void DeAlermEventModel::setData(const QList<AlermEventData> &data)
+void DeAlermEventModel::setData(const QList<DeAlermTable> &data)
 {
 	m_data = data;
 }
 //----------------------------------------------------------------------------
 int DeAlermEventModel::perPageCount()
 {
-	return 10;
+	return  10;
 }
 //----------------------------------------------------------------------------
 int DeAlermEventModel::dataSize()
@@ -38,18 +39,18 @@ QVariant DeAlermEventModel::dataShow(const QModelIndex &index) const
 	int row = index.row();
 	int column = index.column();
 
-	QList<AlermEventData> tmpData = m_data.mid(indexData());	
+	QList<DeAlermTable> tmpData = m_data.mid(indexData());	
 	if (row + 1 > tmpData.size())
 		return QVariant();
 
 	switch(column)
 	{
 	case 0:
-		return tmpData[row].orderNumber;
+		return (indexData() + row);
 	case 1:
-		return tmpData[row].time;
+		return QDateTime::fromMSecsSinceEpoch(tmpData[row].getAlermTime()).toString("hh:mm:ss");
 	case 2:
-		return tmpData[row].channel;
+		return tmpData[row].getChannel();
 	default:
 		return QVariant();
 	}	
@@ -59,5 +60,10 @@ Qt::ItemFlags DeAlermEventModel::flags(const QModelIndex &index) const
 {
 	Q_UNUSED(index)
 	return Qt::ItemIsSelectable | Qt::ItemIsEnabled;
+}
+//----------------------------------------------------------------------------
+QList<DeAlermTable> &DeAlermEventModel::getData()
+{
+	return m_data;
 }
 //----------------------------------------------------------------------------

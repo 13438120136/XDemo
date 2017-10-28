@@ -15,7 +15,17 @@ public:
 	///初始化表结构
 	void initTable();
 	///设置污染通道
-	void setPolluteChannel(quint32 channel);
+	void setPolluteChannel(const QList<int> &channel);
+	///设置污染数据
+	void setPolluteData(const QByteArray &byteArray);
+	///时间
+	quint64 getAlermTime();
+	///获取通道
+	QString getChannel();
+	///获取数据
+	QByteArray getData();
+
+	bool insertDataToDataBase();
 
 protected:
 	QString execAddString();
@@ -24,7 +34,8 @@ protected:
 
 private:
 	quint64 m_alermTime;			///报警事件
-	quint32 m_polluteChannel;		///污染通道
+	QString m_polluteChannel;		///污染通道
+	QByteArray m_polluteData;		///污染数据
 };
 
 #endif // DEALERMTABLE_H

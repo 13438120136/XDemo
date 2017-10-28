@@ -10,6 +10,8 @@
  * 系统参数对话框
  * 包含系统参数的设置及保存数据库表
  */
+class DeAlermEventModel;
+class DeTestDataModel;
 class DeSystemConfigWidget : public QDialog
 {
 	Q_OBJECT
@@ -45,6 +47,8 @@ public Q_SLOTS:
 	void slotChannelType();
 	///测量通道选择
 	void slotTestChannel();
+	///污染数据显示
+	void slotShowWuranData(const QModelIndex &);
 
 private:
 	///初始化编辑
@@ -67,6 +71,9 @@ private:
 	DeButtonIntDelegate m_intDelegate;
 	DeButtonDoubleDelegate m_doubleDelegate;
 	DeIntDelegate m_tIntDelegate;
+
+	DeAlermEventModel *eventModel;
+	DeTestDataModel *testDataModel;
 };
 
 #endif // DESYSTEMCONFIGWIDGET_H
