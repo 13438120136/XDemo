@@ -29,7 +29,7 @@ struct systemAlarm
 struct SystemParam
 {
 	/*
-	 * 阀值类型 1-静态阀值  2-动态阀值
+	 * 阈值类型 1-静态阈值  2-动态阈值
 	 */
 	int thresholdType;
 
@@ -37,6 +37,12 @@ struct SystemParam
 	 * 语言选择 1-中文  2-英文
 	 */
 	int language;
+
+	/* 1-表示选择了alpha通道  2-选择了beta通道 3-选择两者*/
+	int channel[3];
+
+	/*1-表示选中 0-表示未选中*/
+	int selectChannel[4];
 
 	/*
 	 * ip地址
@@ -106,6 +112,12 @@ DeSystemParam &DeSystemParam::operator=(const DeSystemParam & other)
 //----------------------------------------------------------------------------
 void DeSystemParam::setDefaultValues(SystemParam *value)
 {
+	for (int i = 0; i < 4; i++)
+		value->channel[i] = 1;
+
+	for (int i = 0; i < 4; i++)
+		value->selectChannel[i] = 1;
+
 	value->thresholdType = 1;
 	value->language = 1;
 	value->measurementTime = 5;
@@ -146,6 +158,22 @@ void DeSystemParam::setByteArray(const QByteArray &byteArray)
 
 	char *pData = (char *)byteArray.data();
 	memcpy(pSystemParam, pData, sizeof(SystemParam));
+}
+//----------------------------------------------------------------------------
+void DeSystemParam::setChannelType(int index, int type)
+{
+	if (index < 0 || index > 2)
+		return ;
+
+	pSystemParam->channel[index] = type;
+}
+//----------------------------------------------------------------------------
+void DeSystemParam::setSelectChannel(int index, int value)
+{
+	if (index < 0 || index > 3)
+		return ;
+
+	pSystemParam->selectChannel[index] = value;
 }
 //----------------------------------------------------------------------------
 void DeSystemParam::setThresholdType(int type)
@@ -378,4 +406,14 @@ int DeSystemParam::getBetaSeriousThreshold()
 {
 	return pSystemParam->beta.seriousThreshold;
 }	
+//----------------------------------------------------------------------------
+int *DeSystemParam::getChannelType()
+{
+	return pSystemParam->channel;
+}
+//----------------------------------------------------------------------------
+int *DeSystemParam::getSelectChannel()
+{
+	return pSystemParam->selectChannel;
+}
 //----------------------------------------------------------------------------

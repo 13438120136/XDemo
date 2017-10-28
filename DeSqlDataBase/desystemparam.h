@@ -19,7 +19,11 @@ public:
 	void setByteArray(const QByteArray &byteArray);
 	QByteArray byteArray() const;
 
-	///阀值类型 1-静态阀值  2-动态阀值
+	/// index序号 范围:0-2   value-1表示选中
+	void setChannelType(int index, int type);
+	///index序号 范围:0-3   value-1表示选中
+	void setSelectChannel(int index, int value);
+	///阈值类型 1-静态阈值  2-动态阈值
 	void setThresholdType(int type);
 	///语言选择 1-中文  2-英文
 	void setLanguage(int language);
@@ -81,6 +85,10 @@ public:
 	int getBetaSeriousAlramCoefficient();
 	int getBetaThreshold();
 	int getBetaSeriousThreshold();	
+
+	int *getChannelType();
+	///返回长度为4的int数组
+	int *getSelectChannel();
 
 private:
 	///设置所有相关字段的默认值

@@ -89,12 +89,12 @@ DeSystemConfigWidget::~DeSystemConfigWidget()
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::initUI()
 {
-	ui.widget_31->setInitValue(tr("¾²Ì¬·§Öµ"), true);
-	ui.widget_42->setInitValue(tr("¶¯Ì¬·§Öµ"), false);
+	ui.widget_31->setInitValue(tr("¾²Ì¬ãÐÖµ"), true);
+	ui.widget_42->setInitValue(tr("¶¯Ì¬ãÐÖµ"), false);
 
 	ui.widget_43->setInitValue(tr("¦Á"), true);
-	ui.widget_44->setInitValue(tr("¦Â"), false);
-	ui.widget_45->setInitValue(tr("¦Á+¦Â"), false);	
+	ui.widget_44->setInitValue(tr("¦Â"), true);
+	ui.widget_45->setInitValue(tr("¦Á+¦Â"), true);	
 
 	ui.widget_46->setInitValue(tr("1"), true);	
 	ui.widget_47->setInitValue(tr("2"), true);	
@@ -111,6 +111,34 @@ void DeSystemConfigWidget::initUI()
 
 	connect(ui.widget_31, SIGNAL(signalCheckedChanged(bool)), this, SLOT(slotDynamicValue()));
 	connect(ui.widget_42, SIGNAL(signalCheckedChanged(bool)), this, SLOT(slotStaticValue()));
+
+	connect(ui.widget_43, SIGNAL(signalCheckedChanged(bool)), this, SLOT(slotChannelType()));
+	connect(ui.widget_44, SIGNAL(signalCheckedChanged(bool)), this, SLOT(slotChannelType()));
+	connect(ui.widget_45, SIGNAL(signalCheckedChanged(bool)), this, SLOT(slotChannelType()));
+
+	connect(ui.widget_46, SIGNAL(signalCheckedChanged(bool)), this, SLOT(slotTestChannel()));
+	connect(ui.widget_47, SIGNAL(signalCheckedChanged(bool)), this, SLOT(slotTestChannel()));
+	connect(ui.widget_48, SIGNAL(signalCheckedChanged(bool)), this, SLOT(slotTestChannel()));
+	connect(ui.widget_49, SIGNAL(signalCheckedChanged(bool)), this, SLOT(slotTestChannel()));
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::slotChannelType()
+{
+	m_systemParamData.setChannelType(0, ui.widget_43->checked() ? 1:0);
+	m_systemParamData.setChannelType(1, ui.widget_44->checked() ? 1:0);
+	m_systemParamData.setChannelType(2, ui.widget_45->checked() ? 1:0);
+
+	updateDataBase();
+}
+//----------------------------------------------------------------------------
+void DeSystemConfigWidget::slotTestChannel()
+{
+	m_systemParamData.setSelectChannel(0, ui.widget_46->checked() ? 1:0);
+	m_systemParamData.setSelectChannel(1, ui.widget_47->checked() ? 1:0);
+	m_systemParamData.setSelectChannel(2, ui.widget_48->checked() ? 1:0);
+	m_systemParamData.setSelectChannel(3, ui.widget_49->checked() ? 1:0);
+
+	updateDataBase();
 }
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::initEdit()
@@ -303,6 +331,20 @@ void DeSystemConfigWidget::readDataFromDB()
 	ui.betaSAlarmEdit->setText(QString::number(m_systemParamData.getBetaSeriousAlramCoefficient()));
 	ui.betaThresholdEdit->setText(QString::number(m_systemParamData.getBetaThreshold()));
 	ui.betaSThresholdEdit->setText(QString::number(m_systemParamData.getBetaSeriousThreshold()));
+
+	ui.widget_31->setChecked(m_systemParamData.getThresholdType() == 1);
+	ui.widget_42->setChecked(m_systemParamData.getThresholdType() == 2);
+
+	int *tmpChanneltype = m_systemParamData.getChannelType();
+	ui.widget_43->setChecked(tmpChanneltype[0] == 1);
+	ui.widget_44->setChecked(tmpChanneltype[1] == 1);
+	ui.widget_45->setChecked(tmpChanneltype[2] == 1);
+
+	int *tmpChannel = m_systemParamData.getSelectChannel();
+	ui.widget_46->setChecked(tmpChannel[0] == 1);
+	ui.widget_47->setChecked(tmpChannel[1] == 1);
+	ui.widget_48->setChecked(tmpChannel[2] == 1);
+	ui.widget_49->setChecked(tmpChannel[3] == 1);
 }
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::on_deviceBtn_clicked()
@@ -480,11 +522,13 @@ void DeSystemConfigWidget::slotDynamicValue()
 {
 	ui.widget_31->setChecked(true);
 	ui.widget_42->setChecked(false);
+	m_systemParamData.setThresholdType(1);
 }
 //----------------------------------------------------------------------------
 void DeSystemConfigWidget::slotStaticValue()
 {
 	ui.widget_42->setChecked(true);
 	ui.widget_31->setChecked(false);
+	m_systemParamData.setThresholdType(2);
 }
 //----------------------------------------------------------------------------

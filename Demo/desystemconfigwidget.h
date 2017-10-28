@@ -41,6 +41,11 @@ public Q_SLOTS:
 	///根据界面更新数据库中的值
 	void slotUpdateDatabase(QObject *);
 
+	///通道选择
+	void slotChannelType();
+	///测量通道选择
+	void slotTestChannel();
+
 private:
 	///初始化编辑
 	void initEdit();
